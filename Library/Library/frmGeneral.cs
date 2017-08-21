@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class Form1 : Form
+    public partial class frmGeneral : Form
     {
-        public Form1()
+        public frmGeneral ()
         {
             InitializeComponent();
+        }
+
+        private void _CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
