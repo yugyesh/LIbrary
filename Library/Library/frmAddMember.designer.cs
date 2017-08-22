@@ -55,7 +55,7 @@
             this.incLabel8 = new IncLibrary.IncLabel();
             this.incLabel9 = new IncLibrary.IncLabel();
             this.grpContactInfo = new System.Windows.Forms.GroupBox();
-            this.emailTextbox1 = new IncLibrary.EmailTextbox();
+            this.txtEmail = new IncLibrary.EmailTextbox();
             this.grpTeacher = new System.Windows.Forms.GroupBox();
             this.incLabel11 = new IncLibrary.IncLabel();
             this.txtMajorSubject = new System.Windows.Forms.TextBox();
@@ -411,7 +411,7 @@
             // 
             // grpContactInfo
             // 
-            this.grpContactInfo.Controls.Add(this.emailTextbox1);
+            this.grpContactInfo.Controls.Add(this.txtEmail);
             this.grpContactInfo.Controls.Add(this.incLabel9);
             this.grpContactInfo.Controls.Add(this.incLabel7);
             this.grpContactInfo.Controls.Add(this.incLabel8);
@@ -426,21 +426,21 @@
             this.grpContactInfo.TabStop = false;
             this.grpContactInfo.Text = "Contact Information";
             // 
-            // emailTextbox1
+            // txtEmail
             // 
-            this.emailTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.emailTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.emailTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.emailTextbox1.Location = new System.Drawing.Point(125, 144);
-            this.emailTextbox1.Mandatory = false;
-            this.emailTextbox1.Name = "emailTextbox1";
-            this.emailTextbox1.NextControl = null;
-            this.emailTextbox1.PreviousControl = null;
-            this.emailTextbox1.ReadonlyByOrchestrator = false;
-            this.emailTextbox1.Size = new System.Drawing.Size(174, 26);
-            this.emailTextbox1.TabIndex = 33;
-            this.emailTextbox1.Value_Orchestrator = "";
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtEmail.Location = new System.Drawing.Point(125, 144);
+            this.txtEmail.Mandatory = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.NextControl = null;
+            this.txtEmail.PreviousControl = null;
+            this.txtEmail.ReadonlyByOrchestrator = false;
+            this.txtEmail.Size = new System.Drawing.Size(174, 26);
+            this.txtEmail.TabIndex = 33;
+            this.txtEmail.Value_Orchestrator = "";
             // 
             // grpTeacher
             // 
@@ -812,7 +812,7 @@
         private IncLibrary.IncLabel incLabel8;
         private IncLibrary.IncLabel incLabel9;
         private System.Windows.Forms.GroupBox grpContactInfo;
-        private IncLibrary.EmailTextbox emailTextbox1;
+        private IncLibrary.EmailTextbox txtEmail;
         private System.Windows.Forms.GroupBox grpStudent;
         private IncLibrary.IncLabel incLabel21;
         private System.Windows.Forms.TextBox txtSection;

@@ -64,5 +64,28 @@ namespace BussinessLayer
                 throw;
             }
         }
+        public int CountMember()
+        {
+            string query = "select count(*) as memberNo from PersonalDetails";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, null, CommandType.Text);
+            try
+            {
+                if (dt != null)
+                {
+                    return Convert.ToInt32(dt.Rows[0]["memberNo"].ToString());
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        //public bool AddMember(int memberType,)
+        //{
+           
+
+        //}
     }
 }

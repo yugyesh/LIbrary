@@ -133,9 +133,24 @@ namespace Library
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int lastMemberNo = balMember.CountMember();
             if (!ValidateField())
             {
-
+                
+                List<string> personalDetails = new List<string>();
+                personalDetails.Add(txtFirstName.Text);
+                personalDetails.Add(txtMiddleName.Text);
+                personalDetails.Add(txtLastName.Text);
+                personalDetails.Add(cboGender.SelectedValue.ToString());
+                personalDetails.Add(cboStatus.SelectedValue.ToString());
+                personalDetails.Add(txtAddress.Text);
+                personalDetails.Add(txtPhone.Text);
+                personalDetails.Add(txtEmail.Text);
+                List<string> specificDetails = new List<string>();
+                //if (Convert.ToInt32(cboMemberType.SelectedValue.ToString())==1)
+                //{
+                //    specificDetails.Add(txt)
+                //}
             }
         }
         private bool ValidateField()
