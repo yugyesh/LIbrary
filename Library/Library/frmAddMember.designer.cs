@@ -29,14 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlClose = new System.Windows.Forms.Panel();
+            this._CloseButton = new Library.ButtonZ();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.grpStudent = new System.Windows.Forms.GroupBox();
-            this.incLabel21 = new IncLibrary.IncLabel();
-            this.txtSection = new System.Windows.Forms.TextBox();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.cboClass = new System.Windows.Forms.ComboBox();
-            this.incLabel23 = new IncLibrary.IncLabel();
-            this.incLabel24 = new IncLibrary.IncLabel();
             this.incLabel5 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -47,6 +41,13 @@
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.incLabel1 = new IncLibrary.IncLabel();
             this.incLabel3 = new IncLibrary.IncLabel();
+            this.grpStudent = new System.Windows.Forms.GroupBox();
+            this.incLabel21 = new IncLibrary.IncLabel();
+            this.txtSection = new System.Windows.Forms.TextBox();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.cboClass = new System.Windows.Forms.ComboBox();
+            this.incLabel23 = new IncLibrary.IncLabel();
+            this.incLabel24 = new IncLibrary.IncLabel();
             this.btnSave = new IncLibrary.IncButton();
             this.incLabel7 = new IncLibrary.IncLabel();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -65,6 +66,7 @@
             this.grpUser = new System.Windows.Forms.GroupBox();
             this.incLabel15 = new IncLibrary.IncLabel();
             this.incLabel16 = new IncLibrary.IncLabel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPasswordConform = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtUserID = new System.Windows.Forms.TextBox();
@@ -72,19 +74,18 @@
             this.cboRole = new System.Windows.Forms.ComboBox();
             this.incLabel18 = new IncLibrary.IncLabel();
             this.incLabel19 = new IncLibrary.IncLabel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.cboMemberType = new System.Windows.Forms.ComboBox();
             this.incLabel4 = new IncLibrary.IncLabel();
-            this._CloseButton = new Library.ButtonZ();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picMember = new System.Windows.Forms.PictureBox();
             this.btnBrowse = new IncLibrary.IncButton();
+            this.fileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.pnlClose.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpStudent.SuspendLayout();
             this.grpContactInfo.SuspendLayout();
             this.grpTeacher.SuspendLayout();
             this.grpUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -96,6 +97,26 @@
             this.pnlClose.Name = "pnlClose";
             this.pnlClose.Size = new System.Drawing.Size(1361, 41);
             this.pnlClose.TabIndex = 2;
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(31, 27);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // groupBox1
             // 
@@ -117,95 +138,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Details";
-            // 
-            // grpStudent
-            // 
-            this.grpStudent.Controls.Add(this.incLabel21);
-            this.grpStudent.Controls.Add(this.txtSection);
-            this.grpStudent.Controls.Add(this.txtStudentID);
-            this.grpStudent.Controls.Add(this.cboClass);
-            this.grpStudent.Controls.Add(this.incLabel23);
-            this.grpStudent.Controls.Add(this.incLabel24);
-            this.grpStudent.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
-            this.grpStudent.ForeColor = System.Drawing.Color.White;
-            this.grpStudent.Location = new System.Drawing.Point(981, 115);
-            this.grpStudent.Name = "grpStudent";
-            this.grpStudent.Size = new System.Drawing.Size(320, 364);
-            this.grpStudent.TabIndex = 27;
-            this.grpStudent.TabStop = false;
-            this.grpStudent.Text = "Student Information";
-            this.grpStudent.Visible = false;
-            // 
-            // incLabel21
-            // 
-            this.incLabel21.AutoSize = true;
-            this.incLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel21.Location = new System.Drawing.Point(46, 191);
-            this.incLabel21.Name = "incLabel21";
-            this.incLabel21.Readonly = false;
-            this.incLabel21.Size = new System.Drawing.Size(42, 17);
-            this.incLabel21.TabIndex = 26;
-            this.incLabel21.Text = "Class";
-            this.incLabel21.ValueByOrchestrator = "Class";
-            // 
-            // txtSection
-            // 
-            this.txtSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSection.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSection.Location = new System.Drawing.Point(109, 127);
-            this.txtSection.Name = "txtSection";
-            this.txtSection.Size = new System.Drawing.Size(174, 26);
-            this.txtSection.TabIndex = 20;
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentID.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStudentID.Location = new System.Drawing.Point(109, 66);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.ReadOnly = true;
-            this.txtStudentID.Size = new System.Drawing.Size(174, 26);
-            this.txtStudentID.TabIndex = 20;
-            // 
-            // cboClass
-            // 
-            this.cboClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.cboClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboClass.ForeColor = System.Drawing.SystemColors.Window;
-            this.cboClass.FormattingEnabled = true;
-            this.cboClass.Location = new System.Drawing.Point(109, 188);
-            this.cboClass.Name = "cboClass";
-            this.cboClass.Size = new System.Drawing.Size(174, 26);
-            this.cboClass.TabIndex = 21;
-            // 
-            // incLabel23
-            // 
-            this.incLabel23.AutoSize = true;
-            this.incLabel23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incLabel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel23.Location = new System.Drawing.Point(33, 130);
-            this.incLabel23.Name = "incLabel23";
-            this.incLabel23.Readonly = false;
-            this.incLabel23.Size = new System.Drawing.Size(55, 17);
-            this.incLabel23.TabIndex = 23;
-            this.incLabel23.Text = "Section";
-            this.incLabel23.ValueByOrchestrator = "Section";
-            // 
-            // incLabel24
-            // 
-            this.incLabel24.AutoSize = true;
-            this.incLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel24.Location = new System.Drawing.Point(14, 69);
-            this.incLabel24.Name = "incLabel24";
-            this.incLabel24.Readonly = false;
-            this.incLabel24.Size = new System.Drawing.Size(74, 17);
-            this.incLabel24.TabIndex = 23;
-            this.incLabel24.Text = "Student ID";
-            this.incLabel24.ValueByOrchestrator = "Student ID";
             // 
             // incLabel5
             // 
@@ -323,6 +255,95 @@
             this.incLabel3.TabIndex = 23;
             this.incLabel3.Text = "First Name";
             this.incLabel3.ValueByOrchestrator = "First Name";
+            // 
+            // grpStudent
+            // 
+            this.grpStudent.Controls.Add(this.incLabel21);
+            this.grpStudent.Controls.Add(this.txtSection);
+            this.grpStudent.Controls.Add(this.txtStudentID);
+            this.grpStudent.Controls.Add(this.cboClass);
+            this.grpStudent.Controls.Add(this.incLabel23);
+            this.grpStudent.Controls.Add(this.incLabel24);
+            this.grpStudent.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
+            this.grpStudent.ForeColor = System.Drawing.Color.White;
+            this.grpStudent.Location = new System.Drawing.Point(981, 115);
+            this.grpStudent.Name = "grpStudent";
+            this.grpStudent.Size = new System.Drawing.Size(320, 364);
+            this.grpStudent.TabIndex = 27;
+            this.grpStudent.TabStop = false;
+            this.grpStudent.Text = "Student Information";
+            this.grpStudent.Visible = false;
+            // 
+            // incLabel21
+            // 
+            this.incLabel21.AutoSize = true;
+            this.incLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel21.Location = new System.Drawing.Point(46, 191);
+            this.incLabel21.Name = "incLabel21";
+            this.incLabel21.Readonly = false;
+            this.incLabel21.Size = new System.Drawing.Size(42, 17);
+            this.incLabel21.TabIndex = 26;
+            this.incLabel21.Text = "Class";
+            this.incLabel21.ValueByOrchestrator = "Class";
+            // 
+            // txtSection
+            // 
+            this.txtSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSection.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtSection.Location = new System.Drawing.Point(109, 127);
+            this.txtSection.Name = "txtSection";
+            this.txtSection.Size = new System.Drawing.Size(174, 26);
+            this.txtSection.TabIndex = 20;
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentID.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStudentID.Location = new System.Drawing.Point(109, 66);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.ReadOnly = true;
+            this.txtStudentID.Size = new System.Drawing.Size(174, 26);
+            this.txtStudentID.TabIndex = 20;
+            // 
+            // cboClass
+            // 
+            this.cboClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboClass.ForeColor = System.Drawing.SystemColors.Window;
+            this.cboClass.FormattingEnabled = true;
+            this.cboClass.Location = new System.Drawing.Point(109, 188);
+            this.cboClass.Name = "cboClass";
+            this.cboClass.Size = new System.Drawing.Size(174, 26);
+            this.cboClass.TabIndex = 21;
+            // 
+            // incLabel23
+            // 
+            this.incLabel23.AutoSize = true;
+            this.incLabel23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incLabel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel23.Location = new System.Drawing.Point(33, 130);
+            this.incLabel23.Name = "incLabel23";
+            this.incLabel23.Readonly = false;
+            this.incLabel23.Size = new System.Drawing.Size(55, 17);
+            this.incLabel23.TabIndex = 23;
+            this.incLabel23.Text = "Section";
+            this.incLabel23.ValueByOrchestrator = "Section";
+            // 
+            // incLabel24
+            // 
+            this.incLabel24.AutoSize = true;
+            this.incLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel24.Location = new System.Drawing.Point(14, 69);
+            this.incLabel24.Name = "incLabel24";
+            this.incLabel24.Readonly = false;
+            this.incLabel24.Size = new System.Drawing.Size(74, 17);
+            this.incLabel24.TabIndex = 23;
+            this.incLabel24.Text = "Student ID";
+            this.incLabel24.ValueByOrchestrator = "Student ID";
             // 
             // btnSave
             // 
@@ -536,7 +557,7 @@
             this.grpUser.Controls.Add(this.incLabel19);
             this.grpUser.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
             this.grpUser.ForeColor = System.Drawing.Color.White;
-            this.grpUser.Location = new System.Drawing.Point(981, 125);
+            this.grpUser.Location = new System.Drawing.Point(981, 111);
             this.grpUser.Name = "grpUser";
             this.grpUser.Size = new System.Drawing.Size(335, 388);
             this.grpUser.TabIndex = 35;
@@ -569,6 +590,16 @@
             this.incLabel16.TabIndex = 26;
             this.incLabel16.Text = "Password";
             this.incLabel16.ValueByOrchestrator = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.Location = new System.Drawing.Point(134, 172);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(174, 26);
+            this.txtPassword.TabIndex = 20;
             // 
             // txtPasswordConform
             // 
@@ -651,16 +682,6 @@
             this.incLabel19.Text = "UserID";
             this.incLabel19.ValueByOrchestrator = "UserID";
             // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.Location = new System.Drawing.Point(134, 172);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(174, 26);
-            this.txtPassword.TabIndex = 20;
-            // 
             // cboMemberType
             // 
             this.cboMemberType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -686,33 +707,14 @@
             this.incLabel4.Text = "Member Type";
             this.incLabel4.ValueByOrchestrator = "Member Type";
             // 
-            // _CloseButton
+            // picMember
             // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(804, 127);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(134, 124);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.picMember.Location = new System.Drawing.Point(759, 125);
+            this.picMember.Name = "picMember";
+            this.picMember.Size = new System.Drawing.Size(134, 124);
+            this.picMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMember.TabIndex = 38;
+            this.picMember.TabStop = false;
             // 
             // btnBrowse
             // 
@@ -721,15 +723,20 @@
             this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBrowse.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnBrowse.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnBrowse.Location = new System.Drawing.Point(804, 269);
+            this.btnBrowse.Location = new System.Drawing.Point(759, 254);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.NextControl = null;
             this.btnBrowse.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnBrowse.PreviousControl = null;
             this.btnBrowse.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnBrowse.Size = new System.Drawing.Size(110, 25);
+            this.btnBrowse.Size = new System.Drawing.Size(134, 25);
             this.btnBrowse.TabIndex = 39;
             this.btnBrowse.Text = "Browse";
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // fileDialogPhoto
+            // 
+            this.fileDialogPhoto.FileName ="";
             // 
             // frmAddMember
             // 
@@ -740,7 +747,7 @@
             this.ClientSize = new System.Drawing.Size(1361, 630);
             this.ControlBox = false;
             this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picMember);
             this.Controls.Add(this.grpStudent);
             this.Controls.Add(this.incLabel4);
             this.Controls.Add(this.cboMemberType);
@@ -768,7 +775,7 @@
             this.grpTeacher.PerformLayout();
             this.grpUser.ResumeLayout(false);
             this.grpUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -824,8 +831,9 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.ComboBox cboMemberType;
         private IncLibrary.IncLabel incLabel4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picMember;
         private IncLibrary.IncButton btnBrowse;
+        private System.Windows.Forms.OpenFileDialog fileDialogPhoto;
     }
 }
 

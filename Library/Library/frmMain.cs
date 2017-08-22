@@ -22,7 +22,6 @@ namespace Library
             frmAddMember addMemberForm = new frmAddMember();
             addMemberForm.MdiParent = this;
             addMemberForm.Show();
-
         }
     }
 }

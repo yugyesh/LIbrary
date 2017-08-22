@@ -54,6 +54,10 @@ namespace Library
         private void frmAddMember_Load(object sender, EventArgs e)
         {
             LoadComboBoxes();
+            string defaultImage;
+            //application. startuppath gives the path of the bin
+            defaultImage = Application.StartupPath + "\\default.jpg";
+            picMember.ImageLocation = defaultImage;
         }
 
         private void LoadComboBoxes()
@@ -97,6 +101,18 @@ namespace Library
                 cboStatus.ValueMember = "MStatusID";
                 cboStatus.DisplayMember = "MStatusName";
             }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            fileDialogPhoto.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;";
+            string browseImage;
+            if (fileDialogPhoto.ShowDialog()==DialogResult.OK)
+            {
+                browseImage = fileDialogPhoto.FileName;
+                picMember.ImageLocation = browseImage;
+            }
+
         }
     }
 }
