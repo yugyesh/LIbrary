@@ -114,5 +114,111 @@ namespace Library
             }
 
         }
+
+        private void txtLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!ValidateField())
+            {
+
+            }
+        }
+        private bool ValidateField()
+        {
+            if (cboMemberType.SelectedIndex == 0)
+            {
+                cboMemberType.Focus();
+                erpGeneral.SetError(cboMemberType, "Please Select any Member");
+                return true;
+            }
+            else if (txtFirstName.Text.Trim() == string.Empty)
+            {
+                txtFirstName.Focus();
+                erpGeneral.SetError(txtFirstName, "Please provide First Name");
+                return true;
+            }
+            else if (txtLastName.Text.Trim() == string.Empty)
+            {
+                txtLastName.Focus();
+                erpGeneral.SetError(txtLastName, "Please provide Last Name");
+                return true;
+            }
+            else if (cboGender.SelectedIndex == 0)
+            {
+                cboGender.Focus();
+                erpGeneral.SetError(cboGender, "Please Select Gender");
+                return true;
+            }
+            else if (cboStatus.SelectedIndex == 0)
+            {
+                cboStatus.Focus();
+                erpGeneral.SetError(cboStatus, "Please Select Status");
+                return true;
+            }
+            else if (txtAddress.Text.Trim() == string.Empty)
+            {
+                txtAddress.Focus();
+                erpGeneral.SetError(txtAddress, "Please provide Address");
+                return true;
+            }
+            else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 1 && Convert.ToInt32(cboClass.SelectedValue.ToString()) == 0)
+            {
+                    cboClass.Focus();
+                    erpGeneral.SetError(cboClass, "Please Select Class");
+                    return true;
+            }
+            else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
+            { 
+                if (txtUserName.Text==string.Empty)
+                {
+                    txtUserName.Focus();
+                    erpGeneral.SetError(txtUserName, "Please provide User Name");
+                    return true;
+                }
+                else if (txtPassword.Text==string.Empty)
+                {
+                    txtPassword.Focus();
+                    erpGeneral.SetError(txtPassword, "Please provide Password");
+                    return true;
+                }
+                else if (Convert.ToInt32(cboRole.SelectedValue.ToString()) == 0)
+                {
+                    cboRole.Focus();
+                    erpGeneral.SetError(cboRole, "Please Select Role");
+                    return true;
+                }
+                else
+                {
+
+                }
+            }
+            else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2 && Convert.ToInt32(cboDepartment.SelectedValue.ToString()) == 0)
+            {
+                    cboDepartment.Focus();
+                    erpGeneral.SetError(cboDepartment, "Please Select Department");
+                    return true;
+            }
+            
+            else
+            {
+                return false;
+            }
+            return false;
+        }
     }
 }
