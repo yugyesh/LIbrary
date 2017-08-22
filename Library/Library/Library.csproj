@@ -135,6 +135,10 @@
       <Project>{24e311dc-7cc0-4448-959a-9befb51af862}</Project>
       <Name>BussinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{ecdd08ce-9997-4f6b-8571-fb718db39c89}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

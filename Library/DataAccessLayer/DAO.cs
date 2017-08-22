@@ -53,6 +53,19 @@ namespace DataAccessLayer
                 return i;
             }
         }
+        public static int IUD(string sql, List<SqlParameter> pram, CommandType cmdType)
+        {
+            using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
+            {
+                cmd.CommandType = cmdType;
+                if (pram != null && pram.ToArray().Length != 0)
+                {
+                    cmd.Parameters.AddRange(pram.ToArray());
+                }
+                int i = cmd.ExecuteNonQuery();
+                return i;
+            }
+        }
     }
 }
 

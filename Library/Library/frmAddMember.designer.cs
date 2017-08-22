@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this._CloseButton = new Library.ButtonZ();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.incLabel5 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
@@ -79,7 +80,6 @@
             this.picMember = new System.Windows.Forms.PictureBox();
             this.btnBrowse = new IncLibrary.IncButton();
             this.fileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
-            this._CloseButton = new Library.ButtonZ();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlClose.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,6 +101,26 @@
             this.pnlClose.Size = new System.Drawing.Size(1361, 41);
             this.pnlClose.TabIndex = 2;
             // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(31, 27);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.incLabel5);
@@ -118,7 +138,7 @@
             this.groupBox1.Location = new System.Drawing.Point(4, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 364);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Details";
             // 
@@ -156,7 +176,7 @@
             this.txtLastName.Location = new System.Drawing.Point(109, 180);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(174, 26);
-            this.txtLastName.TabIndex = 20;
+            this.txtLastName.TabIndex = 2;
             this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtMiddleName
@@ -167,7 +187,7 @@
             this.txtMiddleName.Location = new System.Drawing.Point(109, 123);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(174, 26);
-            this.txtMiddleName.TabIndex = 20;
+            this.txtMiddleName.TabIndex = 1;
             this.txtMiddleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtFirstName
@@ -178,7 +198,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(109, 66);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(174, 26);
-            this.txtFirstName.TabIndex = 20;
+            this.txtFirstName.TabIndex = 0;
             this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // incLabel2
@@ -203,7 +223,7 @@
             this.cboGender.Location = new System.Drawing.Point(109, 237);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(174, 26);
-            this.cboGender.TabIndex = 21;
+            this.cboGender.TabIndex = 3;
             // 
             // cboStatus
             // 
@@ -214,7 +234,7 @@
             this.cboStatus.Location = new System.Drawing.Point(109, 296);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(174, 26);
-            this.cboStatus.TabIndex = 21;
+            this.cboStatus.TabIndex = 4;
             // 
             // incLabel1
             // 
@@ -252,10 +272,10 @@
             this.grpStudent.Controls.Add(this.incLabel24);
             this.grpStudent.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
             this.grpStudent.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.grpStudent.Location = new System.Drawing.Point(420, 281);
+            this.grpStudent.Location = new System.Drawing.Point(1055, 172);
             this.grpStudent.Name = "grpStudent";
             this.grpStudent.Size = new System.Drawing.Size(335, 337);
-            this.grpStudent.TabIndex = 27;
+            this.grpStudent.TabIndex = 6;
             this.grpStudent.TabStop = false;
             this.grpStudent.Text = "Student Information";
             this.grpStudent.Visible = false;
@@ -281,7 +301,7 @@
             this.txtSection.Location = new System.Drawing.Point(109, 127);
             this.txtSection.Name = "txtSection";
             this.txtSection.Size = new System.Drawing.Size(174, 26);
-            this.txtSection.TabIndex = 20;
+            this.txtSection.TabIndex = 1;
             // 
             // txtStudentID
             // 
@@ -292,7 +312,7 @@
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.ReadOnly = true;
             this.txtStudentID.Size = new System.Drawing.Size(174, 26);
-            this.txtStudentID.TabIndex = 20;
+            this.txtStudentID.TabIndex = 0;
             // 
             // cboClass
             // 
@@ -303,7 +323,7 @@
             this.cboClass.Location = new System.Drawing.Point(109, 188);
             this.cboClass.Name = "cboClass";
             this.cboClass.Size = new System.Drawing.Size(174, 26);
-            this.cboClass.TabIndex = 21;
+            this.cboClass.TabIndex = 2;
             // 
             // incLabel23
             // 
@@ -345,7 +365,7 @@
             this.btnSave.PreviousControl = null;
             this.btnSave.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.Size = new System.Drawing.Size(110, 39);
-            this.btnSave.TabIndex = 22;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -370,7 +390,7 @@
             this.txtPhone.Location = new System.Drawing.Point(125, 94);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(174, 26);
-            this.txtPhone.TabIndex = 28;
+            this.txtPhone.TabIndex = 1;
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtAddress
@@ -381,7 +401,7 @@
             this.txtAddress.Location = new System.Drawing.Point(125, 44);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(174, 26);
-            this.txtAddress.TabIndex = 29;
+            this.txtAddress.TabIndex = 0;
             // 
             // incLabel8
             // 
@@ -422,7 +442,7 @@
             this.grpContactInfo.Location = new System.Drawing.Point(4, 423);
             this.grpContactInfo.Name = "grpContactInfo";
             this.grpContactInfo.Size = new System.Drawing.Size(365, 195);
-            this.grpContactInfo.TabIndex = 33;
+            this.grpContactInfo.TabIndex = 1;
             this.grpContactInfo.TabStop = false;
             this.grpContactInfo.Text = "Contact Information";
             // 
@@ -439,7 +459,7 @@
             this.txtEmail.PreviousControl = null;
             this.txtEmail.ReadonlyByOrchestrator = false;
             this.txtEmail.Size = new System.Drawing.Size(174, 26);
-            this.txtEmail.TabIndex = 33;
+            this.txtEmail.TabIndex = 2;
             this.txtEmail.Value_Orchestrator = "";
             // 
             // grpTeacher
@@ -452,10 +472,10 @@
             this.grpTeacher.Controls.Add(this.incLabel14);
             this.grpTeacher.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
             this.grpTeacher.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.grpTeacher.Location = new System.Drawing.Point(420, 281);
+            this.grpTeacher.Location = new System.Drawing.Point(735, 172);
             this.grpTeacher.Name = "grpTeacher";
             this.grpTeacher.Size = new System.Drawing.Size(335, 337);
-            this.grpTeacher.TabIndex = 34;
+            this.grpTeacher.TabIndex = 5;
             this.grpTeacher.TabStop = false;
             this.grpTeacher.Text = "Teacher Information";
             this.grpTeacher.Visible = false;
@@ -481,7 +501,7 @@
             this.txtMajorSubject.Location = new System.Drawing.Point(111, 142);
             this.txtMajorSubject.Name = "txtMajorSubject";
             this.txtMajorSubject.Size = new System.Drawing.Size(174, 26);
-            this.txtMajorSubject.TabIndex = 20;
+            this.txtMajorSubject.TabIndex = 1;
             // 
             // txtTeacherID
             // 
@@ -492,7 +512,7 @@
             this.txtTeacherID.Name = "txtTeacherID";
             this.txtTeacherID.ReadOnly = true;
             this.txtTeacherID.Size = new System.Drawing.Size(174, 26);
-            this.txtTeacherID.TabIndex = 20;
+            this.txtTeacherID.TabIndex = 0;
             // 
             // cboDepartment
             // 
@@ -503,7 +523,7 @@
             this.cboDepartment.Location = new System.Drawing.Point(111, 202);
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(174, 26);
-            this.cboDepartment.TabIndex = 21;
+            this.cboDepartment.TabIndex = 2;
             // 
             // incLabel13
             // 
@@ -548,7 +568,7 @@
             this.grpUser.Location = new System.Drawing.Point(420, 281);
             this.grpUser.Name = "grpUser";
             this.grpUser.Size = new System.Drawing.Size(335, 337);
-            this.grpUser.TabIndex = 35;
+            this.grpUser.TabIndex = 4;
             this.grpUser.TabStop = false;
             this.grpUser.Text = "User Information";
             this.grpUser.Visible = false;
@@ -575,7 +595,7 @@
             this.cboRole.Location = new System.Drawing.Point(135, 165);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(174, 26);
-            this.cboRole.TabIndex = 27;
+            this.cboRole.TabIndex = 2;
             // 
             // incLabel16
             // 
@@ -598,7 +618,7 @@
             this.txtPassword.Location = new System.Drawing.Point(135, 216);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(174, 26);
-            this.txtPassword.TabIndex = 20;
+            this.txtPassword.TabIndex = 3;
             // 
             // txtPasswordConform
             // 
@@ -608,7 +628,7 @@
             this.txtPasswordConform.Location = new System.Drawing.Point(135, 267);
             this.txtPasswordConform.Name = "txtPasswordConform";
             this.txtPasswordConform.Size = new System.Drawing.Size(174, 26);
-            this.txtPasswordConform.TabIndex = 20;
+            this.txtPasswordConform.TabIndex = 4;
             // 
             // txtUserName
             // 
@@ -618,7 +638,7 @@
             this.txtUserName.Location = new System.Drawing.Point(135, 114);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(174, 26);
-            this.txtUserName.TabIndex = 20;
+            this.txtUserName.TabIndex = 1;
             // 
             // txtUserID
             // 
@@ -629,7 +649,7 @@
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.ReadOnly = true;
             this.txtUserID.Size = new System.Drawing.Size(174, 26);
-            this.txtUserID.TabIndex = 20;
+            this.txtUserID.TabIndex = 0;
             // 
             // incLabel17
             // 
@@ -679,7 +699,7 @@
             this.cboMemberType.Location = new System.Drawing.Point(518, 58);
             this.cboMemberType.Name = "cboMemberType";
             this.cboMemberType.Size = new System.Drawing.Size(174, 25);
-            this.cboMemberType.TabIndex = 36;
+            this.cboMemberType.TabIndex = 2;
             this.cboMemberType.SelectedIndexChanged += new System.EventHandler(this.cboMemberType_SelectedIndexChanged);
             // 
             // incLabel4
@@ -718,29 +738,9 @@
             this.btnBrowse.PreviousControl = null;
             this.btnBrowse.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnBrowse.Size = new System.Drawing.Size(134, 25);
-            this.btnBrowse.TabIndex = 39;
+            this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // erpGeneral
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
+using Common;
 namespace Library
 {
     public partial class frmAddMember : Form
@@ -51,6 +52,7 @@ namespace Library
             }
         }
         BALMember balMember = new BALMember();
+        BALHelper balHelper = new BALHelper();
         private void frmAddMember_Load(object sender, EventArgs e)
         {
             LoadComboBoxes();
@@ -78,7 +80,7 @@ namespace Library
                 this.cboMemberType.SelectedIndexChanged += new EventHandler(cboMemberType_SelectedIndexChanged);
             }
             DataTable dtGender = new DataTable();
-            dtGender = balMember.GetGenderType();
+            dtGender = balHelper.GetGenderType();
             if (dtGender != null)
             {
                 DataRow dr = dtGender.NewRow();
@@ -133,10 +135,10 @@ namespace Library
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int lastMemberNo = balMember.CountMember();
+            
             if (!ValidateField())
             {
-                
+                //creating a list that consist of personal details except photo as it is in byte formate   
                 List<string> personalDetails = new List<string>();
                 personalDetails.Add(txtFirstName.Text);
                 personalDetails.Add(txtMiddleName.Text);
@@ -147,12 +149,35 @@ namespace Library
                 personalDetails.Add(txtPhone.Text);
                 personalDetails.Add(txtEmail.Text);
                 List<string> specificDetails = new List<string>();
-                //if (Convert.ToInt32(cboMemberType.SelectedValue.ToString())==1)
-                //{
-                //    specificDetails.Add(txt)
-                //}
+                int lastMemberNo = balMember.CountMember();
+
+                //sending parameter to the bussiness layer based on the member type
+                if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 1)
+                {
+                    string studentID = Helper.GetMemberID(personalDetails[0], personalDetails[1], lastMemberNo);
+                    specificDetails.Add(studentID);
+                    specificDetails.Add(txtSection.Text);
+                    specificDetails.Add(cboClass.SelectedValue.ToString());
+                }
+                else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
+                {
+                    string teacherID = Helper.GetMemberID(personalDetails[0], personalDetails[1], lastMemberNo);
+                    specificDetails.Add(teacherID);
+                    specificDetails.Add(txtMajorSubject.Text);
+                    specificDetails.Add(cboDepartment.SelectedValue.ToString());
+                }
+                if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
+                {
+                    string userID = Helper.GetMemberID(personalDetails[0], personalDetails[1], lastMemberNo);
+                    specificDetails.Add(userID);
+                    specificDetails.Add(txtUserName.Text);
+                    specificDetails.Add(txtPassword.Text);
+                    specificDetails.Add(cboRole.SelectedValue.ToString());
+                }
             }
         }
+
+        //validating controls in this form
         private bool ValidateField()
         {
             if (cboMemberType.SelectedIndex == 0)
@@ -216,6 +241,11 @@ namespace Library
                     cboRole.Focus();
                     erpGeneral.SetError(cboRole, "Please Select Role");
                     return true;
+                }
+                else if (txtPassword.Text!=txtPasswordConform.Text)
+                {
+                    txtPassword.Focus();
+                    erpGeneral.SetError(txtPassword, "Password Miss Match");
                 }
                 else
                 {

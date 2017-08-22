@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,10 @@ namespace Common
             picData = br.ReadBytes((int)numBytes);
             return picData;
         }
-        //public static GetID(string fName,string LName,)
+        public static string GetMemberID(string fName, string LName,int number)
+        {
+            return fName.Substring(0, 2) + "-" + LName.Substring(0, 1) + "-" + number;
+        }
+        
     }
 }
