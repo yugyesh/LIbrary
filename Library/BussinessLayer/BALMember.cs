@@ -48,6 +48,27 @@ namespace BussinessLayer
                 throw;
             }
         }
+        public DataTable GetAllMember(int memberType)
+        {
+            string query = "sp_GetMemberDetails";
+            SqlParameter[] pram = new SqlParameter[]{
+                new SqlParameter("@memberType",memberType)
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, pram, CommandType.StoredProcedure);
+            try
+            {
+                if (dt != null)
+                {
+                    return dt;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public int CountMember()
         {
             string query = "select count(*) as memberNo from PersonalDetails";
@@ -105,5 +126,6 @@ namespace BussinessLayer
             }
             return false;
         }
+       
     }
 }

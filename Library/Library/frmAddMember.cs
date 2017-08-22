@@ -172,7 +172,16 @@ namespace Library
                 e.Handled = true;
             }
         }
-
+        private void btnGetAllMember_Click(object sender, EventArgs e)
+        {
+            int memberTypeID = Convert.ToInt32(cboMemberType.SelectedValue.ToString());
+            if (memberTypeID<=0)
+            {
+                return;
+            }
+            DataTable dt = balMember.GetAllMember(memberTypeID);
+            dgvAllMember.DataSource = dt;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             

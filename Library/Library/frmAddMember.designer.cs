@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this._CloseButton = new Library.ButtonZ();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.incLabel5 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
@@ -83,9 +84,25 @@
             this.btnBrowse = new IncLibrary.IncButton();
             this.fileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this._CloseButton = new Library.ButtonZ();
-            this.incButton1 = new IncLibrary.IncButton();
+            this.dgvAllMember = new System.Windows.Forms.DataGridView();
+            this.btnGet = new IncLibrary.IncButton();
+            this.colMemberType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGenderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMajorSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlClose.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpStudent.SuspendLayout();
@@ -94,7 +111,7 @@
             this.grpUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllMember)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -106,6 +123,26 @@
             this.pnlClose.Name = "pnlClose";
             this.pnlClose.Size = new System.Drawing.Size(1361, 41);
             this.pnlClose.TabIndex = 2;
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(31, 27);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // groupBox1
             // 
@@ -344,7 +381,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnSave.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSave.Location = new System.Drawing.Point(1239, 577);
+            this.btnSave.Location = new System.Drawing.Point(1226, 577);
             this.btnSave.Name = "btnSave";
             this.btnSave.NextControl = null;
             this.btnSave.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -374,6 +411,7 @@
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPhone.Location = new System.Drawing.Point(125, 94);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(174, 26);
             this.txtPhone.TabIndex = 1;
@@ -603,6 +641,7 @@
             this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPassword.Location = new System.Drawing.Point(135, 216);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(174, 26);
             this.txtPassword.TabIndex = 3;
             // 
@@ -613,6 +652,7 @@
             this.txtPasswordConform.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPasswordConform.Location = new System.Drawing.Point(135, 267);
             this.txtPasswordConform.Name = "txtPasswordConform";
+            this.txtPasswordConform.PasswordChar = '*';
             this.txtPasswordConform.Size = new System.Drawing.Size(174, 26);
             this.txtPasswordConform.TabIndex = 4;
             // 
@@ -732,11 +772,11 @@
             // 
             this.erpGeneral.ContainerControl = this;
             // 
-            // dgvProduct
+            // dgvAllMember
             // 
-            this.dgvProduct.AllowUserToAddRows = false;
-            this.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAllMember.AllowUserToAddRows = false;
+            this.dgvAllMember.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvAllMember.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -744,8 +784,26 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllMember.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAllMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMemberType,
+            this.colFirstName,
+            this.colMiddleName,
+            this.colLastName,
+            this.colGenderID,
+            this.colStatusID,
+            this.colAddress,
+            this.colPhone,
+            this.colEmail,
+            this.colUserID,
+            this.colUserName,
+            this.colPassword,
+            this.colRoleID,
+            this.colMajorSubject,
+            this.colDepartmentID,
+            this.colClassID,
+            this.colSectionName});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -753,12 +811,12 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProduct.EnableHeadersVisualStyles = false;
-            this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvProduct.Location = new System.Drawing.Point(817, 58);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.ReadOnly = true;
+            this.dgvAllMember.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAllMember.EnableHeadersVisualStyles = false;
+            this.dgvAllMember.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvAllMember.Location = new System.Drawing.Point(817, 58);
+            this.dgvAllMember.Name = "dgvAllMember";
+            this.dgvAllMember.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -766,48 +824,147 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvProduct.Size = new System.Drawing.Size(532, 484);
-            this.dgvProduct.TabIndex = 39;
+            this.dgvAllMember.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAllMember.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvAllMember.Size = new System.Drawing.Size(532, 484);
+            this.dgvAllMember.TabIndex = 39;
             // 
-            // _CloseButton
+            // btnGet
             // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            this.btnGet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnGet.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnGet.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnGet.Location = new System.Drawing.Point(1096, 577);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.NextControl = null;
+            this.btnGet.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnGet.PreviousControl = null;
+            this.btnGet.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnGet.Size = new System.Drawing.Size(110, 39);
+            this.btnGet.TabIndex = 7;
+            this.btnGet.Text = "Get";
+            this.btnGet.Click += new System.EventHandler(this.btnGetAllMember_Click);
             // 
-            // incButton1
+            // colMemberType
             // 
-            this.incButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.incButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incButton1.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.incButton1.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.incButton1.Location = new System.Drawing.Point(1081, 577);
-            this.incButton1.Name = "incButton1";
-            this.incButton1.NextControl = null;
-            this.incButton1.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.incButton1.PreviousControl = null;
-            this.incButton1.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.incButton1.Size = new System.Drawing.Size(110, 39);
-            this.incButton1.TabIndex = 7;
-            this.incButton1.Text = "Save";
-            this.incButton1.Click += new System.EventHandler(this.btnSave_Click);
+            this.colMemberType.HeaderText = "MemberType";
+            this.colMemberType.Name = "colMemberType";
+            this.colMemberType.ReadOnly = true;
+            this.colMemberType.Visible = false;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.HeaderText = "FirstName";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.ReadOnly = true;
+            this.colFirstName.Visible = false;
+            // 
+            // colMiddleName
+            // 
+            this.colMiddleName.HeaderText = "MiddleName";
+            this.colMiddleName.Name = "colMiddleName";
+            this.colMiddleName.ReadOnly = true;
+            this.colMiddleName.Visible = false;
+            // 
+            // colLastName
+            // 
+            this.colLastName.HeaderText = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.ReadOnly = true;
+            this.colLastName.Visible = false;
+            // 
+            // colGenderID
+            // 
+            this.colGenderID.HeaderText = "GenderID";
+            this.colGenderID.Name = "colGenderID";
+            this.colGenderID.ReadOnly = true;
+            this.colGenderID.Visible = false;
+            // 
+            // colStatusID
+            // 
+            this.colStatusID.HeaderText = "StatusID";
+            this.colStatusID.Name = "colStatusID";
+            this.colStatusID.ReadOnly = true;
+            this.colStatusID.Visible = false;
+            // 
+            // colAddress
+            // 
+            this.colAddress.HeaderText = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            this.colAddress.Visible = false;
+            // 
+            // colPhone
+            // 
+            this.colPhone.HeaderText = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            this.colPhone.Visible = false;
+            // 
+            // colEmail
+            // 
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Visible = false;
+            // 
+            // colUserID
+            // 
+            this.colUserID.HeaderText = "UserID";
+            this.colUserID.Name = "colUserID";
+            this.colUserID.ReadOnly = true;
+            this.colUserID.Visible = false;
+            // 
+            // colUserName
+            // 
+            this.colUserName.HeaderText = "UserName";
+            this.colUserName.Name = "colUserName";
+            this.colUserName.ReadOnly = true;
+            this.colUserName.Visible = false;
+            // 
+            // colPassword
+            // 
+            this.colPassword.HeaderText = "Password";
+            this.colPassword.Name = "colPassword";
+            this.colPassword.ReadOnly = true;
+            this.colPassword.Visible = false;
+            // 
+            // colRoleID
+            // 
+            this.colRoleID.HeaderText = "Role";
+            this.colRoleID.Name = "colRoleID";
+            this.colRoleID.ReadOnly = true;
+            this.colRoleID.Visible = false;
+            // 
+            // colMajorSubject
+            // 
+            this.colMajorSubject.HeaderText = "Major Subject";
+            this.colMajorSubject.Name = "colMajorSubject";
+            this.colMajorSubject.ReadOnly = true;
+            this.colMajorSubject.Visible = false;
+            // 
+            // colDepartmentID
+            // 
+            this.colDepartmentID.HeaderText = "DepartmentID";
+            this.colDepartmentID.Name = "colDepartmentID";
+            this.colDepartmentID.ReadOnly = true;
+            this.colDepartmentID.Visible = false;
+            // 
+            // colClassID
+            // 
+            this.colClassID.HeaderText = "Class ID";
+            this.colClassID.Name = "colClassID";
+            this.colClassID.ReadOnly = true;
+            this.colClassID.Visible = false;
+            // 
+            // colSectionName
+            // 
+            this.colSectionName.HeaderText = "Section Name";
+            this.colSectionName.Name = "colSectionName";
+            this.colSectionName.ReadOnly = true;
+            this.colSectionName.Visible = false;
             // 
             // frmAddMember
             // 
@@ -817,7 +974,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 630);
             this.ControlBox = false;
-            this.Controls.Add(this.dgvProduct);
+            this.Controls.Add(this.dgvAllMember);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.picMember);
             this.Controls.Add(this.grpStudent);
@@ -828,7 +985,7 @@
             this.Controls.Add(this.grpUser);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlClose);
-            this.Controls.Add(this.incButton1);
+            this.Controls.Add(this.btnGet);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -850,7 +1007,7 @@
             this.grpUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -910,8 +1067,25 @@
         private IncLibrary.IncLabel incLabel15;
         private System.Windows.Forms.ComboBox cboRole;
         private System.Windows.Forms.ErrorProvider erpGeneral;
-        private System.Windows.Forms.DataGridView dgvProduct;
-        private IncLibrary.IncButton incButton1;
+        private System.Windows.Forms.DataGridView dgvAllMember;
+        private IncLibrary.IncButton btnGet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMiddleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGenderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoleID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMajorSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSectionName;
     }
 }
 
