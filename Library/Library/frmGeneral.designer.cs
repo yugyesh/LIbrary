@@ -41,7 +41,7 @@
             this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(531, 0);
+            this._CloseButton.Location = new System.Drawing.Point(531, 2);
             this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
             this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this._CloseButton.Name = "_CloseButton";
@@ -55,11 +55,12 @@
             // 
             // pnlClose
             // 
+            this.pnlClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlClose.Controls.Add(this._CloseButton);
             this.pnlClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlClose.Location = new System.Drawing.Point(0, 0);
             this.pnlClose.Name = "pnlClose";
-            this.pnlClose.Size = new System.Drawing.Size(565, 30);
+            this.pnlClose.Size = new System.Drawing.Size(565, 36);
             this.pnlClose.TabIndex = 2;
             // 
             // frmGeneral

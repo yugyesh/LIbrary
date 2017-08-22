@@ -42,6 +42,7 @@
             this.incLabel2 = new IncLibrary.IncLabel();
             this.incLabel1 = new IncLibrary.IncLabel();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlClose.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).BeginInit();
@@ -55,7 +56,7 @@
             this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(360, 0);
+            this._CloseButton.Location = new System.Drawing.Point(359, 4);
             this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
             this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this._CloseButton.Name = "_CloseButton";
@@ -69,11 +70,12 @@
             // 
             // pnlClose
             // 
+            this.pnlClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlClose.Controls.Add(this._CloseButton);
             this.pnlClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlClose.Location = new System.Drawing.Point(0, 0);
             this.pnlClose.Name = "pnlClose";
-            this.pnlClose.Size = new System.Drawing.Size(394, 30);
+            this.pnlClose.Size = new System.Drawing.Size(394, 36);
             this.pnlClose.TabIndex = 2;
             // 
             // label1
@@ -214,6 +216,17 @@
             // 
             this.erpGeneral.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(114, 465);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 18);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Library Management";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +235,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(394, 485);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlClose);
@@ -256,6 +270,7 @@
         private IncLibrary.IncLabel incLabel2;
         private IncLibrary.IncLabel incLabel1;
         private System.Windows.Forms.ErrorProvider erpGeneral;
+        private System.Windows.Forms.Label label2;
     }
 }
 

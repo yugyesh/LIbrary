@@ -31,5 +31,23 @@ namespace BussinessLayer
             }
             
         }
+        public bool CheckUser(string userName,string password,int roleID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@userName",userName),
+                new SqlParameter("@password",password),
+                new SqlParameter("@roleID",roleID)
+            };
+            string query = "select UserID,UserName from User where Password=@password,UserName=@userName,RoleID=@roleID";
+            try
+            {
+                return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
