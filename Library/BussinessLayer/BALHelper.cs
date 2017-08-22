@@ -25,7 +25,43 @@ namespace BussinessLayer
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
+            }
+        }
+        public DataTable GetUserRole()
+        {
+            string query = "select * from UserRole";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, null, CommandType.Text);
+            try
+            {
+                if (dt != null)
+                {
+                    return dt;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable GetDepartment()
+        {
+            string query = "select * from Department";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, null, CommandType.Text);
+            try
+            {
+                if (dt != null)
+                {
+                    return dt;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
