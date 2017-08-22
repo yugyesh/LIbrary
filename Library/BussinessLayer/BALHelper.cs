@@ -46,9 +46,27 @@ namespace BussinessLayer
                 throw ex;
             }
         }
-        public DataTable GetDepartment()
+        public DataTable GetAllDepartment()
         {
-            string query = "select * from Department";
+            string query = "select DepartmentID,DepartmentName from Department";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, null, CommandType.Text);
+            try
+            {
+                if (dt != null)
+                {
+                    return dt;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable GetAllClass()
+        {
+            string query = "select ClassID,ClassName from Class";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
             try

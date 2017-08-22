@@ -66,7 +66,7 @@ namespace BussinessLayer
                 throw;
             }
         }
-        public bool AddMember(int memberType, List<string> personalDetails, List<String> specificDetails, byte photo)
+        public bool AddMember(int memberType, List<string> personalDetails, List<String> specificDetails, byte photo = 0 )
         {
             var pram = new List<SqlParameter>
             {

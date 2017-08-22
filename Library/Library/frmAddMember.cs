@@ -22,7 +22,8 @@ namespace Library
         {
             this.Close();
         }
-
+        BALMember balMember = new BALMember();
+        BALHelper balHelper = new BALHelper();
         private void cboMemberType_SelectedIndexChanged(object sender, EventArgs e)
         {
            if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 1)
@@ -30,6 +31,7 @@ namespace Library
                 grpStudent.Visible = true;
                 grpTeacher.Visible = false;
                 grpUser.Visible = false;
+                LoadSpecificCombo(1);
                 return;
             }
             else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
@@ -37,6 +39,7 @@ namespace Library
                 grpTeacher.Visible = true;
                 grpStudent.Visible = false;
                 grpUser.Visible = false;
+                LoadSpecificCombo(2);
                 return;
             }
             else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
@@ -44,6 +47,7 @@ namespace Library
                 grpUser.Visible = true;
                 grpTeacher.Visible = false;
                 grpStudent.Visible = false;
+                LoadSpecificCombo(3);
                 return;
             }
             else
@@ -51,8 +55,44 @@ namespace Library
                 return;
             }
         }
-        BALMember balMember = new BALMember();
-        BALHelper balHelper = new BALHelper();
+        private void LoadSpecificCombo(int i)
+        {
+            DataTable dt = new DataTable();
+            if (i==1)
+            {
+                dt = balHelper.GetAllClass();
+                DataRow dr = dt.NewRow();
+                dr["ClassName"] = "-- Please Select --";
+                dr["ClassID"] = 0;
+                dt.Rows.InsertAt(dr, 0);
+                cboClass.DataSource = dt;
+                cboClass.DisplayMember = "ClassName";
+                cboClass.ValueMember = "ClassID";
+            }
+            else if (i==2)
+            {
+                dt = balHelper.GetAllDepartment();
+                DataRow dr = dt.NewRow();
+                dr["DepartmentName"] = "-- Please Select --";
+                dr["DepartmentID"] = 0;
+                dt.Rows.InsertAt(dr, 0);
+                cboDepartment.DataSource = dt;
+                cboDepartment.DisplayMember = "DepartmentName";
+                cboDepartment.ValueMember = "DepartmentID";
+            }
+            else
+            {
+                dt = balHelper.GetUserRole();
+                DataRow dr = dt.NewRow();
+                dr["RoleName"] = "-- Please Select --";
+                dr["RoleID"] = 0;
+                dt.Rows.InsertAt(dr, 0);
+                cboRole.DataSource = dt;
+                cboRole.DisplayMember = "RoleName";
+                cboRole.ValueMember = "RoleID";
+            }
+        }
+       
         private void frmAddMember_Load(object sender, EventArgs e)
         {
             LoadComboBoxes();
@@ -150,29 +190,32 @@ namespace Library
                 personalDetails.Add(txtEmail.Text);
                 List<string> specificDetails = new List<string>();
                 int lastMemberNo = balMember.CountMember();
-
+                int memberType = Convert.ToInt32(cboMemberType.SelectedValue.ToString());
                 //sending parameter to the bussiness layer based on the member type
                 if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 1)
                 {
-                    string studentID = Helper.GetMemberID(personalDetails[0], personalDetails[1], lastMemberNo);
+                    string studentID = Helper.GetMemberID(personalDetails[0], personalDetails[2], lastMemberNo);
                     specificDetails.Add(studentID);
                     specificDetails.Add(txtSection.Text);
                     specificDetails.Add(cboClass.SelectedValue.ToString());
+                    balMember.AddMember(memberType, personalDetails, specificDetails);
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
                 {
-                    string teacherID = Helper.GetMemberID(personalDetails[0], personalDetails[1], lastMemberNo);
+                    string teacherID = Helper.GetMemberID(personalDetails[0], personalDetails[2], lastMemberNo);
                     specificDetails.Add(teacherID);
                     specificDetails.Add(txtMajorSubject.Text);
                     specificDetails.Add(cboDepartment.SelectedValue.ToString());
+                    balMember.AddMember(memberType, personalDetails, specificDetails);
                 }
                 if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
                 {
-                    string userID = Helper.GetMemberID(personalDetails[0], personalDetails[1], lastMemberNo);
+                    string userID = Helper.GetMemberID(personalDetails[0], personalDetails[2], lastMemberNo);
                     specificDetails.Add(userID);
                     specificDetails.Add(txtUserName.Text);
                     specificDetails.Add(txtPassword.Text);
                     specificDetails.Add(cboRole.SelectedValue.ToString());
+                    balMember.AddMember(memberType, personalDetails, specificDetails);
                 }
             }
         }

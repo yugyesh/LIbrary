@@ -33,7 +33,7 @@ namespace Common
         }
         public static string GetMemberID(string fName, string LName,int number)
         {
-            return fName.Substring(0, 2) + "-" + LName.Substring(0, 1) + "-" + number;
+            return fName.Substring(0, 3).ToUpper() + "-" + LName.Substring(0, 2).ToUpper() + "-" + number+1;
         }
         
     }
