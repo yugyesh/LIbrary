@@ -167,7 +167,7 @@ namespace Library
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -207,7 +207,10 @@ namespace Library
                     specificDetails.Add(studentID);
                     specificDetails.Add(txtSection.Text);
                     specificDetails.Add(cboClass.SelectedValue.ToString());
-                    balMember.AddMember(memberType, personalDetails, specificDetails);
+                    if (balMember.AddMember(memberType, personalDetails, specificDetails))
+                    {
+                        MessageBox.Show("Student Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
                 {
@@ -215,7 +218,10 @@ namespace Library
                     specificDetails.Add(teacherID);
                     specificDetails.Add(txtMajorSubject.Text);
                     specificDetails.Add(cboDepartment.SelectedValue.ToString());
-                    balMember.AddMember(memberType, personalDetails, specificDetails);
+                    if (balMember.AddMember(memberType, personalDetails, specificDetails))
+                    {
+                        MessageBox.Show("Teacher Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
                 {
@@ -224,11 +230,46 @@ namespace Library
                     specificDetails.Add(txtUserName.Text);
                     specificDetails.Add(txtPassword.Text);
                     specificDetails.Add(cboRole.SelectedValue.ToString());
-                    balMember.AddMember(memberType, personalDetails, specificDetails);
+                    if (balMember.AddMember(memberType, personalDetails, specificDetails))
+                    {
+                        MessageBox.Show("User Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
+        //clearing Controls
+        private void ClearControls()
+        {
+            erpGeneral.Clear();
+            //dgvProduct.DataSource = null;
+            //dgvFeatures.DataSource = null;
+            //dgvFeatures.Rows.Clear();
+            //dgvProduct.Rows.Clear();
+            // dgvFeatures.ClearSelection();
+            Action<Control.ControlCollection> func = null;
 
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else if (control is ComboBox)
+                    {
+                        (control as ComboBox).SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+
+            };
+
+            func(Controls);
+        }
         //validating controls in this form
         private bool ValidateField()
         {
@@ -316,6 +357,11 @@ namespace Library
                 return false;
             }
             return false;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearControls();
         }
     }
 }
