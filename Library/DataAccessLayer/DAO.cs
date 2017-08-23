@@ -27,18 +27,28 @@ namespace DataAccessLayer
         }
         public static DataTable GetTable(string sql, SqlParameter[] pram, CommandType cmdType)
         {
-            using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
+            try
             {
-                cmd.CommandType = cmdType;
-                if (pram !=null && pram.Length != 0)
+                using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
                 {
-                    cmd.Parameters.AddRange(pram);
+                    cmd.CommandType = cmdType;
+                    if (pram != null && pram.Length != 0)
+                    {
+                        cmd.Parameters.AddRange(pram);
+                    }
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    return dt;
                 }
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                return dt;
+
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
         public static int IUD(string sql, SqlParameter[] pram, CommandType cmdType)
         {
