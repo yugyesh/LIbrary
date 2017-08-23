@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
-
+using Common;
 namespace Library
 {
     public partial class frmAddBooks : Form
     {
-        public frmAddBooks ()
+        public frmAddBooks()
         {
             InitializeComponent();
         }
@@ -26,6 +26,24 @@ namespace Library
         BALBook balBook = new BALBook();
         private void frmAddBooks_Load(object sender, EventArgs e)
         {
+            LoadCboBox();
+            string defaultImage;
+            //application. startuppath gives the path of the bin
+            defaultImage = Application.StartupPath + "\\DefaultBook.jpg";
+            picMember.ImageLocation = defaultImage;
+        }
+        private void LoadCboBox()
+        {
+            DataTable dt = new DataTable();
+            dt = balHelper.GetAllClass();
+            DataRow drClass = dt.NewRow();
+            drClass["ClassName"] = "-- Please Select --";
+            drClass["ClassID"] = 0;
+            dt.Rows.InsertAt(drClass, 0);
+            cboClass.DataSource = dt;
+            cboClass.DisplayMember = "ClassName";
+            cboClass.ValueMember = "ClassID";
+
             DataTable dtStatus = new DataTable();
             dtStatus = balBook.GetBookType();
             if (dtStatus != null)
@@ -50,10 +68,6 @@ namespace Library
                 cboTag.ValueMember = "TagID";
                 cboTag.DisplayMember = "TagName";
             }
-            string defaultImage;
-            //application. startuppath gives the path of the bin
-            defaultImage = Application.StartupPath + "\\DefaultBook.jpg";
-            picMember.ImageLocation = defaultImage;
         }
 
         private void txtPublisherName_KeyPress(object sender, KeyPressEventArgs e)
@@ -66,96 +80,113 @@ namespace Library
 
         private void chkRegistered_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkRegistered.Checked==true)
+            if (chkRegistered.Checked == true)
             {
                 grpBookInfo.Enabled = true;
                 pnlBook.Enabled = false;
+                //as we are using isbn to validate the operation required
+                //clearControls();
             }
             else
             {
                 grpBookInfo.Enabled = false;
                 pnlBook.Enabled = true;
+                //clearControls();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (chkRegistered.Checked==true)
+            if (!ValidateField())
             {
-
+                if (chkRegistered.Checked==true)
+                {
+                    int lastBookNo = balBook.ContBookDetails();
+                    string bookDetailID = Helper.GetBookID(txtBookTitle.Text, txtAuthor.Text, lastBookNo);
+                    List<string> BookDetails = new List<string>();
+                    BookDetails.Add(bookDetailID);
+                    BookDetails.Add(txtBookTitle.Text);
+                    BookDetails.Add(txtPublisherPlace.Text);
+                    BookDetails.Add(txtPublisherName.Text);
+                    BookDetails.Add(txtPublisherYear.Text);
+                    BookDetails.Add(txtSource.Text);
+                    BookDetails.Add(cboTag.SelectedValue.ToString());
+                    BookDetails.Add(txtAuthor.Text);
+                    BookDetails.Add("0");
+                    BookDetails.Add(txtCost.Text);
+                    BookDetails.Add(txtBookCopies.Text);
+                    BookDetails.Add(cboClass.SelectedValue.ToString());
+                    if (balBook.AddBookDetails(BookDetails))
+                    {
+                        MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                else
+                {
+                    List<string> BookInfo = new List<string>();
+                    BookInfo.Add(txtISBN.Text);
+                    BookInfo.Add(cboStatus.SelectedValue.ToString());
+                    BookInfo.Add(txtBookIDSearch.Text);
+                    BookInfo.Add(DateTime.Today.ToString());
+                    BookInfo.Add("");
+                    BookInfo.Add("");
+                    if (balBook.AddBook(BookInfo))
+                    {
+                        MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                
             }
         }
         private bool ValidateField()
         {
-            if (chkRegistered.Checked==true)
+            if (chkRegistered.Checked == true)
             {
-                if (cboMemberType.SelectedIndex == 0)
+                if (txtBookTitle.Text.Trim() == string.Empty)
                 {
-                    cboMemberType.Focus();
-                    erpGeneral.SetError(cboMemberType, "Please Select any Member");
+                    txtBookTitle.Focus();
+                    erpGeneral.SetError(txtBookTitle, "Please Provide Book Title");
                     return true;
                 }
-                else if (txtFirstName.Text.Trim() == string.Empty)
+                else if (Convert.ToInt32(cboTag.SelectedValue.ToString())==0)
                 {
-                    txtFirstName.Focus();
-                    erpGeneral.SetError(txtFirstName, "Please provide First Name");
+                    cboTag.Focus();
+                    erpGeneral.SetError(cboTag, "Please Select Tag");
+
                     return true;
                 }
-                else if (txtLastName.Text.Trim() == string.Empty)
+                else if (Convert.ToInt32(txtBookCopies.Text.Trim()) == 0)
                 {
-                    txtLastName.Focus();
-                    erpGeneral.SetError(txtLastName, "Please provide Last Name");
+                    txtBookCopies.Focus();
+                    erpGeneral.SetError(txtBookCopies, "Please Provide Number Of Copies");
                     return true;
                 }
-                else if (cboGender.SelectedIndex == 0)
+                else
                 {
-                    cboGender.Focus();
-                    erpGeneral.SetError(cboGender, "Please Select Gender");
+                    return false;
+                }
+            }
+            else
+            {
+                if (txtISBN.Text.Trim()==string.Empty)
+                {
+                    txtISBN.Focus();
+                    erpGeneral.SetError(txtISBN, "Please Scan Book Properley");
                     return true;
                 }
-                else if (cboStatus.SelectedIndex == 0)
+                else if (Convert.ToInt32(cboStatus.SelectedValue.ToString())==0)
                 {
                     cboStatus.Focus();
                     erpGeneral.SetError(cboStatus, "Please Select Status");
                     return true;
                 }
-            }
-            if (cboMemberType.SelectedIndex == 0)
-            {
-                cboMemberType.Focus();
-                erpGeneral.SetError(cboMemberType, "Please Select any Member");
-                return true;
-            }
-            else if (txtFirstName.Text.Trim() == string.Empty)
-            {
-                txtFirstName.Focus();
-                erpGeneral.SetError(txtFirstName, "Please provide First Name");
-                return true;
-            }
-            else if (txtLastName.Text.Trim() == string.Empty)
-            {
-                txtLastName.Focus();
-                erpGeneral.SetError(txtLastName, "Please provide Last Name");
-                return true;
-            }
-            else if (cboGender.SelectedIndex == 0)
-            {
-                cboGender.Focus();
-                erpGeneral.SetError(cboGender, "Please Select Gender");
-                return true;
-            }
-            else if (cboStatus.SelectedIndex == 0)
-            {
-                cboStatus.Focus();
-                erpGeneral.SetError(cboStatus, "Please Select Status");
-                return true;
-            }
-            else if (txtAddress.Text.Trim() == string.Empty)
-            {
-                txtAddress.Focus();
-                erpGeneral.SetError(txtAddress, "Please provide Address");
-                return true;
+                else
+                {
+                    return false;
+                }
             }
         }
-        }
+    }
 }

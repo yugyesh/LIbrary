@@ -104,21 +104,8 @@ namespace Library
 
         private void LoadComboBoxes()
         {
-            this.cboMemberType.SelectedIndexChanged -= new EventHandler(cboMemberType_SelectedIndexChanged);
-            DataTable dt = new DataTable();
-            dt = balMember.GetMemberType();
-            if (dt != null)
-            {
-                DataRow dr = dt.NewRow();
-                dr["TypeName"] = "-- Please Select --";
-                dr["TypeID"] = 0;
-                dt.Rows.InsertAt(dr, 0);
-                //removing handler so that event wont get triggered when binding datasource to combo box
-                cboMemberType.DataSource = dt;
-                cboMemberType.ValueMember = "TypeID";
-                cboMemberType.DisplayMember = "TypeName";
-                this.cboMemberType.SelectedIndexChanged += new EventHandler(cboMemberType_SelectedIndexChanged);
-            }
+            DataTable dtClass = new DataTable();
+            dtClass = balHelper.GetAllClass();
             DataTable dtGender = new DataTable();
             dtGender = balHelper.GetGenderType();
             if (dtGender != null)
@@ -143,6 +130,22 @@ namespace Library
                 cboStatus.ValueMember = "MStatusID";
                 cboStatus.DisplayMember = "MStatusName";
             }
+            this.cboMemberType.SelectedIndexChanged -= new EventHandler(cboMemberType_SelectedIndexChanged);
+            DataTable dt = new DataTable();
+            dt = balMember.GetMemberType();
+            if (dt != null)
+            {
+                DataRow dr = dt.NewRow();
+                dr["TypeName"] = "-- Please Select --";
+                dr["TypeID"] = 0;
+                dt.Rows.InsertAt(dr, 0);
+                //removing handler so that event wont get triggered when binding datasource to combo box
+                cboMemberType.DataSource = dt;
+                cboMemberType.ValueMember = "TypeID";
+                cboMemberType.DisplayMember = "TypeName";
+                this.cboMemberType.SelectedIndexChanged += new EventHandler(cboMemberType_SelectedIndexChanged);
+            }
+           
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

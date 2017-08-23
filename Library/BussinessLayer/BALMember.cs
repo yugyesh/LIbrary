@@ -107,14 +107,14 @@ namespace BussinessLayer
                 pram.Add(new SqlParameter("@teacherID", specificDetails[0]));
                 pram.Add(new SqlParameter("@sectionName", specificDetails[1]));
                 pram.Add(new SqlParameter("@classID", Convert.ToInt32(specificDetails[2])));
-                DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure);
+               return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) >0? true :false;
             }
             else if (memberType == 2)
             {
                 pram.Add(new SqlParameter("@studentID", specificDetails[0]));
                 pram.Add(new SqlParameter("@majorSubject", specificDetails[1]));
                 pram.Add(new SqlParameter("@departmentID", Convert.ToInt32(specificDetails[2])));
-                DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure);
+                return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) > 0 ? true : false;
             }
             else
             {
@@ -122,10 +122,8 @@ namespace BussinessLayer
                 pram.Add(new SqlParameter("@userName", specificDetails[1]));
                 pram.Add(new SqlParameter("@password", specificDetails[2]));
                 pram.Add(new SqlParameter("@roleID", Convert.ToInt32(specificDetails[3])));
-                DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure);
+                return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) > 0 ? true : false;
             }
-            return false;
         }
-       
     }
 }
