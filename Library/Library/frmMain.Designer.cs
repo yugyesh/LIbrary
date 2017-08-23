@@ -35,6 +35,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,8 @@
             // masterToolStripMenuItem
             // 
             this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMemberToolStripMenuItem});
+            this.addMemberToolStripMenuItem,
+            this.addBooksToolStripMenuItem});
             this.masterToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
@@ -97,6 +99,14 @@
             this.toolStripButton2.Size = new System.Drawing.Size(23, 69);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
+            // addBooksToolStripMenuItem
+            // 
+            this.addBooksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBooksToolStripMenuItem.Text = "Add Books";
+            this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +138,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem addMemberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
     }
 }
