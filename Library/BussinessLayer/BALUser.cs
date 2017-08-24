@@ -26,10 +26,28 @@ namespace BussinessLayer
             }
             catch (Exception ex)
             {
-                throw;
-                return null;
+                throw ex;
             }
             
+        }
+        public DataTable CheckPassword()
+         {
+            string query = "select * from UserRole";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, null, CommandType.Text);
+            try
+            {
+                if (dt != null)
+                {
+                    return dt;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
         public bool CheckUser(string userName,string password,int roleID)
         {

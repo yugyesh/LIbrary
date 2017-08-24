@@ -28,7 +28,7 @@ namespace Library
             erpGeneral.Clear();
             if (!ValidateFields())
             {
-                
+                frmMain mainForm = new frmMain();
             }
         }
 

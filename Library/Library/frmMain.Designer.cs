@@ -32,12 +32,17 @@
             this.menuStripZ1 = new Library.MenuStripZ();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statUserID = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripZ1
@@ -67,6 +72,14 @@
             this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addMemberToolStripMenuItem.Text = "Add Member";
             this.addMemberToolStripMenuItem.Click += new System.EventHandler(this.addMemberToolStripMenuItem_Click);
+            // 
+            // addBooksToolStripMenuItem
+            // 
+            this.addBooksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBooksToolStripMenuItem.Text = "Add Books";
+            this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -99,19 +112,44 @@
             this.toolStripButton2.Size = new System.Drawing.Size(23, 69);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
-            // addBooksToolStripMenuItem
+            // statusStrip1
             // 
-            this.addBooksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
-            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addBooksToolStripMenuItem.Text = "Add Books";
-            this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statUserName,
+            this.statUserID,
+            this.statDate});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 526);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // statUserName
+            // 
+            this.statUserName.ForeColor = System.Drawing.Color.White;
+            this.statUserName.Name = "statUserName";
+            this.statUserName.Size = new System.Drawing.Size(62, 17);
+            this.statUserName.Text = "UserName";
+            // 
+            // statUserID
+            // 
+            this.statUserID.Name = "statUserID";
+            this.statUserID.Size = new System.Drawing.Size(41, 17);
+            this.statUserID.Text = "UserID";
+            // 
+            // statDate
+            // 
+            this.statDate.ForeColor = System.Drawing.Color.White;
+            this.statDate.Name = "statDate";
+            this.statDate.Size = new System.Drawing.Size(31, 17);
+            this.statDate.Text = "Date";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 548);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStripZ1);
             this.IsMdiContainer = true;
@@ -121,10 +159,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Controls.SetChildIndex(this.menuStripZ1, 0);
             this.Controls.SetChildIndex(this.toolStrip1, 0);
+            this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.menuStripZ1.ResumeLayout(false);
             this.menuStripZ1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +180,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem addMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel statUserName;
+        private System.Windows.Forms.ToolStripStatusLabel statUserID;
+        private System.Windows.Forms.ToolStripStatusLabel statDate;
     }
 }
