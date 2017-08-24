@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this._CloseButton = new Library.ButtonZ();
             this.incLabel14 = new IncLibrary.IncLabel();
             this.txtBookIDSearch = new System.Windows.Forms.TextBox();
             this.grpBookInfo = new System.Windows.Forms.GroupBox();
@@ -95,7 +96,6 @@
             this.incLabel16 = new IncLibrary.IncLabel();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNew = new IncLibrary.IncButton();
-            this._CloseButton = new Library.ButtonZ();
             this.pnlClose.SuspendLayout();
             this.grpBookInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
@@ -113,8 +113,28 @@
             this.pnlClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlClose.Location = new System.Drawing.Point(0, 0);
             this.pnlClose.Name = "pnlClose";
-            this.pnlClose.Size = new System.Drawing.Size(1361, 36);
+            this.pnlClose.Size = new System.Drawing.Size(1361, 24);
             this.pnlClose.TabIndex = 2;
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1327, 0);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(22, 19);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // incLabel14
             // 
@@ -170,9 +190,9 @@
             this.grpBookInfo.Enabled = false;
             this.grpBookInfo.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
             this.grpBookInfo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.grpBookInfo.Location = new System.Drawing.Point(14, 117);
+            this.grpBookInfo.Location = new System.Drawing.Point(13, 103);
             this.grpBookInfo.Name = "grpBookInfo";
-            this.grpBookInfo.Size = new System.Drawing.Size(742, 501);
+            this.grpBookInfo.Size = new System.Drawing.Size(742, 479);
             this.grpBookInfo.TabIndex = 1;
             this.grpBookInfo.TabStop = false;
             this.grpBookInfo.Text = "Book Info";
@@ -183,7 +203,7 @@
             this.cboClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboClass.ForeColor = System.Drawing.SystemColors.Window;
             this.cboClass.FormattingEnabled = true;
-            this.cboClass.Location = new System.Drawing.Point(118, 219);
+            this.cboClass.Location = new System.Drawing.Point(118, 202);
             this.cboClass.Name = "cboClass";
             this.cboClass.Size = new System.Drawing.Size(209, 28);
             this.cboClass.TabIndex = 47;
@@ -193,7 +213,7 @@
             this.incLabel15.AutoSize = true;
             this.incLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel15.Location = new System.Drawing.Point(68, 225);
+            this.incLabel15.Location = new System.Drawing.Point(70, 207);
             this.incLabel15.Name = "incLabel15";
             this.incLabel15.Readonly = false;
             this.incLabel15.Size = new System.Drawing.Size(42, 17);
@@ -206,7 +226,7 @@
             this.txtBookTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtBookTitle.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBookTitle.Location = new System.Drawing.Point(118, 113);
+            this.txtBookTitle.Location = new System.Drawing.Point(118, 98);
             this.txtBookTitle.MaxLength = 500;
             this.txtBookTitle.Name = "txtBookTitle";
             this.txtBookTitle.Size = new System.Drawing.Size(209, 26);
@@ -217,7 +237,7 @@
             this.incLabel13.AutoSize = true;
             this.incLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.incLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel13.Location = new System.Drawing.Point(39, 117);
+            this.incLabel13.Location = new System.Drawing.Point(41, 101);
             this.incLabel13.Name = "incLabel13";
             this.incLabel13.Readonly = false;
             this.incLabel13.Size = new System.Drawing.Size(71, 17);
@@ -256,7 +276,7 @@
             this.txtPublisherYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtPublisherYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPublisherYear.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPublisherYear.Location = new System.Drawing.Point(471, 336);
+            this.txtPublisherYear.Location = new System.Drawing.Point(471, 339);
             this.txtPublisherYear.MaxLength = 500;
             this.txtPublisherYear.Name = "txtPublisherYear";
             this.txtPublisherYear.Size = new System.Drawing.Size(227, 26);
@@ -267,7 +287,7 @@
             this.txtBookCopies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtBookCopies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookCopies.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBookCopies.Location = new System.Drawing.Point(118, 329);
+            this.txtBookCopies.Location = new System.Drawing.Point(118, 310);
             this.txtBookCopies.MaxLength = 500;
             this.txtBookCopies.Name = "txtBookCopies";
             this.txtBookCopies.Size = new System.Drawing.Size(209, 26);
@@ -280,7 +300,7 @@
             this.cboTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTag.ForeColor = System.Drawing.SystemColors.Window;
             this.cboTag.FormattingEnabled = true;
-            this.cboTag.Location = new System.Drawing.Point(118, 274);
+            this.cboTag.Location = new System.Drawing.Point(118, 256);
             this.cboTag.Name = "cboTag";
             this.cboTag.Size = new System.Drawing.Size(209, 28);
             this.cboTag.TabIndex = 1;
@@ -290,7 +310,7 @@
             this.incLabel12.AutoSize = true;
             this.incLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel12.Location = new System.Drawing.Point(357, 412);
+            this.incLabel12.Location = new System.Drawing.Point(357, 415);
             this.incLabel12.Name = "incLabel12";
             this.incLabel12.Readonly = false;
             this.incLabel12.Size = new System.Drawing.Size(109, 17);
@@ -303,7 +323,7 @@
             this.incLabel11.AutoSize = true;
             this.incLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel11.Location = new System.Drawing.Point(359, 268);
+            this.incLabel11.Location = new System.Drawing.Point(359, 271);
             this.incLabel11.Name = "incLabel11";
             this.incLabel11.Readonly = false;
             this.incLabel11.Size = new System.Drawing.Size(108, 17);
@@ -316,7 +336,7 @@
             this.incLabel10.AutoSize = true;
             this.incLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel10.Location = new System.Drawing.Point(363, 340);
+            this.incLabel10.Location = new System.Drawing.Point(363, 343);
             this.incLabel10.Name = "incLabel10";
             this.incLabel10.Readonly = false;
             this.incLabel10.Size = new System.Drawing.Size(104, 17);
@@ -329,7 +349,7 @@
             this.incLabel7.AutoSize = true;
             this.incLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel7.Location = new System.Drawing.Point(77, 279);
+            this.incLabel7.Location = new System.Drawing.Point(79, 260);
             this.incLabel7.Name = "incLabel7";
             this.incLabel7.Readonly = false;
             this.incLabel7.Size = new System.Drawing.Size(33, 17);
@@ -342,7 +362,7 @@
             this.incLabel9.AutoSize = true;
             this.incLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel9.Location = new System.Drawing.Point(74, 441);
+            this.incLabel9.Location = new System.Drawing.Point(76, 419);
             this.incLabel9.Name = "incLabel9";
             this.incLabel9.Readonly = false;
             this.incLabel9.Size = new System.Drawing.Size(36, 17);
@@ -355,7 +375,7 @@
             this.incLabel6.AutoSize = true;
             this.incLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel6.Location = new System.Drawing.Point(60, 171);
+            this.incLabel6.Location = new System.Drawing.Point(62, 154);
             this.incLabel6.Name = "incLabel6";
             this.incLabel6.Readonly = false;
             this.incLabel6.Size = new System.Drawing.Size(50, 17);
@@ -368,7 +388,7 @@
             this.txtPublisherName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtPublisherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPublisherName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPublisherName.Location = new System.Drawing.Point(471, 264);
+            this.txtPublisherName.Location = new System.Drawing.Point(471, 267);
             this.txtPublisherName.MaxLength = 500;
             this.txtPublisherName.Name = "txtPublisherName";
             this.txtPublisherName.Size = new System.Drawing.Size(227, 26);
@@ -380,7 +400,7 @@
             this.txtPublisherPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtPublisherPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPublisherPlace.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPublisherPlace.Location = new System.Drawing.Point(471, 408);
+            this.txtPublisherPlace.Location = new System.Drawing.Point(471, 411);
             this.txtPublisherPlace.MaxLength = 500;
             this.txtPublisherPlace.Name = "txtPublisherPlace";
             this.txtPublisherPlace.Size = new System.Drawing.Size(227, 26);
@@ -391,7 +411,7 @@
             this.txtSource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSource.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSource.Location = new System.Drawing.Point(118, 382);
+            this.txtSource.Location = new System.Drawing.Point(118, 362);
             this.txtSource.MaxLength = 500;
             this.txtSource.Name = "txtSource";
             this.txtSource.Size = new System.Drawing.Size(209, 26);
@@ -402,7 +422,7 @@
             this.txtCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCost.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCost.Location = new System.Drawing.Point(118, 435);
+            this.txtCost.Location = new System.Drawing.Point(118, 414);
             this.txtCost.MaxLength = 500;
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(209, 26);
@@ -414,7 +434,7 @@
             this.incLabel4.AutoSize = true;
             this.incLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel4.Location = new System.Drawing.Point(57, 387);
+            this.incLabel4.Location = new System.Drawing.Point(59, 366);
             this.incLabel4.Name = "incLabel4";
             this.incLabel4.Readonly = false;
             this.incLabel4.Size = new System.Drawing.Size(53, 17);
@@ -427,7 +447,7 @@
             this.incLabel2.AutoSize = true;
             this.incLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel2.Location = new System.Drawing.Point(23, 333);
+            this.incLabel2.Location = new System.Drawing.Point(25, 313);
             this.incLabel2.Name = "incLabel2";
             this.incLabel2.Readonly = false;
             this.incLabel2.Size = new System.Drawing.Size(87, 17);
@@ -440,7 +460,7 @@
             this.txtAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAuthor.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAuthor.Location = new System.Drawing.Point(118, 166);
+            this.txtAuthor.Location = new System.Drawing.Point(118, 150);
             this.txtAuthor.MaxLength = 500;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(209, 26);
@@ -452,7 +472,7 @@
             this.txtBookID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookID.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBookID.Location = new System.Drawing.Point(118, 60);
+            this.txtBookID.Location = new System.Drawing.Point(118, 46);
             this.txtBookID.MaxLength = 500;
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.ReadOnly = true;
@@ -464,7 +484,7 @@
             this.incLabel1.AutoSize = true;
             this.incLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel1.Location = new System.Drawing.Point(53, 63);
+            this.incLabel1.Location = new System.Drawing.Point(55, 48);
             this.incLabel1.Name = "incLabel1";
             this.incLabel1.Readonly = false;
             this.incLabel1.Size = new System.Drawing.Size(57, 17);
@@ -555,7 +575,7 @@
             this.pnlBook.Controls.Add(this.txtBookIDSearch);
             this.pnlBook.Controls.Add(this.incLabel5);
             this.pnlBook.Controls.Add(this.txtISBN);
-            this.pnlBook.Location = new System.Drawing.Point(142, 62);
+            this.pnlBook.Location = new System.Drawing.Point(142, 49);
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(614, 44);
             this.pnlBook.TabIndex = 0;
@@ -603,7 +623,7 @@
             this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBooksInfo.EnableHeadersVisualStyles = false;
             this.dgvBooksInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvBooksInfo.Location = new System.Drawing.Point(-2, -2);
+            this.dgvBooksInfo.Location = new System.Drawing.Point(17, 28);
             this.dgvBooksInfo.Name = "dgvBooksInfo";
             this.dgvBooksInfo.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -746,7 +766,7 @@
             this.pnlBooksInfo.Controls.Add(this.dgvBooksInfo);
             this.pnlBooksInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBooksInfo.ForeColor = System.Drawing.Color.White;
-            this.pnlBooksInfo.Location = new System.Drawing.Point(755, 129);
+            this.pnlBooksInfo.Location = new System.Drawing.Point(754, 115);
             this.pnlBooksInfo.Name = "pnlBooksInfo";
             this.pnlBooksInfo.Size = new System.Drawing.Size(575, 392);
             this.pnlBooksInfo.TabIndex = 41;
@@ -758,13 +778,13 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnSave.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSave.Location = new System.Drawing.Point(1192, 552);
+            this.btnSave.Location = new System.Drawing.Point(1165, 525);
             this.btnSave.Name = "btnSave";
             this.btnSave.NextControl = null;
             this.btnSave.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.PreviousControl = null;
             this.btnSave.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnSave.Size = new System.Drawing.Size(96, 47);
+            this.btnSave.Size = new System.Drawing.Size(92, 39);
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -776,13 +796,13 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnUpdate.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnUpdate.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnUpdate.Location = new System.Drawing.Point(1080, 552);
+            this.btnUpdate.Location = new System.Drawing.Point(1053, 525);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.NextControl = null;
             this.btnUpdate.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnUpdate.PreviousControl = null;
             this.btnUpdate.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnUpdate.Size = new System.Drawing.Size(96, 47);
+            this.btnUpdate.Size = new System.Drawing.Size(92, 39);
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -794,13 +814,13 @@
             this.btnGet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGet.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnGet.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnGet.Location = new System.Drawing.Point(965, 552);
+            this.btnGet.Location = new System.Drawing.Point(930, 525);
             this.btnGet.Name = "btnGet";
             this.btnGet.NextControl = null;
             this.btnGet.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnGet.PreviousControl = null;
             this.btnGet.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnGet.Size = new System.Drawing.Size(96, 47);
+            this.btnGet.Size = new System.Drawing.Size(92, 39);
             this.btnGet.TabIndex = 42;
             this.btnGet.Text = "Get";
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
@@ -811,7 +831,7 @@
             this.chkRegistered.BackColor = System.Drawing.Color.Red;
             this.chkRegistered.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRegistered.ForeColor = System.Drawing.Color.White;
-            this.chkRegistered.Location = new System.Drawing.Point(14, 74);
+            this.chkRegistered.Location = new System.Drawing.Point(14, 61);
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(122, 21);
             this.chkRegistered.TabIndex = 43;
@@ -828,7 +848,7 @@
             this.grpSearch.Controls.Add(this.incLabel8);
             this.grpSearch.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSearch.ForeColor = System.Drawing.Color.SeaShell;
-            this.grpSearch.Location = new System.Drawing.Point(756, 62);
+            this.grpSearch.Location = new System.Drawing.Point(756, 49);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(572, 44);
             this.grpSearch.TabIndex = 44;
@@ -872,36 +892,16 @@
             this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNew.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnNew.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnNew.Location = new System.Drawing.Point(845, 552);
+            this.btnNew.Location = new System.Drawing.Point(810, 525);
             this.btnNew.Name = "btnNew";
             this.btnNew.NextControl = null;
             this.btnNew.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnNew.PreviousControl = null;
             this.btnNew.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnNew.Size = new System.Drawing.Size(96, 47);
+            this.btnNew.Size = new System.Drawing.Size(92, 39);
             this.btnNew.TabIndex = 42;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1327, 2);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // frmAddBooks
             // 
@@ -909,7 +909,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1361, 630);
+            this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.chkRegistered);

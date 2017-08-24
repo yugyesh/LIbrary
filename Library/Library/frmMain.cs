@@ -30,5 +30,12 @@ namespace Library
             addBooksForm.MdiParent = this;
             addBooksForm.Show();
         }
+
+        private void issueBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBookIssue bookIssueForm = new frmBookIssue();
+            bookIssueForm.MdiParent = this;
+            bookIssueForm.Show();
+        }
     }
 }
