@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this._CloseButton = new Library.ButtonZ();
             this.incLabel14 = new IncLibrary.IncLabel();
             this.txtBookIDSearch = new System.Windows.Forms.TextBox();
             this.grpBookInfo = new System.Windows.Forms.GroupBox();
@@ -95,7 +96,6 @@
             this.incLabel16 = new IncLibrary.IncLabel();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNew = new IncLibrary.IncButton();
-            this._CloseButton = new Library.ButtonZ();
             this.pnlClose.SuspendLayout();
             this.grpBookInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
@@ -116,6 +116,26 @@
             this.pnlClose.Size = new System.Drawing.Size(1361, 36);
             this.pnlClose.TabIndex = 2;
             // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1327, 2);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(31, 27);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            // 
             // incLabel14
             // 
             this.incLabel14.AutoSize = true;
@@ -133,7 +153,7 @@
             // 
             this.txtBookIDSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtBookIDSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBookIDSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBookIDSearch.ForeColor = System.Drawing.Color.White;
             this.txtBookIDSearch.Location = new System.Drawing.Point(470, 10);
             this.txtBookIDSearch.MaxLength = 500;
             this.txtBookIDSearch.Name = "txtBookIDSearch";
@@ -272,6 +292,7 @@
             this.txtBookCopies.Name = "txtBookCopies";
             this.txtBookCopies.Size = new System.Drawing.Size(209, 26);
             this.txtBookCopies.TabIndex = 2;
+            this.txtBookCopies.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBookCopies_KeyPress);
             // 
             // cboTag
             // 
@@ -406,6 +427,7 @@
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(209, 26);
             this.txtCost.TabIndex = 4;
+            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
             // 
             // incLabel4
             // 
@@ -564,14 +586,14 @@
             this.dgvBooksInfo.AllowUserToDeleteRows = false;
             this.dgvBooksInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvBooksInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBooksInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBooksInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBooksInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooksInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colClassName,
@@ -591,27 +613,27 @@
             this.colPages,
             this.colBookDetailID,
             this.colTagID});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBooksInfo.EnableHeadersVisualStyles = false;
             this.dgvBooksInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvBooksInfo.Location = new System.Drawing.Point(-2, -2);
             this.dgvBooksInfo.Name = "dgvBooksInfo";
             this.dgvBooksInfo.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBooksInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBooksInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBooksInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvBooksInfo.Size = new System.Drawing.Size(575, 387);
             this.dgvBooksInfo.TabIndex = 40;
@@ -880,26 +902,6 @@
             this.btnNew.TabIndex = 42;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1327, 2);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // frmAddBooks
             // 

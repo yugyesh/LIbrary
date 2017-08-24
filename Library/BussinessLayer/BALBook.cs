@@ -115,7 +115,7 @@ namespace BussinessLayer
                 new SqlParameter("@tagID",  Convert.ToInt32(BookDetails[6])),
                 new SqlParameter("@author", BookDetails[7]),
                 new SqlParameter("@pages", Convert.ToInt32(BookDetails[8])),
-                new SqlParameter("@cost", Convert.ToInt32(BookDetails[9])),
+                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[9])),
                 new SqlParameter("@bookCopies", Convert.ToInt32(BookDetails[10])),
                 new SqlParameter("@classID",Convert.ToInt32(BookDetails[11])),
                 new SqlParameter("@operation","U"),

@@ -383,5 +383,25 @@ namespace Library
             }
         }
 
+          private void txtBookCopies_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && txtCost.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
