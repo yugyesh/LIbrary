@@ -33,6 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this.txtContactDetailID = new System.Windows.Forms.TextBox();
+            this.txtPersonalDetailID = new System.Windows.Forms.TextBox();
+            this._CloseButton = new Library.ButtonZ();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.incLabel5 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
@@ -86,11 +89,16 @@
             this.dgvAllMember = new System.Windows.Forms.DataGridView();
             this.btnGet = new IncLibrary.IncButton();
             this.btnClear = new IncLibrary.IncButton();
-            this._CloseButton = new Library.ButtonZ();
-            this.colMemberType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlMemberInfo = new IncLibrary.Panel();
+            this.btnUpadate = new IncLibrary.IncButton();
             this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPersonalDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMemberType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comMemberTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +110,7 @@
             this.colRoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMajorSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlClose.SuspendLayout();
@@ -113,17 +122,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllMember)).BeginInit();
+            this.pnlMemberInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClose
             // 
             this.pnlClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlClose.Controls.Add(this.txtContactDetailID);
+            this.pnlClose.Controls.Add(this.txtPersonalDetailID);
             this.pnlClose.Controls.Add(this._CloseButton);
             this.pnlClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlClose.Location = new System.Drawing.Point(0, 0);
             this.pnlClose.Name = "pnlClose";
             this.pnlClose.Size = new System.Drawing.Size(1361, 41);
             this.pnlClose.TabIndex = 2;
+            // 
+            // txtContactDetailID
+            // 
+            this.txtContactDetailID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtContactDetailID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactDetailID.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtContactDetailID.Location = new System.Drawing.Point(634, 7);
+            this.txtContactDetailID.Name = "txtContactDetailID";
+            this.txtContactDetailID.Size = new System.Drawing.Size(92, 26);
+            this.txtContactDetailID.TabIndex = 3;
+            this.txtContactDetailID.Visible = false;
+            // 
+            // txtPersonalDetailID
+            // 
+            this.txtPersonalDetailID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtPersonalDetailID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonalDetailID.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPersonalDetailID.Location = new System.Drawing.Point(506, 6);
+            this.txtPersonalDetailID.Name = "txtPersonalDetailID";
+            this.txtPersonalDetailID.Size = new System.Drawing.Size(92, 26);
+            this.txtPersonalDetailID.TabIndex = 2;
+            this.txtPersonalDetailID.Visible = false;
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(31, 27);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // groupBox1
             // 
@@ -358,17 +412,17 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnSave.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSave.Location = new System.Drawing.Point(1204, 577);
+            this.btnSave.Location = new System.Drawing.Point(1209, 557);
             this.btnSave.Name = "btnSave";
             this.btnSave.NextControl = null;
             this.btnSave.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.PreviousControl = null;
             this.btnSave.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnSave.Size = new System.Drawing.Size(110, 39);
+            this.btnSave.Size = new System.Drawing.Size(96, 47);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -756,22 +810,27 @@
             // dgvAllMember
             // 
             this.dgvAllMember.AllowUserToAddRows = false;
-            this.dgvAllMember.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvAllMember.AllowUserToDeleteRows = false;
+            this.dgvAllMember.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvAllMember.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAllMember.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAllMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMemberType,
             this.colFirstName,
-            this.colMiddleName,
+            this.colContactID,
+            this.colPersonalDetailID,
             this.colLastName,
+            this.colMemberType,
+            this.comMemberTypeID,
+            this.colGender,
+            this.colMiddleName,
             this.colGenderID,
             this.colStatusID,
             this.colAddress,
@@ -783,47 +842,49 @@
             this.colRoleID,
             this.colMajorSubject,
             this.colDepartmentID,
+            this.colDepartmentName,
             this.colClassID,
             this.colSectionName});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAllMember.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAllMember.EnableHeadersVisualStyles = false;
             this.dgvAllMember.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvAllMember.Location = new System.Drawing.Point(817, 58);
+            this.dgvAllMember.Location = new System.Drawing.Point(1, -1);
             this.dgvAllMember.Name = "dgvAllMember";
             this.dgvAllMember.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAllMember.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAllMember.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAllMember.Size = new System.Drawing.Size(532, 484);
+            this.dgvAllMember.Size = new System.Drawing.Size(520, 398);
             this.dgvAllMember.TabIndex = 39;
+            this.dgvAllMember.Click += new System.EventHandler(this.dgvAllMember_Click);
             // 
             // btnGet
             // 
             this.btnGet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGet.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnGet.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnGet.Location = new System.Drawing.Point(1088, 579);
+            this.btnGet.Location = new System.Drawing.Point(943, 557);
             this.btnGet.Name = "btnGet";
             this.btnGet.NextControl = null;
             this.btnGet.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnGet.PreviousControl = null;
             this.btnGet.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnGet.Size = new System.Drawing.Size(110, 39);
+            this.btnGet.Size = new System.Drawing.Size(96, 47);
             this.btnGet.TabIndex = 7;
             this.btnGet.Text = "Get";
             this.btnGet.Click += new System.EventHandler(this.btnGetAllMember_Click);
@@ -831,40 +892,76 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnClear.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnClear.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnClear.Location = new System.Drawing.Point(959, 577);
+            this.btnClear.Location = new System.Drawing.Point(810, 557);
             this.btnClear.Name = "btnClear";
             this.btnClear.NextControl = null;
             this.btnClear.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnClear.PreviousControl = null;
             this.btnClear.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnClear.Size = new System.Drawing.Size(110, 39);
+            this.btnClear.Size = new System.Drawing.Size(96, 47);
             this.btnClear.TabIndex = 40;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "New";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // _CloseButton
+            // pnlMemberInfo
             // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            this.pnlMemberInfo.AutoScroll = true;
+            this.pnlMemberInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMemberInfo.Controls.Add(this.dgvAllMember);
+            this.pnlMemberInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlMemberInfo.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlMemberInfo.Location = new System.Drawing.Point(810, 121);
+            this.pnlMemberInfo.Name = "pnlMemberInfo";
+            this.pnlMemberInfo.Size = new System.Drawing.Size(528, 402);
+            this.pnlMemberInfo.TabIndex = 41;
+            // 
+            // btnUpadate
+            // 
+            this.btnUpadate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnUpadate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpadate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnUpadate.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnUpadate.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnUpadate.Location = new System.Drawing.Point(1076, 557);
+            this.btnUpadate.Name = "btnUpadate";
+            this.btnUpadate.NextControl = null;
+            this.btnUpadate.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnUpadate.PreviousControl = null;
+            this.btnUpadate.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnUpadate.Size = new System.Drawing.Size(96, 47);
+            this.btnUpadate.TabIndex = 7;
+            this.btnUpadate.Text = "Update";
+            this.btnUpadate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.HeaderText = "FirstName";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.ReadOnly = true;
+            // 
+            // colContactID
+            // 
+            this.colContactID.HeaderText = "Contact ID";
+            this.colContactID.Name = "colContactID";
+            this.colContactID.ReadOnly = true;
+            this.colContactID.Visible = false;
+            // 
+            // colPersonalDetailID
+            // 
+            this.colPersonalDetailID.HeaderText = "PersonalDetailID";
+            this.colPersonalDetailID.Name = "colPersonalDetailID";
+            this.colPersonalDetailID.ReadOnly = true;
+            this.colPersonalDetailID.Visible = false;
+            // 
+            // colLastName
+            // 
+            this.colLastName.HeaderText = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.ReadOnly = true;
             // 
             // colMemberType
             // 
@@ -872,12 +969,18 @@
             this.colMemberType.Name = "colMemberType";
             this.colMemberType.ReadOnly = true;
             // 
-            // colFirstName
+            // comMemberTypeID
             // 
-            this.colFirstName.HeaderText = "FirstName";
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.ReadOnly = true;
-            this.colFirstName.Visible = false;
+            this.comMemberTypeID.HeaderText = "Member Type ID";
+            this.comMemberTypeID.Name = "comMemberTypeID";
+            this.comMemberTypeID.ReadOnly = true;
+            this.comMemberTypeID.Visible = false;
+            // 
+            // colGender
+            // 
+            this.colGender.HeaderText = "Gender";
+            this.colGender.Name = "colGender";
+            this.colGender.ReadOnly = true;
             // 
             // colMiddleName
             // 
@@ -885,13 +988,6 @@
             this.colMiddleName.Name = "colMiddleName";
             this.colMiddleName.ReadOnly = true;
             this.colMiddleName.Visible = false;
-            // 
-            // colLastName
-            // 
-            this.colLastName.HeaderText = "LastName";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.ReadOnly = true;
-            this.colLastName.Visible = false;
             // 
             // colGenderID
             // 
@@ -970,6 +1066,13 @@
             this.colDepartmentID.ReadOnly = true;
             this.colDepartmentID.Visible = false;
             // 
+            // colDepartmentName
+            // 
+            this.colDepartmentName.HeaderText = "Department Name";
+            this.colDepartmentName.Name = "colDepartmentName";
+            this.colDepartmentName.ReadOnly = true;
+            this.colDepartmentName.Visible = false;
+            // 
             // colClassID
             // 
             this.colClassID.HeaderText = "Class ID";
@@ -992,8 +1095,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 630);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlMemberInfo);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.dgvAllMember);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.picMember);
             this.Controls.Add(this.grpStudent);
@@ -1004,6 +1107,7 @@
             this.Controls.Add(this.grpUser);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlClose);
+            this.Controls.Add(this.btnUpadate);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1014,6 +1118,7 @@
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmAddMember_Load);
             this.pnlClose.ResumeLayout(false);
+            this.pnlClose.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grpStudent.ResumeLayout(false);
@@ -1027,6 +1132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllMember)).EndInit();
+            this.pnlMemberInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1089,10 +1195,18 @@
         private System.Windows.Forms.DataGridView dgvAllMember;
         private IncLibrary.IncButton btnGet;
         private IncLibrary.IncButton btnClear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberType;
+        private IncLibrary.Panel pnlMemberInfo;
+        private IncLibrary.IncButton btnUpadate;
+        private System.Windows.Forms.TextBox txtPersonalDetailID;
+        private System.Windows.Forms.TextBox txtContactDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMiddleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContactID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPersonalDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comMemberTypeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMiddleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatusID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
@@ -1104,6 +1218,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMajorSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSectionName;
     }
