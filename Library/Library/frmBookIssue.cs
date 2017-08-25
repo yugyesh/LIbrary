@@ -24,10 +24,13 @@ namespace Library
         int length = 0;
         private void txtISBN_TextChanged(object sender, EventArgs e)
         {
+            
             if (txtISBN.Text.Length==13)
             {
                 dgvISBNList.Rows.Add();
                 dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
+                dgvISBNList.Rows[length].Cells["colSN"].Value = length+1;
+                //length = dgvISBNList.Rows.Count-1;
                 length = length + 1;
                 txtISBN.Text = string.Empty;
                 return;
@@ -60,6 +63,14 @@ namespace Library
                 dgvStudentInfo.Columns["colDepartment"].Visible = true;
 
             }
+        }
+
+        private void lblRemoveBook_Click(object sender, EventArgs e)
+        {
+            dgvISBNList.Rows.RemoveAt(dgvISBNList.CurrentRow.Index);
+            txtISBN.Focus();
+            length = length - 1;
+            //dgvISBNList.CurrentRow.Cells["col"]
         }
     }
 }

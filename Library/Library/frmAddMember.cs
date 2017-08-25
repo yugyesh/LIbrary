@@ -185,7 +185,6 @@ namespace Library
 
                     dgvAllMember.Rows[i].Cells["colStudentID"].Value = dt.Rows[i]["StudentID"].ToString();
                     dgvAllMember.Rows[i].Cells["colClassName"].Value = dt.Rows[i]["ClassName"].ToString();
-                    //dgvAllMember.rows
                     dgvAllMember.Rows[i].Cells["colClassID"].Value = dt.Rows[i]["ClassID"].ToString();
                     dgvAllMember.Rows[i].Cells["colSectionName"].Value = dt.Rows[i]["SectionName"].ToString();
 
@@ -197,7 +196,7 @@ namespace Library
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
 
-                    dgvAllMember.Rows[i].Cells["colTeacherID"].Value = dt.Rows[i]["FirstName"].ToString();
+                    dgvAllMember.Rows[i].Cells["colTeacherID"].Value = dt.Rows[i]["TeacherID"].ToString();
                     dgvAllMember.Rows[i].Cells["colMajorSubject"].Value = dt.Rows[i]["MajorSubject"].ToString();
                     dgvAllMember.Rows[i].Cells["colDepartmentName"].Value = dt.Rows[i]["DepartmentName"].ToString();
                     dgvAllMember.Rows[i].Cells["colDepartmentID"].Value = dt.Rows[i]["DepartmentID"].ToString();

@@ -28,21 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
             this.lblBurrowerName = new IncLibrary.IncLabel();
             this.btnNew = new IncLibrary.IncButton();
             this.txtBookCopies = new System.Windows.Forms.TextBox();
             this.dgvStudentInfo = new System.Windows.Forms.DataGridView();
+            this.colBurrowerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBurrowerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeparmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookIssued = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBook = new System.Windows.Forms.Panel();
+            this.cboDepartment = new System.Windows.Forms.ComboBox();
             this.lblBurrowerID = new IncLibrary.IncLabel();
             this.cboClass = new System.Windows.Forms.ComboBox();
             this.txtBookIDSearch = new System.Windows.Forms.TextBox();
@@ -52,33 +61,32 @@
             this.pnlStudentInfo = new System.Windows.Forms.Panel();
             this.chkBurrower = new System.Windows.Forms.CheckBox();
             this.pnlISBN = new System.Windows.Forms.Panel();
+            this.dgvISBNList = new System.Windows.Forms.DataGridView();
+            this.colSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picMember = new System.Windows.Forms.PictureBox();
             this.lblBurrowerNameImg = new IncLibrary.IncLabel();
             this.incButton1 = new IncLibrary.IncButton();
-            this.dgvISBNList = new System.Windows.Forms.DataGridView();
-            this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvInfo = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBurrowedBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboDepartment = new System.Windows.Forms.ComboBox();
+            this.lblWhichInfo = new IncLibrary.IncLabel();
+            this.btnClear = new IncLibrary.IncButton();
             this._CloseButton = new Library.ButtonZ();
-            this.colBurrowerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBurrowerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeparmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookIssued = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblRemoveBook = new IncLibrary.IncLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlClose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentInfo)).BeginInit();
             this.pnlBook.SuspendLayout();
             this.pnlStudentInfo.SuspendLayout();
             this.pnlISBN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvISBNList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -111,7 +119,7 @@
             this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNew.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnNew.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnNew.Location = new System.Drawing.Point(1012, 522);
+            this.btnNew.Location = new System.Drawing.Point(1083, 513);
             this.btnNew.Name = "btnNew";
             this.btnNew.NextControl = null;
             this.btnNew.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -119,7 +127,7 @@
             this.btnNew.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnNew.Size = new System.Drawing.Size(92, 42);
             this.btnNew.TabIndex = 46;
-            this.btnNew.Text = "New";
+            this.btnNew.Text = "Return";
             // 
             // txtBookCopies
             // 
@@ -138,14 +146,14 @@
             this.dgvStudentInfo.AllowUserToDeleteRows = false;
             this.dgvStudentInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvStudentInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvStudentInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colBurrowerID,
@@ -156,30 +164,85 @@
             this.colBookIssued,
             this.colClassID,
             this.colFine});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentInfo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentInfo.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvStudentInfo.EnableHeadersVisualStyles = false;
             this.dgvStudentInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvStudentInfo.Location = new System.Drawing.Point(2, -2);
             this.dgvStudentInfo.Name = "dgvStudentInfo";
             this.dgvStudentInfo.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvStudentInfo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvStudentInfo.Size = new System.Drawing.Size(557, 456);
             this.dgvStudentInfo.TabIndex = 49;
+            // 
+            // colBurrowerID
+            // 
+            this.colBurrowerID.HeaderText = "Burrower ID";
+            this.colBurrowerID.Name = "colBurrowerID";
+            this.colBurrowerID.ReadOnly = true;
+            this.colBurrowerID.Width = 110;
+            // 
+            // colBurrowerName
+            // 
+            this.colBurrowerName.HeaderText = "Name";
+            this.colBurrowerName.Name = "colBurrowerName";
+            this.colBurrowerName.ReadOnly = true;
+            this.colBurrowerName.Width = 140;
+            // 
+            // colClass
+            // 
+            this.colClass.HeaderText = "Class";
+            this.colClass.Name = "colClass";
+            this.colClass.ReadOnly = true;
+            this.colClass.Visible = false;
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.HeaderText = "Deparment";
+            this.colDepartment.Name = "colDepartment";
+            this.colDepartment.ReadOnly = true;
+            this.colDepartment.Visible = false;
+            // 
+            // colDeparmentID
+            // 
+            this.colDeparmentID.HeaderText = "Department ID";
+            this.colDeparmentID.Name = "colDeparmentID";
+            this.colDeparmentID.ReadOnly = true;
+            this.colDeparmentID.Visible = false;
+            // 
+            // colBookIssued
+            // 
+            this.colBookIssued.HeaderText = "BookIssued";
+            this.colBookIssued.Name = "colBookIssued";
+            this.colBookIssued.ReadOnly = true;
+            // 
+            // colClassID
+            // 
+            this.colClassID.HeaderText = "Class ID";
+            this.colClassID.Name = "colClassID";
+            this.colClassID.ReadOnly = true;
+            this.colClassID.Visible = false;
+            // 
+            // colFine
+            // 
+            this.colFine.HeaderText = "Fine";
+            this.colFine.Name = "colFine";
+            this.colFine.ReadOnly = true;
+            this.colFine.Width = 80;
             // 
             // pnlBook
             // 
@@ -195,6 +258,17 @@
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(566, 59);
             this.pnlBook.TabIndex = 50;
+            // 
+            // cboDepartment
+            // 
+            this.cboDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.cboDepartment.ForeColor = System.Drawing.SystemColors.Window;
+            this.cboDepartment.FormattingEnabled = true;
+            this.cboDepartment.Location = new System.Drawing.Point(211, 28);
+            this.cboDepartment.Name = "cboDepartment";
+            this.cboDepartment.Size = new System.Drawing.Size(148, 24);
+            this.cboDepartment.TabIndex = 59;
             // 
             // lblBurrowerID
             // 
@@ -303,6 +377,62 @@
             this.pnlISBN.Size = new System.Drawing.Size(216, 317);
             this.pnlISBN.TabIndex = 53;
             // 
+            // dgvISBNList
+            // 
+            this.dgvISBNList.AllowUserToDeleteRows = false;
+            this.dgvISBNList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvISBNList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvISBNList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvISBNList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvISBNList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSN,
+            this.colISBN});
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvISBNList.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvISBNList.EnableHeadersVisualStyles = false;
+            this.dgvISBNList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvISBNList.Location = new System.Drawing.Point(-1, -1);
+            this.dgvISBNList.Name = "dgvISBNList";
+            this.dgvISBNList.ReadOnly = true;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvISBNList.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvISBNList.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvISBNList.Size = new System.Drawing.Size(216, 312);
+            this.dgvISBNList.TabIndex = 56;
+            // 
+            // colSN
+            // 
+            this.colSN.HeaderText = "SN";
+            this.colSN.Name = "colSN";
+            this.colSN.ReadOnly = true;
+            this.colSN.Width = 30;
+            // 
+            // colISBN
+            // 
+            this.colISBN.HeaderText = "ISBN";
+            this.colISBN.Name = "colISBN";
+            this.colISBN.ReadOnly = true;
+            this.colISBN.Width = 172;
+            // 
             // picMember
             // 
             this.picMember.Location = new System.Drawing.Point(669, 75);
@@ -332,7 +462,7 @@
             this.incButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.incButton1.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.incButton1.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.incButton1.Location = new System.Drawing.Point(1192, 522);
+            this.incButton1.Location = new System.Drawing.Point(1237, 513);
             this.incButton1.Name = "incButton1";
             this.incButton1.NextControl = null;
             this.incButton1.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -340,123 +470,109 @@
             this.incButton1.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.incButton1.Size = new System.Drawing.Size(92, 42);
             this.incButton1.TabIndex = 46;
-            this.incButton1.Text = "New";
+            this.incButton1.Text = "Issue";
             // 
-            // dgvISBNList
+            // dgvInfo
             // 
-            this.dgvISBNList.AllowUserToDeleteRows = false;
-            this.dgvISBNList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.dgvISBNList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvISBNList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvISBNList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvISBNList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colISBN});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvISBNList.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvISBNList.EnableHeadersVisualStyles = false;
-            this.dgvISBNList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvISBNList.Location = new System.Drawing.Point(-1, -1);
-            this.dgvISBNList.Name = "dgvISBNList";
-            this.dgvISBNList.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvISBNList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvISBNList.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvISBNList.Size = new System.Drawing.Size(216, 312);
-            this.dgvISBNList.TabIndex = 56;
-            // 
-            // colISBN
-            // 
-            this.colISBN.HeaderText = "ISBN";
-            this.colISBN.Name = "colISBN";
-            this.colISBN.ReadOnly = true;
-            this.colISBN.Width = 172;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(395, 422);
-            this.dataGridView1.TabIndex = 57;
+            this.dgvInfo.AllowUserToDeleteRows = false;
+            this.dgvInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.colBurrowedBook,
+            this.colBurrowedDate});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInfo.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvInfo.EnableHeadersVisualStyles = false;
+            this.dgvInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvInfo.Location = new System.Drawing.Point(3, 3);
+            this.dgvInfo.Name = "dgvInfo";
+            this.dgvInfo.ReadOnly = true;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dgvInfo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvInfo.Size = new System.Drawing.Size(395, 422);
+            this.dgvInfo.TabIndex = 57;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "ISBN";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 172;
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // colBurrowedBook
+            // 
+            this.colBurrowedBook.HeaderText = "Book Name";
+            this.colBurrowedBook.Name = "colBurrowedBook";
+            this.colBurrowedBook.ReadOnly = true;
+            this.colBurrowedBook.Visible = false;
+            // 
+            // colBurrowedDate
+            // 
+            this.colBurrowedDate.HeaderText = "Burrowed Date";
+            this.colBurrowedDate.Name = "colBurrowedDate";
+            this.colBurrowedDate.ReadOnly = true;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvInfo);
             this.panel1.Location = new System.Drawing.Point(927, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 432);
             this.panel1.TabIndex = 58;
             // 
-            // cboDepartment
+            // lblWhichInfo
             // 
-            this.cboDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.cboDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.cboDepartment.ForeColor = System.Drawing.SystemColors.Window;
-            this.cboDepartment.FormattingEnabled = true;
-            this.cboDepartment.Location = new System.Drawing.Point(211, 28);
-            this.cboDepartment.Name = "cboDepartment";
-            this.cboDepartment.Size = new System.Drawing.Size(148, 24);
-            this.cboDepartment.TabIndex = 59;
+            this.lblWhichInfo.AutoSize = true;
+            this.lblWhichInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline);
+            this.lblWhichInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblWhichInfo.Location = new System.Drawing.Point(1116, 52);
+            this.lblWhichInfo.Name = "lblWhichInfo";
+            this.lblWhichInfo.Readonly = false;
+            this.lblWhichInfo.Size = new System.Drawing.Size(31, 17);
+            this.lblWhichInfo.TabIndex = 58;
+            this.lblWhichInfo.Text = "Info";
+            this.lblWhichInfo.ValueByOrchestrator = "Info";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClear.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnClear.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnClear.Location = new System.Drawing.Point(929, 513);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NextControl = null;
+            this.btnClear.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnClear.PreviousControl = null;
+            this.btnClear.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnClear.Size = new System.Drawing.Size(92, 42);
+            this.btnClear.TabIndex = 58;
+            this.btnClear.Text = "Clear";
             // 
             // _CloseButton
             // 
@@ -478,60 +594,28 @@
             this._CloseButton.UseVisualStyleBackColor = true;
             this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
-            // colBurrowerID
+            // lblRemoveBook
             // 
-            this.colBurrowerID.HeaderText = "Burrower ID";
-            this.colBurrowerID.Name = "colBurrowerID";
-            this.colBurrowerID.ReadOnly = true;
-            this.colBurrowerID.Width = 110;
+            this.lblRemoveBook.BackColor = System.Drawing.Color.Red;
+            this.lblRemoveBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold);
+            this.lblRemoveBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblRemoveBook.Location = new System.Drawing.Point(1, 1);
+            this.lblRemoveBook.Name = "lblRemoveBook";
+            this.lblRemoveBook.Readonly = false;
+            this.lblRemoveBook.Size = new System.Drawing.Size(31, 42);
+            this.lblRemoveBook.TabIndex = 59;
+            this.lblRemoveBook.Text = "-";
+            this.lblRemoveBook.ValueByOrchestrator = "-";
+            this.lblRemoveBook.Click += new System.EventHandler(this.lblRemoveBook_Click);
             // 
-            // colBurrowerName
+            // panel2
             // 
-            this.colBurrowerName.HeaderText = "Name";
-            this.colBurrowerName.Name = "colBurrowerName";
-            this.colBurrowerName.ReadOnly = true;
-            this.colBurrowerName.Width = 140;
-            // 
-            // colClass
-            // 
-            this.colClass.HeaderText = "Class";
-            this.colClass.Name = "colClass";
-            this.colClass.ReadOnly = true;
-            this.colClass.Visible = false;
-            // 
-            // colDepartment
-            // 
-            this.colDepartment.HeaderText = "Deparment";
-            this.colDepartment.Name = "colDepartment";
-            this.colDepartment.ReadOnly = true;
-            this.colDepartment.Visible = false;
-            // 
-            // colDeparmentID
-            // 
-            this.colDeparmentID.HeaderText = "Department ID";
-            this.colDeparmentID.Name = "colDeparmentID";
-            this.colDeparmentID.ReadOnly = true;
-            this.colDeparmentID.Visible = false;
-            // 
-            // colBookIssued
-            // 
-            this.colBookIssued.HeaderText = "BookIssued";
-            this.colBookIssued.Name = "colBookIssued";
-            this.colBookIssued.ReadOnly = true;
-            // 
-            // colClassID
-            // 
-            this.colClassID.HeaderText = "Class ID";
-            this.colClassID.Name = "colClassID";
-            this.colClassID.ReadOnly = true;
-            this.colClassID.Visible = false;
-            // 
-            // colFine
-            // 
-            this.colFine.HeaderText = "Fine";
-            this.colFine.Name = "colFine";
-            this.colFine.ReadOnly = true;
-            this.colFine.Width = 80;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblRemoveBook);
+            this.panel2.Location = new System.Drawing.Point(641, 274);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(37, 45);
+            this.panel2.TabIndex = 58;
             // 
             // frmBookIssue
             // 
@@ -541,6 +625,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.lblWhichInfo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblBurrowerNameImg);
             this.Controls.Add(this.picMember);
@@ -565,10 +652,11 @@
             this.pnlBook.PerformLayout();
             this.pnlStudentInfo.ResumeLayout(false);
             this.pnlISBN.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvISBNList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMember)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,9 +684,7 @@
         private IncLibrary.IncLabel lblBurrowerNameImg;
         private IncLibrary.IncButton incButton1;
         private System.Windows.Forms.DataGridView dgvISBNList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dgvInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowerID;
@@ -609,6 +695,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colBookIssued;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedDate;
+        private IncLibrary.IncLabel lblWhichInfo;
+        private IncLibrary.IncButton btnClear;
+        private IncLibrary.IncLabel lblRemoveBook;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

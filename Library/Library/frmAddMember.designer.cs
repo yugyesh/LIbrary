@@ -35,7 +35,6 @@
             this.pnlClose = new System.Windows.Forms.Panel();
             this.txtContactDetailID = new System.Windows.Forms.TextBox();
             this.txtPersonalDetailID = new System.Windows.Forms.TextBox();
-            this._CloseButton = new Library.ButtonZ();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.incLabel5 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
@@ -91,7 +90,11 @@
             this.btnClear = new IncLibrary.IncButton();
             this.pnlMemberInfo = new IncLibrary.Panel();
             this.btnUpadate = new IncLibrary.IncButton();
+            this._CloseButton = new Library.ButtonZ();
             this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPersonalDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,26 +161,6 @@
             this.txtPersonalDetailID.Size = new System.Drawing.Size(92, 26);
             this.txtPersonalDetailID.TabIndex = 2;
             this.txtPersonalDetailID.Visible = false;
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // groupBox1
             // 
@@ -824,6 +807,9 @@
             this.dgvAllMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFirstName,
+            this.colTeacherID,
+            this.colStudentID,
+            this.colClassName,
             this.colContactID,
             this.colPersonalDetailID,
             this.colLastName,
@@ -937,11 +923,52 @@
             this.btnUpadate.Text = "Update";
             this.btnUpadate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // _CloseButton
+            // 
+            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1324, 6);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(31, 27);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
+            // 
             // colFirstName
             // 
             this.colFirstName.HeaderText = "FirstName";
             this.colFirstName.Name = "colFirstName";
             this.colFirstName.ReadOnly = true;
+            // 
+            // colTeacherID
+            // 
+            this.colTeacherID.HeaderText = "TeacherID";
+            this.colTeacherID.Name = "colTeacherID";
+            this.colTeacherID.ReadOnly = true;
+            this.colTeacherID.Visible = false;
+            // 
+            // colStudentID
+            // 
+            this.colStudentID.HeaderText = "StudentID";
+            this.colStudentID.Name = "colStudentID";
+            this.colStudentID.ReadOnly = true;
+            this.colStudentID.Visible = false;
+            // 
+            // colClassName
+            // 
+            this.colClassName.HeaderText = "Class Name";
+            this.colClassName.Name = "colClassName";
+            this.colClassName.ReadOnly = true;
+            this.colClassName.Visible = false;
             // 
             // colContactID
             // 
@@ -1200,6 +1227,9 @@
         private System.Windows.Forms.TextBox txtPersonalDetailID;
         private System.Windows.Forms.TextBox txtContactDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeacherID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContactID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPersonalDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
