@@ -516,7 +516,7 @@ namespace Library
             {
                 txtTeacherID.Text = dgvAllMember.CurrentRow.Cells["colTeacherID"].Value.ToString();
                 txtMajorSubject.Text = dgvAllMember.CurrentRow.Cells["colMajorSubject"].Value.ToString() == null ? string.Empty : dgvAllMember.CurrentRow.Cells["colMajorSubject"].Value.ToString();
-                cboDepartment.SelectedValue = dgvAllMember.CurrentRow.Cells["colMajorSubject"].Value;
+                cboDepartment.SelectedValue = dgvAllMember.CurrentRow.Cells["colDepartmentID"].Value;
 
             }
             else if (memberType == 3)

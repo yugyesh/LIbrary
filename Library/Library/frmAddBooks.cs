@@ -383,6 +383,7 @@ namespace Library
             }
         }
 
+        //Maintaining integrity of a textbox
           private void txtBookCopies_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
