@@ -28,8 +28,19 @@ namespace Library
             erpGeneral.Clear();
             if (!ValidateFields())
             {
-                frmMain mainForm = new frmMain();
-                mainForm.statUserName.Text = txtUserName.Text;
+                if (balUser.CheckUser(txtUserName.Text, txtPassword.Text, Convert.ToInt32(cboUserType.SelectedValue.ToString())))
+                {
+                    MessageBox.Show("Login Successful", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMain mainForm = new frmMain();
+                    mainForm.statUserName.Text = txtUserName.Text;
+                    this.Hide();
+                    mainForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Username and Password Mismatch", "Login Falure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserName.Focus();
+                }
             }
         }
 

@@ -43,24 +43,33 @@ namespace DataAccessLayer
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                return null;
             }
             
         }
         public static int IUD(string sql, SqlParameter[] pram, CommandType cmdType)
         {
-            using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
+            try
             {
-                cmd.CommandType = cmdType;
-                if (pram != null && pram.Length != 0)
+                using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
                 {
-                    cmd.Parameters.AddRange(pram);
+                    cmd.CommandType = cmdType;
+                    if (pram != null && pram.Length != 0)
+                    {
+                        cmd.Parameters.AddRange(pram);
+                    }
+                    int i = cmd.ExecuteNonQuery();
+                    return i;
                 }
-                int i = cmd.ExecuteNonQuery();
-                return i;
+            }
+            catch (Exception)
+            {
+                return 0;
+                //throw Exception;
+
             }
         }
         public static int IUD(string sql, List<SqlParameter> pram, CommandType cmdType)
