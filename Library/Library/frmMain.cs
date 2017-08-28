@@ -128,5 +128,12 @@ namespace Library
             }
             bookIssueForm.lblIssueorReturn.Checked = false;
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword changePasswordForm = new frmChangePassword();
+            changePasswordForm.ShowDialog();
+            changePasswordForm.MdiParent = this;
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Library
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static string userName = "";
         [STAThread]
         static void Main()
         {

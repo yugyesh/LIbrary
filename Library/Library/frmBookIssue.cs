@@ -275,5 +275,10 @@ namespace Library
                 btnIssue.Enabled = false;
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearControls();
+        }
     }
 }

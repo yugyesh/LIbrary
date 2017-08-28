@@ -33,6 +33,12 @@
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolAddMember = new System.Windows.Forms.ToolStripButton();
             this.toolAddBooks = new System.Windows.Forms.ToolStripButton();
@@ -51,7 +57,9 @@
             // menuStripZ1
             // 
             this.menuStripZ1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.masterToolStripMenuItem});
+            this.masterToolStripMenuItem,
+            this.bookToolStripMenuItem,
+            this.userToolStripMenuItem});
             this.menuStripZ1.Location = new System.Drawing.Point(0, 36);
             this.menuStripZ1.Name = "menuStripZ1";
             this.menuStripZ1.Size = new System.Drawing.Size(1034, 24);
@@ -83,6 +91,58 @@
             this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
+            // 
+            // bookToolStripMenuItem
+            // 
+            this.bookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.issueToolStripMenuItem,
+            this.returnToolStripMenuItem});
+            this.bookToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
+            this.bookToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.bookToolStripMenuItem.Text = "Book";
+            // 
+            // issueToolStripMenuItem
+            // 
+            this.issueToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
+            this.issueToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.issueToolStripMenuItem.Text = "Issue";
+            this.issueToolStripMenuItem.Click += new System.EventHandler(this.toolBookIssue_Click);
+            // 
+            // returnToolStripMenuItem
+            // 
+            this.returnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.returnToolStripMenuItem.Text = "Return";
+            this.returnToolStripMenuItem.Click += new System.EventHandler(this.toolBookReturn_Click);
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePasswordToolStripMenuItem,
+            this.logoutToolStripMenuItem});
+            this.userToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.userToolStripMenuItem.Text = "User";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.toolLogout_Click);
             // 
             // toolStrip1
             // 
@@ -226,5 +286,11 @@
         public System.Windows.Forms.ToolStripStatusLabel statDate;
         private System.Windows.Forms.ToolStripButton toolAddMember;
         private System.Windows.Forms.ToolStripButton toolAddBooks;
+        private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem issueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
