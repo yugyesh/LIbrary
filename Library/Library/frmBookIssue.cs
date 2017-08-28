@@ -125,6 +125,16 @@ namespace Library
         {
             LoadCombo();
             cboDepartment.Visible = false;
+            if (lblIssueorReturn.Checked==true)
+            {
+                btnIssue.Enabled = true;
+                btnReturn.Enabled = false;    
+            }
+            else
+            {
+                btnReturn.Enabled = true;
+                btnIssue.Enabled = false;
+            }
         }
 
         private void LoadCombo()
@@ -250,6 +260,20 @@ namespace Library
         private void _CloseButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblIssueorReturn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lblIssueorReturn.Checked == true)
+            {
+                btnIssue.Enabled = true;
+                btnReturn.Enabled = false;
+            }
+            else
+            {
+                btnReturn.Enabled = true;
+                btnIssue.Enabled = false;
+            }
         }
     }
 }

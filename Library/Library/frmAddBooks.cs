@@ -404,5 +404,10 @@ namespace Library
                 e.Handled = true;
             }
         }
+
+        private void _CloseButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

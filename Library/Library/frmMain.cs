@@ -73,7 +73,6 @@ namespace Library
                 addMemberForm.Show();
                 addMemberForm.MdiParent = this;
                 activeChild.Close();
-
             }
         }
 
@@ -88,10 +87,46 @@ namespace Library
             }
             else
             {
+                activeChild.Close();
                 bookAddForm.Show();
                 bookAddForm.MdiParent = this;
-                activeChild.Close();
             }
+        }
+
+        private void toolBookIssue_Click(object sender, EventArgs e)
+        {
+            Form activeChild = this.ActiveMdiChild;
+            frmBookIssue bookIssueForm = new frmBookIssue();
+            if (activeChild == null)
+            {
+                bookIssueForm.Show();
+                bookIssueForm.MdiParent = this;
+            }
+            else
+            {
+                activeChild.Close();
+                bookIssueForm.Show();
+                bookIssueForm.MdiParent = this;
+            }
+            bookIssueForm.lblIssueorReturn.Checked = true;
+        }
+
+        private void toolBookReturn_Click(object sender, EventArgs e)
+        {
+            Form activeChild = this.ActiveMdiChild;
+            frmBookIssue bookIssueForm = new frmBookIssue();
+            if (activeChild == null)
+            {
+                bookIssueForm.Show();
+                bookIssueForm.MdiParent = this;
+            }
+            else
+            {
+                activeChild.Close();
+                bookIssueForm.Show();
+                bookIssueForm.MdiParent = this;
+            }
+            bookIssueForm.lblIssueorReturn.Checked = false;
         }
     }
 }

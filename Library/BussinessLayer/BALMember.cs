@@ -141,21 +141,21 @@ namespace BussinessLayer
                 new SqlParameter("@address", personalDetails[5]),
                 new SqlParameter("@phone", personalDetails[6]),
                 new SqlParameter("@email", personalDetails[7]),
-                new SqlParameter("@operationType","U"),
                 new SqlParameter("@personalDetailID",personalDetails[8]),
                 new SqlParameter("@contactID",personalDetails[9]),
+                new SqlParameter("@operationType","U"),
             };
 
             if (memberType == 1)
             {
-                pram.Add(new SqlParameter("@teacherID", specificDetails[0]));
+                pram.Add(new SqlParameter("@studentID", specificDetails[0]));
                 pram.Add(new SqlParameter("@sectionName", specificDetails[1]));
                 pram.Add(new SqlParameter("@classID", Convert.ToInt32(specificDetails[2])));
                 return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) > 0 ? true : false;
             }
             else if (memberType == 2)
             {
-                pram.Add(new SqlParameter("@studentID", specificDetails[0]));
+                pram.Add(new SqlParameter("@teacherID", specificDetails[0]));
                 pram.Add(new SqlParameter("@majorSubject", specificDetails[1]));
                 pram.Add(new SqlParameter("@departmentID", Convert.ToInt32(specificDetails[2])));
                 return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) > 0 ? true : false;

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this._CloseButton = new Library.ButtonZ();
             this.txtContactDetailID = new System.Windows.Forms.TextBox();
             this.txtPersonalDetailID = new System.Windows.Forms.TextBox();
-            this._CloseButton = new Library.ButtonZ();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.incLabel5 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
@@ -87,19 +87,28 @@
             this.fileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvAllMember = new System.Windows.Forms.DataGridView();
+            this.btnGet = new IncLibrary.IncButton();
+            this.btnClear = new IncLibrary.IncButton();
+            this.pnlMemberInfo = new IncLibrary.Panel();
+            this.btnUpadate = new IncLibrary.IncButton();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMajorSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMemberType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPersonalDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMemberType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comMemberTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,15 +116,8 @@
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMajorSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGet = new IncLibrary.IncButton();
-            this.btnClear = new IncLibrary.IncButton();
-            this.pnlMemberInfo = new IncLibrary.Panel();
-            this.btnUpadate = new IncLibrary.IncButton();
             this.pnlClose.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpStudent.SuspendLayout();
@@ -131,21 +133,41 @@
             // pnlClose
             // 
             this.pnlClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlClose.Controls.Add(this._CloseButton);
             this.pnlClose.Controls.Add(this.txtContactDetailID);
             this.pnlClose.Controls.Add(this.txtPersonalDetailID);
-            this.pnlClose.Controls.Add(this._CloseButton);
             this.pnlClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlClose.Location = new System.Drawing.Point(0, 0);
             this.pnlClose.Name = "pnlClose";
-            this.pnlClose.Size = new System.Drawing.Size(1361, 29);
+            this.pnlClose.Size = new System.Drawing.Size(1361, 25);
             this.pnlClose.TabIndex = 2;
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1333, 0);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(28, 25);
+            this._CloseButton.TabIndex = 4;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click_1);
             // 
             // txtContactDetailID
             // 
             this.txtContactDetailID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtContactDetailID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactDetailID.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtContactDetailID.Location = new System.Drawing.Point(634, 7);
+            this.txtContactDetailID.Location = new System.Drawing.Point(634, 3);
             this.txtContactDetailID.Name = "txtContactDetailID";
             this.txtContactDetailID.Size = new System.Drawing.Size(35, 18);
             this.txtContactDetailID.TabIndex = 3;
@@ -156,31 +178,11 @@
             this.txtPersonalDetailID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtPersonalDetailID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonalDetailID.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPersonalDetailID.Location = new System.Drawing.Point(506, 6);
+            this.txtPersonalDetailID.Location = new System.Drawing.Point(506, 3);
             this.txtPersonalDetailID.Name = "txtPersonalDetailID";
             this.txtPersonalDetailID.Size = new System.Drawing.Size(59, 18);
             this.txtPersonalDetailID.TabIndex = 2;
             this.txtPersonalDetailID.Visible = false;
-            // 
-            // _CloseButton
-            // 
-            this._CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1328, 1);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(31, 27);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // groupBox1
             // 
@@ -278,6 +280,7 @@
             // cboGender
             // 
             this.cboGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGender.ForeColor = System.Drawing.SystemColors.Window;
             this.cboGender.FormattingEnabled = true;
@@ -289,6 +292,7 @@
             // cboStatus
             // 
             this.cboStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStatus.ForeColor = System.Drawing.SystemColors.Window;
             this.cboStatus.FormattingEnabled = true;
@@ -757,6 +761,7 @@
             // cboMemberType
             // 
             this.cboMemberType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboMemberType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMemberType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMemberType.ForeColor = System.Drawing.SystemColors.Window;
             this.cboMemberType.FormattingEnabled = true;
@@ -816,29 +821,34 @@
             this.dgvAllMember.AllowUserToDeleteRows = false;
             this.dgvAllMember.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvAllMember.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllMember.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllMember.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAllMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
             this.colFirstName,
-            this.colTeacherID,
-            this.colStudentID,
+            this.colLastName,
             this.colClassName,
+            this.colSectionName,
+            this.colMajorSubject,
+            this.colDepartmentName,
+            this.colRoleName,
+            this.colGender,
+            this.colMemberType,
+            this.colStudentID,
             this.colContactID,
             this.colPersonalDetailID,
-            this.colLastName,
-            this.colMemberType,
             this.comMemberTypeID,
-            this.colGender,
             this.colMiddleName,
             this.colGenderID,
             this.colStatusID,
+            this.colTeacherID,
             this.colAddress,
             this.colPhone,
             this.colEmail,
@@ -846,207 +856,33 @@
             this.colUserName,
             this.colPassword,
             this.colRoleID,
-            this.colMajorSubject,
             this.colDepartmentID,
-            this.colDepartmentName,
-            this.colClassID,
-            this.colSectionName});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAllMember.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colClassID});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAllMember.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAllMember.EnableHeadersVisualStyles = false;
             this.dgvAllMember.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvAllMember.Location = new System.Drawing.Point(1, -1);
             this.dgvAllMember.Name = "dgvAllMember";
             this.dgvAllMember.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllMember.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvAllMember.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllMember.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAllMember.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAllMember.Size = new System.Drawing.Size(520, 398);
             this.dgvAllMember.TabIndex = 39;
             this.dgvAllMember.Click += new System.EventHandler(this.dgvAllMember_Click);
-            // 
-            // colFirstName
-            // 
-            this.colFirstName.HeaderText = "FirstName";
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.ReadOnly = true;
-            // 
-            // colTeacherID
-            // 
-            this.colTeacherID.HeaderText = "TeacherID";
-            this.colTeacherID.Name = "colTeacherID";
-            this.colTeacherID.ReadOnly = true;
-            this.colTeacherID.Visible = false;
-            // 
-            // colStudentID
-            // 
-            this.colStudentID.HeaderText = "StudentID";
-            this.colStudentID.Name = "colStudentID";
-            this.colStudentID.ReadOnly = true;
-            this.colStudentID.Visible = false;
-            // 
-            // colClassName
-            // 
-            this.colClassName.HeaderText = "Class Name";
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            this.colClassName.Visible = false;
-            // 
-            // colContactID
-            // 
-            this.colContactID.HeaderText = "Contact ID";
-            this.colContactID.Name = "colContactID";
-            this.colContactID.ReadOnly = true;
-            this.colContactID.Visible = false;
-            // 
-            // colPersonalDetailID
-            // 
-            this.colPersonalDetailID.HeaderText = "PersonalDetailID";
-            this.colPersonalDetailID.Name = "colPersonalDetailID";
-            this.colPersonalDetailID.ReadOnly = true;
-            this.colPersonalDetailID.Visible = false;
-            // 
-            // colLastName
-            // 
-            this.colLastName.HeaderText = "LastName";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.ReadOnly = true;
-            // 
-            // colMemberType
-            // 
-            this.colMemberType.HeaderText = "MemberType";
-            this.colMemberType.Name = "colMemberType";
-            this.colMemberType.ReadOnly = true;
-            // 
-            // comMemberTypeID
-            // 
-            this.comMemberTypeID.HeaderText = "Member Type ID";
-            this.comMemberTypeID.Name = "comMemberTypeID";
-            this.comMemberTypeID.ReadOnly = true;
-            this.comMemberTypeID.Visible = false;
-            // 
-            // colGender
-            // 
-            this.colGender.HeaderText = "Gender";
-            this.colGender.Name = "colGender";
-            this.colGender.ReadOnly = true;
-            // 
-            // colMiddleName
-            // 
-            this.colMiddleName.HeaderText = "MiddleName";
-            this.colMiddleName.Name = "colMiddleName";
-            this.colMiddleName.ReadOnly = true;
-            this.colMiddleName.Visible = false;
-            // 
-            // colGenderID
-            // 
-            this.colGenderID.HeaderText = "GenderID";
-            this.colGenderID.Name = "colGenderID";
-            this.colGenderID.ReadOnly = true;
-            this.colGenderID.Visible = false;
-            // 
-            // colStatusID
-            // 
-            this.colStatusID.HeaderText = "StatusID";
-            this.colStatusID.Name = "colStatusID";
-            this.colStatusID.ReadOnly = true;
-            this.colStatusID.Visible = false;
-            // 
-            // colAddress
-            // 
-            this.colAddress.HeaderText = "Address";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.ReadOnly = true;
-            this.colAddress.Visible = false;
-            // 
-            // colPhone
-            // 
-            this.colPhone.HeaderText = "Phone";
-            this.colPhone.Name = "colPhone";
-            this.colPhone.ReadOnly = true;
-            this.colPhone.Visible = false;
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            this.colEmail.Visible = false;
-            // 
-            // colUserID
-            // 
-            this.colUserID.HeaderText = "UserID";
-            this.colUserID.Name = "colUserID";
-            this.colUserID.ReadOnly = true;
-            this.colUserID.Visible = false;
-            // 
-            // colUserName
-            // 
-            this.colUserName.HeaderText = "UserName";
-            this.colUserName.Name = "colUserName";
-            this.colUserName.ReadOnly = true;
-            this.colUserName.Visible = false;
-            // 
-            // colPassword
-            // 
-            this.colPassword.HeaderText = "Password";
-            this.colPassword.Name = "colPassword";
-            this.colPassword.ReadOnly = true;
-            this.colPassword.Visible = false;
-            // 
-            // colRoleID
-            // 
-            this.colRoleID.HeaderText = "Role";
-            this.colRoleID.Name = "colRoleID";
-            this.colRoleID.ReadOnly = true;
-            this.colRoleID.Visible = false;
-            // 
-            // colMajorSubject
-            // 
-            this.colMajorSubject.HeaderText = "Major Subject";
-            this.colMajorSubject.Name = "colMajorSubject";
-            this.colMajorSubject.ReadOnly = true;
-            this.colMajorSubject.Visible = false;
-            // 
-            // colDepartmentID
-            // 
-            this.colDepartmentID.HeaderText = "DepartmentID";
-            this.colDepartmentID.Name = "colDepartmentID";
-            this.colDepartmentID.ReadOnly = true;
-            this.colDepartmentID.Visible = false;
-            // 
-            // colDepartmentName
-            // 
-            this.colDepartmentName.HeaderText = "Department Name";
-            this.colDepartmentName.Name = "colDepartmentName";
-            this.colDepartmentName.ReadOnly = true;
-            this.colDepartmentName.Visible = false;
-            // 
-            // colClassID
-            // 
-            this.colClassID.HeaderText = "Class ID";
-            this.colClassID.Name = "colClassID";
-            this.colClassID.ReadOnly = true;
-            this.colClassID.Visible = false;
-            // 
-            // colSectionName
-            // 
-            this.colSectionName.HeaderText = "Section Name";
-            this.colSectionName.Name = "colSectionName";
-            this.colSectionName.ReadOnly = true;
-            this.colSectionName.Visible = false;
             // 
             // btnGet
             // 
@@ -1114,6 +950,196 @@
             this.btnUpadate.Text = "Update";
             this.btnUpadate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // colName
+            // 
+            this.colName.FillWeight = 150F;
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 179;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colFirstName.HeaderText = "FirstName";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.ReadOnly = true;
+            this.colFirstName.Visible = false;
+            this.colFirstName.Width = 95;
+            // 
+            // colLastName
+            // 
+            this.colLastName.HeaderText = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.ReadOnly = true;
+            this.colLastName.Visible = false;
+            // 
+            // colClassName
+            // 
+            this.colClassName.HeaderText = "Class Name";
+            this.colClassName.Name = "colClassName";
+            this.colClassName.ReadOnly = true;
+            this.colClassName.Visible = false;
+            // 
+            // colSectionName
+            // 
+            this.colSectionName.HeaderText = "Section Name";
+            this.colSectionName.Name = "colSectionName";
+            this.colSectionName.ReadOnly = true;
+            this.colSectionName.Visible = false;
+            // 
+            // colMajorSubject
+            // 
+            this.colMajorSubject.HeaderText = "Major Subject";
+            this.colMajorSubject.Name = "colMajorSubject";
+            this.colMajorSubject.ReadOnly = true;
+            this.colMajorSubject.Width = 110;
+            // 
+            // colDepartmentName
+            // 
+            this.colDepartmentName.HeaderText = "Department Name";
+            this.colDepartmentName.Name = "colDepartmentName";
+            this.colDepartmentName.ReadOnly = true;
+            this.colDepartmentName.Visible = false;
+            this.colDepartmentName.Width = 95;
+            // 
+            // colRoleName
+            // 
+            this.colRoleName.HeaderText = "Role";
+            this.colRoleName.Name = "colRoleName";
+            this.colRoleName.ReadOnly = true;
+            // 
+            // colGender
+            // 
+            this.colGender.HeaderText = "Gender";
+            this.colGender.Name = "colGender";
+            this.colGender.ReadOnly = true;
+            // 
+            // colMemberType
+            // 
+            this.colMemberType.HeaderText = "MemberType";
+            this.colMemberType.Name = "colMemberType";
+            this.colMemberType.ReadOnly = true;
+            // 
+            // colStudentID
+            // 
+            this.colStudentID.HeaderText = "StudentID";
+            this.colStudentID.Name = "colStudentID";
+            this.colStudentID.ReadOnly = true;
+            this.colStudentID.Visible = false;
+            // 
+            // colContactID
+            // 
+            this.colContactID.HeaderText = "Contact ID";
+            this.colContactID.Name = "colContactID";
+            this.colContactID.ReadOnly = true;
+            this.colContactID.Visible = false;
+            // 
+            // colPersonalDetailID
+            // 
+            this.colPersonalDetailID.HeaderText = "PersonalDetailID";
+            this.colPersonalDetailID.Name = "colPersonalDetailID";
+            this.colPersonalDetailID.ReadOnly = true;
+            this.colPersonalDetailID.Visible = false;
+            // 
+            // comMemberTypeID
+            // 
+            this.comMemberTypeID.HeaderText = "Member Type ID";
+            this.comMemberTypeID.Name = "comMemberTypeID";
+            this.comMemberTypeID.ReadOnly = true;
+            this.comMemberTypeID.Visible = false;
+            // 
+            // colMiddleName
+            // 
+            this.colMiddleName.HeaderText = "MiddleName";
+            this.colMiddleName.Name = "colMiddleName";
+            this.colMiddleName.ReadOnly = true;
+            this.colMiddleName.Visible = false;
+            // 
+            // colGenderID
+            // 
+            this.colGenderID.HeaderText = "GenderID";
+            this.colGenderID.Name = "colGenderID";
+            this.colGenderID.ReadOnly = true;
+            this.colGenderID.Visible = false;
+            // 
+            // colStatusID
+            // 
+            this.colStatusID.HeaderText = "StatusID";
+            this.colStatusID.Name = "colStatusID";
+            this.colStatusID.ReadOnly = true;
+            this.colStatusID.Visible = false;
+            // 
+            // colTeacherID
+            // 
+            this.colTeacherID.HeaderText = "TeacherID";
+            this.colTeacherID.Name = "colTeacherID";
+            this.colTeacherID.ReadOnly = true;
+            this.colTeacherID.Visible = false;
+            // 
+            // colAddress
+            // 
+            this.colAddress.HeaderText = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            this.colAddress.Visible = false;
+            // 
+            // colPhone
+            // 
+            this.colPhone.HeaderText = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            this.colPhone.Visible = false;
+            // 
+            // colEmail
+            // 
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Visible = false;
+            // 
+            // colUserID
+            // 
+            this.colUserID.HeaderText = "UserID";
+            this.colUserID.Name = "colUserID";
+            this.colUserID.ReadOnly = true;
+            this.colUserID.Visible = false;
+            // 
+            // colUserName
+            // 
+            this.colUserName.HeaderText = "UserName";
+            this.colUserName.Name = "colUserName";
+            this.colUserName.ReadOnly = true;
+            this.colUserName.Visible = false;
+            // 
+            // colPassword
+            // 
+            this.colPassword.HeaderText = "Password";
+            this.colPassword.Name = "colPassword";
+            this.colPassword.ReadOnly = true;
+            this.colPassword.Visible = false;
+            // 
+            // colRoleID
+            // 
+            this.colRoleID.HeaderText = "Role";
+            this.colRoleID.Name = "colRoleID";
+            this.colRoleID.ReadOnly = true;
+            this.colRoleID.Visible = false;
+            // 
+            // colDepartmentID
+            // 
+            this.colDepartmentID.HeaderText = "DepartmentID";
+            this.colDepartmentID.Name = "colDepartmentID";
+            this.colDepartmentID.ReadOnly = true;
+            this.colDepartmentID.Visible = false;
+            // 
+            // colClassID
+            // 
+            this.colClassID.HeaderText = "Class ID";
+            this.colClassID.Name = "colClassID";
+            this.colClassID.ReadOnly = true;
+            this.colClassID.Visible = false;
+            // 
             // frmAddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1166,8 +1192,6 @@
         }
 
         #endregion
-
-        private ButtonZ _CloseButton;
         private System.Windows.Forms.Panel pnlClose;
         private System.Windows.Forms.GroupBox groupBox1;
         private IncLibrary.IncLabel incLabel5;
@@ -1226,19 +1250,25 @@
         private IncLibrary.IncButton btnUpadate;
         private System.Windows.Forms.TextBox txtPersonalDetailID;
         private System.Windows.Forms.TextBox txtContactDetailID;
+        private ButtonZ _CloseButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTeacherID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSectionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMajorSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContactID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPersonalDetailID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberType;
         private System.Windows.Forms.DataGridViewTextBoxColumn comMemberTypeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMiddleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeacherID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
@@ -1246,11 +1276,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMajorSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDepartmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSectionName;
     }
 }
 

@@ -31,6 +31,7 @@ namespace Library
                 grpStudent.Visible = true;
                 grpTeacher.Visible = false;
                 grpUser.Visible = false;
+                LoadGridGeneral(1);
                 return;
             }
             else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
@@ -38,6 +39,7 @@ namespace Library
                 grpTeacher.Visible = true;
                 grpStudent.Visible = false;
                 grpUser.Visible = false;
+                LoadGridGeneral(2);
                 return;
             }
             else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
@@ -45,6 +47,7 @@ namespace Library
                 grpUser.Visible = true;
                 grpTeacher.Visible = false;
                 grpStudent.Visible = false;
+                LoadGridGeneral(3);
                 return;
             }
             else
@@ -187,7 +190,11 @@ namespace Library
                     dgvAllMember.Rows[i].Cells["colClassName"].Value = dt.Rows[i]["ClassName"].ToString();
                     dgvAllMember.Rows[i].Cells["colClassID"].Value = dt.Rows[i]["ClassID"].ToString();
                     dgvAllMember.Rows[i].Cells["colSectionName"].Value = dt.Rows[i]["SectionName"].ToString();
-
+                    dgvAllMember.Rows[i].Cells["colMemberType"].Value = cboMemberType.Text == "-- Please Select --" ? string.Empty : cboMemberType.Text;
+                    dgvAllMember.Columns["colMajorSubject"].Visible = false;
+                    dgvAllMember.Columns["colSectionName"].Visible = true;
+                    dgvAllMember.Columns["colRoleName"].Visible = false;
+                    dgvAllMember.Columns["colDepartmentName"].Visible = false;
                 }
 
             }
@@ -200,7 +207,11 @@ namespace Library
                     dgvAllMember.Rows[i].Cells["colMajorSubject"].Value = dt.Rows[i]["MajorSubject"].ToString();
                     dgvAllMember.Rows[i].Cells["colDepartmentName"].Value = dt.Rows[i]["DepartmentName"].ToString();
                     dgvAllMember.Rows[i].Cells["colDepartmentID"].Value = dt.Rows[i]["DepartmentID"].ToString();
-
+                    dgvAllMember.Rows[i].Cells["colMemberType"].Value = cboMemberType.Text == "-- Please Select --" ? string.Empty : cboMemberType.Text;
+                    dgvAllMember.Columns["colMajorSubject"].Visible = true;
+                    dgvAllMember.Columns["colDepartmentName"].Visible = true;
+                    dgvAllMember.Columns["colSectionName"].Visible = false;
+                    dgvAllMember.Columns["colRoleName"].Visible = false;
                 }
 
             }
@@ -212,8 +223,12 @@ namespace Library
                     dgvAllMember.Rows[i].Cells["colUserID"].Value = dt.Rows[i]["UserID"].ToString();
                     dgvAllMember.Rows[i].Cells["colUserName"].Value = dt.Rows[i]["UserName"].ToString();
                     dgvAllMember.Rows[i].Cells["colRoleID"].Value = dt.Rows[i]["RoleID"].ToString();
-                    dgvAllMember.Rows[i].Cells["colMemberType"].Value = dt.Rows[i]["MemberType"].ToString();
-
+                    dgvAllMember.Rows[i].Cells["colMemberType"].Value = cboMemberType.Text=="-- Please Select --"?string.Empty:cboMemberType.Text;
+                    dgvAllMember.Rows[i].Cells["colRoleName"].Value = dt.Rows[i]["RoleName"].ToString();
+                    dgvAllMember.Columns["colMajorSubject"].Visible = false;
+                    dgvAllMember.Columns["colRoleName"].Visible = true;
+                    dgvAllMember.Columns["colDepartmentName"].Visible = false;
+                    dgvAllMember.Columns["colSectionName"].Visible = false;
                 }
 
             }
@@ -228,6 +243,7 @@ namespace Library
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 dgvAllMember.Rows.Add();
+                dgvAllMember.Rows[i].Cells["colName"].Value = dt.Rows[i]["FirstName"].ToString() + " " + dt.Rows[i]["LastName"].ToString();
                 dgvAllMember.Rows[i].Cells["colFirstName"].Value = dt.Rows[i]["FirstName"].ToString();
                 dgvAllMember.Rows[i].Cells["colMiddleName"].Value = dt.Rows[i]["MiddleName"].ToString();
                 dgvAllMember.Rows[i].Cells["colLastName"].Value = dt.Rows[i]["LastName"].ToString();
@@ -272,6 +288,7 @@ namespace Library
                     if (balMember.UpdateMember(memberType, personalDetails, specificDetails))
                     {
                         MessageBox.Show("Student updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
                     }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
@@ -282,6 +299,9 @@ namespace Library
                     if (balMember.UpdateMember(memberType, personalDetails, specificDetails))
                     {
                         MessageBox.Show("Teacher Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
+                        LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
+                        ClearControls();
                     }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
@@ -293,6 +313,8 @@ namespace Library
                     if (balMember.UpdateMember(memberType, personalDetails, specificDetails))
                     {
                         MessageBox.Show("User Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
+                        ClearControls();
                     }
                 }
                 else
@@ -304,8 +326,6 @@ namespace Library
             {
                 MessageBox.Show("Please Save Detail First", "Falure", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
-            ClearControls();
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -335,6 +355,7 @@ namespace Library
                     if (balMember.AddMember(memberType, personalDetails, specificDetails))
                     {
                         MessageBox.Show("Student Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
                     }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
@@ -346,6 +367,7 @@ namespace Library
                     if (balMember.AddMember(memberType, personalDetails, specificDetails))
                     {
                         MessageBox.Show("Teacher Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
                     }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
@@ -358,6 +380,7 @@ namespace Library
                     if (balMember.AddMember(memberType, personalDetails, specificDetails))
                     {
                         MessageBox.Show("User Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
                     }
                 }
                 else
@@ -532,6 +555,11 @@ namespace Library
                 return;
             }
 
+        }
+
+        private void _CloseButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

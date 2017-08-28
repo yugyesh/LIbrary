@@ -72,7 +72,7 @@
             // 
             this.addMemberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addMemberToolStripMenuItem.Name = "addMemberToolStripMenuItem";
-            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.addMemberToolStripMenuItem.Text = "Add Member";
             this.addMemberToolStripMenuItem.Click += new System.EventHandler(this.addMemberToolStripMenuItem_Click);
             // 
@@ -80,7 +80,7 @@
             // 
             this.addBooksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
-            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
@@ -127,6 +127,7 @@
             this.toolBookIssue.Size = new System.Drawing.Size(67, 59);
             this.toolBookIssue.Text = "Book Issue";
             this.toolBookIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolBookIssue.Click += new System.EventHandler(this.toolBookIssue_Click);
             // 
             // toolBookReturn
             // 
@@ -136,6 +137,7 @@
             this.toolBookReturn.Size = new System.Drawing.Size(76, 59);
             this.toolBookReturn.Text = "Book Return";
             this.toolBookReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolBookReturn.Click += new System.EventHandler(this.toolBookReturn_Click);
             // 
             // toolLogout
             // 
