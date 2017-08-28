@@ -20,7 +20,7 @@ namespace Library
 
         private void _CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         BALUser balUser = new BALUser();
         private void btnLogin_Click(object sender, EventArgs e)
@@ -33,8 +33,9 @@ namespace Library
                     MessageBox.Show("Login Successful", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain mainForm = new frmMain();
                     mainForm.statUserName.Text = txtUserName.Text;
-                    this.Hide();
+                    mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
                     mainForm.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -46,7 +47,7 @@ namespace Library
 
         private void btnCancle_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         private bool ValidateFields()
         {
@@ -81,7 +82,7 @@ namespace Library
             if (dt != null)
             {
                 DataRow dr = dt.NewRow();
-                dr["RoleName"] = "User Type";
+                dr["RoleName"] = "-- Please Select --";
                 dt.Rows.InsertAt(dr, 0);
                 cboUserType.DataSource = dt;
                 cboUserType.ValueMember = "RoleID";

@@ -33,14 +33,15 @@
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.issueBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolAddMember = new System.Windows.Forms.ToolStripButton();
+            this.toolAddBooks = new System.Windows.Forms.ToolStripButton();
             this.toolBookIssue = new System.Windows.Forms.ToolStripButton();
             this.toolBookReturn = new System.Windows.Forms.ToolStripButton();
             this.toolLogout = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statUserID = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statRoleID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -50,8 +51,7 @@
             // menuStripZ1
             // 
             this.menuStripZ1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.masterToolStripMenuItem,
-            this.issueBookToolStripMenuItem});
+            this.masterToolStripMenuItem});
             this.menuStripZ1.Location = new System.Drawing.Point(0, 36);
             this.menuStripZ1.Name = "menuStripZ1";
             this.menuStripZ1.Size = new System.Drawing.Size(1034, 24);
@@ -84,18 +84,12 @@
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
-            // issueBookToolStripMenuItem
-            // 
-            this.issueBookToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.issueBookToolStripMenuItem.Name = "issueBookToolStripMenuItem";
-            this.issueBookToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.issueBookToolStripMenuItem.Text = "Issue Book";
-            this.issueBookToolStripMenuItem.Click += new System.EventHandler(this.issueBookToolStripMenuItem_Click);
-            // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolAddMember,
+            this.toolAddBooks,
             this.toolBookIssue,
             this.toolBookReturn,
             this.toolLogout});
@@ -104,6 +98,26 @@
             this.toolStrip1.Size = new System.Drawing.Size(1034, 62);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolAddMember
+            // 
+            this.toolAddMember.Image = ((System.Drawing.Image)(resources.GetObject("toolAddMember.Image")));
+            this.toolAddMember.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAddMember.Name = "toolAddMember";
+            this.toolAddMember.Size = new System.Drawing.Size(81, 59);
+            this.toolAddMember.Text = "Add Member";
+            this.toolAddMember.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolAddMember.Click += new System.EventHandler(this.toolAddMember_Click);
+            // 
+            // toolAddBooks
+            // 
+            this.toolAddBooks.Image = ((System.Drawing.Image)(resources.GetObject("toolAddBooks.Image")));
+            this.toolAddBooks.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAddBooks.Name = "toolAddBooks";
+            this.toolAddBooks.Size = new System.Drawing.Size(68, 59);
+            this.toolAddBooks.Text = "Add Books";
+            this.toolAddBooks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolAddBooks.Click += new System.EventHandler(this.toolAddBooks_Click);
             // 
             // toolBookIssue
             // 
@@ -137,7 +151,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statUserName,
-            this.statUserID,
+            this.statRoleID,
             this.statDate});
             this.statusStrip1.Location = new System.Drawing.Point(0, 526);
             this.statusStrip1.Name = "statusStrip1";
@@ -152,11 +166,12 @@
             this.statUserName.Size = new System.Drawing.Size(62, 17);
             this.statUserName.Text = "UserName";
             // 
-            // statUserID
+            // statRoleID
             // 
-            this.statUserID.Name = "statUserID";
-            this.statUserID.Size = new System.Drawing.Size(41, 17);
-            this.statUserID.Text = "UserID";
+            this.statRoleID.Name = "statRoleID";
+            this.statRoleID.Size = new System.Drawing.Size(41, 17);
+            this.statRoleID.Text = "RoleID";
+            this.statRoleID.Visible = false;
             // 
             // statDate
             // 
@@ -178,6 +193,7 @@
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.Controls.SetChildIndex(this.menuStripZ1, 0);
             this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.Controls.SetChildIndex(this.statusStrip1, 0);
@@ -200,12 +216,13 @@
         private System.Windows.Forms.ToolStripMenuItem addMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripMenuItem issueBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolBookIssue;
         private System.Windows.Forms.ToolStripButton toolBookReturn;
         private System.Windows.Forms.ToolStripButton toolLogout;
         public System.Windows.Forms.ToolStripStatusLabel statUserName;
-        public System.Windows.Forms.ToolStripStatusLabel statUserID;
+        public System.Windows.Forms.ToolStripStatusLabel statRoleID;
         public System.Windows.Forms.ToolStripStatusLabel statDate;
+        private System.Windows.Forms.ToolStripButton toolAddMember;
+        private System.Windows.Forms.ToolStripButton toolAddBooks;
     }
 }

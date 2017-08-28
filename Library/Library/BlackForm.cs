@@ -291,7 +291,7 @@ namespace Library
 
         private void _CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
 

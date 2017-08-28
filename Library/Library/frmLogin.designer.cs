@@ -103,7 +103,7 @@
             this.groupBox1.Location = new System.Drawing.Point(31, 85);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(331, 372);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtPassword
@@ -115,7 +115,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(174, 26);
-            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TabIndex = 1;
             // 
             // txtUserName
             // 
@@ -125,18 +125,19 @@
             this.txtUserName.Location = new System.Drawing.Point(125, 51);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(174, 26);
-            this.txtUserName.TabIndex = 13;
+            this.txtUserName.TabIndex = 0;
             // 
             // cboUserType
             // 
             this.cboUserType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUserType.ForeColor = System.Drawing.SystemColors.Window;
             this.cboUserType.FormattingEnabled = true;
             this.cboUserType.Location = new System.Drawing.Point(125, 175);
             this.cboUserType.Name = "cboUserType";
             this.cboUserType.Size = new System.Drawing.Size(174, 28);
-            this.cboUserType.TabIndex = 15;
+            this.cboUserType.TabIndex = 2;
             // 
             // btnCancle
             // 
@@ -152,7 +153,7 @@
             this.btnCancle.PreviousControl = null;
             this.btnCancle.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnCancle.Size = new System.Drawing.Size(82, 39);
-            this.btnCancle.TabIndex = 18;
+            this.btnCancle.TabIndex = 4;
             this.btnCancle.Text = "Cancle";
             this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
@@ -170,7 +171,7 @@
             this.btnLogin.PreviousControl = null;
             this.btnLogin.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnLogin.Size = new System.Drawing.Size(82, 39);
-            this.btnLogin.TabIndex = 16;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

@@ -246,5 +246,10 @@ namespace Library
             }
 
         }
+
+        private void _CloseButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
