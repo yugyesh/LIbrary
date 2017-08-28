@@ -37,5 +37,51 @@ namespace BussinessLayer
         {
             return DAO.GetTable("sp_GetInfoBurrower", null, CommandType.StoredProcedure);
         }
+        public DataTable GetBookInfo(string ISBN)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@infoType","B"),
+            };
+            return DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
+        }
+        public bool CheckBookAvailibity(string ISBN)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@infoType","C"),
+            };
+            DataTable dt = new DataTable();
+            dt= DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
+            return dt.Rows.Count > 0 ? true : false;
+        }
+        public bool IssueBook(string ISBN,string[] burrowerDetails)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@burrowerID",burrowerDetails[0]),
+                new SqlParameter("@burrowedDate",Convert.ToDateTime(burrowerDetails[1])),
+                new SqlParameter("@dueDate",Convert.ToDateTime(burrowerDetails[2])),
+                new SqlParameter("@isStudent",Convert.ToBoolean(Convert.ToInt32(burrowerDetails[3]))),
+                new SqlParameter("@issued",Convert.ToBoolean(Convert.ToInt32(burrowerDetails[4]))),
+                new SqlParameter("@operation","I"),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("sp_BookIssueReturn", pram, CommandType.StoredProcedure);
+            return dt.Rows.Count > 0 ? true : false;
+        }
+        public bool ReturnBook(string ISBN, string burrowerID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@burrowerID",burrowerID),
+                new SqlParameter("@issued",Convert.ToBoolean(0)),
+            };
+            return DAO.IUD("sp_BookIssueReturn", pram, CommandType.StoredProcedure) > 0 ? true:false ;
+        }
     }
 }

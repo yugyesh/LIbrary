@@ -37,11 +37,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolBookIssue = new System.Windows.Forms.ToolStripButton();
             this.toolBookReturn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.statUserID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -101,7 +101,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 60);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1034, 72);
+            this.toolStrip1.Size = new System.Drawing.Size(1034, 62);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -110,7 +110,7 @@
             this.toolBookIssue.Image = ((System.Drawing.Image)(resources.GetObject("toolBookIssue.Image")));
             this.toolBookIssue.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBookIssue.Name = "toolBookIssue";
-            this.toolBookIssue.Size = new System.Drawing.Size(67, 69);
+            this.toolBookIssue.Size = new System.Drawing.Size(67, 59);
             this.toolBookIssue.Text = "Book Issue";
             this.toolBookIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -119,9 +119,18 @@
             this.toolBookReturn.Image = ((System.Drawing.Image)(resources.GetObject("toolBookReturn.Image")));
             this.toolBookReturn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBookReturn.Name = "toolBookReturn";
-            this.toolBookReturn.Size = new System.Drawing.Size(76, 69);
+            this.toolBookReturn.Size = new System.Drawing.Size(76, 59);
             this.toolBookReturn.Text = "Book Return";
             this.toolBookReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(44, 59);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // statusStrip1
             // 
@@ -154,15 +163,6 @@
             this.statDate.Name = "statDate";
             this.statDate.Size = new System.Drawing.Size(31, 17);
             this.statDate.Text = "Date";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(44, 69);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // frmMain
             // 
@@ -199,12 +199,12 @@
         private System.Windows.Forms.ToolStripMenuItem addMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addBooksToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel statUserName;
-        private System.Windows.Forms.ToolStripStatusLabel statUserID;
-        private System.Windows.Forms.ToolStripStatusLabel statDate;
         private System.Windows.Forms.ToolStripMenuItem issueBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolBookIssue;
         private System.Windows.Forms.ToolStripButton toolBookReturn;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        public System.Windows.Forms.ToolStripStatusLabel statUserName;
+        public System.Windows.Forms.ToolStripStatusLabel statUserID;
+        public System.Windows.Forms.ToolStripStatusLabel statDate;
     }
 }

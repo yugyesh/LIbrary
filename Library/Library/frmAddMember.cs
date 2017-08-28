@@ -508,7 +508,7 @@ namespace Library
             int memberType = Convert.ToInt32(cboMemberType.SelectedValue.ToString());
             if (memberType == 1)
             {
-                txtSection.Text = dgvAllMember.CurrentRow.Cells["colSection"].Value.ToString();
+                txtSection.Text = dgvAllMember.CurrentRow.Cells["colSectionName"].Value.ToString();
                 txtStudentID.Text = dgvAllMember.CurrentRow.Cells["colStudentID"].Value.ToString();
                 cboClass.SelectedValue = dgvAllMember.CurrentRow.Cells["colClassID"].Value.ToString();
             }

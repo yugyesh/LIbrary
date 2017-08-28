@@ -29,18 +29,19 @@ namespace Library
             
             if (txtISBN.Text.Length==13)
             {
+                if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
+                {
+                    txtISBN.Focus();
+                    MessageBox.Show("Book Not Registered YET!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtISBN.Clear();
+                    return;
+                }
                 dgvISBNList.Rows.Add();
                 dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
                 dgvISBNList.Rows[length].Cells["colSN"].Value = length+1;
                 //length = dgvISBNList.Rows.Count-1;
                 length = length + 1;
-                txtISBN.Text = string.Empty;
-                return;
-                //length = dgvISBNList.Rows.Count;
-            }
-            else
-            {
-                return;
+                txtISBN.Clear();
             }
         }
 
@@ -73,6 +74,10 @@ namespace Library
 
         private void lblRemoveBook_Click(object sender, EventArgs e)
         {
+            if (dgvISBNList.CurrentRow.Cells["colISBN"].Value== null)
+            {
+                return;
+            }
             dgvISBNList.Rows.RemoveAt(dgvISBNList.CurrentRow.Index);
             txtISBN.Focus();
             length = length - 1;
@@ -190,6 +195,56 @@ namespace Library
             };
 
             func(Controls);
+        }
+
+        private void dgvISBNList_Click(object sender, EventArgs e)
+        {
+            dgvInfoGeneral.Rows.Clear();
+            if (dgvISBNList.CurrentRow.Cells["colISBN"].Value==null)
+            {
+                return;
+            }
+            DataTable dtBookInfo = new DataTable();
+            dtBookInfo=balIssueReturn.GetBookInfo(dgvISBNList.CurrentRow.Cells["colISBN"].Value.ToString());
+            //populating the Book detail in data grid general
+            string[] subject = new string[] { "Book Title", "Author", "ClassName" };
+            for (int i = 0; i < dtBookInfo.Columns.Count; i++)
+            {
+                dgvInfoGeneral.Rows.Add();
+                dgvInfoGeneral.Rows[i].Cells["colSubject"].Value = subject[i];
+                dgvInfoGeneral.Rows[i].Cells["colInfo"].Value = dtBookInfo.Rows[0][i].ToString();
+            }
+            lblWhichInfo.Text = "Book Details" + "      "+"ISBN"+" : "+dgvISBNList.CurrentRow.Cells["colISBN"].Value.ToString();
+            //dgvInfoGeneral.Rows[0].Cells[]
+        }
+
+        private void btnIssue_Click(object sender, EventArgs e)
+        {
+            DateTime burrowedDate = DateTime.Today;
+            DateTime dueDate = burrowedDate.AddDays(10);
+            string[] burrowrInfo = new string[]
+            {
+                txtBurrowerID.Text,
+                //provider id
+                //"unknown",
+                burrowedDate.ToString(),
+                dueDate.ToString(),
+                chkBurrower.Checked==true?"1":"0",
+                "1",
+            };
+            for (int i = 0; i < dgvISBNList.Rows.Count; i++)
+            {
+                balIssueReturn.IssueBook(dgvISBNList.Rows[0].Cells["colISBN"].Value.ToString(), burrowrInfo);
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvISBNList.Rows.Count; i++)
+            {
+                balIssueReturn.ReturnBook(dgvISBNList.Rows[0].Cells["colISBN"].Value.ToString(),txtBurrowerID.Text);
+            }
+
         }
     }
 }

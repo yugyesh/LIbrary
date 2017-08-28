@@ -29,6 +29,7 @@ namespace Library
             if (!ValidateFields())
             {
                 frmMain mainForm = new frmMain();
+                mainForm.statUserName.Text = txtUserName.Text;
             }
         }
 

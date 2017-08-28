@@ -110,7 +110,7 @@ namespace Library
                     BookDetails.Add(cboTag.SelectedValue.ToString());
                     BookDetails.Add(txtAuthor.Text);
                     BookDetails.Add("0");
-                    BookDetails.Add(txtCost.Text);
+                    BookDetails.Add(txtCost.Text==string.Empty?"0":txtCost.Text);
                     BookDetails.Add(txtBookCopies.Text);
                     BookDetails.Add(cboClass.SelectedValue.ToString());
                     if (balBook.AddBookDetails(BookDetails))
@@ -224,8 +224,8 @@ namespace Library
         {
             if (chkRegistered.Checked == false)
             {
-                cboStatus.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value == null ? 0 : dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value;
-                txtISBN.Text = dgvBooksInfo.CurrentRow.Cells["colISBN"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colISBN"].Value.ToString();
+                //cboStatus.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value == null ? 0 : dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value;
+                //txtISBN.Text = dgvBooksInfo.CurrentRow.Cells["colISBN"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colISBN"].Value.ToString();
                 txtBookIDSearch.Text = dgvBooksInfo.CurrentRow.Cells["colBookDetailID"].Value.ToString();
              }
             else
@@ -328,7 +328,7 @@ namespace Library
         }
         private void txtPublisherName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != '.'))
+            if (char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }

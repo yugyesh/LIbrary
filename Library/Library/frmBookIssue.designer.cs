@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,7 +41,7 @@
             this.pnlClose = new System.Windows.Forms.Panel();
             this._CloseButton = new Library.ButtonZ();
             this.lblBurrowerName = new IncLibrary.IncLabel();
-            this.btnNew = new IncLibrary.IncButton();
+            this.btnReturn = new IncLibrary.IncButton();
             this.txtBurrowerName = new System.Windows.Forms.TextBox();
             this.dgvBurrowerInfo = new System.Windows.Forms.DataGridView();
             this.colBurrowerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +68,10 @@
             this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picMember = new System.Windows.Forms.PictureBox();
             this.lblBurrowerNameImg = new IncLibrary.IncLabel();
-            this.incButton1 = new IncLibrary.IncButton();
-            this.dgvInfo = new System.Windows.Forms.DataGridView();
+            this.btnIssue = new IncLibrary.IncButton();
+            this.dgvInfoGeneral = new System.Windows.Forms.DataGridView();
+            this.colSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBurrowedBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +80,8 @@
             this.btnClear = new IncLibrary.IncButton();
             this.lblRemoveBook = new IncLibrary.IncLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIssueorReturn = new System.Windows.Forms.CheckBox();
             this.pnlClose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBurrowerInfo)).BeginInit();
             this.pnlBook.SuspendLayout();
@@ -84,9 +89,10 @@
             this.pnlISBN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvISBNList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoGeneral)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -132,22 +138,23 @@
             this.lblBurrowerName.Text = "Student Name";
             this.lblBurrowerName.ValueByOrchestrator = "Student Name";
             // 
-            // btnNew
+            // btnReturn
             // 
-            this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnNew.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.btnNew.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnNew.Location = new System.Drawing.Point(1083, 513);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.NextControl = null;
-            this.btnNew.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnNew.PreviousControl = null;
-            this.btnNew.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnNew.Size = new System.Drawing.Size(92, 42);
-            this.btnNew.TabIndex = 46;
-            this.btnNew.Text = "Return";
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnReturn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnReturn.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnReturn.Location = new System.Drawing.Point(1083, 513);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.NextControl = null;
+            this.btnReturn.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnReturn.PreviousControl = null;
+            this.btnReturn.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnReturn.Size = new System.Drawing.Size(92, 42);
+            this.btnReturn.TabIndex = 46;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // txtBurrowerName
             // 
@@ -269,6 +276,7 @@
             // pnlBook
             // 
             this.pnlBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.pnlBook.Controls.Add(this.cboDepartment);
             this.pnlBook.Controls.Add(this.lblBurrowerID);
             this.pnlBook.Controls.Add(this.cboClass);
             this.pnlBook.Controls.Add(this.txtBurrowerID);
@@ -286,7 +294,7 @@
             this.cboDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.cboDepartment.ForeColor = System.Drawing.SystemColors.Window;
             this.cboDepartment.FormattingEnabled = true;
-            this.cboDepartment.Location = new System.Drawing.Point(230, 20);
+            this.cboDepartment.Location = new System.Drawing.Point(211, 28);
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(148, 24);
             this.cboDepartment.TabIndex = 59;
@@ -370,7 +378,6 @@
             // pnlStudentInfo
             // 
             this.pnlStudentInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlStudentInfo.Controls.Add(this.cboDepartment);
             this.pnlStudentInfo.Controls.Add(this.dgvBurrowerInfo);
             this.pnlStudentInfo.Location = new System.Drawing.Point(13, 135);
             this.pnlStudentInfo.Name = "pnlStudentInfo";
@@ -443,6 +450,7 @@
             this.dgvISBNList.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvISBNList.Size = new System.Drawing.Size(216, 312);
             this.dgvISBNList.TabIndex = 56;
+            this.dgvISBNList.Click += new System.EventHandler(this.dgvISBNList_Click);
             // 
             // colSN
             // 
@@ -480,28 +488,29 @@
             this.lblBurrowerNameImg.Text = "Student Name";
             this.lblBurrowerNameImg.ValueByOrchestrator = "Student Name";
             // 
-            // incButton1
+            // btnIssue
             // 
-            this.incButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.incButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incButton1.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.incButton1.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.incButton1.Location = new System.Drawing.Point(1237, 513);
-            this.incButton1.Name = "incButton1";
-            this.incButton1.NextControl = null;
-            this.incButton1.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.incButton1.PreviousControl = null;
-            this.incButton1.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.incButton1.Size = new System.Drawing.Size(92, 42);
-            this.incButton1.TabIndex = 46;
-            this.incButton1.Text = "Issue";
+            this.btnIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnIssue.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnIssue.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnIssue.Location = new System.Drawing.Point(1237, 513);
+            this.btnIssue.Name = "btnIssue";
+            this.btnIssue.NextControl = null;
+            this.btnIssue.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnIssue.PreviousControl = null;
+            this.btnIssue.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnIssue.Size = new System.Drawing.Size(92, 42);
+            this.btnIssue.TabIndex = 46;
+            this.btnIssue.Text = "Issue";
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
-            // dgvInfo
+            // dgvInfoGeneral
             // 
-            this.dgvInfo.AllowUserToDeleteRows = false;
-            this.dgvInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.dgvInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInfoGeneral.AllowUserToDeleteRows = false;
+            this.dgvInfoGeneral.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvInfoGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -509,9 +518,11 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInfoGeneral.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvInfoGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoGeneral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSubject,
+            this.colInfo,
             this.dataGridViewTextBoxColumn1,
             this.colBurrowedBook,
             this.colBurrowedDate});
@@ -522,12 +533,12 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInfo.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvInfo.EnableHeadersVisualStyles = false;
-            this.dgvInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvInfo.Location = new System.Drawing.Point(3, 3);
-            this.dgvInfo.Name = "dgvInfo";
-            this.dgvInfo.ReadOnly = true;
+            this.dgvInfoGeneral.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvInfoGeneral.EnableHeadersVisualStyles = false;
+            this.dgvInfoGeneral.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvInfoGeneral.Location = new System.Drawing.Point(3, 3);
+            this.dgvInfoGeneral.Name = "dgvInfoGeneral";
+            this.dgvInfoGeneral.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -535,10 +546,22 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvInfo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvInfo.Size = new System.Drawing.Size(395, 422);
-            this.dgvInfo.TabIndex = 57;
+            this.dgvInfoGeneral.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvInfoGeneral.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvInfoGeneral.Size = new System.Drawing.Size(395, 422);
+            this.dgvInfoGeneral.TabIndex = 57;
+            // 
+            // colSubject
+            // 
+            this.colSubject.HeaderText = "Subject";
+            this.colSubject.Name = "colSubject";
+            this.colSubject.ReadOnly = true;
+            // 
+            // colInfo
+            // 
+            this.colInfo.HeaderText = "Info";
+            this.colInfo.Name = "colInfo";
+            this.colInfo.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -563,7 +586,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dgvInfo);
+            this.panel1.Controls.Add(this.dgvInfoGeneral);
             this.panel1.Location = new System.Drawing.Point(927, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 432);
@@ -572,9 +595,9 @@
             // lblWhichInfo
             // 
             this.lblWhichInfo.AutoSize = true;
-            this.lblWhichInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline);
+            this.lblWhichInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblWhichInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblWhichInfo.Location = new System.Drawing.Point(1116, 52);
+            this.lblWhichInfo.Location = new System.Drawing.Point(966, 55);
             this.lblWhichInfo.Name = "lblWhichInfo";
             this.lblWhichInfo.Readonly = false;
             this.lblWhichInfo.Size = new System.Drawing.Size(31, 17);
@@ -622,6 +645,25 @@
             this.panel2.Size = new System.Drawing.Size(37, 45);
             this.panel2.TabIndex = 58;
             // 
+            // erpGeneral
+            // 
+            this.erpGeneral.ContainerControl = this;
+            // 
+            // lblIssueorReturn
+            // 
+            this.lblIssueorReturn.AutoSize = true;
+            this.lblIssueorReturn.BackColor = System.Drawing.Color.Red;
+            this.lblIssueorReturn.Checked = true;
+            this.lblIssueorReturn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.lblIssueorReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIssueorReturn.ForeColor = System.Drawing.Color.White;
+            this.lblIssueorReturn.Location = new System.Drawing.Point(669, 22);
+            this.lblIssueorReturn.Name = "lblIssueorReturn";
+            this.lblIssueorReturn.Size = new System.Drawing.Size(83, 30);
+            this.lblIssueorReturn.TabIndex = 53;
+            this.lblIssueorReturn.Text = "Issue";
+            this.lblIssueorReturn.UseVisualStyleBackColor = true;
+            // 
             // frmBookIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,6 +672,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
+            this.Controls.Add(this.lblIssueorReturn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblWhichInfo);
@@ -642,8 +685,8 @@
             this.Controls.Add(this.pnlBook);
             this.Controls.Add(this.incLabel3);
             this.Controls.Add(this.txtISBN);
-            this.Controls.Add(this.incButton1);
-            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.btnIssue);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.pnlClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -660,9 +703,10 @@
             this.pnlISBN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvISBNList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoGeneral)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,7 +717,7 @@
         private ButtonZ _CloseButton;
         private System.Windows.Forms.Panel pnlClose;
         private IncLibrary.IncLabel lblBurrowerName;
-        private IncLibrary.IncButton btnNew;
+        private IncLibrary.IncButton btnReturn;
         private System.Windows.Forms.TextBox txtBurrowerName;
         private System.Windows.Forms.DataGridView dgvBurrowerInfo;
         private System.Windows.Forms.Panel pnlBook;
@@ -688,16 +732,13 @@
         private System.Windows.Forms.Panel pnlISBN;
         private System.Windows.Forms.PictureBox picMember;
         private IncLibrary.IncLabel lblBurrowerNameImg;
-        private IncLibrary.IncButton incButton1;
+        private IncLibrary.IncButton btnIssue;
         private System.Windows.Forms.DataGridView dgvISBNList;
-        private System.Windows.Forms.DataGridView dgvInfo;
+        private System.Windows.Forms.DataGridView dgvInfoGeneral;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedBook;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedDate;
         private IncLibrary.IncLabel lblWhichInfo;
         private IncLibrary.IncButton btnClear;
         private IncLibrary.IncLabel lblRemoveBook;
@@ -710,6 +751,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colBookIssued;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedDate;
+        private System.Windows.Forms.ErrorProvider erpGeneral;
+        private System.Windows.Forms.CheckBox lblIssueorReturn;
     }
 }
 
