@@ -94,9 +94,14 @@ namespace Library
         //Button CLick Events
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidateField())
+            if (!ValidateField() && chkRegistered.Checked == true)
             {
-                if (chkRegistered.Checked == true && txtBookID.Text.Trim()==string.Empty)
+                if (txtBookID.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
                 {
                     int lastBookNo = balBook.CountBookDetails();
                     string bookDetailID = Helper.GetBookID(txtBookTitle.Text, txtAuthor.Text, lastBookNo);
@@ -110,7 +115,7 @@ namespace Library
                     BookDetails.Add(cboTag.SelectedValue.ToString());
                     BookDetails.Add(txtAuthor.Text);
                     BookDetails.Add("0");
-                    BookDetails.Add(txtCost.Text==string.Empty?"0":txtCost.Text);
+                    BookDetails.Add(txtCost.Text == string.Empty ? "0" : txtCost.Text);
                     BookDetails.Add(txtBookCopies.Text);
                     BookDetails.Add(cboClass.SelectedValue.ToString());
                     if (balBook.AddBookDetails(BookDetails))
@@ -119,12 +124,17 @@ namespace Library
                         return;
                     }
                 }
+
+            }
+            else
+            {
+                if (balBook.CheckISBN(txtISBN.Text))
+                {
+                    MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 else
                 {
-                    //if (balBook.CheckISBN(txtISBN.Text))
-                    //{
-                    //    return;
-                    //}
                     List<string> BookInfo = new List<string>();
                     BookInfo.Add(txtISBN.Text);
                     BookInfo.Add(cboStatus.SelectedValue.ToString());
@@ -137,6 +147,7 @@ namespace Library
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
+
                 }
 
             }
@@ -144,9 +155,14 @@ namespace Library
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!ValidateField())
+            if (!ValidateField() && chkRegistered.Checked == true)
             {
-                if (chkRegistered.Checked == true && txtBookID.Text != string.Empty)
+                if (txtBookID.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
                 {
                     List<string> BookDetails = new List<string>();
                     BookDetails.Add(txtBookID.Text);
@@ -167,30 +183,30 @@ namespace Library
                         return;
                     }
                 }
-                else
+            }
+            else
+            {
+                if (balBook.CheckISBN(txtISBN.Text))
                 {
-                    bool text = balBook.CheckISBN(txtISBN.Text);
-                    if (!balBook.CheckISBN(txtISBN.Text))
-                    {
-                        return;
-                    }
-                    List<string> BookInfo = new List<string>();
-                    BookInfo.Add(txtISBN.Text);
-                    BookInfo.Add(cboStatus.SelectedValue.ToString());
-                    BookInfo.Add(txtBookIDSearch.Text);
-                    BookInfo.Add(DateTime.Today.ToString());
-                    BookInfo.Add("");
-                    BookInfo.Add("");
-                    if (balBook.UpdateBook(BookInfo))
-                    {
-                        MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                    MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-
+                List<string> BookInfo = new List<string>();
+                BookInfo.Add(txtISBN.Text);
+                BookInfo.Add(cboStatus.SelectedValue.ToString());
+                BookInfo.Add(txtBookIDSearch.Text);
+                BookInfo.Add(DateTime.Today.ToString());
+                BookInfo.Add("");
+                BookInfo.Add("");
+                if (balBook.UpdateBook(BookInfo))
+                {
+                    MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
             }
 
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearGridView();
@@ -227,7 +243,7 @@ namespace Library
                 //cboStatus.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value == null ? 0 : dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value;
                 //txtISBN.Text = dgvBooksInfo.CurrentRow.Cells["colISBN"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colISBN"].Value.ToString();
                 txtBookIDSearch.Text = dgvBooksInfo.CurrentRow.Cells["colBookDetailID"].Value.ToString();
-             }
+            }
             else
             {
                 txtBookID.Text = dgvBooksInfo.CurrentRow.Cells["colBookDetailID"].Value.ToString();
@@ -384,7 +400,7 @@ namespace Library
         }
 
         //Maintaining integrity of a textbox
-          private void txtBookCopies_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtBookCopies_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

@@ -44,11 +44,16 @@
             this.toolAddBooks = new System.Windows.Forms.ToolStripButton();
             this.toolBookIssue = new System.Windows.Forms.ToolStripButton();
             this.toolBookReturn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolLogout = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.statRoleID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -59,6 +64,7 @@
             this.menuStripZ1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.masterToolStripMenuItem,
             this.bookToolStripMenuItem,
+            this.searchToolStripMenuItem,
             this.userToolStripMenuItem});
             this.menuStripZ1.Location = new System.Drawing.Point(0, 36);
             this.menuStripZ1.Name = "menuStripZ1";
@@ -80,7 +86,7 @@
             // 
             this.addMemberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addMemberToolStripMenuItem.Name = "addMemberToolStripMenuItem";
-            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addMemberToolStripMenuItem.Text = "Add Member";
             this.addMemberToolStripMenuItem.Click += new System.EventHandler(this.addMemberToolStripMenuItem_Click);
             // 
@@ -88,7 +94,7 @@
             // 
             this.addBooksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
-            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
@@ -106,7 +112,7 @@
             // 
             this.issueToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
-            this.issueToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.issueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.issueToolStripMenuItem.Text = "Issue";
             this.issueToolStripMenuItem.Click += new System.EventHandler(this.toolBookIssue_Click);
             // 
@@ -114,7 +120,7 @@
             // 
             this.returnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.toolBookReturn_Click);
             // 
@@ -146,12 +152,15 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolAddMember,
             this.toolAddBooks,
             this.toolBookIssue,
             this.toolBookReturn,
+            this.toolStripButton1,
+            this.toolStripButton2,
             this.toolLogout});
             this.toolStrip1.Location = new System.Drawing.Point(0, 60);
             this.toolStrip1.Name = "toolStrip1";
@@ -199,6 +208,24 @@
             this.toolBookReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolBookReturn.Click += new System.EventHandler(this.toolBookReturn_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(81, 59);
+            this.toolStripButton1.Text = "Search Books";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(94, 59);
+            this.toolStripButton2.Text = "Search Member";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // toolLogout
             // 
             this.toolLogout.Image = ((System.Drawing.Image)(resources.GetObject("toolLogout.Image")));
@@ -241,6 +268,30 @@
             this.statDate.Name = "statDate";
             this.statDate.Size = new System.Drawing.Size(31, 17);
             this.statDate.Text = "Date";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.booksToolStripMenuItem,
+            this.memberToolStripMenuItem});
+            this.searchToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Text = "Search";
+            // 
+            // booksToolStripMenuItem
+            // 
+            this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.booksToolStripMenuItem.Text = "Books";
+            // 
+            // memberToolStripMenuItem
+            // 
+            this.memberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.memberToolStripMenuItem.Text = "Member";
             // 
             // frmMain
             // 
@@ -292,5 +343,10 @@
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
     }
 }

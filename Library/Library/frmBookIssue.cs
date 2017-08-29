@@ -102,7 +102,6 @@ namespace Library
                     dgvBurrowerInfo.Rows[i].Cells["colClass"].Value = dt.Rows[i]["ClassName"].ToString();
                     dgvBurrowerInfo.Rows[i].Cells["colClassID"].Value = dt.Rows[i]["ClassID"].ToString();
                     dgvBurrowerInfo.Rows[i].Cells["colBookIssued"].Value = dtCount.Rows.Count;
-                    dgvBurrowerInfo.Rows[i].Cells["colClassID"].Value = dt.Rows[i]["ClassID"].ToString();
                     dgvBurrowerInfo.Columns["colClass"].Visible = true;
                 }
             }
@@ -162,15 +161,26 @@ namespace Library
 
         private void dgvBurrowerInfo_Click(object sender, EventArgs e)
         {
-            txtBurrowerName.Text = dgvBurrowerInfo.CurrentRow.Cells["colBurrowerName"].Value.ToString();
-            txtBurrowerID.Text = dgvBurrowerInfo.CurrentRow.Cells["colBurrowerID"].Value.ToString();
+            if (dgvBurrowerInfo==null||dgvBurrowerInfo.Rows.Count<=0)
+            {
+                return;
+            }
+            string[] values = new string[]
+            {
+                dgvBurrowerInfo.CurrentRow.Cells["colBurrowerName"].Value.ToString(),
+                dgvBurrowerInfo.CurrentRow.Cells["colBurrowerID"].Value.ToString(),
+                dgvBurrowerInfo.CurrentRow.Cells["colClassID"].Value==null?"0":dgvBurrowerInfo.CurrentRow.Cells["colClassID"].Value.ToString(),
+                dgvBurrowerInfo.CurrentRow.Cells["colDepartmentID"].Value==null?"0":dgvBurrowerInfo.CurrentRow.Cells["colDepartmentID"].Value.ToString(),
+            };
+            txtBurrowerName.Text = values[0];
+            txtBurrowerID.Text = values[1];
             if (chkBurrower.Checked==true)
             {
-                cboClass.SelectedValue = dgvBurrowerInfo.CurrentRow.Cells["colClassID"].Value;
+                cboClass.SelectedValue = values[2];
             }
             else
             {
-                cboDepartment.SelectedValue = dgvBurrowerInfo.CurrentRow.Cells["colDepartmentID"].Value;
+                cboDepartment.SelectedValue = values[3];
             }
         }
         private void ClearControls()

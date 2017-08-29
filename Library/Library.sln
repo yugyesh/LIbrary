@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{957745CA-2613-44BD-9399-41D397C3852C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LibrarySetup", "LibrarySetup\LibrarySetup.vdproj", "{7F4DAA21-64E6-4326-9B80-EFAF0C1DCC28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -60,6 +62,11 @@ Global
 		{957745CA-2613-44BD-9399-41D397C3852C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{957745CA-2613-44BD-9399-41D397C3852C}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{957745CA-2613-44BD-9399-41D397C3852C}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{7F4DAA21-64E6-4326-9B80-EFAF0C1DCC28}.CD_ROM|Any CPU.ActiveCfg = Release
+		{7F4DAA21-64E6-4326-9B80-EFAF0C1DCC28}.Debug|Any CPU.ActiveCfg = Debug
+		{7F4DAA21-64E6-4326-9B80-EFAF0C1DCC28}.DVD-5|Any CPU.ActiveCfg = Debug
+		{7F4DAA21-64E6-4326-9B80-EFAF0C1DCC28}.Release|Any CPU.ActiveCfg = Release
+		{7F4DAA21-64E6-4326-9B80-EFAF0C1DCC28}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

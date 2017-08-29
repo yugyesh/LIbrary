@@ -128,7 +128,7 @@
             this.txtBookIDSearch.MaxLength = 500;
             this.txtBookIDSearch.Name = "txtBookIDSearch";
             this.txtBookIDSearch.Size = new System.Drawing.Size(131, 23);
-            this.txtBookIDSearch.TabIndex = 26;
+            this.txtBookIDSearch.TabIndex = 3;
             this.txtBookIDSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
             // 
             // grpBookInfo
@@ -163,20 +163,21 @@
             this.grpBookInfo.Location = new System.Drawing.Point(13, 103);
             this.grpBookInfo.Name = "grpBookInfo";
             this.grpBookInfo.Size = new System.Drawing.Size(742, 479);
-            this.grpBookInfo.TabIndex = 1;
+            this.grpBookInfo.TabIndex = 2;
             this.grpBookInfo.TabStop = false;
             this.grpBookInfo.Text = "Book Info";
             // 
             // cboClass
             // 
             this.cboClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboClass.ForeColor = System.Drawing.SystemColors.Window;
             this.cboClass.FormattingEnabled = true;
             this.cboClass.Location = new System.Drawing.Point(118, 202);
             this.cboClass.Name = "cboClass";
             this.cboClass.Size = new System.Drawing.Size(209, 28);
-            this.cboClass.TabIndex = 47;
+            this.cboClass.TabIndex = 3;
             // 
             // incLabel15
             // 
@@ -200,7 +201,7 @@
             this.txtBookTitle.MaxLength = 500;
             this.txtBookTitle.Name = "txtBookTitle";
             this.txtBookTitle.Size = new System.Drawing.Size(209, 26);
-            this.txtBookTitle.TabIndex = 45;
+            this.txtBookTitle.TabIndex = 1;
             // 
             // incLabel13
             // 
@@ -250,7 +251,7 @@
             this.txtPublisherYear.MaxLength = 500;
             this.txtPublisherYear.Name = "txtPublisherYear";
             this.txtPublisherYear.Size = new System.Drawing.Size(227, 26);
-            this.txtPublisherYear.TabIndex = 6;
+            this.txtPublisherYear.TabIndex = 9;
             // 
             // txtBookCopies
             // 
@@ -261,19 +262,20 @@
             this.txtBookCopies.MaxLength = 500;
             this.txtBookCopies.Name = "txtBookCopies";
             this.txtBookCopies.Size = new System.Drawing.Size(209, 26);
-            this.txtBookCopies.TabIndex = 2;
+            this.txtBookCopies.TabIndex = 5;
             this.txtBookCopies.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBookCopies_KeyPress);
             // 
             // cboTag
             // 
             this.cboTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboTag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTag.ForeColor = System.Drawing.SystemColors.Window;
             this.cboTag.FormattingEnabled = true;
             this.cboTag.Location = new System.Drawing.Point(118, 256);
             this.cboTag.Name = "cboTag";
             this.cboTag.Size = new System.Drawing.Size(209, 28);
-            this.cboTag.TabIndex = 1;
+            this.cboTag.TabIndex = 4;
             // 
             // incLabel12
             // 
@@ -362,7 +364,7 @@
             this.txtPublisherName.MaxLength = 500;
             this.txtPublisherName.Name = "txtPublisherName";
             this.txtPublisherName.Size = new System.Drawing.Size(227, 26);
-            this.txtPublisherName.TabIndex = 5;
+            this.txtPublisherName.TabIndex = 8;
             this.txtPublisherName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPublisherName_KeyPress);
             // 
             // txtPublisherPlace
@@ -374,7 +376,7 @@
             this.txtPublisherPlace.MaxLength = 500;
             this.txtPublisherPlace.Name = "txtPublisherPlace";
             this.txtPublisherPlace.Size = new System.Drawing.Size(227, 26);
-            this.txtPublisherPlace.TabIndex = 7;
+            this.txtPublisherPlace.TabIndex = 10;
             // 
             // txtSource
             // 
@@ -385,7 +387,7 @@
             this.txtSource.MaxLength = 500;
             this.txtSource.Name = "txtSource";
             this.txtSource.Size = new System.Drawing.Size(209, 26);
-            this.txtSource.TabIndex = 3;
+            this.txtSource.TabIndex = 6;
             // 
             // txtCost
             // 
@@ -396,7 +398,7 @@
             this.txtCost.MaxLength = 500;
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(209, 26);
-            this.txtCost.TabIndex = 4;
+            this.txtCost.TabIndex = 7;
             this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
             // 
             // incLabel4
@@ -434,7 +436,7 @@
             this.txtAuthor.MaxLength = 500;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(209, 26);
-            this.txtAuthor.TabIndex = 8;
+            this.txtAuthor.TabIndex = 2;
             this.txtAuthor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPublisherName_KeyPress);
             // 
             // txtBookID
@@ -521,7 +523,7 @@
             this.txtBookTitleSearch.MaxLength = 500;
             this.txtBookTitleSearch.Name = "txtBookTitleSearch";
             this.txtBookTitleSearch.Size = new System.Drawing.Size(168, 23);
-            this.txtBookTitleSearch.TabIndex = 2;
+            this.txtBookTitleSearch.TabIndex = 0;
             this.txtBookTitleSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
             // 
             // incLabel8
@@ -549,7 +551,7 @@
             this.pnlBook.Location = new System.Drawing.Point(142, 49);
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(614, 44);
-            this.pnlBook.TabIndex = 0;
+            this.pnlBook.TabIndex = 1;
             // 
             // dgvBooksInfo
             // 
@@ -756,7 +758,7 @@
             this.btnSave.PreviousControl = null;
             this.btnSave.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.Size = new System.Drawing.Size(92, 39);
-            this.btnSave.TabIndex = 42;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -774,7 +776,7 @@
             this.btnUpdate.PreviousControl = null;
             this.btnUpdate.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnUpdate.Size = new System.Drawing.Size(92, 39);
-            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -792,7 +794,7 @@
             this.btnGet.PreviousControl = null;
             this.btnGet.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnGet.Size = new System.Drawing.Size(92, 39);
-            this.btnGet.TabIndex = 42;
+            this.btnGet.TabIndex = 5;
             this.btnGet.Text = "Get";
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
@@ -805,7 +807,7 @@
             this.chkRegistered.Location = new System.Drawing.Point(14, 61);
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(122, 21);
-            this.chkRegistered.TabIndex = 43;
+            this.chkRegistered.TabIndex = 0;
             this.chkRegistered.Text = "Not Registered";
             this.chkRegistered.UseVisualStyleBackColor = false;
             this.chkRegistered.CheckedChanged += new System.EventHandler(this.chkRegistered_CheckedChanged);
@@ -822,7 +824,7 @@
             this.grpSearch.Location = new System.Drawing.Point(756, 49);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(572, 44);
-            this.grpSearch.TabIndex = 44;
+            this.grpSearch.TabIndex = 3;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
             // 
@@ -837,7 +839,7 @@
             this.cboClassSearch.MaxLength = 500;
             this.cboClassSearch.Name = "cboClassSearch";
             this.cboClassSearch.Size = new System.Drawing.Size(130, 24);
-            this.cboClassSearch.TabIndex = 49;
+            this.cboClassSearch.TabIndex = 2;
             this.cboClassSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
             // 
             // incLabel16
@@ -849,7 +851,7 @@
             this.incLabel16.Name = "incLabel16";
             this.incLabel16.Readonly = false;
             this.incLabel16.Size = new System.Drawing.Size(42, 17);
-            this.incLabel16.TabIndex = 50;
+            this.incLabel16.TabIndex = 1;
             this.incLabel16.Text = "Class";
             this.incLabel16.ValueByOrchestrator = "Class";
             // 
@@ -871,7 +873,7 @@
             this.btnNew.PreviousControl = null;
             this.btnNew.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnNew.Size = new System.Drawing.Size(92, 39);
-            this.btnNew.TabIndex = 42;
+            this.btnNew.TabIndex = 4;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnClear_Click);
             // 
