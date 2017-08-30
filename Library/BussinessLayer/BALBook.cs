@@ -11,6 +11,31 @@ namespace BussinessLayer
 {
     public class BALBook
     {
+        //Add Book Status
+        public bool AddBStatus(string bStatusName, string userName)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@bStatusName",bStatusName),
+                new SqlParameter("@createdOn",DateTime.Today),
+                new SqlParameter("@createdBy",userName),
+            };
+            string query = "Insert into BookStatus(BStatusName,CreatedOn,CreatedBy) values(@bStatusName,@createdOn,@createdBy)";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
+        //Update Book Status
+        public bool UpdateBStatus(string bStatusName, string userName, int bstatusID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@bStatusName",bStatusName),
+                new SqlParameter("@modifiedOn",DateTime.Today),
+                new SqlParameter("@modifiedBy",userName),
+                new SqlParameter("@bstatusID",bstatusID),
+            };
+            string query = "Update BookStatus set BStatusName=@bStatusName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where BStatusID=@bstatusID";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
         //Add Tag
         public bool AddTag(string tagName, string userName)
         {
@@ -38,7 +63,7 @@ namespace BussinessLayer
         }
         public DataTable GetBookStatus()
         {
-            string query = "select * from BookStatus";
+            string query = "select BStatusID,BStatusName from BookStatus";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
             try

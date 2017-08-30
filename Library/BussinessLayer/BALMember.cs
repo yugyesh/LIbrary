@@ -29,10 +29,34 @@ namespace BussinessLayer
                 throw;
             }
         }
-
+        //Add Member Status
+        public bool AddMStatus(string mStatusName, string userName)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@mStatusName",mStatusName),
+                new SqlParameter("@createdOn",DateTime.Today),
+                new SqlParameter("@createdBy",userName),
+            };
+            string query = "Insert into MemberStatus(MStatusName,CreatedOn,CreatedBy) values(@mStatusName,@createdOn,@createdBy)";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
+        //Update Member Status
+        public bool UpdateMStatus(string mStatusName, string userName, int mStatusID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@mStatusName",mStatusName),
+                new SqlParameter("@modifiedOn",DateTime.Today),
+                new SqlParameter("@modifiedBy",userName),
+                new SqlParameter("@mStatusID",mStatusID),
+            };
+            string query = "Update MemberStatus set MStatusName=@mStatusName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where MStatusID=@mStatusID";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
         public DataTable GetMemberStatus()
         {
-            string query = "select * from MemberStatus";
+            string query = "select MStatusID,MStatusName from MemberStatus";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
             try

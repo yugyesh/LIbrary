@@ -36,6 +36,9 @@
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +54,10 @@
             this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.statRoleID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -76,7 +80,11 @@
             // 
             this.masterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addMemberToolStripMenuItem,
-            this.addBooksToolStripMenuItem});
+            this.addBooksToolStripMenuItem,
+            this.addDepartmentToolStripMenuItem,
+            this.addClassToolStripMenuItem,
+            this.addStatusToolStripMenuItem,
+            this.addTagToolStripMenuItem});
             this.masterToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
@@ -86,7 +94,7 @@
             // 
             this.addMemberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addMemberToolStripMenuItem.Name = "addMemberToolStripMenuItem";
-            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.addMemberToolStripMenuItem.Text = "Add Member";
             this.addMemberToolStripMenuItem.Click += new System.EventHandler(this.addMemberToolStripMenuItem_Click);
             // 
@@ -94,7 +102,7 @@
             // 
             this.addBooksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addBooksToolStripMenuItem.Name = "addBooksToolStripMenuItem";
-            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
             // 
@@ -112,7 +120,7 @@
             // 
             this.issueToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
-            this.issueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.issueToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.issueToolStripMenuItem.Text = "Issue";
             this.issueToolStripMenuItem.Click += new System.EventHandler(this.toolBookIssue_Click);
             // 
@@ -120,9 +128,33 @@
             // 
             this.returnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.toolBookReturn_Click);
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.booksToolStripMenuItem,
+            this.memberToolStripMenuItem});
+            this.searchToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Text = "Search";
+            // 
+            // booksToolStripMenuItem
+            // 
+            this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.booksToolStripMenuItem.Text = "Books";
+            // 
+            // memberToolStripMenuItem
+            // 
+            this.memberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.memberToolStripMenuItem.Text = "Member";
             // 
             // userToolStripMenuItem
             // 
@@ -269,29 +301,37 @@
             this.statDate.Size = new System.Drawing.Size(31, 17);
             this.statDate.Text = "Date";
             // 
-            // searchToolStripMenuItem
+            // addClassToolStripMenuItem
             // 
-            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.booksToolStripMenuItem,
-            this.memberToolStripMenuItem});
-            this.searchToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.searchToolStripMenuItem.Text = "Search";
+            this.addClassToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addClassToolStripMenuItem.Name = "addClassToolStripMenuItem";
+            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addClassToolStripMenuItem.Text = "Add Class";
+            this.addClassToolStripMenuItem.Click += new System.EventHandler(this.addClassToolStripMenuItem_Click);
             // 
-            // booksToolStripMenuItem
+            // addDepartmentToolStripMenuItem
             // 
-            this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.booksToolStripMenuItem.Text = "Books";
+            this.addDepartmentToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addDepartmentToolStripMenuItem.Name = "addDepartmentToolStripMenuItem";
+            this.addDepartmentToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addDepartmentToolStripMenuItem.Text = "Add Department";
+            this.addDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addDepartmentToolStripMenuItem_Click);
             // 
-            // memberToolStripMenuItem
+            // addStatusToolStripMenuItem
             // 
-            this.memberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.memberToolStripMenuItem.Text = "Member";
+            this.addStatusToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addStatusToolStripMenuItem.Name = "addStatusToolStripMenuItem";
+            this.addStatusToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addStatusToolStripMenuItem.Text = "Add Status";
+            this.addStatusToolStripMenuItem.Click += new System.EventHandler(this.addStatusToolStripMenuItem_Click);
+            // 
+            // addTagToolStripMenuItem
+            // 
+            this.addTagToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addTagToolStripMenuItem.Name = "addTagToolStripMenuItem";
+            this.addTagToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addTagToolStripMenuItem.Text = "Add Tag";
+            this.addTagToolStripMenuItem.Click += new System.EventHandler(this.addTagToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -348,5 +388,9 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addClassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDepartmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStatusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addTagToolStripMenuItem;
     }
 }

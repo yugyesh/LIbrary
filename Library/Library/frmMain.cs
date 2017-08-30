@@ -135,5 +135,33 @@ namespace Library
             changePasswordForm.ShowDialog();
             changePasswordForm.MdiParent = this;
         }
+
+        private void addClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddClass addClassForm = new frmAddClass();
+            addClassForm.ShowDialog();
+            addClassForm.MdiParent = this;
+        }
+
+        private void addStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddStatus addStatusForm = new frmAddStatus();
+            addStatusForm.ShowDialog();
+            addStatusForm.MdiParent = this;
+        }
+
+        private void addDepartmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddDepartment addDepartmentForm = new frmAddDepartment();
+            addDepartmentForm.ShowDialog();
+            addDepartmentForm.MdiParent = this;
+        }
+
+        private void addTagToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddTag addTag = new frmAddTag();
+            addTag.ShowDialog();
+            addTag.MdiParent = this;
+        }
     }
 }

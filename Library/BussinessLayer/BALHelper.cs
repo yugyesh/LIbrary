@@ -133,56 +133,5 @@ namespace BussinessLayer
             string query = "Update Class set ClassName=@className,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where ClassID=@classID";
             return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
         }
-
-        //Add Book Status
-        public bool AddBStatus(string bStatusName, string userName)
-        {
-            SqlParameter[] pram = new SqlParameter[]
-            {
-                new SqlParameter("@bStatusName",bStatusName),
-                new SqlParameter("@createdOn",DateTime.Today),
-                new SqlParameter("@createdBy",userName),
-            };
-            string query = "Insert into BookStatus(BStatusName,CreatedOn,CreatedBy) values(@bStatusName,@createdOn,@createdBy)";
-            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
-        }
-        //Update Book Status
-        public bool UpdateBStatus(string bStatusName, string userName, int bstatusID)
-        {
-            SqlParameter[] pram = new SqlParameter[]
-            {
-                new SqlParameter("@bStatusName",bStatusName),
-                new SqlParameter("@modifiedOn",DateTime.Today),
-                new SqlParameter("@modifiedBy",userName),
-                new SqlParameter("@statusID",bstatusID),
-            };
-            string query = "Update BookStatus set BStatusName=@bStatusName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where BStatusID=@bstatusID";
-            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
-        }
-        //Add Member Status
-        public bool AddMStatus(string mStatusName, string userName)
-        {
-            SqlParameter[] pram = new SqlParameter[]
-            {
-                new SqlParameter("@mStatusName",mStatusName),
-                new SqlParameter("@createdOn",DateTime.Today),
-                new SqlParameter("@createdBy",userName),
-            };
-            string query = "Insert into MemberStatus(MStatusName,CreatedOn,CreatedBy) values(@mStatusName,@createdOn,@createdBy)";
-            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
-        }
-        //Update Member Status
-        public bool UpdateMStatus(string mStatusName, string userName,int mStatusID)
-        {
-            SqlParameter[] pram = new SqlParameter[]
-            {
-                new SqlParameter("@mStatusName",mStatusName),
-                new SqlParameter("@modifiedOn",DateTime.Today),
-                new SqlParameter("@modifiedBy",userName),
-                new SqlParameter("@mStatusID",mStatusID),
-            };
-            string query = "Update MemberStatus set MStatusName=@mStatusName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where MStatusID=@mStatusID";
-            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
-        }
     }
 }
