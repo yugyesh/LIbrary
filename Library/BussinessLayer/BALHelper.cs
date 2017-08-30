@@ -96,15 +96,16 @@ namespace BussinessLayer
             return DAO.IUD(query, pram, CommandType.Text)>0?true:false;
         }
         //Update Department
-        public bool UpdateDepartment(string departmentName, string userName)
+        public bool UpdateDepartment(string departmentName, string userName,int departmentID)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
                 new SqlParameter("@departmentName",departmentName),
                 new SqlParameter("@modifiedOn",DateTime.Today),
                 new SqlParameter("@modifiedBy",userName),
+                new SqlParameter("@departmentID",departmentID),
             };
-            string query = "Update Department set DepartmentName=@departmentName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy";
+            string query = "Update Department set DepartmentName=@departmentName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy Where DepartmentID=@departmentID";
             return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
         }
         //Add Class
@@ -120,15 +121,16 @@ namespace BussinessLayer
             return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
         }
         //Update Class
-        public bool UpdateClass(string className, string userName)
+        public bool UpdateClass(string className, string userName,int classID)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
                 new SqlParameter("@className",className),
                 new SqlParameter("@modifiedOn",DateTime.Today),
                 new SqlParameter("@modifiedBy",userName),
+                new SqlParameter("@classID",classID),
             };
-            string query = "Update Class set ClassName=@className,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy";
+            string query = "Update Class set ClassName=@className,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where ClassID=@classID";
             return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
         }
 
