@@ -48,7 +48,7 @@ namespace Library
             cboClassSearch.ValueMember = "ClassID";
 
             DataTable dtStatus = new DataTable();
-            dtStatus = balBook.GetBookType();
+            dtStatus = balBook.GetBookStatus();
             if (dtStatus != null)
             {
                 DataRow dr = dtStatus.NewRow();

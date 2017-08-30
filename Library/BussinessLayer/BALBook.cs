@@ -11,7 +11,32 @@ namespace BussinessLayer
 {
     public class BALBook
     {
-        public DataTable GetBookType()
+        //Add Tag
+        public bool AddTag(string tagName, string userName)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@tagName",tagName),
+                new SqlParameter("@createdOn",DateTime.Today),
+                new SqlParameter("@createdBy",userName),
+            };
+            string query = "Insert into Tag(tagName,CreatedOn,CreatedBy) values(@tagName,@createdOn,@createdBy)";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
+        //Update Tag
+        public bool UpdateTag(string tagName, string userName, int tagID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@tagName",tagName),
+                new SqlParameter("@modifiedOn",DateTime.Today),
+                new SqlParameter("@modifiedBy",userName),
+                new SqlParameter("@tagID",tagID),
+            };
+            string query = "Update Tag set TagName=@tagName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where TagID=@tagID";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
+        public DataTable GetBookStatus()
         {
             string query = "select * from BookStatus";
             DataTable dt = new DataTable();
@@ -48,7 +73,7 @@ namespace BussinessLayer
 
         public DataTable GetBookTag()
         {
-            string query = "select * from Tag";
+            string query = "select TagID,TagName from Tag";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
             try

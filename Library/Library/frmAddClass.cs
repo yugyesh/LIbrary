@@ -31,6 +31,8 @@ namespace Library
 
         private void LoadGrid()
         {
+            dgvList.Rows.Clear();
+            dgvList.DataSource = null;
             DataTable dt = new DataTable();
             dt = balHelper.GetAllClass();
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -50,8 +52,7 @@ namespace Library
             }
             else if (ValidateField() || txtID.Text == string.Empty)
             {
-                MessageBox.Show("Class Name update failed", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ClearControls();
+                MessageBox.Show("Error while updating Class", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (balHelper.UpdateClass(txtClassName.Text, Program.userName, Convert.ToInt32(txtID.Text)))
@@ -85,13 +86,12 @@ namespace Library
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != string.Empty)
+            if (ValidateField()||txtID.Text != string.Empty)
             {
-                MessageBox.Show("Class Name already added please update", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ClearControls();
+                MessageBox.Show("Error while adding Class", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (balHelper.AddClass(txtClassName.Text, Program.userName) && !ValidateField())
+            if (balHelper.AddClass(txtClassName.Text, Program.userName))
             {
                 MessageBox.Show("Class Name added successfully", "Added Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -114,6 +114,7 @@ namespace Library
         }
         private void ClearControls()
         {
+            erpGeneral.Clear();
             txtClassName.Text = string.Empty;
             txtID.Text = string.Empty;
             dgvList.Rows.Clear();

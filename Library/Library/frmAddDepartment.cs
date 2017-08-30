@@ -30,6 +30,9 @@ namespace Library
 
         private void LoadGrid()
         {
+            //reinitalizing data grid to avoid adding blank line in grid view
+            dgvList.Rows.Clear();
+            dgvList.DataSource = null;
             DataTable dt = new DataTable();
             dt = balHelper.GetAllDepartment();
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -49,8 +52,7 @@ namespace Library
             }
             else if(ValidateField()||txtID.Text == string.Empty)
             {
-                MessageBox.Show("Dapartment Name update failed", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ClearControls();
+                MessageBox.Show("Error while updating Department", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (balHelper.UpdateDepartment(txtDepartmentName.Text,Program.userName,Convert.ToInt32(txtID.Text)))
@@ -84,22 +86,22 @@ namespace Library
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtID.Text!=string.Empty)
+            if (ValidateField()||txtID.Text!=string.Empty)
             {
-                MessageBox.Show("Dapartment Name already added please update?", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ClearControls();
+                MessageBox.Show("Error while adding Department", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (balHelper.AddDepartment(txtDepartmentName.Text, Program.userName) && !ValidateField())
+            else if (balHelper.AddDepartment(txtDepartmentName.Text, Program.userName))
             {
                 MessageBox.Show("Dapartment Name added successfully", "Added Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearControls();
+                LoadGrid();
             }
             else
             {
                 MessageBox.Show("Dapartment Name adding failure", "Adding Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClearControls();
             }
-            ClearControls();
-            LoadGrid();
         }
 
         private void dgvList_Click(object sender, EventArgs e)
@@ -113,6 +115,7 @@ namespace Library
         }
         private void ClearControls()
         {
+            erpGeneral.Clear();
             txtDepartmentName.Text = string.Empty;
             txtID.Text = string.Empty;
             dgvList.Rows.Clear();
