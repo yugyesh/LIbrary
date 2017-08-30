@@ -61,6 +61,24 @@
     <Compile Include="ButtonZ.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="frmAddTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTag.designer.cs">
+      <DependentUpon>frmAddTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddClass.designer.cs">
+      <DependentUpon>frmAddClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStatus.designer.cs">
+      <DependentUpon>frmAddStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +102,12 @@
     </Compile>
     <Compile Include="frmBookIssue.designer.cs">
       <DependentUpon>frmBookIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddDepartment.designer.cs">
+      <DependentUpon>frmAddDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSearchBooks.cs">
       <SubType>Form</SubType>
@@ -120,6 +144,15 @@
     <EmbeddedResource Include="BlackForm.resx">
       <DependentUpon>BlackForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTag.resx">
+      <DependentUpon>frmAddTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddClass.resx">
+      <DependentUpon>frmAddClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStatus.resx">
+      <DependentUpon>frmAddStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddMember.resx">
       <DependentUpon>frmAddMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBookIssue.resx">
       <DependentUpon>frmBookIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddDepartment.resx">
+      <DependentUpon>frmAddDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchBooks.resx">
       <DependentUpon>frmSearchBooks.cs</DependentUpon>

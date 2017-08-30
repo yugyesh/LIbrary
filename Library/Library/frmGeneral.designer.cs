@@ -61,6 +61,7 @@
             this._CloseButton.TextLocation_X = 6;
             this._CloseButton.TextLocation_Y = 1;
             this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
             // frmGeneral
             // 

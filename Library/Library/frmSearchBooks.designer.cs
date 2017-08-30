@@ -30,12 +30,12 @@
         {
             this.pnlClose = new System.Windows.Forms.Panel();
             this._CloseButton = new Library.ButtonZ();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radBurrowed = new System.Windows.Forms.RadioButton();
+            this.radLost = new System.Windows.Forms.RadioButton();
             this.radAvailable = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlRadio = new System.Windows.Forms.Panel();
             this.pnlClose.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlRadio.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -66,28 +66,29 @@
             this._CloseButton.TextLocation_X = 6;
             this._CloseButton.TextLocation_Y = 1;
             this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
-            // radioButton1
+            // radBurrowed
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(261, 16);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 17);
-            this.radioButton1.TabIndex = 62;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Burrowed";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radBurrowed.AutoSize = true;
+            this.radBurrowed.Location = new System.Drawing.Point(261, 16);
+            this.radBurrowed.Name = "radBurrowed";
+            this.radBurrowed.Size = new System.Drawing.Size(70, 17);
+            this.radBurrowed.TabIndex = 62;
+            this.radBurrowed.TabStop = true;
+            this.radBurrowed.Text = "Burrowed";
+            this.radBurrowed.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radLost
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(468, 16);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 17);
-            this.radioButton2.TabIndex = 63;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Lost";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radLost.AutoSize = true;
+            this.radLost.Location = new System.Drawing.Point(468, 16);
+            this.radLost.Name = "radLost";
+            this.radLost.Size = new System.Drawing.Size(45, 17);
+            this.radLost.TabIndex = 63;
+            this.radLost.TabStop = true;
+            this.radLost.Text = "Lost";
+            this.radLost.UseVisualStyleBackColor = true;
             // 
             // radAvailable
             // 
@@ -100,15 +101,15 @@
             this.radAvailable.Text = "Available";
             this.radAvailable.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pnlRadio
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radAvailable);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Location = new System.Drawing.Point(139, 77);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(621, 50);
-            this.panel1.TabIndex = 65;
+            this.pnlRadio.Controls.Add(this.radLost);
+            this.pnlRadio.Controls.Add(this.radAvailable);
+            this.pnlRadio.Controls.Add(this.radBurrowed);
+            this.pnlRadio.Location = new System.Drawing.Point(141, 31);
+            this.pnlRadio.Name = "pnlRadio";
+            this.pnlRadio.Size = new System.Drawing.Size(621, 50);
+            this.pnlRadio.TabIndex = 65;
             // 
             // frmSearchBooks
             // 
@@ -118,7 +119,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlRadio);
             this.Controls.Add(this.pnlClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -127,8 +128,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.pnlClose.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlRadio.ResumeLayout(false);
+            this.pnlRadio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -137,10 +138,10 @@
 
         private System.Windows.Forms.Panel pnlClose;
         private ButtonZ _CloseButton;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radBurrowed;
+        private System.Windows.Forms.RadioButton radLost;
         private System.Windows.Forms.RadioButton radAvailable;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlRadio;
     }
 }
 

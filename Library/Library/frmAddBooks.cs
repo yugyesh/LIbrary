@@ -96,7 +96,7 @@ namespace Library
         {
             if (!ValidateField() && chkRegistered.Checked == true)
             {
-                if (txtBookID.Text.Trim() == string.Empty)
+                if (txtBookID.Text.Trim() != string.Empty)
                 {
                     MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
