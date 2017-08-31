@@ -130,7 +130,7 @@ namespace BussinessLayer
             if (memberType == 1)
             {
                 pram.Add(new SqlParameter("@studentID", specificDetails[0]));
-                pram.Add(new SqlParameter("@majorSubject", specificDetails[1]));
+                pram.Add(new SqlParameter("@sectionName", specificDetails[1]));
                 pram.Add(new SqlParameter("@classID", Convert.ToInt32(specificDetails[2])));
                 return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) > 0 ? true : false;
             }
@@ -138,7 +138,7 @@ namespace BussinessLayer
             {
 
                 pram.Add(new SqlParameter("@teacherID", specificDetails[0]));
-                pram.Add(new SqlParameter("@sectionName", specificDetails[1]));
+                pram.Add(new SqlParameter("@majorSubject", specificDetails[1]));
                 pram.Add(new SqlParameter("@departmentID", Convert.ToInt32(specificDetails[2])));
                 return DAO.IUD("sp_SaveChangeMemberInfo", pram, CommandType.StoredProcedure) > 0 ? true : false;
 

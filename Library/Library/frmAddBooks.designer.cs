@@ -596,7 +596,7 @@
             this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBooksInfo.EnableHeadersVisualStyles = false;
             this.dgvBooksInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvBooksInfo.Location = new System.Drawing.Point(17, 28);
+            this.dgvBooksInfo.Location = new System.Drawing.Point(-2, -2);
             this.dgvBooksInfo.Name = "dgvBooksInfo";
             this.dgvBooksInfo.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -608,7 +608,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBooksInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBooksInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvBooksInfo.Size = new System.Drawing.Size(575, 387);
+            this.dgvBooksInfo.Size = new System.Drawing.Size(573, 387);
             this.dgvBooksInfo.TabIndex = 40;
             this.dgvBooksInfo.Click += new System.EventHandler(this.dgvBooksInfo_Click);
             // 

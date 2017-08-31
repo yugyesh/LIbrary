@@ -86,7 +86,7 @@ namespace Library
                 dgvFineDetail.Rows[i].Cells["colBookTitleF"].Value = dt.Rows[i]["BookTitle"].ToString();
                 dgvFineDetail.Rows[i].Cells["colAuthorF"].Value = dt.Rows[i]["Author"].ToString();
                 dgvFineDetail.Rows[i].Cells["colBurrowedDate"].Value = dt.Rows[i]["BurrowedDate"].ToString();
-                dgvFineDetail.Rows[i].Cells["colISBN"].Value = dt.Rows[i]["ISBN"].ToString();
+                dgvFineDetail.Rows[i].Cells["colISBNF"].Value = dt.Rows[i]["ISBN"].ToString();
             }
         }
 
@@ -202,6 +202,29 @@ namespace Library
             frmAddTag addTag = new frmAddTag();
             addTag.ShowDialog();
             addTag.MdiParent = this;
+        }
+        private void dgvFineDetail_Click(object sender, EventArgs e)
+        {
+            if (dgvFineDetail != null && dgvFineDetail.Rows.Count > 0)
+            {
+                lblID.Text = dgvFineDetail.CurrentRow.Cells["colStudentID"].Value.ToString();
+                lblName.Text = dgvFineDetail.CurrentRow.Cells["colStudentName"].Value.ToString();
+                lblSection.Text = dgvFineDetail.CurrentRow.Cells["colSection"].Value.ToString();
+                lblBookTitle.Text = dgvFineDetail.CurrentRow.Cells["colBookTitleF"].Value.ToString();
+                lblAuthor.Text = dgvFineDetail.CurrentRow.Cells["colAuthorF"].Value.ToString();
+                lblClass.Text = dgvFineDetail.CurrentRow.Cells["colClassF"].Value.ToString();
+                lblISBN.Text = dgvFineDetail.CurrentRow.Cells["colISBNF"].Value.ToString();
+                DateTime burrowedDate = Convert.ToDateTime(dgvFineDetail.CurrentRow.Cells["colBurrowedDate"].Value.ToString());
+                lblBurrowedDate.Text = burrowedDate.ToString("yyyy-mm-dd");
+            }
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(dgvFineDetail.CurrentRow.Cells["colFineAmount"].Value.ToString())==Convert.ToInt32(txtFine.Text))
+            {
+                
+            }
         }
     }
 }

@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IncLibrary">
-      <HintPath>..\..\..\..\..\Downloads\Office Practise (2017-07-21)\Office Practise (2017-07-07)\IncControl\bin\Debug\IncLibrary.dll</HintPath>
+    <Reference Include="IncLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IncLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />

@@ -22,5 +22,19 @@ namespace BussinessLayer
             dt = DAO.GetTable("sp_GetFineInfo", pram, CommandType.StoredProcedure);
             return dt == null ? null : dt;
         }
+        //Checking Fine Amount
+        public DataTable AddFineAmount(int fineAmount,string burrowerID,string ISBN)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@paidDate",DateTime.Today),
+                new SqlParameter("@burrowerID",burrowerID),
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@fineAmount",fineAmount),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("sp_AddFine", pram, CommandType.StoredProcedure);
+            return dt == null ? null : dt;
+        }
     }
 }

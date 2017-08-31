@@ -29,19 +29,21 @@ namespace Library
             
             if (txtISBN.Text.Length==13)
             {
+
                 if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
                 {
-                    txtISBN.Focus();
                     MessageBox.Show("Book Not Registered YET!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtISBN.Clear();
-                    return;
+                    txtISBN.Focus();
                 }
-                dgvISBNList.Rows.Add();
-                dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
-                dgvISBNList.Rows[length].Cells["colSN"].Value = length+1;
-                //length = dgvISBNList.Rows.Count-1;
-                length = length + 1;
-                txtISBN.Clear();
+                else
+                {
+                    dgvISBNList.Rows.Add();
+                    dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
+                    dgvISBNList.Rows[length].Cells["colSN"].Value = length + 1;
+                    //length = dgvISBNList.Rows.Count-1;
+                    length = length + 1;
+                }
+                txtISBN.Text=string.Empty;
             }
         }
 
@@ -100,8 +102,9 @@ namespace Library
                     dgvBurrowerInfo.Rows[i].Cells["colBurrowerName"].Value = dt.Rows[i]["Name"].ToString();
                     dgvBurrowerInfo.Rows[i].Cells["colBurrowerID"].Value = dt.Rows[i]["StudentID"].ToString();
                     dgvBurrowerInfo.Rows[i].Cells["colClass"].Value = dt.Rows[i]["ClassName"].ToString();
+                    dgvBurrowerInfo.Rows[i].Cells["colBookIssued"].Value = string.Empty;
                     dgvBurrowerInfo.Rows[i].Cells["colClassID"].Value = dt.Rows[i]["ClassID"].ToString();
-                    dgvBurrowerInfo.Rows[i].Cells["colBookIssued"].Value = dtCount.Rows.Count;
+                    //dgvBurrowerInfo.Rows[i].Cells["colBookIssued"].Value = dtCount.Rows.Count;
                     dgvBurrowerInfo.Columns["colClass"].Visible = true;
                 }
             }

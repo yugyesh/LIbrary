@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStripZ1 = new Library.MenuStripZ();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +65,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.incLabel1 = new IncLibrary.IncLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPay = new IncLibrary.IncButton();
+            this.txtFine = new System.Windows.Forms.TextBox();
+            this.lblBurrowedDate = new IncLibrary.IncLabel();
+            this.lblISBN = new IncLibrary.IncLabel();
+            this.incLabel10 = new IncLibrary.IncLabel();
             this.lblSection = new IncLibrary.IncLabel();
             this.incLabel9 = new IncLibrary.IncLabel();
             this.lblAuthor = new IncLibrary.IncLabel();
@@ -92,11 +97,6 @@
             this.colClassF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblISBN = new IncLibrary.IncLabel();
-            this.incLabel10 = new IncLibrary.IncLabel();
-            this.lblBurrowedDate = new IncLibrary.IncLabel();
-            this.btnIssue = new IncLibrary.IncButton();
-            this.txtFine = new System.Windows.Forms.TextBox();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -418,7 +418,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.panel2.Controls.Add(this.btnIssue);
+            this.panel2.Controls.Add(this.btnPay);
             this.panel2.Controls.Add(this.txtFine);
             this.panel2.Controls.Add(this.lblBurrowedDate);
             this.panel2.Controls.Add(this.lblISBN);
@@ -438,6 +438,77 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 345);
             this.panel2.TabIndex = 74;
+            // 
+            // btnPay
+            // 
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPay.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnPay.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnPay.Location = new System.Drawing.Point(8, 311);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.NextControl = null;
+            this.btnPay.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnPay.PreviousControl = null;
+            this.btnPay.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnPay.Size = new System.Drawing.Size(63, 30);
+            this.btnPay.TabIndex = 83;
+            this.btnPay.Text = "Pay";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // txtFine
+            // 
+            this.txtFine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtFine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFine.ForeColor = System.Drawing.Color.White;
+            this.txtFine.Location = new System.Drawing.Point(79, 314);
+            this.txtFine.MaxLength = 500;
+            this.txtFine.Name = "txtFine";
+            this.txtFine.Size = new System.Drawing.Size(91, 23);
+            this.txtFine.TabIndex = 82;
+            // 
+            // lblBurrowedDate
+            // 
+            this.lblBurrowedDate.AutoSize = true;
+            this.lblBurrowedDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblBurrowedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBurrowedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBurrowedDate.Location = new System.Drawing.Point(108, 227);
+            this.lblBurrowedDate.Name = "lblBurrowedDate";
+            this.lblBurrowedDate.Readonly = false;
+            this.lblBurrowedDate.Size = new System.Drawing.Size(8, 17);
+            this.lblBurrowedDate.TabIndex = 81;
+            this.lblBurrowedDate.Text = "\r\n";
+            this.lblBurrowedDate.ValueByOrchestrator = "\r\n";
+            // 
+            // lblISBN
+            // 
+            this.lblISBN.AutoSize = true;
+            this.lblISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblISBN.Location = new System.Drawing.Point(48, 271);
+            this.lblISBN.Name = "lblISBN";
+            this.lblISBN.Readonly = false;
+            this.lblISBN.Size = new System.Drawing.Size(8, 17);
+            this.lblISBN.TabIndex = 80;
+            this.lblISBN.Text = "\r\n";
+            this.lblISBN.ValueByOrchestrator = "\r\n";
+            // 
+            // incLabel10
+            // 
+            this.incLabel10.AutoSize = true;
+            this.incLabel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel10.Location = new System.Drawing.Point(2, 271);
+            this.incLabel10.Name = "incLabel10";
+            this.incLabel10.Readonly = false;
+            this.incLabel10.Size = new System.Drawing.Size(51, 17);
+            this.incLabel10.TabIndex = 79;
+            this.incLabel10.Text = "ISBN : ";
+            this.incLabel10.ValueByOrchestrator = "ISBN : ";
             // 
             // lblSection
             // 
@@ -647,14 +718,14 @@
             this.dgvFineDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvFineDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFineDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFineDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFineDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFineDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFineDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSNF,
@@ -668,31 +739,32 @@
             this.colClassF,
             this.colSection,
             this.colBurrowedDate});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFineDetail.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFineDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFineDetail.EnableHeadersVisualStyles = false;
             this.dgvFineDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvFineDetail.Location = new System.Drawing.Point(0, -3);
             this.dgvFineDetail.Name = "dgvFineDetail";
             this.dgvFineDetail.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFineDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFineDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFineDetail.RowHeadersVisible = false;
             this.dgvFineDetail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvFineDetail.Size = new System.Drawing.Size(158, 346);
             this.dgvFineDetail.TabIndex = 58;
+            this.dgvFineDetail.Click += new System.EventHandler(this.dgvFineDetail_Click);
             // 
             // colSNF
             // 
@@ -771,76 +843,6 @@
             this.colBurrowedDate.Name = "colBurrowedDate";
             this.colBurrowedDate.ReadOnly = true;
             this.colBurrowedDate.Visible = false;
-            // 
-            // lblISBN
-            // 
-            this.lblISBN.AutoSize = true;
-            this.lblISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lblISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblISBN.Location = new System.Drawing.Point(48, 271);
-            this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Readonly = false;
-            this.lblISBN.Size = new System.Drawing.Size(8, 17);
-            this.lblISBN.TabIndex = 80;
-            this.lblISBN.Text = "\r\n";
-            this.lblISBN.ValueByOrchestrator = "\r\n";
-            // 
-            // incLabel10
-            // 
-            this.incLabel10.AutoSize = true;
-            this.incLabel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.incLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.incLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel10.Location = new System.Drawing.Point(2, 271);
-            this.incLabel10.Name = "incLabel10";
-            this.incLabel10.Readonly = false;
-            this.incLabel10.Size = new System.Drawing.Size(51, 17);
-            this.incLabel10.TabIndex = 79;
-            this.incLabel10.Text = "ISBN : ";
-            this.incLabel10.ValueByOrchestrator = "ISBN : ";
-            // 
-            // lblBurrowedDate
-            // 
-            this.lblBurrowedDate.AutoSize = true;
-            this.lblBurrowedDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lblBurrowedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblBurrowedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblBurrowedDate.Location = new System.Drawing.Point(108, 227);
-            this.lblBurrowedDate.Name = "lblBurrowedDate";
-            this.lblBurrowedDate.Readonly = false;
-            this.lblBurrowedDate.Size = new System.Drawing.Size(8, 17);
-            this.lblBurrowedDate.TabIndex = 81;
-            this.lblBurrowedDate.Text = "\r\n";
-            this.lblBurrowedDate.ValueByOrchestrator = "\r\n";
-            // 
-            // btnIssue
-            // 
-            this.btnIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnIssue.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.btnIssue.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnIssue.Location = new System.Drawing.Point(8, 311);
-            this.btnIssue.Name = "btnIssue";
-            this.btnIssue.NextControl = null;
-            this.btnIssue.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnIssue.PreviousControl = null;
-            this.btnIssue.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnIssue.Size = new System.Drawing.Size(63, 30);
-            this.btnIssue.TabIndex = 83;
-            this.btnIssue.Text = "Pay";
-            // 
-            // txtFine
-            // 
-            this.txtFine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtFine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFine.ForeColor = System.Drawing.Color.White;
-            this.txtFine.Location = new System.Drawing.Point(79, 314);
-            this.txtFine.MaxLength = 500;
-            this.txtFine.Name = "txtFine";
-            this.txtFine.Size = new System.Drawing.Size(91, 23);
-            this.txtFine.TabIndex = 82;
             // 
             // frmMain
             // 
@@ -944,7 +946,7 @@
         private IncLibrary.IncLabel lblISBN;
         private IncLibrary.IncLabel incLabel10;
         private IncLibrary.IncLabel lblBurrowedDate;
-        private IncLibrary.IncButton btnIssue;
+        private IncLibrary.IncButton btnPay;
         private System.Windows.Forms.TextBox txtFine;
     }
 }
