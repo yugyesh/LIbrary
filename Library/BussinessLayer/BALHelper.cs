@@ -29,6 +29,7 @@ namespace BussinessLayer
                 throw ex;
             }
         }
+
         public DataTable GetUserRole()
         {
             string query = "select * from UserRole";

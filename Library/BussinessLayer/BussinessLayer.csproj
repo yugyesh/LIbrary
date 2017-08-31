@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BALBook.cs" />
     <Compile Include="BALBookIssueReturn.cs" />
+    <Compile Include="BALFine.cs" />
     <Compile Include="BALMember.cs" />
     <Compile Include="BALUser.cs" />
     <Compile Include="BALHelper.cs" />

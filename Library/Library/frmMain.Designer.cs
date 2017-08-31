@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStripZ1 = new Library.MenuStripZ();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,13 +61,50 @@
             this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.statRoleID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
-            this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.incLabel1 = new IncLibrary.IncLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSection = new IncLibrary.IncLabel();
+            this.incLabel9 = new IncLibrary.IncLabel();
+            this.lblAuthor = new IncLibrary.IncLabel();
+            this.lblID = new IncLibrary.IncLabel();
+            this.lblClass = new IncLibrary.IncLabel();
+            this.lblBookTitle = new IncLibrary.IncLabel();
+            this.incLabel4 = new IncLibrary.IncLabel();
+            this.incLabel8 = new IncLibrary.IncLabel();
+            this.incLabel7 = new IncLibrary.IncLabel();
+            this.incLabel6 = new IncLibrary.IncLabel();
+            this.lblSpecificInfoH = new IncLibrary.IncLabel();
+            this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.lblName = new IncLibrary.IncLabel();
+            this.incLabel2 = new IncLibrary.IncLabel();
+            this.pnlISBN = new System.Windows.Forms.Panel();
+            this.dgvFineDetail = new System.Windows.Forms.DataGridView();
+            this.colSNF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colISBNF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFIneAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookTitleF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAuthorF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblISBN = new IncLibrary.IncLabel();
+            this.incLabel10 = new IncLibrary.IncLabel();
+            this.lblBurrowedDate = new IncLibrary.IncLabel();
+            this.btnIssue = new IncLibrary.IncButton();
+            this.txtFine = new System.Windows.Forms.TextBox();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pnlISBN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFineDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripZ1
@@ -72,7 +116,7 @@
             this.userToolStripMenuItem});
             this.menuStripZ1.Location = new System.Drawing.Point(0, 36);
             this.menuStripZ1.Name = "menuStripZ1";
-            this.menuStripZ1.Size = new System.Drawing.Size(1034, 24);
+            this.menuStripZ1.Size = new System.Drawing.Size(1361, 24);
             this.menuStripZ1.TabIndex = 5;
             this.menuStripZ1.Text = "menuStripZ1";
             // 
@@ -105,6 +149,38 @@
             this.addBooksToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.addBooksToolStripMenuItem.Text = "Add Books";
             this.addBooksToolStripMenuItem.Click += new System.EventHandler(this.addBooksToolStripMenuItem_Click);
+            // 
+            // addDepartmentToolStripMenuItem
+            // 
+            this.addDepartmentToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addDepartmentToolStripMenuItem.Name = "addDepartmentToolStripMenuItem";
+            this.addDepartmentToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addDepartmentToolStripMenuItem.Text = "Add Department";
+            this.addDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addDepartmentToolStripMenuItem_Click);
+            // 
+            // addClassToolStripMenuItem
+            // 
+            this.addClassToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addClassToolStripMenuItem.Name = "addClassToolStripMenuItem";
+            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addClassToolStripMenuItem.Text = "Add Class";
+            this.addClassToolStripMenuItem.Click += new System.EventHandler(this.addClassToolStripMenuItem_Click);
+            // 
+            // addStatusToolStripMenuItem
+            // 
+            this.addStatusToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addStatusToolStripMenuItem.Name = "addStatusToolStripMenuItem";
+            this.addStatusToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addStatusToolStripMenuItem.Text = "Add Status";
+            this.addStatusToolStripMenuItem.Click += new System.EventHandler(this.addStatusToolStripMenuItem_Click);
+            // 
+            // addTagToolStripMenuItem
+            // 
+            this.addTagToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addTagToolStripMenuItem.Name = "addTagToolStripMenuItem";
+            this.addTagToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addTagToolStripMenuItem.Text = "Add Tag";
+            this.addTagToolStripMenuItem.Click += new System.EventHandler(this.addTagToolStripMenuItem_Click);
             // 
             // bookToolStripMenuItem
             // 
@@ -196,7 +272,7 @@
             this.toolLogout});
             this.toolStrip1.Location = new System.Drawing.Point(0, 60);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1034, 62);
+            this.toolStrip1.Size = new System.Drawing.Size(1361, 62);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -274,9 +350,9 @@
             this.statUserName,
             this.statRoleID,
             this.statDate});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 526);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 705);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1361, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -301,43 +377,477 @@
             this.statDate.Size = new System.Drawing.Size(31, 17);
             this.statDate.Text = "Date";
             // 
-            // addClassToolStripMenuItem
+            // pnlMain
             // 
-            this.addClassToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addClassToolStripMenuItem.Name = "addClassToolStripMenuItem";
-            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addClassToolStripMenuItem.Text = "Add Class";
-            this.addClassToolStripMenuItem.Click += new System.EventHandler(this.addClassToolStripMenuItem_Click);
+            this.pnlMain.Controls.Add(this.panel1);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 122);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1361, 583);
+            this.pnlMain.TabIndex = 87;
             // 
-            // addDepartmentToolStripMenuItem
+            // panel1
             // 
-            this.addDepartmentToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addDepartmentToolStripMenuItem.Name = "addDepartmentToolStripMenuItem";
-            this.addDepartmentToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addDepartmentToolStripMenuItem.Text = "Add Department";
-            this.addDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addDepartmentToolStripMenuItem_Click);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.incLabel1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.txtStudentName);
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Controls.Add(this.incLabel2);
+            this.panel1.Controls.Add(this.pnlISBN);
+            this.panel1.Location = new System.Drawing.Point(942, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(418, 435);
+            this.panel1.TabIndex = 86;
             // 
-            // addStatusToolStripMenuItem
+            // incLabel1
             // 
-            this.addStatusToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addStatusToolStripMenuItem.Name = "addStatusToolStripMenuItem";
-            this.addStatusToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addStatusToolStripMenuItem.Text = "Add Status";
-            this.addStatusToolStripMenuItem.Click += new System.EventHandler(this.addStatusToolStripMenuItem_Click);
+            this.incLabel1.AutoSize = true;
+            this.incLabel1.BackColor = System.Drawing.Color.Red;
+            this.incLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 20F, System.Drawing.FontStyle.Italic);
+            this.incLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel1.Location = new System.Drawing.Point(192, 4);
+            this.incLabel1.Name = "incLabel1";
+            this.incLabel1.Readonly = false;
+            this.incLabel1.Size = new System.Drawing.Size(59, 33);
+            this.incLabel1.TabIndex = 77;
+            this.incLabel1.Text = "Fine";
+            this.incLabel1.ValueByOrchestrator = "Fine";
             // 
-            // addTagToolStripMenuItem
+            // panel2
             // 
-            this.addTagToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addTagToolStripMenuItem.Name = "addTagToolStripMenuItem";
-            this.addTagToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addTagToolStripMenuItem.Text = "Add Tag";
-            this.addTagToolStripMenuItem.Click += new System.EventHandler(this.addTagToolStripMenuItem_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.btnIssue);
+            this.panel2.Controls.Add(this.txtFine);
+            this.panel2.Controls.Add(this.lblBurrowedDate);
+            this.panel2.Controls.Add(this.lblISBN);
+            this.panel2.Controls.Add(this.incLabel10);
+            this.panel2.Controls.Add(this.lblSection);
+            this.panel2.Controls.Add(this.incLabel9);
+            this.panel2.Controls.Add(this.lblAuthor);
+            this.panel2.Controls.Add(this.lblID);
+            this.panel2.Controls.Add(this.lblClass);
+            this.panel2.Controls.Add(this.lblBookTitle);
+            this.panel2.Controls.Add(this.incLabel4);
+            this.panel2.Controls.Add(this.incLabel8);
+            this.panel2.Controls.Add(this.incLabel7);
+            this.panel2.Controls.Add(this.incLabel6);
+            this.panel2.Controls.Add(this.lblSpecificInfoH);
+            this.panel2.Location = new System.Drawing.Point(165, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(251, 345);
+            this.panel2.TabIndex = 74;
+            // 
+            // lblSection
+            // 
+            this.lblSection.AutoSize = true;
+            this.lblSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblSection.Location = new System.Drawing.Point(61, 95);
+            this.lblSection.Name = "lblSection";
+            this.lblSection.Readonly = false;
+            this.lblSection.Size = new System.Drawing.Size(8, 17);
+            this.lblSection.TabIndex = 76;
+            this.lblSection.Text = "\r\n";
+            this.lblSection.ValueByOrchestrator = "\r\n";
+            // 
+            // incLabel9
+            // 
+            this.incLabel9.AutoSize = true;
+            this.incLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel9.Location = new System.Drawing.Point(2, 95);
+            this.incLabel9.Name = "incLabel9";
+            this.incLabel9.Readonly = false;
+            this.incLabel9.Size = new System.Drawing.Size(67, 17);
+            this.incLabel9.TabIndex = 75;
+            this.incLabel9.Text = "Section : ";
+            this.incLabel9.ValueByOrchestrator = "Section : ";
+            // 
+            // lblAuthor
+            // 
+            this.lblAuthor.AutoSize = true;
+            this.lblAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblAuthor.Location = new System.Drawing.Point(61, 183);
+            this.lblAuthor.Name = "lblAuthor";
+            this.lblAuthor.Readonly = false;
+            this.lblAuthor.Size = new System.Drawing.Size(8, 17);
+            this.lblAuthor.TabIndex = 74;
+            this.lblAuthor.Text = "\r\n";
+            this.lblAuthor.ValueByOrchestrator = "\r\n";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblID.Location = new System.Drawing.Point(30, 7);
+            this.lblID.Name = "lblID";
+            this.lblID.Readonly = false;
+            this.lblID.Size = new System.Drawing.Size(8, 17);
+            this.lblID.TabIndex = 73;
+            this.lblID.Text = "\r\n";
+            this.lblID.ValueByOrchestrator = "\r\n";
+            // 
+            // lblClass
+            // 
+            this.lblClass.AutoSize = true;
+            this.lblClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblClass.Location = new System.Drawing.Point(56, 51);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Readonly = false;
+            this.lblClass.Size = new System.Drawing.Size(8, 17);
+            this.lblClass.TabIndex = 71;
+            this.lblClass.Text = "\r\n";
+            this.lblClass.ValueByOrchestrator = "\r\n";
+            // 
+            // lblBookTitle
+            // 
+            this.lblBookTitle.AutoSize = true;
+            this.lblBookTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBookTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBookTitle.Location = new System.Drawing.Point(81, 139);
+            this.lblBookTitle.Name = "lblBookTitle";
+            this.lblBookTitle.Readonly = false;
+            this.lblBookTitle.Size = new System.Drawing.Size(8, 17);
+            this.lblBookTitle.TabIndex = 69;
+            this.lblBookTitle.Text = "\r\n";
+            this.lblBookTitle.ValueByOrchestrator = "\r\n";
+            // 
+            // incLabel4
+            // 
+            this.incLabel4.AutoSize = true;
+            this.incLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel4.Location = new System.Drawing.Point(2, 7);
+            this.incLabel4.Name = "incLabel4";
+            this.incLabel4.Readonly = false;
+            this.incLabel4.Size = new System.Drawing.Size(33, 17);
+            this.incLabel4.TabIndex = 68;
+            this.incLabel4.Text = "ID : ";
+            this.incLabel4.ValueByOrchestrator = "ID : ";
+            // 
+            // incLabel8
+            // 
+            this.incLabel8.AutoSize = true;
+            this.incLabel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel8.Location = new System.Drawing.Point(2, 183);
+            this.incLabel8.Name = "incLabel8";
+            this.incLabel8.Readonly = false;
+            this.incLabel8.Size = new System.Drawing.Size(62, 17);
+            this.incLabel8.TabIndex = 67;
+            this.incLabel8.Text = "Author : ";
+            this.incLabel8.ValueByOrchestrator = "Author : ";
+            // 
+            // incLabel7
+            // 
+            this.incLabel7.AutoSize = true;
+            this.incLabel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel7.Location = new System.Drawing.Point(2, 139);
+            this.incLabel7.Name = "incLabel7";
+            this.incLabel7.Readonly = false;
+            this.incLabel7.Size = new System.Drawing.Size(83, 17);
+            this.incLabel7.TabIndex = 67;
+            this.incLabel7.Text = "Book Title : ";
+            this.incLabel7.ValueByOrchestrator = "Book Title : ";
+            // 
+            // incLabel6
+            // 
+            this.incLabel6.AutoSize = true;
+            this.incLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel6.Location = new System.Drawing.Point(2, 227);
+            this.incLabel6.Name = "incLabel6";
+            this.incLabel6.Readonly = false;
+            this.incLabel6.Size = new System.Drawing.Size(114, 17);
+            this.incLabel6.TabIndex = 66;
+            this.incLabel6.Text = "Burrowed Date : ";
+            this.incLabel6.ValueByOrchestrator = "Burrowed Date : ";
+            // 
+            // lblSpecificInfoH
+            // 
+            this.lblSpecificInfoH.AutoSize = true;
+            this.lblSpecificInfoH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblSpecificInfoH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSpecificInfoH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblSpecificInfoH.Location = new System.Drawing.Point(2, 51);
+            this.lblSpecificInfoH.Name = "lblSpecificInfoH";
+            this.lblSpecificInfoH.Readonly = false;
+            this.lblSpecificInfoH.Size = new System.Drawing.Size(54, 17);
+            this.lblSpecificInfoH.TabIndex = 65;
+            this.lblSpecificInfoH.Text = "Class : ";
+            this.lblSpecificInfoH.ValueByOrchestrator = "Class : ";
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtStudentName.ForeColor = System.Drawing.Color.White;
+            this.txtStudentName.Location = new System.Drawing.Point(1, 61);
+            this.txtStudentName.MaxLength = 500;
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(163, 21);
+            this.txtStudentName.TabIndex = 75;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblName.Location = new System.Drawing.Point(246, 64);
+            this.lblName.Name = "lblName";
+            this.lblName.Readonly = false;
+            this.lblName.Size = new System.Drawing.Size(57, 17);
+            this.lblName.TabIndex = 72;
+            this.lblName.Text = "Name : ";
+            this.lblName.ValueByOrchestrator = "Name : ";
+            // 
+            // incLabel2
+            // 
+            this.incLabel2.AutoSize = true;
+            this.incLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel2.Location = new System.Drawing.Point(35, 43);
+            this.incLabel2.Name = "incLabel2";
+            this.incLabel2.Readonly = false;
+            this.incLabel2.Size = new System.Drawing.Size(98, 17);
+            this.incLabel2.TabIndex = 76;
+            this.incLabel2.Text = "Student Name";
+            this.incLabel2.ValueByOrchestrator = "Student Name";
+            // 
+            // pnlISBN
+            // 
+            this.pnlISBN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlISBN.Controls.Add(this.dgvFineDetail);
+            this.pnlISBN.Location = new System.Drawing.Point(1, 85);
+            this.pnlISBN.Name = "pnlISBN";
+            this.pnlISBN.Size = new System.Drawing.Size(163, 347);
+            this.pnlISBN.TabIndex = 73;
+            // 
+            // dgvFineDetail
+            // 
+            this.dgvFineDetail.AllowUserToAddRows = false;
+            this.dgvFineDetail.AllowUserToDeleteRows = false;
+            this.dgvFineDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvFineDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvFineDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFineDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvFineDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFineDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSNF,
+            this.colISBNF,
+            this.colStudentName,
+            this.colDays,
+            this.colFIneAmount,
+            this.colStudentID,
+            this.colBookTitleF,
+            this.colAuthorF,
+            this.colClassF,
+            this.colSection,
+            this.colBurrowedDate});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFineDetail.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvFineDetail.EnableHeadersVisualStyles = false;
+            this.dgvFineDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvFineDetail.Location = new System.Drawing.Point(0, -3);
+            this.dgvFineDetail.Name = "dgvFineDetail";
+            this.dgvFineDetail.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFineDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvFineDetail.RowHeadersVisible = false;
+            this.dgvFineDetail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvFineDetail.Size = new System.Drawing.Size(158, 346);
+            this.dgvFineDetail.TabIndex = 58;
+            // 
+            // colSNF
+            // 
+            this.colSNF.HeaderText = "SN";
+            this.colSNF.Name = "colSNF";
+            this.colSNF.ReadOnly = true;
+            this.colSNF.Width = 30;
+            // 
+            // colISBNF
+            // 
+            this.colISBNF.HeaderText = "ISBN";
+            this.colISBNF.Name = "colISBNF";
+            this.colISBNF.ReadOnly = true;
+            this.colISBNF.Visible = false;
+            // 
+            // colStudentName
+            // 
+            this.colStudentName.HeaderText = "Student Name";
+            this.colStudentName.Name = "colStudentName";
+            this.colStudentName.ReadOnly = true;
+            this.colStudentName.Visible = false;
+            this.colStudentName.Width = 170;
+            // 
+            // colDays
+            // 
+            this.colDays.HeaderText = "Days";
+            this.colDays.Name = "colDays";
+            this.colDays.ReadOnly = true;
+            this.colDays.Width = 50;
+            // 
+            // colFIneAmount
+            // 
+            this.colFIneAmount.HeaderText = "Fine";
+            this.colFIneAmount.Name = "colFIneAmount";
+            this.colFIneAmount.ReadOnly = true;
+            this.colFIneAmount.Width = 80;
+            // 
+            // colStudentID
+            // 
+            this.colStudentID.HeaderText = "StudentID";
+            this.colStudentID.Name = "colStudentID";
+            this.colStudentID.ReadOnly = true;
+            this.colStudentID.Visible = false;
+            // 
+            // colBookTitleF
+            // 
+            this.colBookTitleF.HeaderText = "Book Title";
+            this.colBookTitleF.Name = "colBookTitleF";
+            this.colBookTitleF.ReadOnly = true;
+            this.colBookTitleF.Visible = false;
+            // 
+            // colAuthorF
+            // 
+            this.colAuthorF.HeaderText = "Author";
+            this.colAuthorF.Name = "colAuthorF";
+            this.colAuthorF.ReadOnly = true;
+            this.colAuthorF.Visible = false;
+            // 
+            // colClassF
+            // 
+            this.colClassF.HeaderText = "Class";
+            this.colClassF.Name = "colClassF";
+            this.colClassF.ReadOnly = true;
+            this.colClassF.Visible = false;
+            // 
+            // colSection
+            // 
+            this.colSection.HeaderText = "Section";
+            this.colSection.Name = "colSection";
+            this.colSection.ReadOnly = true;
+            this.colSection.Visible = false;
+            // 
+            // colBurrowedDate
+            // 
+            this.colBurrowedDate.HeaderText = "BurrowedDate";
+            this.colBurrowedDate.Name = "colBurrowedDate";
+            this.colBurrowedDate.ReadOnly = true;
+            this.colBurrowedDate.Visible = false;
+            // 
+            // lblISBN
+            // 
+            this.lblISBN.AutoSize = true;
+            this.lblISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblISBN.Location = new System.Drawing.Point(48, 271);
+            this.lblISBN.Name = "lblISBN";
+            this.lblISBN.Readonly = false;
+            this.lblISBN.Size = new System.Drawing.Size(8, 17);
+            this.lblISBN.TabIndex = 80;
+            this.lblISBN.Text = "\r\n";
+            this.lblISBN.ValueByOrchestrator = "\r\n";
+            // 
+            // incLabel10
+            // 
+            this.incLabel10.AutoSize = true;
+            this.incLabel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.incLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel10.Location = new System.Drawing.Point(2, 271);
+            this.incLabel10.Name = "incLabel10";
+            this.incLabel10.Readonly = false;
+            this.incLabel10.Size = new System.Drawing.Size(51, 17);
+            this.incLabel10.TabIndex = 79;
+            this.incLabel10.Text = "ISBN : ";
+            this.incLabel10.ValueByOrchestrator = "ISBN : ";
+            // 
+            // lblBurrowedDate
+            // 
+            this.lblBurrowedDate.AutoSize = true;
+            this.lblBurrowedDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lblBurrowedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBurrowedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBurrowedDate.Location = new System.Drawing.Point(108, 227);
+            this.lblBurrowedDate.Name = "lblBurrowedDate";
+            this.lblBurrowedDate.Readonly = false;
+            this.lblBurrowedDate.Size = new System.Drawing.Size(8, 17);
+            this.lblBurrowedDate.TabIndex = 81;
+            this.lblBurrowedDate.Text = "\r\n";
+            this.lblBurrowedDate.ValueByOrchestrator = "\r\n";
+            // 
+            // btnIssue
+            // 
+            this.btnIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnIssue.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnIssue.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnIssue.Location = new System.Drawing.Point(8, 311);
+            this.btnIssue.Name = "btnIssue";
+            this.btnIssue.NextControl = null;
+            this.btnIssue.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnIssue.PreviousControl = null;
+            this.btnIssue.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnIssue.Size = new System.Drawing.Size(63, 30);
+            this.btnIssue.TabIndex = 83;
+            this.btnIssue.Text = "Pay";
+            // 
+            // txtFine
+            // 
+            this.txtFine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtFine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFine.ForeColor = System.Drawing.Color.White;
+            this.txtFine.Location = new System.Drawing.Point(79, 314);
+            this.txtFine.MaxLength = 500;
+            this.txtFine.Name = "txtFine";
+            this.txtFine.Size = new System.Drawing.Size(91, 23);
+            this.txtFine.TabIndex = 82;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 548);
+            this.ClientSize = new System.Drawing.Size(1361, 727);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStripZ1);
@@ -350,12 +860,20 @@
             this.Controls.SetChildIndex(this.menuStripZ1, 0);
             this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.Controls.SetChildIndex(this.statusStrip1, 0);
+            this.Controls.SetChildIndex(this.pnlMain, 0);
             this.menuStripZ1.ResumeLayout(false);
             this.menuStripZ1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.pnlISBN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFineDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +910,41 @@
         private System.Windows.Forms.ToolStripMenuItem addDepartmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTagToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel panel1;
+        private IncLibrary.IncLabel incLabel1;
+        private System.Windows.Forms.Panel panel2;
+        private IncLibrary.IncLabel lblSection;
+        private IncLibrary.IncLabel incLabel9;
+        private IncLibrary.IncLabel lblAuthor;
+        private IncLibrary.IncLabel lblID;
+        private IncLibrary.IncLabel lblClass;
+        private IncLibrary.IncLabel lblBookTitle;
+        private IncLibrary.IncLabel incLabel4;
+        private IncLibrary.IncLabel incLabel8;
+        private IncLibrary.IncLabel incLabel7;
+        private IncLibrary.IncLabel incLabel6;
+        private IncLibrary.IncLabel lblSpecificInfoH;
+        private System.Windows.Forms.TextBox txtStudentName;
+        private IncLibrary.IncLabel lblName;
+        private IncLibrary.IncLabel incLabel2;
+        private System.Windows.Forms.Panel pnlISBN;
+        private System.Windows.Forms.DataGridView dgvFineDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSNF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colISBNF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDays;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFIneAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBookTitleF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthorF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClassF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSection;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedDate;
+        private IncLibrary.IncLabel lblISBN;
+        private IncLibrary.IncLabel incLabel10;
+        private IncLibrary.IncLabel lblBurrowedDate;
+        private IncLibrary.IncButton btnIssue;
+        private System.Windows.Forms.TextBox txtFine;
     }
 }
