@@ -309,9 +309,13 @@ namespace Library
                     MessageBox.Show("Book Not Registered", "Book Not Added Yet!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 //if book is already issued it cannot be issued agian until its returned
-                else if (balIssueReturn.CheckBookIssued(txtISBN.Text))
+                else if (lblIssueorReturn.Checked==true && balIssueReturn.CheckBookIssued(txtISBN.Text))
                 {
                     MessageBox.Show("Book already issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (lblIssueorReturn.Checked == true && !balIssueReturn.CheckBookIssued(txtISBN.Text))
+                {
+                    MessageBox.Show("Book already returned", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (CheckISBNDuplicate())
                 {
