@@ -67,23 +67,6 @@
             this.incLabel8 = new IncLibrary.IncLabel();
             this.pnlBook = new System.Windows.Forms.Panel();
             this.dgvBooksInfo = new System.Windows.Forms.DataGridView();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPublisherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPublishedYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTagID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBooksInfo = new System.Windows.Forms.Panel();
             this.btnSave = new IncLibrary.IncButton();
             this.btnUpdate = new IncLibrary.IncButton();
@@ -96,6 +79,23 @@
             this.btnNew = new IncLibrary.IncButton();
             this.pnlClose = new System.Windows.Forms.Panel();
             this._CloseButton = new Library.ButtonZ();
+            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPublisherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPublishedYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTagID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBookInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMember)).BeginInit();
             this.pnlBook.SuspendLayout();
@@ -574,11 +574,11 @@
             this.colAuthor,
             this.colTag,
             this.colStatus,
+            this.colISBN,
             this.colCost,
             this.colBookCopies,
             this.colClassID,
             this.colBookStatusID,
-            this.colISBN,
             this.colSource,
             this.colPlace,
             this.colPublisherName,
@@ -611,127 +611,6 @@
             this.dgvBooksInfo.Size = new System.Drawing.Size(573, 387);
             this.dgvBooksInfo.TabIndex = 40;
             this.dgvBooksInfo.Click += new System.EventHandler(this.dgvBooksInfo_Click);
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colClassName.HeaderText = "Class";
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            this.colClassName.Width = 67;
-            // 
-            // colTitle
-            // 
-            this.colTitle.HeaderText = "Title";
-            this.colTitle.Name = "colTitle";
-            this.colTitle.ReadOnly = true;
-            this.colTitle.Width = 180;
-            // 
-            // colAuthor
-            // 
-            this.colAuthor.HeaderText = "Author";
-            this.colAuthor.Name = "colAuthor";
-            this.colAuthor.ReadOnly = true;
-            this.colAuthor.Width = 115;
-            // 
-            // colTag
-            // 
-            this.colTag.HeaderText = "Tag";
-            this.colTag.Name = "colTag";
-            this.colTag.ReadOnly = true;
-            this.colTag.Width = 80;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Width = 90;
-            // 
-            // colCost
-            // 
-            this.colCost.HeaderText = "Cost";
-            this.colCost.Name = "colCost";
-            this.colCost.ReadOnly = true;
-            this.colCost.Visible = false;
-            // 
-            // colBookCopies
-            // 
-            this.colBookCopies.HeaderText = "No.";
-            this.colBookCopies.Name = "colBookCopies";
-            this.colBookCopies.ReadOnly = true;
-            this.colBookCopies.Visible = false;
-            this.colBookCopies.Width = 40;
-            // 
-            // colClassID
-            // 
-            this.colClassID.HeaderText = "Class ID";
-            this.colClassID.Name = "colClassID";
-            this.colClassID.ReadOnly = true;
-            this.colClassID.Visible = false;
-            // 
-            // colBookStatusID
-            // 
-            this.colBookStatusID.HeaderText = "Stauts ID";
-            this.colBookStatusID.Name = "colBookStatusID";
-            this.colBookStatusID.ReadOnly = true;
-            this.colBookStatusID.Visible = false;
-            // 
-            // colISBN
-            // 
-            this.colISBN.HeaderText = "ISBN";
-            this.colISBN.Name = "colISBN";
-            this.colISBN.ReadOnly = true;
-            this.colISBN.Visible = false;
-            // 
-            // colSource
-            // 
-            this.colSource.HeaderText = "Source";
-            this.colSource.Name = "colSource";
-            this.colSource.ReadOnly = true;
-            this.colSource.Visible = false;
-            // 
-            // colPlace
-            // 
-            this.colPlace.HeaderText = "Place";
-            this.colPlace.Name = "colPlace";
-            this.colPlace.ReadOnly = true;
-            this.colPlace.Visible = false;
-            // 
-            // colPublisherName
-            // 
-            this.colPublisherName.HeaderText = "Publisher Name";
-            this.colPublisherName.Name = "colPublisherName";
-            this.colPublisherName.ReadOnly = true;
-            this.colPublisherName.Visible = false;
-            // 
-            // colPublishedYear
-            // 
-            this.colPublishedYear.HeaderText = "Published Year";
-            this.colPublishedYear.Name = "colPublishedYear";
-            this.colPublishedYear.ReadOnly = true;
-            this.colPublishedYear.Visible = false;
-            // 
-            // colPages
-            // 
-            this.colPages.HeaderText = "Pages";
-            this.colPages.Name = "colPages";
-            this.colPages.ReadOnly = true;
-            this.colPages.Visible = false;
-            // 
-            // colBookDetailID
-            // 
-            this.colBookDetailID.HeaderText = "Book Detail ID";
-            this.colBookDetailID.Name = "colBookDetailID";
-            this.colBookDetailID.ReadOnly = true;
-            this.colBookDetailID.Visible = false;
-            // 
-            // colTagID
-            // 
-            this.colTagID.HeaderText = "TagID";
-            this.colTagID.Name = "colTagID";
-            this.colTagID.ReadOnly = true;
-            this.colTagID.Visible = false;
             // 
             // pnlBooksInfo
             // 
@@ -907,6 +786,127 @@
             this._CloseButton.UseVisualStyleBackColor = true;
             this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click_1);
             // 
+            // colClassName
+            // 
+            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colClassName.HeaderText = "Class";
+            this.colClassName.Name = "colClassName";
+            this.colClassName.ReadOnly = true;
+            this.colClassName.Width = 67;
+            // 
+            // colTitle
+            // 
+            this.colTitle.HeaderText = "Title";
+            this.colTitle.Name = "colTitle";
+            this.colTitle.ReadOnly = true;
+            this.colTitle.Width = 180;
+            // 
+            // colAuthor
+            // 
+            this.colAuthor.HeaderText = "Author";
+            this.colAuthor.Name = "colAuthor";
+            this.colAuthor.ReadOnly = true;
+            this.colAuthor.Width = 115;
+            // 
+            // colTag
+            // 
+            this.colTag.HeaderText = "Tag";
+            this.colTag.Name = "colTag";
+            this.colTag.ReadOnly = true;
+            this.colTag.Width = 80;
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Width = 90;
+            // 
+            // colISBN
+            // 
+            this.colISBN.HeaderText = "ISBN";
+            this.colISBN.Name = "colISBN";
+            this.colISBN.ReadOnly = true;
+            this.colISBN.Visible = false;
+            // 
+            // colCost
+            // 
+            this.colCost.HeaderText = "Cost";
+            this.colCost.Name = "colCost";
+            this.colCost.ReadOnly = true;
+            this.colCost.Visible = false;
+            // 
+            // colBookCopies
+            // 
+            this.colBookCopies.HeaderText = "No.";
+            this.colBookCopies.Name = "colBookCopies";
+            this.colBookCopies.ReadOnly = true;
+            this.colBookCopies.Visible = false;
+            this.colBookCopies.Width = 40;
+            // 
+            // colClassID
+            // 
+            this.colClassID.HeaderText = "Class ID";
+            this.colClassID.Name = "colClassID";
+            this.colClassID.ReadOnly = true;
+            this.colClassID.Visible = false;
+            // 
+            // colBookStatusID
+            // 
+            this.colBookStatusID.HeaderText = "Stauts ID";
+            this.colBookStatusID.Name = "colBookStatusID";
+            this.colBookStatusID.ReadOnly = true;
+            this.colBookStatusID.Visible = false;
+            // 
+            // colSource
+            // 
+            this.colSource.HeaderText = "Source";
+            this.colSource.Name = "colSource";
+            this.colSource.ReadOnly = true;
+            this.colSource.Visible = false;
+            // 
+            // colPlace
+            // 
+            this.colPlace.HeaderText = "Place";
+            this.colPlace.Name = "colPlace";
+            this.colPlace.ReadOnly = true;
+            this.colPlace.Visible = false;
+            // 
+            // colPublisherName
+            // 
+            this.colPublisherName.HeaderText = "Publisher Name";
+            this.colPublisherName.Name = "colPublisherName";
+            this.colPublisherName.ReadOnly = true;
+            this.colPublisherName.Visible = false;
+            // 
+            // colPublishedYear
+            // 
+            this.colPublishedYear.HeaderText = "Published Year";
+            this.colPublishedYear.Name = "colPublishedYear";
+            this.colPublishedYear.ReadOnly = true;
+            this.colPublishedYear.Visible = false;
+            // 
+            // colPages
+            // 
+            this.colPages.HeaderText = "Pages";
+            this.colPages.Name = "colPages";
+            this.colPages.ReadOnly = true;
+            this.colPages.Visible = false;
+            // 
+            // colBookDetailID
+            // 
+            this.colBookDetailID.HeaderText = "Book Detail ID";
+            this.colBookDetailID.Name = "colBookDetailID";
+            this.colBookDetailID.ReadOnly = true;
+            this.colBookDetailID.Visible = false;
+            // 
+            // colTagID
+            // 
+            this.colTagID.HeaderText = "TagID";
+            this.colTagID.Name = "colTagID";
+            this.colTagID.ReadOnly = true;
+            this.colTagID.Visible = false;
+            // 
             // frmAddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -993,16 +993,19 @@
         private IncLibrary.IncLabel incLabel15;
         private System.Windows.Forms.ComboBox cboClassSearch;
         private IncLibrary.IncLabel incLabel16;
+        private IncLibrary.IncButton btnNew;
+        private System.Windows.Forms.Panel pnlClose;
+        private ButtonZ _CloseButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTag;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBookCopies;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBookStatusID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPublisherName;
@@ -1010,9 +1013,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPages;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBookDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTagID;
-        private IncLibrary.IncButton btnNew;
-        private System.Windows.Forms.Panel pnlClose;
-        private ButtonZ _CloseButton;
     }
 }
 

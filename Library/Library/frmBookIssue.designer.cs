@@ -79,6 +79,7 @@
             this.lblIssueorReturn = new System.Windows.Forms.CheckBox();
             this.pnlClose = new System.Windows.Forms.Panel();
             this._CloseButton = new Library.ButtonZ();
+            this.btnAdd = new IncLibrary.IncLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBurrowerInfo)).BeginInit();
             this.pnlBook.SuspendLayout();
             this.pnlStudentInfo.SuspendLayout();
@@ -372,6 +373,7 @@
             // pnlISBN
             // 
             this.pnlISBN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlISBN.Controls.Add(this.btnAdd);
             this.pnlISBN.Controls.Add(this.dgvISBNList);
             this.pnlISBN.Location = new System.Drawing.Point(638, 274);
             this.pnlISBN.Name = "pnlISBN";
@@ -643,6 +645,20 @@
             this._CloseButton.TextLocation_Y = 1;
             this._CloseButton.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Red;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.Location = new System.Drawing.Point(179, -2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Readonly = false;
+            this.btnAdd.Size = new System.Drawing.Size(35, 45);
+            this.btnAdd.TabIndex = 60;
+            this.btnAdd.Text = "+";
+            this.btnAdd.ValueByOrchestrator = "+";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // frmBookIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,6 +749,7 @@
         public System.Windows.Forms.CheckBox lblIssueorReturn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInfo;
+        private IncLibrary.IncLabel btnAdd;
     }
 }
 

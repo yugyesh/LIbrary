@@ -22,30 +22,7 @@ namespace Library
         {
             this.Close();
         }
-        int length = 0;
-        
-        private void txtISBN_TextChanged(object sender, EventArgs e)
-        {
-            
-            if (txtISBN.Text.Length==13)
-            {
 
-                if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
-                {
-                    MessageBox.Show("Book Not Registered YET!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtISBN.Focus();
-                }
-                else
-                {
-                    dgvISBNList.Rows.Add();
-                    dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
-                    dgvISBNList.Rows[length].Cells["colSN"].Value = length + 1;
-                    //length = dgvISBNList.Rows.Count-1;
-                    length = length + 1;
-                }
-                txtISBN.Text=string.Empty;
-            }
-        }
 
         private void chkBurrower_CheckedChanged(object sender, EventArgs e)
         {
@@ -74,17 +51,7 @@ namespace Library
             }
         }
 
-        private void lblRemoveBook_Click(object sender, EventArgs e)
-        {
-            if (dgvISBNList.CurrentRow.Cells["colISBN"].Value== null)
-            {
-                return;
-            }
-            dgvISBNList.Rows.RemoveAt(dgvISBNList.CurrentRow.Index);
-            txtISBN.Focus();
-            length = length - 1;
-            //dgvISBNList.CurrentRow.Cells["col"]
-        }
+
         BALBookIssueReturn balIssueReturn = new BALBookIssueReturn();
         private void txtBookIDSearch_TextChanged(object sender, EventArgs e)
         {
@@ -255,10 +222,15 @@ namespace Library
                 chkBurrower.Checked==true?"1":"0",
                 "1",
             };
-            for (int i = 0; i < dgvISBNList.Rows.Count; i++)
+            for (int i = 0; i < dgvISBNList.Rows.Count-1; i++)
             {
-                balIssueReturn.IssueBook(dgvISBNList.Rows[0].Cells["colISBN"].Value.ToString(), burrowrInfo);
+                balIssueReturn.IssueBook(dgvISBNList.Rows[i].Cells["colISBN"].Value.ToString(), burrowrInfo);
             }
+            MessageBox.Show("Book Issued Successfully", "Issue SuccessFul", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearControls();
+            dgvISBNList.Rows.Clear();
+            dgvISBNList.DataSource = null;
+
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -292,6 +264,97 @@ namespace Library
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
+        }
+        int length = 0;
+        private void txtISBN_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtISBN.Text.Length == 13)
+            {
+                if (txtISBN.Text.Length == 13)
+                {
+                    if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
+                    {
+                        MessageBox.Show("Book Not Registered", "Book Not Added Yet!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    //if book is already issued it cannot be issued agian until its returned
+                    else if (balIssueReturn.CheckBookIssued(txtISBN.Text))
+                    {
+                        MessageBox.Show("Book already issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (CheckISBNDuplicate())
+                    {
+                        MessageBox.Show("Book Already Added To List");
+                    }
+                    else
+                    {
+                        dgvISBNList.Rows.Add();
+                        dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
+                        dgvISBNList.Rows[length].Cells["colSN"].Value = length + 1;
+                        //length = dgvISBNList.Rows.Count-1;
+                        length = length + 1;
+                    }
+                    txtISBN.Text = string.Empty;
+                    txtISBN.Focus();
+                }
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtISBN.Text.Length == 13)
+            {
+                if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
+                {
+                    MessageBox.Show("Book Not Registered", "Book Not Added Yet!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //if book is already issued it cannot be issued agian until its returned
+                else if (balIssueReturn.CheckBookIssued(txtISBN.Text))
+                {
+                    MessageBox.Show("Book already issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (CheckISBNDuplicate())
+                {
+                    MessageBox.Show("Book Already Added To List");
+                }
+                else
+                {
+                    dgvISBNList.Rows.Add();
+                    dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
+                    dgvISBNList.Rows[length].Cells["colSN"].Value = length + 1;
+                    //length = dgvISBNList.Rows.Count-1;
+                    length = length + 1;
+                }
+                txtISBN.Text = string.Empty;
+                txtISBN.Focus();
+            }
+
+        }
+        private bool CheckISBNDuplicate()
+        {
+            if (dgvISBNList == null || dgvISBNList.Rows.Count == 1)
+            {
+                return false;
+            }
+            for (int i = 0; i < dgvISBNList.Rows.Count-1; i++)
+            {
+                if (txtISBN.Text == dgvISBNList.Rows[i].Cells["colISBN"].Value.ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void lblRemoveBook_Click(object sender, EventArgs e)
+        {
+            if (dgvISBNList.CurrentRow.Cells["colISBN"].Value == null)
+            {
+                return;
+            }
+            dgvISBNList.Rows.RemoveAt(dgvISBNList.CurrentRow.Index);
+            txtISBN.Focus();
+            length = length - 1;
+            //dgvISBNList.CurrentRow.Cells["col"]
         }
     }
 }

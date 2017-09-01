@@ -99,6 +99,7 @@ namespace Library
                 if (txtBookID.Text.Trim() != string.Empty)
                 {
                     MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearControls();
                     return;
                 }
                 else
@@ -121,6 +122,7 @@ namespace Library
                     if (balBook.AddBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
                         return;
                     }
                 }
@@ -131,6 +133,7 @@ namespace Library
                 if (balBook.CheckISBN(txtISBN.Text))
                 {
                     MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearControls();
                     return;
                 }
                 else
@@ -145,6 +148,7 @@ namespace Library
                     if (balBook.AddBook(BookInfo))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
                         return;
                     }
 
@@ -186,9 +190,9 @@ namespace Library
             }
             else
             {
-                if (balBook.CheckISBN(txtISBN.Text))
+                if (!balBook.CheckISBN(txtISBN.Text))
                 {
-                    MessageBox.Show("This Book is already Added", "Book Already Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Update operation Falure book not added Yet!", "Book Not Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 List<string> BookInfo = new List<string>();
@@ -223,15 +227,28 @@ namespace Library
                 txtBookIDSearch.Text.Trim(),
                 cboClassSearch.SelectedText.Trim(),
             };
-            dtAllBooks = balBook.GetAllBookInfo(filterString);
-            ClearGridView();
-            LoadGrid(dtAllBooks);
-            for (int i = 0; i < dtAllBooks.Rows.Count; i++)
+            if (chkRegistered.Checked==true)
             {
-                //dgvBooksInfo.Rows.Add(dgvBooksInfo.Rows[i].Cells["colISBN"].Value, dtAllBooks.Rows[i]["BookDetailID"].ToString());
-                dgvBooksInfo.Rows[i].Cells["colISBN"].Value = dtAllBooks.Rows[i]["ISBN"].ToString();
-                dgvBooksInfo.Rows[i].Cells["colBookStatusID"].Value = dtAllBooks.Rows[i]["BStatusID"].ToString();
-                dgvBooksInfo.Rows[i].Cells["colStatus"].Value = dtAllBooks.Rows[i]["BStatusName"].ToString();
+                dgvBooksInfo.Columns["colStatus"].Visible = true;
+                dgvBooksInfo.Columns["colISBN"].Visible = false;
+                dtAllBooks = balBook.GetBookInfo(filterString);
+                ClearGridView();
+                LoadGrid(dtAllBooks);
+            }
+            else
+            {
+                dgvBooksInfo.Columns["colStatus"].Visible = false;
+                dgvBooksInfo.Columns["colISBN"].Visible = true;
+                dtAllBooks = balBook.GetAllBookInfo(filterString);
+                ClearGridView();
+                LoadGrid(dtAllBooks);
+                for (int i = 0; i < dtAllBooks.Rows.Count; i++)
+                {
+                    //dgvBooksInfo.Rows.Add(dgvBooksInfo.Rows[i].Cells["colISBN"].Value, dtAllBooks.Rows[i]["BookDetailID"].ToString());
+                    dgvBooksInfo.Rows[i].Cells["colISBN"].Value = dtAllBooks.Rows[i]["ISBN"].ToString();
+                    dgvBooksInfo.Rows[i].Cells["colBookStatusID"].Value = dtAllBooks.Rows[i]["BStatusID"].ToString();
+                    dgvBooksInfo.Rows[i].Cells["colStatus"].Value = dtAllBooks.Rows[i]["BStatusName"].ToString();
+                }
             }
             //assigning values to grid view
         }
@@ -240,8 +257,11 @@ namespace Library
         {
             if (chkRegistered.Checked == false)
             {
-                //cboStatus.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value == null ? 0 : dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value;
-                //txtISBN.Text = dgvBooksInfo.CurrentRow.Cells["colISBN"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colISBN"].Value.ToString();
+                cboStatus.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value == null ? 0 : dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value;
+                if (txtISBN.Text==string.Empty)
+                {
+                    txtISBN.Text = dgvBooksInfo.CurrentRow.Cells["colISBN"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colISBN"].Value.ToString();
+                }
                 txtBookIDSearch.Text = dgvBooksInfo.CurrentRow.Cells["colBookDetailID"].Value.ToString();
             }
             else

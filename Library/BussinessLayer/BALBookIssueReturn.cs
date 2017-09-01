@@ -57,6 +57,17 @@ namespace BussinessLayer
             dt= DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
             return dt.Rows.Count > 0 ? true : false;
         }
+        public bool CheckBookIssued(string ISBN)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+            };
+            string query = "Select BurrowerID from Burrower where BookID=@ISBN and Issued=1";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, pram, CommandType.Text);
+            return dt.Rows.Count > 0 ? true : false;
+        }
         public bool IssueBook(string ISBN,string[] burrowerDetails)
         {
             SqlParameter[] pram = new SqlParameter[]
