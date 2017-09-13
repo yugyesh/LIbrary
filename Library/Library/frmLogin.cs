@@ -34,7 +34,7 @@ namespace Library
                     MessageBox.Show("Login Successful", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain mainForm = new frmMain();
                     mainForm.statUserName.Text = txtUserName.Text;
-                    mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
+                    //mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
                     mainForm.Show();
                     this.Hide();
                 }
