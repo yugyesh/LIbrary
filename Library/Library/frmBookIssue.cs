@@ -269,35 +269,35 @@ namespace Library
         private void txtISBN_TextChanged(object sender, EventArgs e)
         {
 
-            if (txtISBN.Text.Length == 13)
-            {
-                if (txtISBN.Text.Length == 13)
-                {
-                    if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
-                    {
-                        MessageBox.Show("Book Not Registered", "Book Not Added Yet!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    //if book is already issued it cannot be issued agian until its returned
-                    else if (balIssueReturn.CheckBookIssued(txtISBN.Text))
-                    {
-                        MessageBox.Show("Book already issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (CheckISBNDuplicate())
-                    {
-                        MessageBox.Show("Book Already Added To List");
-                    }
-                    else
-                    {
-                        dgvISBNList.Rows.Add();
-                        dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
-                        dgvISBNList.Rows[length].Cells["colSN"].Value = length + 1;
-                        //length = dgvISBNList.Rows.Count-1;
-                        length = length + 1;
-                    }
-                    txtISBN.Text = string.Empty;
-                    txtISBN.Focus();
-                }
-            }
+            //if (txtISBN.Text.Length == 13)
+            //{
+            //    if (txtISBN.Text.Length == 13)
+            //    {
+            //        if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
+            //        {
+            //            MessageBox.Show("Book Not Registered", "Book Not Added Yet!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //        //if book is already issued it cannot be issued agian until its returned
+            //        else if (balIssueReturn.CheckBookIssued(txtISBN.Text))
+            //        {
+            //            MessageBox.Show("Book already issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //        else if (CheckISBNDuplicate())
+            //        {
+            //            MessageBox.Show("Book Already Added To List");
+            //        }
+            //        else
+            //        {
+            //            dgvISBNList.Rows.Add();
+            //            dgvISBNList.Rows[length].Cells["colISBN"].Value = txtISBN.Text;
+            //            dgvISBNList.Rows[length].Cells["colSN"].Value = length + 1;
+            //            //length = dgvISBNList.Rows.Count-1;
+            //            length = length + 1;
+            //        }
+            //        txtISBN.Text = string.Empty;
+            //        txtISBN.Focus();
+            //    }
+            //}
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace Common
             BinaryReader br = new BinaryReader(fStream);
 
             //when you use binary reader you need to supply number of bytes to read from file
-            //in this case we are reading a whole file so need to supply tota no of bytes
+            //in this case we are reading a whole file so no need to supply tota no of bytes
             picData = br.ReadBytes((int)numBytes);
             return picData;
         }
