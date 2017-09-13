@@ -110,6 +110,12 @@
     <Compile Include="frmAddDepartment.designer.cs">
       <DependentUpon>frmAddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangeRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeRole.designer.cs">
+      <DependentUpon>frmChangeRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddDepartment.resx">
       <DependentUpon>frmAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeRole.resx">
+      <DependentUpon>frmChangeRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchBooks.resx">
       <DependentUpon>frmSearchBooks.cs</DependentUpon>

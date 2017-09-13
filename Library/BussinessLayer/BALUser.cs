@@ -16,20 +16,9 @@ namespace BussinessLayer
             string query = "select * from UserRole";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
-            try
-            {
-                if (dt != null)
-                {
-                    return dt;
-                }
-                return null;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return dt == null || dt.Rows.Count == 0 ? null : dt;
         }
+
         public bool CheckPassword(string userName)
         {
             SqlParameter[] pram = new SqlParameter[]
@@ -64,6 +53,44 @@ namespace BussinessLayer
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, pram, CommandType.Text);
             return dt == null || dt.Rows.Count > 0 ? true : false;
+        }
+        public bool DeleteUser(string userID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+                {
+                    new SqlParameter("@userID", userID),
+                };
+            string query = "Delete from [User] where userID=@userID";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
+        public bool UpdateUser(string userName, Int32 roleID, string userID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+                {
+                    new SqlParameter("@userName", userName),
+                    new SqlParameter("@roleID",roleID),
+                    new SqlParameter("@userID",userID),
+                };
+            string query = "Update [User] set userName=@userName,roleID=@roleID where userID=@userID";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
+        public DataTable GetAllUser()
+        {
+            string query = "select Username,UserID,RoleID from [User]";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, null, CommandType.Text);
+            return dt == null || dt.Rows.Count == 0 ? null : dt;
+        }
+        public DataTable GetAllUserFilter(string username)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@userName","%"+username+"%"),
+            };
+            string query = "select Username,UserID,RoleID from [User] where username like @userName";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, pram, CommandType.Text);
+            return dt == null || dt.Rows.Count == 0 ? null : dt;
         }
     }
 }
