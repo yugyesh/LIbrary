@@ -62,7 +62,7 @@
             this.statRoleID = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFine = new System.Windows.Forms.Panel();
             this.incLabel1 = new IncLibrary.IncLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPay = new IncLibrary.IncButton();
@@ -101,7 +101,7 @@
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.pnlMain.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlFine.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlISBN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFineDetail)).BeginInit();
@@ -196,7 +196,7 @@
             // 
             this.issueToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.issueToolStripMenuItem.Name = "issueToolStripMenuItem";
-            this.issueToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.issueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.issueToolStripMenuItem.Text = "Issue";
             this.issueToolStripMenuItem.Click += new System.EventHandler(this.toolBookIssue_Click);
             // 
@@ -204,7 +204,7 @@
             // 
             this.returnToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.toolBookReturn_Click);
             // 
@@ -222,14 +222,14 @@
             // 
             this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.booksToolStripMenuItem.Text = "Books";
             // 
             // memberToolStripMenuItem
             // 
             this.memberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.memberToolStripMenuItem.Text = "Member";
             // 
             // userToolStripMenuItem
@@ -379,27 +379,27 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.panel1);
+            this.pnlMain.Controls.Add(this.pnlFine);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 122);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1361, 583);
             this.pnlMain.TabIndex = 87;
             // 
-            // panel1
+            // pnlFine
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.incLabel1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.txtStudentName);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.incLabel2);
-            this.panel1.Controls.Add(this.pnlISBN);
-            this.panel1.Location = new System.Drawing.Point(942, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 435);
-            this.panel1.TabIndex = 86;
+            this.pnlFine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFine.Controls.Add(this.incLabel1);
+            this.pnlFine.Controls.Add(this.panel2);
+            this.pnlFine.Controls.Add(this.txtStudentName);
+            this.pnlFine.Controls.Add(this.lblName);
+            this.pnlFine.Controls.Add(this.incLabel2);
+            this.pnlFine.Controls.Add(this.pnlISBN);
+            this.pnlFine.Location = new System.Drawing.Point(942, 4);
+            this.pnlFine.Name = "pnlFine";
+            this.pnlFine.Size = new System.Drawing.Size(418, 435);
+            this.pnlFine.TabIndex = 86;
             // 
             // incLabel1
             // 
@@ -870,8 +870,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.pnlMain.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlFine.ResumeLayout(false);
+            this.pnlFine.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlISBN.ResumeLayout(false);
@@ -913,7 +913,7 @@
         private System.Windows.Forms.ToolStripMenuItem addStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTagToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlFine;
         private IncLibrary.IncLabel incLabel1;
         private System.Windows.Forms.Panel panel2;
         private IncLibrary.IncLabel lblSection;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
+using System.Speech.Synthesis;
 
 namespace Library
 {
@@ -31,6 +32,9 @@ namespace Library
                 if (balUser.CheckUser(txtUserName.Text, txtPassword.Text, Convert.ToInt32(cboUserType.SelectedValue.ToString())))
                 {
                     Program.userName = txtUserName.Text;
+                    //SpeechSynthesizer speak = new SpeechSynthesizer();
+                    //speak.Speak("Hello! Welcome to Library Management System");
+                    //speak.Speak("Have a good day");
                     MessageBox.Show("Login Successful", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain mainForm = new frmMain();
                     mainForm.statUserName.Text = txtUserName.Text;
@@ -40,7 +44,7 @@ namespace Library
                 }
                 else
                 {
-                    MessageBox.Show("Username and Password Mismatch", "Login Falure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username and Password Mismatch", "Login Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUserName.Focus();
                 }
             }

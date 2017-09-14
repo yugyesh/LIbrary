@@ -23,7 +23,15 @@ namespace BussinessLayer
             return dt == null ? null : dt;
         }
         //Checking Fine Amount
-        public DataTable AddFineAmount(int fineAmount,string burrowerID,string ISBN)
+        //public DataTable FineAmount(string burrowerID)
+        //{
+        //    SqlParameter[] pram = new SqlParameter[]
+        //    {
+        //        new SqlParameter("@burrowerID",burrowerID),
+        //    };
+            
+        //}
+        public bool AddFineAmount(int fineAmount,string burrowerID,string ISBN)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
@@ -32,9 +40,7 @@ namespace BussinessLayer
                 new SqlParameter("@ISBN",ISBN),
                 new SqlParameter("@fineAmount",fineAmount),
             };
-            DataTable dt = new DataTable();
-            dt = DAO.GetTable("sp_AddFine", pram, CommandType.StoredProcedure);
-            return dt == null ? null : dt;
+            return DAO.IUD("sp_AddFine", pram, CommandType.StoredProcedure) > 0?true:false;
         }
     }
 }

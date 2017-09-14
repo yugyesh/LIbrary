@@ -223,7 +223,10 @@ namespace Library
         {
             if (Convert.ToInt32(dgvFineDetail.CurrentRow.Cells["colFineAmount"].Value.ToString())==Convert.ToInt32(txtFine.Text))
             {
-                
+                if (balFine.AddFineAmount(Convert.ToInt32(txtFine.Text), lblID.Text, lblISBN.Text))
+                {
+                    MessageBox.Show("Fine Paid", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
             }
         }
     }
