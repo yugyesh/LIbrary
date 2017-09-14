@@ -27,10 +27,6 @@ namespace Library
         private void frmAddBooks_Load(object sender, EventArgs e)
         {
             LoadCboBox();
-            string defaultImage;
-            //application. startuppath gives the path of the bin
-            defaultImage = Application.StartupPath + "\\DefaultBook.jpg";
-            picMember.ImageLocation = defaultImage;
         }
         private void LoadCboBox()
         {
@@ -40,40 +36,29 @@ namespace Library
             drClass["ClassName"] = "-- Please Select --";
             drClass["ClassID"] = 0;
             dt.Rows.InsertAt(drClass, 0);
-            cboClass.DataSource = dt;
-            cboClass.DisplayMember = "ClassName";
-            cboClass.ValueMember = "ClassID";
             cboClassSearch.DataSource = dt;
             cboClassSearch.DisplayMember = "ClassName";
             cboClassSearch.ValueMember = "ClassID";
-
-            DataTable dtStatus = new DataTable();
-            dtStatus = balBook.GetBookStatus();
-            if (dtStatus != null)
-            {
-                DataRow dr = dtStatus.NewRow();
-                dr["BStatusName"] = "-- Please Select --";
-                dr["BStatusID"] = 0;
-                dtStatus.Rows.InsertAt(dr, 0);
-                cboStatus.DataSource = dtStatus;
-                cboStatus.ValueMember = "BStatusID";
-                cboStatus.DisplayMember = "BStatusName";
-            }
-            DataTable dtTag = new DataTable();
-            dtTag = balBook.GetBookTag();
-            if (dtStatus != null)
-            {
-                DataRow dr = dtTag.NewRow();
-                dr["TagName"] = "-- Please Select --";
-                dr["TagID"] = 0;
-                dtTag.Rows.InsertAt(dr, 0);
-                cboTag.DataSource = dtTag;
-                cboTag.ValueMember = "TagID";
-                cboTag.DisplayMember = "TagName";
-            }
         }
 
+        private void txtClassification_Focused(object sender,EventArgs e)
+        {
 
+        }
+        private void txtCategory_Focused(object sender, EventArgs e)
+        {
+            if (txtClassification.Text.Trim()==string.Empty)
+            {
+                return;
+            }
+        }
+        private void txtSubCategory_Focused(object sender, EventArgs e)
+        {
+            if (txtCategory.Text==string.Empty)
+            {
+                return;
+            }
+        }
         private void chkRegistered_CheckedChanged(object sender, EventArgs e)
         {
             if (chkRegistered.Checked == true)
@@ -113,12 +98,9 @@ namespace Library
                     BookDetails.Add(txtPublisherName.Text);
                     BookDetails.Add(txtPublisherYear.Text);
                     BookDetails.Add(txtSource.Text);
-                    BookDetails.Add(cboTag.SelectedValue.ToString());
                     BookDetails.Add(txtAuthor.Text);
                     BookDetails.Add("0");
                     BookDetails.Add(txtCost.Text == string.Empty ? "0" : txtCost.Text);
-                    BookDetails.Add(txtBookCopies.Text);
-                    BookDetails.Add(cboClass.SelectedValue.ToString());
                     if (balBook.AddBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,7 +122,6 @@ namespace Library
                 {
                     List<string> BookInfo = new List<string>();
                     BookInfo.Add(txtISBN.Text);
-                    BookInfo.Add(cboStatus.SelectedValue.ToString());
                     BookInfo.Add(txtBookIDSearch.Text);
                     BookInfo.Add(DateTime.Today.ToString());
                     BookInfo.Add("");
@@ -175,12 +156,9 @@ namespace Library
                     BookDetails.Add(txtPublisherName.Text);
                     BookDetails.Add(txtPublisherYear.Text);
                     BookDetails.Add(txtSource.Text);
-                    BookDetails.Add(cboTag.SelectedValue.ToString());
                     BookDetails.Add(txtAuthor.Text);
                     BookDetails.Add("0");
                     BookDetails.Add(txtCost.Text);
-                    BookDetails.Add(txtBookCopies.Text);
-                    BookDetails.Add(cboClass.SelectedValue.ToString());
                     if (balBook.UpdateBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -197,7 +175,6 @@ namespace Library
                 }
                 List<string> BookInfo = new List<string>();
                 BookInfo.Add(txtISBN.Text);
-                BookInfo.Add(cboStatus.SelectedValue.ToString());
                 BookInfo.Add(txtBookIDSearch.Text);
                 BookInfo.Add(DateTime.Today.ToString());
                 BookInfo.Add("");
@@ -257,7 +234,6 @@ namespace Library
         {
             if (chkRegistered.Checked == false)
             {
-                cboStatus.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value == null ? 0 : dgvBooksInfo.CurrentRow.Cells["colBookStatusID"].Value;
                 if (txtISBN.Text==string.Empty)
                 {
                     txtISBN.Text = dgvBooksInfo.CurrentRow.Cells["colISBN"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colISBN"].Value.ToString();
@@ -269,9 +245,6 @@ namespace Library
                 txtBookID.Text = dgvBooksInfo.CurrentRow.Cells["colBookDetailID"].Value.ToString();
                 txtBookTitle.Text = dgvBooksInfo.CurrentRow.Cells["colTitle"].Value.ToString();
                 txtAuthor.Text = dgvBooksInfo.CurrentRow.Cells["colAuthor"].Value.ToString();
-                cboClass.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colClassID"].Value;
-                cboTag.SelectedValue = dgvBooksInfo.CurrentRow.Cells["colTagID"].Value;
-                txtBookCopies.Text = dgvBooksInfo.CurrentRow.Cells["colBookCopies"].Value.ToString();
                 txtSource.Text = dgvBooksInfo.CurrentRow.Cells["colSource"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colSource"].Value.ToString();
                 txtCost.Text = dgvBooksInfo.CurrentRow.Cells["colCost"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colCost"].Value.ToString();
                 txtPublisherName.Text = dgvBooksInfo.CurrentRow.Cells["colPublisherName"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colPublisherName"].Value.ToString();
@@ -321,7 +294,7 @@ namespace Library
         {
             if (txtISBN.Text.Length == 13)
             {
-                cboStatus.Focus();
+                //cboStatus.Focus();
             }
         }
 
@@ -380,19 +353,6 @@ namespace Library
                     erpGeneral.SetError(txtBookTitle, "Please Provide Book Title");
                     return true;
                 }
-                else if (Convert.ToInt32(cboTag.SelectedValue.ToString()) == 0)
-                {
-                    cboTag.Focus();
-                    erpGeneral.SetError(cboTag, "Please Select Tag");
-
-                    return true;
-                }
-                else if (Convert.ToInt32(txtBookCopies.Text.Trim()) == 0)
-                {
-                    txtBookCopies.Focus();
-                    erpGeneral.SetError(txtBookCopies, "Please Provide Number Of Copies");
-                    return true;
-                }
                 else
                 {
                     return false;
@@ -404,12 +364,6 @@ namespace Library
                 {
                     txtISBN.Focus();
                     erpGeneral.SetError(txtISBN, "Please Scan Book Properley");
-                    return true;
-                }
-                else if (Convert.ToInt32(cboStatus.SelectedValue.ToString()) == 0)
-                {
-                    cboStatus.Focus();
-                    erpGeneral.SetError(cboStatus, "Please Select Status");
                     return true;
                 }
                 else
