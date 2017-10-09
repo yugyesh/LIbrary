@@ -11,6 +11,44 @@ namespace BussinessLayer
 {
     public class BALBook
     {
+        //Retrive Book Classification to populate grid classification
+        public DataTable GetClassification()
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@option",'A'),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("spGetClassification", pram, CommandType.StoredProcedure);
+            return dt == null ? null : dt;
+        }
+
+        //Retrive Books Category ina specific classification
+        public DataTable GetCategory(string classificationID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@option",'C'),
+                new SqlParameter("@classificationID",classificationID),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("spGetClassification", pram, CommandType.StoredProcedure);
+            return dt == null?null:dt;
+        }
+
+        //Retrive Books Subcategory based on CategoryID
+        public DataTable GetSubCategory(string categoryID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@categoryID",categoryID),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("spGetClassification", pram, CommandType.StoredProcedure);
+            return dt == null ? null : dt;
+        }
+
+
         //Add Book Status
         public bool AddBStatus(string bStatusName, string userName)
         {
@@ -114,6 +152,7 @@ namespace BussinessLayer
                 throw ex;
             }
         }
+        //Count book details to provide ID to new book detail added
         public int CountBookDetails()
         {
             string query = "select count(*) as booksNo from BookDetails";
@@ -129,7 +168,7 @@ namespace BussinessLayer
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
         public bool AddBookDetails(List<string> BookDetails, byte photo = 0)

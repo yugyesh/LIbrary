@@ -27,6 +27,9 @@ namespace Library
         private void frmAddBooks_Load(object sender, EventArgs e)
         {
             LoadCboBox();
+            //txtClassification.GotFocus += txtClassification_Focused;
+            //txtCategory.GotFocus += txtCategory_Focused;
+            //txtSubCategory.GotFocus += txtSubCategory_Focused;
         }
         private void LoadCboBox()
         {
@@ -41,24 +44,7 @@ namespace Library
             cboClassSearch.ValueMember = "ClassID";
         }
 
-        private void txtClassification_Focused(object sender,EventArgs e)
-        {
 
-        }
-        private void txtCategory_Focused(object sender, EventArgs e)
-        {
-            if (txtClassification.Text.Trim()==string.Empty)
-            {
-                return;
-            }
-        }
-        private void txtSubCategory_Focused(object sender, EventArgs e)
-        {
-            if (txtCategory.Text==string.Empty)
-            {
-                return;
-            }
-        }
         private void chkRegistered_CheckedChanged(object sender, EventArgs e)
         {
             if (chkRegistered.Checked == true)
@@ -398,6 +384,76 @@ namespace Library
         private void _CloseButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        //Grid that hold classification
+        private void LoadGridClassification(DataTable dt)
+        {
+            dgvClassificationList.Rows.Clear();
+            dgvClassificationList.DataSource = null;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dgvClassificationList.Rows.Add();
+                dgvClassificationList.Rows[i].Cells["colID"].Value = dt.Rows[i]["ID"].ToString();
+                dgvClassificationList.Rows[i].Cells["colName"].Value = dt.Rows[i]["Name"].ToString();
+            }
+            dgvClassificationList.Focus();
+        }
+        //this global variable is used to identify which value is getting populated in classification grid
+        string identifySelect;
+        //Loading classification in grid classification
+        private void txtClassification_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = balBook.GetClassification();
+            LoadGridClassification(dt);
+            identifySelect = "Classification";
+            dgvClassificationList.Columns[1].HeaderText = "Classification Name";
+        }
+        //Loading category in grid category based on classification selected
+        private void txtCategory_Click(object sender, EventArgs e)
+        {
+            if (txtClassification.Text.Trim() == string.Empty)
+            {
+                return;
+            }
+            DataTable dt = new DataTable();
+            dt = balBook.GetCategory(txtClassification.Text);
+            LoadGridClassification(dt);
+            identifySelect = "Category";
+            dgvClassificationList.Columns[1].HeaderText = "Category Name";
+        }
+        //Loading sub category in grid based on category selected
+        private void txtSubCategory_Click(object sender, EventArgs e)
+        {
+            if (txtCategory.Text == string.Empty)
+            {
+                return;
+            }
+            DataTable dt = new DataTable();
+            dt = balBook.GetSubCategory(txtCategory.Text);
+            LoadGridClassification(dt);
+            identifySelect = "SubCategory";
+            dgvClassificationList.Columns[1].HeaderText = "Sub-Category Name";
+        }
+
+        private void dgvClassificationList_Click(object sender, EventArgs e)
+        {
+            if (identifySelect=="Classification")
+            {
+                txtClassification.Text=dgvClassificationList.CurrentRow.Cells["colID"].Value.ToString();
+                
+                return;
+            }
+            else if (identifySelect == "Category")
+            {
+                txtCategory.Text = dgvClassificationList.CurrentRow.Cells["colID"].Value.ToString();
+                return;
+            }
+            else
+            {
+                txtSubCategory.Text = dgvClassificationList.CurrentRow.Cells["colID"].Value.ToString();
+                return;
+            }
         }
     }
 }
