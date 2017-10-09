@@ -104,6 +104,7 @@
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNew = new IncLibrary.IncButton();
             this.pnlClose = new System.Windows.Forms.Panel();
+            this.cboCurrency = new System.Windows.Forms.ComboBox();
             this._CloseButton = new Library.ButtonZ();
             this.grpBookInfo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -143,6 +144,7 @@
             // 
             // grpBookInfo
             // 
+            this.grpBookInfo.Controls.Add(this.cboCurrency);
             this.grpBookInfo.Controls.Add(this.panel1);
             this.grpBookInfo.Controls.Add(this.txtCategory);
             this.grpBookInfo.Controls.Add(this.txtSubCategory);
@@ -535,7 +537,7 @@
             this.txtCost.Location = new System.Drawing.Point(106, 272);
             this.txtCost.MaxLength = 500;
             this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(209, 24);
+            this.txtCost.Size = new System.Drawing.Size(137, 24);
             this.txtCost.TabIndex = 7;
             this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
             // 
@@ -985,6 +987,18 @@
             this.pnlClose.Size = new System.Drawing.Size(1361, 25);
             this.pnlClose.TabIndex = 60;
             // 
+            // cboCurrency
+            // 
+            this.cboCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.cboCurrency.ForeColor = System.Drawing.SystemColors.Window;
+            this.cboCurrency.FormattingEnabled = true;
+            this.cboCurrency.Location = new System.Drawing.Point(249, 271);
+            this.cboCurrency.Name = "cboCurrency";
+            this.cboCurrency.Size = new System.Drawing.Size(66, 24);
+            this.cboCurrency.TabIndex = 64;
+            // 
             // _CloseButton
             // 
             this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -1118,6 +1132,7 @@
         private System.Windows.Forms.DataGridView dgvClassificationList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.ComboBox cboCurrency;
     }
 }
 

@@ -42,6 +42,15 @@ namespace Library
             cboClassSearch.DataSource = dt;
             cboClassSearch.DisplayMember = "ClassName";
             cboClassSearch.ValueMember = "ClassID";
+            //Loading Currency Combo box
+            dt = balHelper.GetCurrencyType();
+            DataRow drCurrency = dt.NewRow();
+            drCurrency["CurrencyID"] = 0;
+            drCurrency["CurrencyCode"] = "CURR";
+            dt.Rows.InsertAt(drCurrency, 0);
+            cboCurrency.DataSource = dt;
+            cboCurrency.DisplayMember = "CurrencyCode";
+            cboCurrency.ValueMember = "CurrencyID";
         }
 
 
