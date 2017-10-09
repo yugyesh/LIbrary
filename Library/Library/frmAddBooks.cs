@@ -388,6 +388,11 @@ namespace Library
         //Grid that hold classification
         private void LoadGridClassification(DataTable dt)
         {
+            //Adding data row with null value to select empty row
+            DataRow dr = dt.NewRow();
+            dr["ID"] = string.Empty;
+            dr["Name"] = "Clear";
+            dt.Rows.InsertAt(dr, dt.Rows.Count + 1);
             dgvClassificationList.Rows.Clear();
             dgvClassificationList.DataSource = null;
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -431,6 +436,7 @@ namespace Library
             }
             DataTable dt = new DataTable();
             dt = balBook.GetSubCategory(txtCategory.Text);
+
             LoadGridClassification(dt);
             identifySelect = "SubCategory";
             dgvClassificationList.Columns[1].HeaderText = "Sub-Category Name";
