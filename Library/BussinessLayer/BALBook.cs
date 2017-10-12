@@ -176,17 +176,21 @@ namespace BussinessLayer
             var pram = new List<SqlParameter>
             {
                 new SqlParameter("@bookDetailID", BookDetails[0]),
-                new SqlParameter("@bookTitle", BookDetails[1]),
-                new SqlParameter("@place", BookDetails[2]),
-                new SqlParameter("@publisherName", BookDetails[3]),
-                new SqlParameter("@publishedYear", BookDetails[4]),
-                new SqlParameter("@source", BookDetails[5]),
-                new SqlParameter("@tagID",  Convert.ToInt32(BookDetails[6])),
-                new SqlParameter("@author", BookDetails[7]),
-                new SqlParameter("@pages", Convert.ToInt32(BookDetails[8])),
-                new SqlParameter("@cost", Convert.ToInt32(BookDetails[9])),
-                new SqlParameter("@bookCopies", Convert.ToInt32(BookDetails[10])),
-                new SqlParameter("@classID",Convert.ToInt32(BookDetails[11])),
+                new SqlParameter("@author", BookDetails[1]),
+                new SqlParameter("@bookTitle", BookDetails[2]),
+                new SqlParameter("@edition", BookDetails[3]),
+                new SqlParameter("@place", BookDetails[4]),
+                new SqlParameter("@publisher", BookDetails[5]),
+                new SqlParameter("@year", BookDetails[6]),
+                new SqlParameter("@pages", BookDetails[7]),
+                new SqlParameter("@vol", BookDetails[8]),
+                new SqlParameter("@source", BookDetails[9]),
+                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[10])),
+                new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[11])),
+                new SqlParameter("@classificationID",BookDetails[12]),
+                new SqlParameter("@CategoryID", BookDetails[13]),
+                new SqlParameter("@subCategoryID", BookDetails[14]),
+                new SqlParameter("@addedOn",DateTime.Today),
                 new SqlParameter("@operation","S"),
             };
             return DAO.IUD("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure) >= 0 ?  true :  false;
@@ -196,17 +200,21 @@ namespace BussinessLayer
             var pram = new List<SqlParameter>
             {
                 new SqlParameter("@bookDetailID", BookDetails[0]),
-                new SqlParameter("@bookTitle", BookDetails[1]),
-                new SqlParameter("@place", BookDetails[2]),
-                new SqlParameter("@publisherName", BookDetails[3]),
-                new SqlParameter("@publishedYear", BookDetails[4]),
-                new SqlParameter("@source", BookDetails[5]),
-                new SqlParameter("@tagID",  Convert.ToInt32(BookDetails[6])),
-                new SqlParameter("@author", BookDetails[7]),
-                new SqlParameter("@pages", Convert.ToInt32(BookDetails[8])),
-                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[9])),
-                new SqlParameter("@bookCopies", Convert.ToInt32(BookDetails[10])),
-                new SqlParameter("@classID",Convert.ToInt32(BookDetails[11])),
+                new SqlParameter("@author", BookDetails[1]),
+                new SqlParameter("@bookTitle", BookDetails[2]),
+                new SqlParameter("@edition", BookDetails[3]),
+                new SqlParameter("@place", BookDetails[4]),
+                new SqlParameter("@publisher", BookDetails[5]),
+                new SqlParameter("@year", BookDetails[6]),
+                new SqlParameter("@pages", BookDetails[7]),
+                new SqlParameter("@vol", BookDetails[8]),
+                new SqlParameter("@source", BookDetails[9]),
+                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[10])),
+                new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[11])),
+                new SqlParameter("@classificationID",BookDetails[12]),
+                new SqlParameter("@CategoryID", BookDetails[13]),
+                new SqlParameter("@subCategoryID", BookDetails[14]),
+                new SqlParameter("@modifiedOn",DateTime.Today),
                 new SqlParameter("@operation","U"),
             };
             return DAO.IUD("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure) >= 0 ? true : false;
@@ -241,7 +249,7 @@ namespace BussinessLayer
             {
                 new SqlParameter("@filterTitle","%"+filters[0]+"%"),
                 new SqlParameter("@filterBookID", "%"+filters[1]+"%"),
-                new SqlParameter("@filterClass", "%"+filters[2]+"%"),
+                new SqlParameter("@filterAuthor", "%"+filters[2]+"%"),
             };
             return DAO.GetTable("sp_GetBookInfo", pram, CommandType.StoredProcedure);
         }
@@ -251,7 +259,7 @@ namespace BussinessLayer
             {
                 new SqlParameter("@filterTitle","%"+filters[0]+"%"),
                 new SqlParameter("@filterBookID", "%"+filters[1]+"%"),
-                new SqlParameter("@filterClass", "%"+filters[2]+"%"),
+                new SqlParameter("@filterAuthor", "%"+filters[2]+"%"),
                 new SqlParameter("@portion","A"),
             };
             return DAO.GetTable("sp_GetBookInfo", pram, CommandType.StoredProcedure);

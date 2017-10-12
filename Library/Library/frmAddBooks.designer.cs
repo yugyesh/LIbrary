@@ -35,9 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.incLabel14 = new IncLibrary.IncLabel();
             this.txtBookIDSearch = new System.Windows.Forms.TextBox();
             this.grpBookInfo = new System.Windows.Forms.GroupBox();
+            this.cboCurrency = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvClassificationList = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,65 +60,71 @@
             this.incLabel15 = new IncLibrary.IncLabel();
             this.txtBookTitle = new System.Windows.Forms.TextBox();
             this.incLabel13 = new IncLibrary.IncLabel();
-            this.txtPublisherYear = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.incLabel12 = new IncLibrary.IncLabel();
             this.incLabel11 = new IncLibrary.IncLabel();
             this.incLabel10 = new IncLibrary.IncLabel();
             this.incLabel9 = new IncLibrary.IncLabel();
             this.incLabel6 = new IncLibrary.IncLabel();
-            this.txtPublisherName = new System.Windows.Forms.TextBox();
-            this.txtPublisherPlace = new System.Windows.Forms.TextBox();
+            this.txtPublisher = new System.Windows.Forms.TextBox();
+            this.txtPlace = new System.Windows.Forms.TextBox();
             this.txtSource = new System.Windows.Forms.TextBox();
             this.txtCost = new System.Windows.Forms.TextBox();
             this.incLabel4 = new IncLibrary.IncLabel();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtBookID = new System.Windows.Forms.TextBox();
             this.incLabel1 = new IncLibrary.IncLabel();
+            this.pnlBooksDetail = new System.Windows.Forms.Panel();
+            this.dgvBookInfoD = new System.Windows.Forms.DataGridView();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.incLabel3 = new IncLibrary.IncLabel();
             this.txtBookTitleSearch = new System.Windows.Forms.TextBox();
             this.incLabel8 = new IncLibrary.IncLabel();
             this.pnlBook = new System.Windows.Forms.Panel();
             this.dgvBooksInfo = new System.Windows.Forms.DataGridView();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPublisherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPublishedYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTagID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBooksInfo = new System.Windows.Forms.Panel();
             this.btnSave = new IncLibrary.IncButton();
             this.btnUpdate = new IncLibrary.IncButton();
             this.btnGet = new IncLibrary.IncButton();
             this.chkRegistered = new System.Windows.Forms.CheckBox();
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.cboClassSearch = new System.Windows.Forms.ComboBox();
+            this.txtAuthorSearch = new System.Windows.Forms.TextBox();
             this.incLabel16 = new IncLibrary.IncLabel();
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNew = new IncLibrary.IncButton();
             this.pnlClose = new System.Windows.Forms.Panel();
-            this.cboCurrency = new System.Windows.Forms.ComboBox();
             this._CloseButton = new Library.ButtonZ();
+            this.pnlAddBookForm = new System.Windows.Forms.Panel();
+            this.lblBook = new IncLibrary.IncLabel();
+            this.lblBookDetails = new IncLibrary.IncLabel();
             this.grpBookInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassificationList)).BeginInit();
+            this.pnlBooksDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookInfoD)).BeginInit();
             this.pnlBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooksInfo)).BeginInit();
             this.pnlBooksInfo.SuspendLayout();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).BeginInit();
             this.pnlClose.SuspendLayout();
+            this.pnlAddBookForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // incLabel14
@@ -139,7 +149,7 @@
             this.txtBookIDSearch.MaxLength = 500;
             this.txtBookIDSearch.Name = "txtBookIDSearch";
             this.txtBookIDSearch.Size = new System.Drawing.Size(131, 23);
-            this.txtBookIDSearch.TabIndex = 3;
+            this.txtBookIDSearch.TabIndex = 1;
             this.txtBookIDSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
             // 
             // grpBookInfo
@@ -160,29 +170,41 @@
             this.grpBookInfo.Controls.Add(this.incLabel15);
             this.grpBookInfo.Controls.Add(this.txtBookTitle);
             this.grpBookInfo.Controls.Add(this.incLabel13);
-            this.grpBookInfo.Controls.Add(this.txtPublisherYear);
+            this.grpBookInfo.Controls.Add(this.txtYear);
             this.grpBookInfo.Controls.Add(this.incLabel12);
             this.grpBookInfo.Controls.Add(this.incLabel11);
             this.grpBookInfo.Controls.Add(this.incLabel10);
             this.grpBookInfo.Controls.Add(this.incLabel9);
             this.grpBookInfo.Controls.Add(this.incLabel6);
-            this.grpBookInfo.Controls.Add(this.txtPublisherName);
-            this.grpBookInfo.Controls.Add(this.txtPublisherPlace);
+            this.grpBookInfo.Controls.Add(this.txtPublisher);
+            this.grpBookInfo.Controls.Add(this.txtPlace);
             this.grpBookInfo.Controls.Add(this.txtSource);
             this.grpBookInfo.Controls.Add(this.txtCost);
             this.grpBookInfo.Controls.Add(this.incLabel4);
             this.grpBookInfo.Controls.Add(this.txtAuthor);
             this.grpBookInfo.Controls.Add(this.txtBookID);
             this.grpBookInfo.Controls.Add(this.incLabel1);
-            this.grpBookInfo.Enabled = false;
+            this.grpBookInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpBookInfo.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
             this.grpBookInfo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.grpBookInfo.Location = new System.Drawing.Point(13, 103);
+            this.grpBookInfo.Location = new System.Drawing.Point(0, 0);
             this.grpBookInfo.Name = "grpBookInfo";
-            this.grpBookInfo.Size = new System.Drawing.Size(742, 494);
-            this.grpBookInfo.TabIndex = 2;
+            this.grpBookInfo.Size = new System.Drawing.Size(378, 451);
+            this.grpBookInfo.TabIndex = 3;
             this.grpBookInfo.TabStop = false;
             this.grpBookInfo.Text = "Book Info";
+            // 
+            // cboCurrency
+            // 
+            this.cboCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.cboCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.cboCurrency.ForeColor = System.Drawing.SystemColors.Window;
+            this.cboCurrency.FormattingEnabled = true;
+            this.cboCurrency.Location = new System.Drawing.Point(249, 271);
+            this.cboCurrency.Name = "cboCurrency";
+            this.cboCurrency.Size = new System.Drawing.Size(66, 24);
+            this.cboCurrency.TabIndex = 11;
             // 
             // panel1
             // 
@@ -191,7 +213,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.panel1.Location = new System.Drawing.Point(1, 354);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 137);
+            this.panel1.Size = new System.Drawing.Size(669, 137);
             this.panel1.TabIndex = 61;
             // 
             // dgvClassificationList
@@ -234,8 +256,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvClassificationList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClassificationList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvClassificationList.Size = new System.Drawing.Size(743, 136);
-            this.dgvClassificationList.TabIndex = 60;
+            this.dgvClassificationList.Size = new System.Drawing.Size(669, 136);
+            this.dgvClassificationList.TabIndex = 0;
             this.dgvClassificationList.Click += new System.EventHandler(this.dgvClassificationList_Click);
             // 
             // colID
@@ -260,7 +282,7 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
             this.txtCategory.Size = new System.Drawing.Size(209, 24);
-            this.txtCategory.TabIndex = 59;
+            this.txtCategory.TabIndex = 13;
             this.txtCategory.Click += new System.EventHandler(this.txtCategory_Click);
             // 
             // txtSubCategory
@@ -272,7 +294,7 @@
             this.txtSubCategory.Name = "txtSubCategory";
             this.txtSubCategory.ReadOnly = true;
             this.txtSubCategory.Size = new System.Drawing.Size(209, 24);
-            this.txtSubCategory.TabIndex = 58;
+            this.txtSubCategory.TabIndex = 14;
             this.txtSubCategory.Click += new System.EventHandler(this.txtSubCategory_Click);
             // 
             // txtClassification
@@ -284,7 +306,7 @@
             this.txtClassification.Name = "txtClassification";
             this.txtClassification.ReadOnly = true;
             this.txtClassification.Size = new System.Drawing.Size(209, 24);
-            this.txtClassification.TabIndex = 57;
+            this.txtClassification.TabIndex = 12;
             this.txtClassification.Click += new System.EventHandler(this.txtClassification_Click);
             // 
             // incLabel5
@@ -321,7 +343,7 @@
             this.txtVol.Location = new System.Drawing.Point(106, 225);
             this.txtVol.Name = "txtVol";
             this.txtVol.Size = new System.Drawing.Size(209, 24);
-            this.txtVol.TabIndex = 53;
+            this.txtVol.TabIndex = 8;
             // 
             // incLabel19
             // 
@@ -344,7 +366,7 @@
             this.txtEdition.Location = new System.Drawing.Point(495, 80);
             this.txtEdition.Name = "txtEdition";
             this.txtEdition.Size = new System.Drawing.Size(209, 24);
-            this.txtEdition.TabIndex = 51;
+            this.txtEdition.TabIndex = 3;
             // 
             // incLabel18
             // 
@@ -367,7 +389,7 @@
             this.txtPages.Location = new System.Drawing.Point(495, 172);
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(209, 24);
-            this.txtPages.TabIndex = 49;
+            this.txtPages.TabIndex = 7;
             // 
             // incLabel17
             // 
@@ -404,7 +426,7 @@
             this.txtBookTitle.MaxLength = 500;
             this.txtBookTitle.Name = "txtBookTitle";
             this.txtBookTitle.Size = new System.Drawing.Size(209, 24);
-            this.txtBookTitle.TabIndex = 1;
+            this.txtBookTitle.TabIndex = 2;
             // 
             // incLabel13
             // 
@@ -419,16 +441,16 @@
             this.incLabel13.Text = "Book TItle";
             this.incLabel13.ValueByOrchestrator = "Book TItle";
             // 
-            // txtPublisherYear
+            // txtYear
             // 
-            this.txtPublisherYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtPublisherYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.txtPublisherYear.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPublisherYear.Location = new System.Drawing.Point(106, 178);
-            this.txtPublisherYear.MaxLength = 500;
-            this.txtPublisherYear.Name = "txtPublisherYear";
-            this.txtPublisherYear.Size = new System.Drawing.Size(209, 24);
-            this.txtPublisherYear.TabIndex = 9;
+            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txtYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtYear.Location = new System.Drawing.Point(106, 178);
+            this.txtYear.MaxLength = 500;
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(209, 24);
+            this.txtYear.TabIndex = 6;
             // 
             // incLabel12
             // 
@@ -495,28 +517,28 @@
             this.incLabel6.Text = "Author";
             this.incLabel6.ValueByOrchestrator = "Author";
             // 
-            // txtPublisherName
+            // txtPublisher
             // 
-            this.txtPublisherName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtPublisherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.txtPublisherName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPublisherName.Location = new System.Drawing.Point(495, 126);
-            this.txtPublisherName.MaxLength = 500;
-            this.txtPublisherName.Name = "txtPublisherName";
-            this.txtPublisherName.Size = new System.Drawing.Size(209, 24);
-            this.txtPublisherName.TabIndex = 8;
-            this.txtPublisherName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPublisherName_KeyPress);
+            this.txtPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txtPublisher.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPublisher.Location = new System.Drawing.Point(495, 126);
+            this.txtPublisher.MaxLength = 500;
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size(209, 24);
+            this.txtPublisher.TabIndex = 5;
+            this.txtPublisher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPublisherName_KeyPress);
             // 
-            // txtPublisherPlace
+            // txtPlace
             // 
-            this.txtPublisherPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtPublisherPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.txtPublisherPlace.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPublisherPlace.Location = new System.Drawing.Point(106, 131);
-            this.txtPublisherPlace.MaxLength = 500;
-            this.txtPublisherPlace.Name = "txtPublisherPlace";
-            this.txtPublisherPlace.Size = new System.Drawing.Size(209, 24);
-            this.txtPublisherPlace.TabIndex = 10;
+            this.txtPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txtPlace.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPlace.Location = new System.Drawing.Point(106, 131);
+            this.txtPlace.MaxLength = 500;
+            this.txtPlace.Name = "txtPlace";
+            this.txtPlace.Size = new System.Drawing.Size(209, 24);
+            this.txtPlace.TabIndex = 4;
             // 
             // txtSource
             // 
@@ -527,7 +549,7 @@
             this.txtSource.MaxLength = 500;
             this.txtSource.Name = "txtSource";
             this.txtSource.Size = new System.Drawing.Size(209, 24);
-            this.txtSource.TabIndex = 6;
+            this.txtSource.TabIndex = 9;
             // 
             // txtCost
             // 
@@ -538,7 +560,7 @@
             this.txtCost.MaxLength = 500;
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(137, 24);
-            this.txtCost.TabIndex = 7;
+            this.txtCost.TabIndex = 10;
             this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
             // 
             // incLabel4
@@ -563,7 +585,7 @@
             this.txtAuthor.MaxLength = 500;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(209, 24);
-            this.txtAuthor.TabIndex = 2;
+            this.txtAuthor.TabIndex = 1;
             this.txtAuthor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPublisherName_KeyPress);
             // 
             // txtBookID
@@ -590,6 +612,59 @@
             this.incLabel1.TabIndex = 23;
             this.incLabel1.Text = "Book ID";
             this.incLabel1.ValueByOrchestrator = "Book ID";
+            // 
+            // pnlBooksDetail
+            // 
+            this.pnlBooksDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBooksDetail.Controls.Add(this.dgvBookInfoD);
+            this.pnlBooksDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlBooksDetail.ForeColor = System.Drawing.Color.White;
+            this.pnlBooksDetail.Location = new System.Drawing.Point(14, 115);
+            this.pnlBooksDetail.Name = "pnlBooksDetail";
+            this.pnlBooksDetail.Size = new System.Drawing.Size(739, 482);
+            this.pnlBooksDetail.TabIndex = 62;
+            // 
+            // dgvBookInfoD
+            // 
+            this.dgvBookInfoD.AllowUserToAddRows = false;
+            this.dgvBookInfoD.AllowUserToDeleteRows = false;
+            this.dgvBookInfoD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvBookInfoD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookInfoD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBookInfoD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBookInfoD.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvBookInfoD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBookInfoD.EnableHeadersVisualStyles = false;
+            this.dgvBookInfoD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.dgvBookInfoD.Location = new System.Drawing.Point(0, 0);
+            this.dgvBookInfoD.Name = "dgvBookInfoD";
+            this.dgvBookInfoD.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookInfoD.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvBookInfoD.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvBookInfoD.Size = new System.Drawing.Size(735, 478);
+            this.dgvBookInfoD.TabIndex = 40;
+            this.dgvBookInfoD.Click += new System.EventHandler(this.dgvBookInfoD_Click);
             // 
             // txtISBN
             // 
@@ -621,10 +696,10 @@
             this.txtBookTitleSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.txtBookTitleSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBookTitleSearch.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBookTitleSearch.Location = new System.Drawing.Point(211, 14);
+            this.txtBookTitleSearch.Location = new System.Drawing.Point(207, 15);
             this.txtBookTitleSearch.MaxLength = 500;
             this.txtBookTitleSearch.Name = "txtBookTitleSearch";
-            this.txtBookTitleSearch.Size = new System.Drawing.Size(168, 23);
+            this.txtBookTitleSearch.Size = new System.Drawing.Size(143, 23);
             this.txtBookTitleSearch.TabIndex = 0;
             this.txtBookTitleSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
             // 
@@ -633,7 +708,7 @@
             this.incLabel8.AutoSize = true;
             this.incLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.incLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel8.Location = new System.Drawing.Point(74, 18);
+            this.incLabel8.Location = new System.Drawing.Point(67, 20);
             this.incLabel8.Name = "incLabel8";
             this.incLabel8.Readonly = false;
             this.incLabel8.Size = new System.Drawing.Size(134, 16);
@@ -648,7 +723,7 @@
             this.pnlBook.Controls.Add(this.incLabel3);
             this.pnlBook.Controls.Add(this.txtBookIDSearch);
             this.pnlBook.Controls.Add(this.txtISBN);
-            this.pnlBook.Location = new System.Drawing.Point(142, 49);
+            this.pnlBook.Location = new System.Drawing.Point(142, 41);
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(614, 44);
             this.pnlBook.TabIndex = 1;
@@ -659,94 +734,57 @@
             this.dgvBooksInfo.AllowUserToDeleteRows = false;
             this.dgvBooksInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvBooksInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBooksInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBooksInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBooksInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooksInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colClassName,
+            this.colISBN,
+            this.colBookDetailID,
             this.colTitle,
             this.colAuthor,
-            this.colTag,
-            this.colStatus,
-            this.colISBN,
-            this.colCost,
-            this.colBookCopies,
-            this.colClassID,
-            this.colBookStatusID,
-            this.colSource,
+            this.colEdition,
             this.colPlace,
             this.colPublisherName,
             this.colPublishedYear,
             this.colPages,
-            this.colBookDetailID,
-            this.colTagID});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colVol,
+            this.colSource,
+            this.colCost,
+            this.colCurrency,
+            this.colClassification,
+            this.colCategory,
+            this.colSubCategory});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBooksInfo.EnableHeadersVisualStyles = false;
             this.dgvBooksInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvBooksInfo.Location = new System.Drawing.Point(-2, -2);
             this.dgvBooksInfo.Name = "dgvBooksInfo";
             this.dgvBooksInfo.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBooksInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBooksInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBooksInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvBooksInfo.Size = new System.Drawing.Size(573, 387);
-            this.dgvBooksInfo.TabIndex = 40;
+            this.dgvBooksInfo.Size = new System.Drawing.Size(573, 379);
+            this.dgvBooksInfo.TabIndex = 0;
             this.dgvBooksInfo.Click += new System.EventHandler(this.dgvBooksInfo_Click);
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colClassName.HeaderText = "Class";
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            this.colClassName.Width = 67;
-            // 
-            // colTitle
-            // 
-            this.colTitle.HeaderText = "Title";
-            this.colTitle.Name = "colTitle";
-            this.colTitle.ReadOnly = true;
-            this.colTitle.Width = 180;
-            // 
-            // colAuthor
-            // 
-            this.colAuthor.HeaderText = "Author";
-            this.colAuthor.Name = "colAuthor";
-            this.colAuthor.ReadOnly = true;
-            this.colAuthor.Width = 115;
-            // 
-            // colTag
-            // 
-            this.colTag.HeaderText = "Tag";
-            this.colTag.Name = "colTag";
-            this.colTag.ReadOnly = true;
-            this.colTag.Width = 80;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Width = 90;
             // 
             // colISBN
             // 
@@ -755,41 +793,33 @@
             this.colISBN.ReadOnly = true;
             this.colISBN.Visible = false;
             // 
-            // colCost
+            // colBookDetailID
             // 
-            this.colCost.HeaderText = "Cost";
-            this.colCost.Name = "colCost";
-            this.colCost.ReadOnly = true;
-            this.colCost.Visible = false;
+            this.colBookDetailID.HeaderText = "Book ID";
+            this.colBookDetailID.Name = "colBookDetailID";
+            this.colBookDetailID.ReadOnly = true;
+            this.colBookDetailID.Width = 95;
             // 
-            // colBookCopies
+            // colTitle
             // 
-            this.colBookCopies.HeaderText = "No.";
-            this.colBookCopies.Name = "colBookCopies";
-            this.colBookCopies.ReadOnly = true;
-            this.colBookCopies.Visible = false;
-            this.colBookCopies.Width = 40;
+            this.colTitle.HeaderText = "Title";
+            this.colTitle.Name = "colTitle";
+            this.colTitle.ReadOnly = true;
+            this.colTitle.Width = 175;
             // 
-            // colClassID
+            // colAuthor
             // 
-            this.colClassID.HeaderText = "Class ID";
-            this.colClassID.Name = "colClassID";
-            this.colClassID.ReadOnly = true;
-            this.colClassID.Visible = false;
+            this.colAuthor.HeaderText = "Author";
+            this.colAuthor.Name = "colAuthor";
+            this.colAuthor.ReadOnly = true;
+            this.colAuthor.Width = 110;
             // 
-            // colBookStatusID
+            // colEdition
             // 
-            this.colBookStatusID.HeaderText = "Stauts ID";
-            this.colBookStatusID.Name = "colBookStatusID";
-            this.colBookStatusID.ReadOnly = true;
-            this.colBookStatusID.Visible = false;
-            // 
-            // colSource
-            // 
-            this.colSource.HeaderText = "Source";
-            this.colSource.Name = "colSource";
-            this.colSource.ReadOnly = true;
-            this.colSource.Visible = false;
+            this.colEdition.HeaderText = "Edition";
+            this.colEdition.Name = "colEdition";
+            this.colEdition.ReadOnly = true;
+            this.colEdition.Visible = false;
             // 
             // colPlace
             // 
@@ -819,19 +849,54 @@
             this.colPages.ReadOnly = true;
             this.colPages.Visible = false;
             // 
-            // colBookDetailID
+            // colVol
             // 
-            this.colBookDetailID.HeaderText = "Book Detail ID";
-            this.colBookDetailID.Name = "colBookDetailID";
-            this.colBookDetailID.ReadOnly = true;
-            this.colBookDetailID.Visible = false;
+            this.colVol.HeaderText = "Vol";
+            this.colVol.Name = "colVol";
+            this.colVol.ReadOnly = true;
+            this.colVol.Visible = false;
             // 
-            // colTagID
+            // colSource
             // 
-            this.colTagID.HeaderText = "TagID";
-            this.colTagID.Name = "colTagID";
-            this.colTagID.ReadOnly = true;
-            this.colTagID.Visible = false;
+            this.colSource.HeaderText = "Source";
+            this.colSource.Name = "colSource";
+            this.colSource.ReadOnly = true;
+            this.colSource.Visible = false;
+            // 
+            // colCost
+            // 
+            this.colCost.HeaderText = "Cost";
+            this.colCost.Name = "colCost";
+            this.colCost.ReadOnly = true;
+            this.colCost.Visible = false;
+            // 
+            // colCurrency
+            // 
+            this.colCurrency.HeaderText = "Currency";
+            this.colCurrency.Name = "colCurrency";
+            this.colCurrency.ReadOnly = true;
+            this.colCurrency.Visible = false;
+            // 
+            // colClassification
+            // 
+            this.colClassification.HeaderText = "Classification";
+            this.colClassification.Name = "colClassification";
+            this.colClassification.ReadOnly = true;
+            this.colClassification.Visible = false;
+            // 
+            // colCategory
+            // 
+            this.colCategory.HeaderText = "Category";
+            this.colCategory.Name = "colCategory";
+            this.colCategory.ReadOnly = true;
+            this.colCategory.Width = 70;
+            // 
+            // colSubCategory
+            // 
+            this.colSubCategory.HeaderText = "S-Category";
+            this.colSubCategory.Name = "colSubCategory";
+            this.colSubCategory.ReadOnly = true;
+            this.colSubCategory.Width = 80;
             // 
             // pnlBooksInfo
             // 
@@ -841,7 +906,7 @@
             this.pnlBooksInfo.ForeColor = System.Drawing.Color.White;
             this.pnlBooksInfo.Location = new System.Drawing.Point(754, 115);
             this.pnlBooksInfo.Name = "pnlBooksInfo";
-            this.pnlBooksInfo.Size = new System.Drawing.Size(575, 392);
+            this.pnlBooksInfo.Size = new System.Drawing.Size(575, 422);
             this.pnlBooksInfo.TabIndex = 41;
             // 
             // btnSave
@@ -851,13 +916,13 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnSave.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSave.Location = new System.Drawing.Point(1165, 525);
+            this.btnSave.Location = new System.Drawing.Point(1046, 546);
             this.btnSave.Name = "btnSave";
             this.btnSave.NextControl = null;
             this.btnSave.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.PreviousControl = null;
             this.btnSave.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnSave.Size = new System.Drawing.Size(92, 39);
+            this.btnSave.Size = new System.Drawing.Size(74, 39);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -869,13 +934,13 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnUpdate.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnUpdate.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnUpdate.Location = new System.Drawing.Point(1053, 525);
+            this.btnUpdate.Location = new System.Drawing.Point(956, 545);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.NextControl = null;
             this.btnUpdate.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnUpdate.PreviousControl = null;
             this.btnUpdate.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnUpdate.Size = new System.Drawing.Size(92, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(74, 39);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -887,13 +952,13 @@
             this.btnGet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGet.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnGet.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnGet.Location = new System.Drawing.Point(930, 525);
+            this.btnGet.Location = new System.Drawing.Point(866, 546);
             this.btnGet.Name = "btnGet";
             this.btnGet.NextControl = null;
             this.btnGet.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnGet.PreviousControl = null;
             this.btnGet.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnGet.Size = new System.Drawing.Size(92, 39);
+            this.btnGet.Size = new System.Drawing.Size(74, 39);
             this.btnGet.TabIndex = 5;
             this.btnGet.Text = "Get";
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
@@ -904,7 +969,7 @@
             this.chkRegistered.BackColor = System.Drawing.Color.Red;
             this.chkRegistered.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRegistered.ForeColor = System.Drawing.Color.White;
-            this.chkRegistered.Location = new System.Drawing.Point(14, 61);
+            this.chkRegistered.Location = new System.Drawing.Point(14, 53);
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(122, 21);
             this.chkRegistered.TabIndex = 0;
@@ -915,45 +980,43 @@
             // grpSearch
             // 
             this.grpSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.grpSearch.Controls.Add(this.cboClassSearch);
+            this.grpSearch.Controls.Add(this.txtAuthorSearch);
             this.grpSearch.Controls.Add(this.incLabel16);
             this.grpSearch.Controls.Add(this.txtBookTitleSearch);
             this.grpSearch.Controls.Add(this.incLabel8);
             this.grpSearch.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSearch.ForeColor = System.Drawing.Color.SeaShell;
-            this.grpSearch.Location = new System.Drawing.Point(756, 49);
+            this.grpSearch.Location = new System.Drawing.Point(756, 41);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(572, 44);
-            this.grpSearch.TabIndex = 3;
+            this.grpSearch.TabIndex = 2;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
             // 
-            // cboClassSearch
+            // txtAuthorSearch
             // 
-            this.cboClassSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.cboClassSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClassSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboClassSearch.ForeColor = System.Drawing.SystemColors.Window;
-            this.cboClassSearch.FormattingEnabled = true;
-            this.cboClassSearch.Location = new System.Drawing.Point(436, 13);
-            this.cboClassSearch.MaxLength = 500;
-            this.cboClassSearch.Name = "cboClassSearch";
-            this.cboClassSearch.Size = new System.Drawing.Size(130, 24);
-            this.cboClassSearch.TabIndex = 2;
-            this.cboClassSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
+            this.txtAuthorSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.txtAuthorSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAuthorSearch.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtAuthorSearch.Location = new System.Drawing.Point(412, 16);
+            this.txtAuthorSearch.MaxLength = 500;
+            this.txtAuthorSearch.Name = "txtAuthorSearch";
+            this.txtAuthorSearch.Size = new System.Drawing.Size(147, 23);
+            this.txtAuthorSearch.TabIndex = 1;
+            this.txtAuthorSearch.TextChanged += new System.EventHandler(this.txtBookIDSearch_TextChanged);
             // 
             // incLabel16
             // 
             this.incLabel16.AutoSize = true;
             this.incLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel16.Location = new System.Drawing.Point(388, 17);
+            this.incLabel16.Location = new System.Drawing.Point(362, 19);
             this.incLabel16.Name = "incLabel16";
             this.incLabel16.Readonly = false;
-            this.incLabel16.Size = new System.Drawing.Size(42, 17);
+            this.incLabel16.Size = new System.Drawing.Size(50, 17);
             this.incLabel16.TabIndex = 1;
-            this.incLabel16.Text = "Class";
-            this.incLabel16.ValueByOrchestrator = "Class";
+            this.incLabel16.Text = "Author";
+            this.incLabel16.ValueByOrchestrator = "Author";
             // 
             // erpGeneral
             // 
@@ -966,13 +1029,13 @@
             this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNew.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnNew.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnNew.Location = new System.Drawing.Point(810, 525);
+            this.btnNew.Location = new System.Drawing.Point(776, 546);
             this.btnNew.Name = "btnNew";
             this.btnNew.NextControl = null;
             this.btnNew.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnNew.PreviousControl = null;
             this.btnNew.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnNew.Size = new System.Drawing.Size(92, 39);
+            this.btnNew.Size = new System.Drawing.Size(74, 39);
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnClear_Click);
@@ -986,18 +1049,6 @@
             this.pnlClose.Name = "pnlClose";
             this.pnlClose.Size = new System.Drawing.Size(1361, 25);
             this.pnlClose.TabIndex = 60;
-            // 
-            // cboCurrency
-            // 
-            this.cboCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.cboCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.cboCurrency.ForeColor = System.Drawing.SystemColors.Window;
-            this.cboCurrency.FormattingEnabled = true;
-            this.cboCurrency.Location = new System.Drawing.Point(249, 271);
-            this.cboCurrency.Name = "cboCurrency";
-            this.cboCurrency.Size = new System.Drawing.Size(66, 24);
-            this.cboCurrency.TabIndex = 64;
             // 
             // _CloseButton
             // 
@@ -1019,6 +1070,41 @@
             this._CloseButton.UseVisualStyleBackColor = true;
             this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click_1);
             // 
+            // pnlAddBookForm
+            // 
+            this.pnlAddBookForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAddBookForm.Controls.Add(this.grpBookInfo);
+            this.pnlAddBookForm.Location = new System.Drawing.Point(12, 142);
+            this.pnlAddBookForm.Name = "pnlAddBookForm";
+            this.pnlAddBookForm.Size = new System.Drawing.Size(659, 455);
+            this.pnlAddBookForm.TabIndex = 63;
+            // 
+            // lblBook
+            // 
+            this.lblBook.AutoSize = true;
+            this.lblBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.lblBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBook.Location = new System.Drawing.Point(1014, 90);
+            this.lblBook.Name = "lblBook";
+            this.lblBook.Readonly = false;
+            this.lblBook.Size = new System.Drawing.Size(146, 16);
+            this.lblBook.TabIndex = 64;
+            this.lblBook.Text = "Recently added Books";
+            this.lblBook.ValueByOrchestrator = "Recently added Books";
+            // 
+            // lblBookDetails
+            // 
+            this.lblBookDetails.AutoSize = true;
+            this.lblBookDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.lblBookDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBookDetails.Location = new System.Drawing.Point(306, 90);
+            this.lblBookDetails.Name = "lblBookDetails";
+            this.lblBookDetails.Readonly = false;
+            this.lblBookDetails.Size = new System.Drawing.Size(184, 16);
+            this.lblBookDetails.TabIndex = 65;
+            this.lblBookDetails.Text = "Recently added Book Details";
+            this.lblBookDetails.ValueByOrchestrator = "Recently added Book Details";
+            // 
             // frmAddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1027,6 +1113,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
+            this.Controls.Add(this.lblBookDetails);
+            this.Controls.Add(this.lblBook);
+            this.Controls.Add(this.pnlAddBookForm);
+            this.Controls.Add(this.pnlBooksDetail);
             this.Controls.Add(this.pnlClose);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.chkRegistered);
@@ -1036,7 +1126,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnlBooksInfo);
             this.Controls.Add(this.pnlBook);
-            this.Controls.Add(this.grpBookInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1048,6 +1137,8 @@
             this.grpBookInfo.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassificationList)).EndInit();
+            this.pnlBooksDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookInfoD)).EndInit();
             this.pnlBook.ResumeLayout(false);
             this.pnlBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooksInfo)).EndInit();
@@ -1056,6 +1147,7 @@
             this.grpSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpGeneral)).EndInit();
             this.pnlClose.ResumeLayout(false);
+            this.pnlAddBookForm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1067,7 +1159,7 @@
         private IncLibrary.IncLabel incLabel3;
         private IncLibrary.IncLabel incLabel8;
         private IncLibrary.IncLabel incLabel6;
-        private System.Windows.Forms.TextBox txtPublisherName;
+        private System.Windows.Forms.TextBox txtPublisher;
         private System.Windows.Forms.TextBox txtCost;
         private IncLibrary.IncLabel incLabel4;
         private System.Windows.Forms.TextBox txtBookTitleSearch;
@@ -1077,8 +1169,8 @@
         private IncLibrary.IncLabel incLabel11;
         private IncLibrary.IncLabel incLabel10;
         private IncLibrary.IncLabel incLabel9;
-        private System.Windows.Forms.TextBox txtPublisherYear;
-        private System.Windows.Forms.TextBox txtPublisherPlace;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.TextBox txtPlace;
         private System.Windows.Forms.TextBox txtSource;
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.Panel pnlBook;
@@ -1095,28 +1187,10 @@
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.ErrorProvider erpGeneral;
         private IncLibrary.IncLabel incLabel15;
-        private System.Windows.Forms.ComboBox cboClassSearch;
         private IncLibrary.IncLabel incLabel16;
         private IncLibrary.IncButton btnNew;
         private System.Windows.Forms.Panel pnlClose;
         private ButtonZ _CloseButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBookCopies;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBookStatusID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPublisherName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPublishedYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPages;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBookDetailID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTagID;
         private System.Windows.Forms.TextBox txtEdition;
         private IncLibrary.IncLabel incLabel18;
         private System.Windows.Forms.TextBox txtPages;
@@ -1133,6 +1207,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.ComboBox cboCurrency;
+        private System.Windows.Forms.TextBox txtAuthorSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colISBN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBookDetailID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEdition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPublisherName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPublishedYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrency;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClassification;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubCategory;
+        private System.Windows.Forms.Panel pnlBooksDetail;
+        private System.Windows.Forms.DataGridView dgvBookInfoD;
+        private System.Windows.Forms.Panel pnlAddBookForm;
+        private IncLibrary.IncLabel lblBookDetails;
+        private IncLibrary.IncLabel lblBook;
     }
 }
 

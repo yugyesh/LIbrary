@@ -56,7 +56,7 @@ namespace Library
         BALFine balFine = new BALFine();
         private void frmMain_Load(object sender, EventArgs e)
         {
-            if (statRoleID.Text!="1")
+            if (statRoleID.Text=="1")
             {
                 toolAddBooks.Enabled = false;
                 toolAddMember.Enabled = false;
