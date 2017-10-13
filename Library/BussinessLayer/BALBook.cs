@@ -236,9 +236,8 @@ namespace BussinessLayer
             var pram = new List<SqlParameter>
             {
                 new SqlParameter("@ISBN", BookDetails[0]),
-                new SqlParameter("@bStatusID", Convert.ToInt32(BookDetails[1])),
-                 new SqlParameter("@bookDetailID", BookDetails[2]),
-                new SqlParameter("@addedDate", Convert.ToDateTime(BookDetails[3])),
+                 new SqlParameter("@bookDetailID", BookDetails[1]),
+                new SqlParameter("@modifiedDate", Convert.ToDateTime(BookDetails[2])),
                 new SqlParameter("@operation","U"),
             };
             return DAO.IUD("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure) >= 0 ? true : false;

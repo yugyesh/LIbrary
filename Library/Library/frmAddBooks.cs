@@ -131,10 +131,9 @@ namespace Library
                 {
                     List<string> BookInfo = new List<string>();
                     BookInfo.Add(txtISBN.Text);
+                    BookInfo.Add("1");
                     BookInfo.Add(txtBookIDSearch.Text);
                     BookInfo.Add(DateTime.Today.ToString());
-                    BookInfo.Add("");
-                    BookInfo.Add("");
                     if (balBook.AddBook(BookInfo))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,7 +149,11 @@ namespace Library
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!ValidateField() && chkRegistered.Checked == true)
+            if (ValidateField())
+            {
+                return;
+            }
+            else if (chkRegistered.Checked == true)
             {
                 if (txtBookID.Text.Trim() == string.Empty)
                 {
@@ -188,15 +191,13 @@ namespace Library
             {
                 if (!balBook.CheckISBN(txtISBN.Text))
                 {
-                    MessageBox.Show("Update operation Falure book not added Yet!", "Book Not Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Update operation Failure book not added Yet!", "Book Not Added", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 List<string> BookInfo = new List<string>();
                 BookInfo.Add(txtISBN.Text);
                 BookInfo.Add(txtBookIDSearch.Text);
                 BookInfo.Add(DateTime.Today.ToString());
-                BookInfo.Add("");
-                BookInfo.Add("");
                 if (balBook.UpdateBook(BookInfo))
                 {
                     MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
