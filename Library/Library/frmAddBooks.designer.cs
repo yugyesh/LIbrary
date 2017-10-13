@@ -109,10 +109,10 @@
             this.erpGeneral = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNew = new IncLibrary.IncButton();
             this.pnlClose = new System.Windows.Forms.Panel();
-            this._CloseButton = new Library.ButtonZ();
             this.pnlAddBookForm = new System.Windows.Forms.Panel();
             this.lblBook = new IncLibrary.IncLabel();
             this.lblBookDetails = new IncLibrary.IncLabel();
+            this._CloseButton = new Library.ButtonZ();
             this.grpBookInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassificationList)).BeginInit();
@@ -184,12 +184,13 @@
             this.grpBookInfo.Controls.Add(this.txtAuthor);
             this.grpBookInfo.Controls.Add(this.txtBookID);
             this.grpBookInfo.Controls.Add(this.incLabel1);
+            this.grpBookInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpBookInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpBookInfo.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
             this.grpBookInfo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.grpBookInfo.Location = new System.Drawing.Point(0, 0);
             this.grpBookInfo.Name = "grpBookInfo";
-            this.grpBookInfo.Size = new System.Drawing.Size(378, 451);
+            this.grpBookInfo.Size = new System.Drawing.Size(737, 476);
             this.grpBookInfo.TabIndex = 3;
             this.grpBookInfo.TabStop = false;
             this.grpBookInfo.Text = "Book Info";
@@ -213,7 +214,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.panel1.Location = new System.Drawing.Point(1, 354);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 137);
+            this.panel1.Size = new System.Drawing.Size(738, 124);
             this.panel1.TabIndex = 61;
             // 
             // dgvClassificationList
@@ -242,9 +243,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClassificationList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClassificationList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClassificationList.EnableHeadersVisualStyles = false;
             this.dgvClassificationList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvClassificationList.Location = new System.Drawing.Point(-2, 0);
+            this.dgvClassificationList.Location = new System.Drawing.Point(0, 0);
             this.dgvClassificationList.Name = "dgvClassificationList";
             this.dgvClassificationList.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -256,7 +258,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvClassificationList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClassificationList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvClassificationList.Size = new System.Drawing.Size(669, 136);
+            this.dgvClassificationList.Size = new System.Drawing.Size(736, 122);
             this.dgvClassificationList.TabIndex = 0;
             this.dgvClassificationList.Click += new System.EventHandler(this.dgvClassificationList_Click);
             // 
@@ -768,9 +770,10 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBooksInfo.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvBooksInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBooksInfo.EnableHeadersVisualStyles = false;
             this.dgvBooksInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.dgvBooksInfo.Location = new System.Drawing.Point(-2, -2);
+            this.dgvBooksInfo.Location = new System.Drawing.Point(0, 0);
             this.dgvBooksInfo.Name = "dgvBooksInfo";
             this.dgvBooksInfo.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -782,7 +785,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBooksInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBooksInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvBooksInfo.Size = new System.Drawing.Size(573, 379);
+            this.dgvBooksInfo.Size = new System.Drawing.Size(571, 418);
             this.dgvBooksInfo.TabIndex = 0;
             this.dgvBooksInfo.Click += new System.EventHandler(this.dgvBooksInfo_Click);
             // 
@@ -916,7 +919,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSave.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnSave.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSave.Location = new System.Drawing.Point(1046, 546);
+            this.btnSave.Location = new System.Drawing.Point(1148, 548);
             this.btnSave.Name = "btnSave";
             this.btnSave.NextControl = null;
             this.btnSave.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -934,7 +937,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnUpdate.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnUpdate.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnUpdate.Location = new System.Drawing.Point(956, 545);
+            this.btnUpdate.Location = new System.Drawing.Point(1049, 547);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.NextControl = null;
             this.btnUpdate.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -952,7 +955,7 @@
             this.btnGet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGet.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnGet.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnGet.Location = new System.Drawing.Point(866, 546);
+            this.btnGet.Location = new System.Drawing.Point(950, 548);
             this.btnGet.Name = "btnGet";
             this.btnGet.NextControl = null;
             this.btnGet.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -1029,7 +1032,7 @@
             this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNew.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnNew.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnNew.Location = new System.Drawing.Point(776, 546);
+            this.btnNew.Location = new System.Drawing.Point(851, 547);
             this.btnNew.Name = "btnNew";
             this.btnNew.NextControl = null;
             this.btnNew.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -1050,33 +1053,13 @@
             this.pnlClose.Size = new System.Drawing.Size(1361, 25);
             this.pnlClose.TabIndex = 60;
             // 
-            // _CloseButton
-            // 
-            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this._CloseButton.DisplayText = "X";
-            this._CloseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._CloseButton.ForeColor = System.Drawing.Color.White;
-            this._CloseButton.Location = new System.Drawing.Point(1333, 0);
-            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this._CloseButton.Name = "_CloseButton";
-            this._CloseButton.Size = new System.Drawing.Size(28, 25);
-            this._CloseButton.TabIndex = 1;
-            this._CloseButton.Text = "X";
-            this._CloseButton.TextLocation_X = 6;
-            this._CloseButton.TextLocation_Y = 1;
-            this._CloseButton.UseVisualStyleBackColor = true;
-            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click_1);
-            // 
             // pnlAddBookForm
             // 
             this.pnlAddBookForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlAddBookForm.Controls.Add(this.grpBookInfo);
-            this.pnlAddBookForm.Location = new System.Drawing.Point(12, 142);
+            this.pnlAddBookForm.Location = new System.Drawing.Point(12, 117);
             this.pnlAddBookForm.Name = "pnlAddBookForm";
-            this.pnlAddBookForm.Size = new System.Drawing.Size(659, 455);
+            this.pnlAddBookForm.Size = new System.Drawing.Size(741, 480);
             this.pnlAddBookForm.TabIndex = 63;
             // 
             // lblBook
@@ -1104,6 +1087,26 @@
             this.lblBookDetails.TabIndex = 65;
             this.lblBookDetails.Text = "Recently added Book Details";
             this.lblBookDetails.ValueByOrchestrator = "Recently added Book Details";
+            // 
+            // _CloseButton
+            // 
+            this._CloseButton.BZBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this._CloseButton.DisplayText = "X";
+            this._CloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this._CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._CloseButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._CloseButton.ForeColor = System.Drawing.Color.White;
+            this._CloseButton.Location = new System.Drawing.Point(1333, 0);
+            this._CloseButton.MouseClickColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this._CloseButton.MouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(28, 25);
+            this._CloseButton.TabIndex = 1;
+            this._CloseButton.Text = "X";
+            this._CloseButton.TextLocation_X = 6;
+            this._CloseButton.TextLocation_Y = 1;
+            this._CloseButton.UseVisualStyleBackColor = true;
+            this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click_1);
             // 
             // frmAddBooks
             // 
