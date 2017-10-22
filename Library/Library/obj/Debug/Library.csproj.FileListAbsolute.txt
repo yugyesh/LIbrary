@@ -27,3 +27,5 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.exe
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmChangeRole.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.ResolveComReference.cache
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmImportBooks.resources

@@ -33,7 +33,7 @@ namespace BussinessLayer
             };
             DataTable dt = new DataTable();
             dt = DAO.GetTable("spGetClassification", pram, CommandType.StoredProcedure);
-            return dt == null?null:dt;
+            return dt == null ? null : dt;
         }
 
         //Retrive Books Subcategory based on CategoryID
@@ -116,7 +116,7 @@ namespace BussinessLayer
             {
                 throw ex;
             }
-        } 
+        }
         public bool CheckISBN(string isbnNumber)
         {
             SqlParameter[] pram = new SqlParameter[]
@@ -126,14 +126,24 @@ namespace BussinessLayer
             string query = "select ISBN from Book where ISBN=@isbn";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, pram, CommandType.Text);
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 return true;
             }
             return false;
         }
 
-
+        //Retrive Categoryid and classification id from subcategory id
+        public DataTable GetCategoryClassificationID(string subCategoryID)
+        {
+            DataTable dt = new DataTable();
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@subCategoryID",subCategoryID)
+            };
+            dt = DAO.GetTable("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure);
+            return dt == null || dt.Rows.Count == 0 ? null : dt;
+        }
         public DataTable GetBookTag()
         {
             string query = "select TagID,TagName from Tag";
@@ -171,6 +181,28 @@ namespace BussinessLayer
                 throw ex;
             }
         }
+        public bool CheckBookDetails(List<string> BookDetails)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                //new SqlParameter("@bookDetailID", BookDetails[0]),
+                new SqlParameter("@author", BookDetails[1]),
+                new SqlParameter("@bookTitle", BookDetails[2]),
+                new SqlParameter("@edition", BookDetails[3]),
+                new SqlParameter("@place", BookDetails[4]),
+                new SqlParameter("@publisher", BookDetails[5]),
+                new SqlParameter("@year", BookDetails[6]),
+                new SqlParameter("@pages", BookDetails[7]),
+                new SqlParameter("@vol", BookDetails[8]),
+                new SqlParameter("@source", BookDetails[9]),
+                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[10])),
+                new SqlParameter("@subCategoryID", BookDetails[12]),
+                new SqlParameter("@operation","C"),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure);
+            return dt == null || dt.Rows.Count==0 ? true : false;
+        }
         public bool AddBookDetails(List<string> BookDetails, byte photo = 0)
         {
             var pram = new List<SqlParameter>
@@ -187,9 +219,9 @@ namespace BussinessLayer
                 new SqlParameter("@source", BookDetails[9]),
                 new SqlParameter("@cost", Convert.ToDecimal(BookDetails[10])),
                 new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[11])),
-                new SqlParameter("@classificationID",BookDetails[12]),
+                new SqlParameter("@subCategoryID", BookDetails[12]),
                 new SqlParameter("@CategoryID", BookDetails[13]),
-                new SqlParameter("@subCategoryID", BookDetails[14]),
+                new SqlParameter("@classificationID",BookDetails[14]),
                 new SqlParameter("@addedOn",DateTime.Today),
                 new SqlParameter("@operation","S"),
             };

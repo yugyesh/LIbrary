@@ -33,11 +33,13 @@ namespace Common
         }
         public static string GetMemberID(string fName, string LName,int number)
         {
-            return fName.Substring(0, 3).ToUpper() + "-" + LName.Substring(0, 2).ToUpper() + "-" + number+1;
+            number += 1;
+            return fName.Substring(0, 3).ToUpper() + "-" + LName.Substring(0, 2).ToUpper() + "-" + number;
         }
         public static string GetBookID(string title, string author, int number)
         {
-            return title.Substring(0, 5).ToUpper() + "-" + author.Substring(0, 3).ToUpper() + "-" + number + 1;
+            number = number + 1;
+            return number+"-"+title.Substring(0, 5).ToUpper() + "-" + author.Substring(0, 3).ToUpper();
         }
     }
 }

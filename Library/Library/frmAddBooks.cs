@@ -106,9 +106,9 @@ namespace Library
                     BookDetails.Add(txtSource.Text);
                     BookDetails.Add(txtCost.Text == string.Empty ? "0" : txtCost.Text);
                     BookDetails.Add(cboCurrency.SelectedValue.ToString());
-                    BookDetails.Add(txtClassification.Text);
-                    BookDetails.Add(txtCategory.Text);
                     BookDetails.Add(txtSubCategory.Text);
+                    BookDetails.Add(txtCategory.Text);
+                    BookDetails.Add(txtClassification.Text);
                     if (balBook.AddBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -131,7 +131,6 @@ namespace Library
                 {
                     List<string> BookInfo = new List<string>();
                     BookInfo.Add(txtISBN.Text);
-                    BookInfo.Add("1");
                     BookInfo.Add(txtBookIDSearch.Text);
                     BookInfo.Add(DateTime.Today.ToString());
                     if (balBook.AddBook(BookInfo))

@@ -29,6 +29,19 @@ namespace BussinessLayer
                 throw ex;
             }
         }
+        //Retereiving CurrencyId from the currency code
+        public string GetCurrencyID(string countryCode)
+        {
+            DataTable dt = new DataTable();
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@currencyCode",countryCode)
+            };
+            dt = DAO.GetTable("select * from currency where CurrencyCode=@currencyCode", pram, CommandType.Text);
+            //return dt == null || dt.Rows.Count == 0 ? 0 : dt.Rows[0]["CurrencyID"].ToString();
+            return dt.Rows[0]["CurrencyID"].ToString() == null||dt.Rows[0]["CurrencyID"].ToString()==string.Empty? "0" : dt.Rows[0]["CurrencyID"].ToString();
+        }
+
         public DataTable GetCurrencyType()
         {
             string query = "select * from Currency";
