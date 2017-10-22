@@ -39,7 +39,6 @@
             this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,6 +96,7 @@
             this.colClassF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -127,8 +127,7 @@
             this.addBooksToolStripMenuItem,
             this.addDepartmentToolStripMenuItem,
             this.addClassToolStripMenuItem,
-            this.addStatusToolStripMenuItem,
-            this.addTagToolStripMenuItem});
+            this.addStatusToolStripMenuItem});
             this.masterToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
@@ -174,19 +173,12 @@
             this.addStatusToolStripMenuItem.Text = "Add Status";
             this.addStatusToolStripMenuItem.Click += new System.EventHandler(this.addStatusToolStripMenuItem_Click);
             // 
-            // addTagToolStripMenuItem
-            // 
-            this.addTagToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addTagToolStripMenuItem.Name = "addTagToolStripMenuItem";
-            this.addTagToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addTagToolStripMenuItem.Text = "Add Tag";
-            this.addTagToolStripMenuItem.Click += new System.EventHandler(this.addTagToolStripMenuItem_Click);
-            // 
             // bookToolStripMenuItem
             // 
             this.bookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.issueToolStripMenuItem,
-            this.returnToolStripMenuItem});
+            this.returnToolStripMenuItem,
+            this.importToolStripMenuItem});
             this.bookToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
             this.bookToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -222,14 +214,14 @@
             // 
             this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.booksToolStripMenuItem.Text = "Books";
             // 
             // memberToolStripMenuItem
             // 
             this.memberToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.memberToolStripMenuItem.Text = "Member";
             // 
             // userToolStripMenuItem
@@ -844,6 +836,13 @@
             this.colBurrowedDate.ReadOnly = true;
             this.colBurrowedDate.Visible = false;
             // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -911,7 +910,6 @@
         private System.Windows.Forms.ToolStripMenuItem addClassToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addDepartmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addStatusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addTagToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel pnlFine;
         private IncLibrary.IncLabel incLabel1;
@@ -948,5 +946,6 @@
         private IncLibrary.IncLabel lblBurrowedDate;
         private IncLibrary.IncButton btnPay;
         private System.Windows.Forms.TextBox txtFine;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
     }
 }

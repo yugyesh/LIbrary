@@ -196,13 +196,6 @@ namespace Library
             addDepartmentForm.MdiParent = this;
         }
 
-        private void addTagToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Hide();
-            frmAddTag addTag = new frmAddTag();
-            addTag.ShowDialog();
-            addTag.MdiParent = this;
-        }
         private void dgvFineDetail_Click(object sender, EventArgs e)
         {
             if (dgvFineDetail != null && dgvFineDetail.Rows.Count > 0)

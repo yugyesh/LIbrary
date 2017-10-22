@@ -223,7 +223,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(114, 465);
+            this.label2.Location = new System.Drawing.Point(114, 464);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 18);
             this.label2.TabIndex = 15;

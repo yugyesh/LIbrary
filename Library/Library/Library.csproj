@@ -63,12 +63,6 @@
     <Compile Include="ButtonZ.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="frmAddTag.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddTag.designer.cs">
-      <DependentUpon>frmAddTag.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +111,12 @@
     <Compile Include="frmChangeRole.designer.cs">
       <DependentUpon>frmChangeRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFine.designer.cs">
+      <DependentUpon>frmFine.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmImportBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,9 +158,6 @@
     <EmbeddedResource Include="BlackForm.resx">
       <DependentUpon>BlackForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddTag.resx">
-      <DependentUpon>frmAddTag.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAddClass.resx">
       <DependentUpon>frmAddClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangeRole.resx">
       <DependentUpon>frmChangeRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFine.resx">
+      <DependentUpon>frmFine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmImportBooks.resx">
       <DependentUpon>frmImportBooks.cs</DependentUpon>

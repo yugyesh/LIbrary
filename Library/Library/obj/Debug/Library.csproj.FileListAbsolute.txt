@@ -10,7 +10,6 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\bin\Debug\Common.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Library\bin\Debug\DataAccessLayer.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.BlackForm.resources
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddTag.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddClass.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddStatus.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddMember.resources
@@ -29,3 +28,4 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmChangeRole.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.ResolveComReference.cache
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmImportBooks.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmFine.resources
