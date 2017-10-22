@@ -28,10 +28,13 @@ namespace Library
         BALHelper balHelper = new BALHelper();
         private void btnImport_Click(object sender, EventArgs e)
         {
+            List<string> book = new List<string>();
             //adding Filter to Dialog box
             ofdBookExcel.Filter = "Excel Worksheets 2003(*.xls)|*.xls|Excel Worksheets 2007(*.xlsx)|*.xlsx";
             string filePath;
             DataTable dt = new DataTable();
+            DataTable dtBookDetailID = new DataTable();
+            int isbn;
             if (ofdBookExcel.ShowDialog()==DialogResult.OK)
             {
                 filePath = ofdBookExcel.FileName;
@@ -58,23 +61,39 @@ namespace Library
                     for (int j = 2; j <= rowCount; j++)
                     {
                         bookDetails.Clear();
+                        book.Clear();
                         for (int k = 1; k < colCount; k++)
                         {
                             string text = exSheet.Cells[j, k].Value == null ? string.Empty : exSheet.Cells[j, k].Value.ToString();
                             bookDetails.Add(text);
                         }
-                        if (balBook.CheckBookDetails(bookDetails))
+                        dtBookDetailID = balBook.CheckBookDetails(bookDetails);
+                        if (dtBookDetailID==null||dtBookDetailID.Rows.Count==0)
                         {
                             dt.Rows.Clear();
                             //retriving currency id
                             int lastBookNo = balBook.CountBookDetails();
+                            isbn = Convert.ToInt32(bookDetails[0]);
                             bookDetails[0] = Helper.GetBookID(bookDetails[2], bookDetails[1], lastBookNo);
                             bookDetails[11] = balHelper.GetCurrencyID(bookDetails[11]);
                             dt = balBook.GetCategoryClassificationID(bookDetails[12]);
                             bookDetails.Add(dt.Rows[0]["CategoryID"].ToString());
                             bookDetails.Add(dt.Rows[0]["ClassificationID"].ToString());
                             balBook.AddBookDetails(bookDetails);
+                            book.Add(isbn.ToString());
+                            book.Add(bookDetails[0]);
+                            balBook.AddBook(book);
                         }
+                        else
+                        {
+                            if (!balBook.CheckISBN(bookDetails[0]))
+                            {
+                                book.Add(bookDetails[0]);
+                                book.Add(dtBookDetailID.Rows[0]["BookDetailID"].ToString());
+                                balBook.AddBook(book);
+                            }
+                        }
+
                         //DataTable dt = new DataTable();
                         //dt=ConvertToDatatable(bookDetails);
                     }

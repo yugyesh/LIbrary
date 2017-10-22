@@ -181,7 +181,7 @@ namespace BussinessLayer
                 throw ex;
             }
         }
-        public bool CheckBookDetails(List<string> BookDetails)
+        public DataTable CheckBookDetails(List<string> BookDetails)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
@@ -199,9 +199,7 @@ namespace BussinessLayer
                 new SqlParameter("@subCategoryID", BookDetails[12]),
                 new SqlParameter("@operation","C"),
             };
-            DataTable dt = new DataTable();
-            dt = DAO.GetTable("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure);
-            return dt == null || dt.Rows.Count==0 ? true : false;
+            return DAO.GetTable("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure);
         }
         public bool AddBookDetails(List<string> BookDetails, byte photo = 0)
         {
@@ -256,9 +254,9 @@ namespace BussinessLayer
             var pram = new List<SqlParameter>
             {
                 new SqlParameter("@ISBN", BookDetails[0]),
-                new SqlParameter("@bStatusID", Convert.ToInt32(BookDetails[1])),
-                 new SqlParameter("@bookDetailID", BookDetails[2]),
-                new SqlParameter("@addedDate", Convert.ToDateTime(BookDetails[3])),
+                new SqlParameter("@bStatusID", 1),
+                 new SqlParameter("@bookDetailID", BookDetails[1]),
+                new SqlParameter("@addedDate", DateTime.Today),
                 new SqlParameter("@operation","S"),
             };
             return DAO.IUD("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure) >= 0 ? true : false;

@@ -132,7 +132,6 @@ namespace Library
                     List<string> BookInfo = new List<string>();
                     BookInfo.Add(txtISBN.Text);
                     BookInfo.Add(txtBookIDSearch.Text);
-                    BookInfo.Add(DateTime.Today.ToString());
                     if (balBook.AddBook(BookInfo))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
