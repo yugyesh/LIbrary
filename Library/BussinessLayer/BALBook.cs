@@ -74,6 +74,18 @@ namespace BussinessLayer
             string query = "Update BookStatus set BStatusName=@bStatusName,ModifiedOn=@modifiedOn,ModifiedBy=@modifiedBy where BStatusID=@bstatusID";
             return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
         }
+        //Update book status
+        public bool ChangeBookStatus(string isbn, int bstatusID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@modifiedOn",DateTime.Today),
+                new SqlParameter("@bstatusID",bstatusID),
+                new SqlParameter("@ISBN",isbn)
+            };
+            string query = "Update Book set ModifiedOn=@modifiedOn,bStatusID=@bstatusID where ISBN=@isbn";
+            return DAO.IUD(query, pram, CommandType.Text) > 0 ? true : false;
+        }
         //Add Tag
         public bool AddTag(string tagName, string userName)
         {

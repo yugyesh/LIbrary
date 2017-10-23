@@ -351,13 +351,22 @@ namespace Library
         }
         private void lblRemoveBook_Click(object sender, EventArgs e)
         {
-            if (dgvISBNList.CurrentRow.Cells["colISBN"].Value == null)
+            try
             {
+                if (dgvISBNList.CurrentRow.Cells["colISBN"].Value == null)
+                {
+                    return;
+                }
+                dgvISBNList.Rows.RemoveAt(dgvISBNList.CurrentRow.Index);
+                txtISBN.Focus();
+                length = length - 1;
+            }
+            catch (Exception)
+            {
+
                 return;
             }
-            dgvISBNList.Rows.RemoveAt(dgvISBNList.CurrentRow.Index);
-            txtISBN.Focus();
-            length = length - 1;
+
             //dgvISBNList.CurrentRow.Cells["col"]
         }
     }

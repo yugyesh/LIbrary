@@ -222,5 +222,41 @@ namespace Library
                 } 
             }
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            pnlMain.Hide();
+            Form activeChild = this.ActiveMdiChild;
+            frmSearchBooks searchBookForm = new frmSearchBooks();
+            if (activeChild == null)
+            {
+                searchBookForm.Show();
+                searchBookForm.MdiParent = this;
+            }
+            else
+            {
+                activeChild.Close();
+                searchBookForm.Show();
+                searchBookForm.MdiParent = this;
+            }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            pnlMain.Hide();
+            Form activeChild = this.ActiveMdiChild;
+            frmImportBooks bookImportForm = new frmImportBooks();
+            if (activeChild == null)
+            {
+                bookImportForm.Show();
+                bookImportForm.MdiParent = this;
+            }
+            else
+            {
+                activeChild.Close();
+                bookImportForm.Show();
+                bookImportForm.MdiParent = this;
+            }
+        }
     }
 }

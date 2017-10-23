@@ -289,6 +289,7 @@ namespace Library
                     {
                         MessageBox.Show("Student updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearControls();
+                        ClearGrid();
                     }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 2)
@@ -302,6 +303,7 @@ namespace Library
                         LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
                         LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
                         ClearControls();
+                        ClearGrid();
                     }
                 }
                 else if (Convert.ToInt32(cboMemberType.SelectedValue.ToString()) == 3)
@@ -315,6 +317,7 @@ namespace Library
                         MessageBox.Show("User Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadGridGeneral(Convert.ToInt32(cboMemberType.SelectedValue.ToString()));
                         ClearControls();
+                        ClearGrid();
                     }
                 }
                 else
@@ -491,6 +494,7 @@ namespace Library
                 {
                     txtPassword.Focus();
                     erpGeneral.SetError(txtPassword, "Password Miss Match");
+                    return true;
                 }
                 else
                 {
@@ -514,8 +518,13 @@ namespace Library
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
+            ClearGrid();
         }
-
+        private void ClearGrid()
+        {
+            dgvAllMember.Rows.Clear();
+            dgvAllMember.DataSource = null;
+        }
         private void dgvAllMember_Click(object sender, EventArgs e)
         {
             txtFirstName.Text = dgvAllMember.CurrentRow.Cells["colFirstName"].Value.ToString();

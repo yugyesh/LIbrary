@@ -27,7 +27,9 @@ namespace Library
         private void frmSearchBooks_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
+            DataTable dtnew = new DataTable();
             dt = balBook.GetBookStatus();
+            dtnew = balBook.GetBookStatus();
             DataRow dr = dt.NewRow();
             dr["BStatusName"] = "--Please Select--";
             dr["BStatusID"] = 0;
@@ -35,6 +37,9 @@ namespace Library
             cboStatus.DisplayMember = "BstatusName";
             cboStatus.ValueMember = "BStatusID";
             cboStatus.DataSource = dt;
+            cboNewStatus.DataSource = dtnew;
+            cboNewStatus.DisplayMember = "BstatusName";
+            cboNewStatus.ValueMember = "BStatusID";
             //DataTable dt = new DataTable();
             //dt = balFine.GetFineDetails(txtStudentName.Text);
             //if (dt!=null && dt.Rows.Count>0)
@@ -68,33 +73,83 @@ namespace Library
                         };
             dtAllBooks = balBook.SearchBooks(filterString);
             //dgvBurrowerInfo.DataSource = dtAllBooks;
-            dgvBurrowerInfo.Rows.Clear();
+            dgvBookDetails.Rows.Clear();
             for (int i = 0; i < dtAllBooks.Rows.Count; i++)
             {
-                dgvBurrowerInfo.Rows.Add();
-                dgvBurrowerInfo.Rows[i].Cells["colSN"].Value = i;
-                dgvBurrowerInfo.Rows[i].Cells["colISBN"].Value = dtAllBooks.Rows[i]["ISBN"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colBookDetailID"].Value = dtAllBooks.Rows[i]["BookDetailID"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colBookTitle"].Value = dtAllBooks.Rows[i]["Title"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colAuthor"].Value = dtAllBooks.Rows[i]["Author"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colBookStatusID"].Value = dtAllBooks.Rows[i]["BStatusID"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colStatusName"].Value = dtAllBooks.Rows[i]["BStatusName"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colPlace"].Value = dtAllBooks.Rows[i]["Place"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colPublisher"].Value = dtAllBooks.Rows[i]["Publisher"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colSource"].Value = dtAllBooks.Rows[i]["Source"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colPublishedYear"].Value = dtAllBooks.Rows[i]["PublishedYear"].ToString();
-                dgvBurrowerInfo.Rows[i].Cells["colSubCategory"].Value = dtAllBooks.Rows[i]["SubCategory"].ToString();
+                dgvBookDetails.Rows.Add();
+                dgvBookDetails.Rows[i].Cells["colSN"].Value = i;
+                dgvBookDetails.Rows[i].Cells["colISBN"].Value = dtAllBooks.Rows[i]["ISBN"].ToString();
+                dgvBookDetails.Rows[i].Cells["colBookDetailID"].Value = dtAllBooks.Rows[i]["BookDetailID"].ToString();
+                dgvBookDetails.Rows[i].Cells["colBookTitle"].Value = dtAllBooks.Rows[i]["Title"].ToString();
+                dgvBookDetails.Rows[i].Cells["colAuthor"].Value = dtAllBooks.Rows[i]["Author"].ToString();
+                dgvBookDetails.Rows[i].Cells["colBookStatusID"].Value = dtAllBooks.Rows[i]["BStatusID"].ToString();
+                dgvBookDetails.Rows[i].Cells["colStatusName"].Value = dtAllBooks.Rows[i]["BStatusName"].ToString();
+                dgvBookDetails.Rows[i].Cells["colPlace"].Value = dtAllBooks.Rows[i]["Place"].ToString();
+                dgvBookDetails.Rows[i].Cells["colPublisher"].Value = dtAllBooks.Rows[i]["Publisher"].ToString();
+                dgvBookDetails.Rows[i].Cells["colSource"].Value = dtAllBooks.Rows[i]["Source"].ToString();
+                dgvBookDetails.Rows[i].Cells["colPublishedYear"].Value = dtAllBooks.Rows[i]["PublishedYear"].ToString();
+                dgvBookDetails.Rows[i].Cells["colSubCategory"].Value = dtAllBooks.Rows[i]["SubCategory"].ToString();
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cboStatus.SelectedIndex = 0;
-            txtAuthor.Text = string.Empty;
-            txtTitle.Text = string.Empty;
-            dgvBurrowerInfo.Rows.Clear();
-            dgvBurrowerInfo.DataSource = null;
+            ClearControls();
         }
+        private void ClearControls()
+        {
+            //erpGeneral.Clear();
+            //dgvProduct.DataSource = null;
+            //dgvFeatures.DataSource = null;
+            //dgvFeatures.Rows.Clear();
+            //dgvProduct.Rows.Clear();
+            // dgvFeatures.ClearSelection();
+            dgvBookDetails.Rows.Clear();
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else if (control is ComboBox)
+                    {
+                        (control as ComboBox).SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+
+            };
+
+            func(Controls);
+        }
+
+        private void dgvBookDetails_Click(object sender, EventArgs e)
+        {
+            txtISBN.Text = dgvBookDetails.CurrentRow.Cells["colISBN"].Value.ToString();
+        }
+
+        private void btnChangeStatus_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            result = MessageBox.Show("Are you sure to change book status", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (result==DialogResult.OK)
+            {
+                bool check;
+                check=balBook.ChangeBookStatus(txtISBN.Text, Convert.ToInt32(cboNewStatus.SelectedValue.ToString()));
+                if (check==true)
+                {
+                    MessageBox.Show("Status update successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
 
 
         ////private void dgvFineDetail_Click(object sender, EventArgs e)
