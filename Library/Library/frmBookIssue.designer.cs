@@ -61,6 +61,7 @@
             this.pnlStudentInfo = new System.Windows.Forms.Panel();
             this.chkBurrower = new System.Windows.Forms.CheckBox();
             this.pnlISBN = new System.Windows.Forms.Panel();
+            this.btnAdd = new IncLibrary.IncLabel();
             this.dgvISBNList = new System.Windows.Forms.DataGridView();
             this.colSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +80,6 @@
             this.lblIssueorReturn = new System.Windows.Forms.CheckBox();
             this.pnlClose = new System.Windows.Forms.Panel();
             this._CloseButton = new Library.ButtonZ();
-            this.btnAdd = new IncLibrary.IncLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBurrowerInfo)).BeginInit();
             this.pnlBook.SuspendLayout();
             this.pnlStudentInfo.SuspendLayout();
@@ -380,6 +380,20 @@
             this.pnlISBN.Size = new System.Drawing.Size(216, 317);
             this.pnlISBN.TabIndex = 53;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Red;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.Location = new System.Drawing.Point(179, -2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Readonly = false;
+            this.btnAdd.Size = new System.Drawing.Size(35, 45);
+            this.btnAdd.TabIndex = 60;
+            this.btnAdd.Text = "+";
+            this.btnAdd.ValueByOrchestrator = "+";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // dgvISBNList
             // 
             this.dgvISBNList.AllowUserToDeleteRows = false;
@@ -644,20 +658,6 @@
             this._CloseButton.TextLocation_X = 6;
             this._CloseButton.TextLocation_Y = 1;
             this._CloseButton.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Red;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAdd.Location = new System.Drawing.Point(179, -2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Readonly = false;
-            this.btnAdd.Size = new System.Drawing.Size(35, 45);
-            this.btnAdd.TabIndex = 60;
-            this.btnAdd.Text = "+";
-            this.btnAdd.ValueByOrchestrator = "+";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmBookIssue
             // 
