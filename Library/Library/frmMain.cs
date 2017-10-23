@@ -56,12 +56,17 @@ namespace Library
         BALFine balFine = new BALFine();
         private void frmMain_Load(object sender, EventArgs e)
         {
-            if (statRoleID.Text=="1")
+            if (statRoleID.Text == "1")
             {
                 toolAddBooks.Enabled = false;
                 toolAddMember.Enabled = false;
                 masterToolStripMenuItem.Enabled = false;
             }
+            RefreshGrid();
+        }
+
+        private void RefreshGrid()
+        {
             DataTable dt = new DataTable();
             dt = balFine.GetFineDetails(txtStudentName.Text);
             if (dt != null && dt.Rows.Count > 0)
@@ -83,7 +88,7 @@ namespace Library
                 dgvFineDetail.Rows[i].Cells["colSection"].Value = dt.Rows[i]["SectionName"].ToString();
                 dgvFineDetail.Rows[i].Cells["colClassF"].Value = dt.Rows[i]["ClassName"].ToString();
                 dgvFineDetail.Rows[i].Cells["colStudentName"].Value = dt.Rows[i]["StudentName"].ToString();
-                dgvFineDetail.Rows[i].Cells["colBookTitleF"].Value = dt.Rows[i]["BookTitle"].ToString();
+                dgvFineDetail.Rows[i].Cells["colBookTitle"].Value = dt.Rows[i]["Title"].ToString();
                 dgvFineDetail.Rows[i].Cells["colAuthorF"].Value = dt.Rows[i]["Author"].ToString();
                 dgvFineDetail.Rows[i].Cells["colBurrowedDate"].Value = dt.Rows[i]["BurrowedDate"].ToString();
                 dgvFineDetail.Rows[i].Cells["colISBNF"].Value = dt.Rows[i]["ISBN"].ToString();
@@ -203,7 +208,7 @@ namespace Library
                 lblID.Text = dgvFineDetail.CurrentRow.Cells["colStudentID"].Value.ToString();
                 lblName.Text = dgvFineDetail.CurrentRow.Cells["colStudentName"].Value.ToString();
                 lblSection.Text = dgvFineDetail.CurrentRow.Cells["colSection"].Value.ToString();
-                lblBookTitle.Text = dgvFineDetail.CurrentRow.Cells["colBookTitleF"].Value.ToString();
+                lblBookTitle.Text = dgvFineDetail.CurrentRow.Cells["colBookTitle"].Value.ToString();
                 lblAuthor.Text = dgvFineDetail.CurrentRow.Cells["colAuthorF"].Value.ToString();
                 lblClass.Text = dgvFineDetail.CurrentRow.Cells["colClassF"].Value.ToString();
                 lblISBN.Text = dgvFineDetail.CurrentRow.Cells["colISBNF"].Value.ToString();
@@ -219,6 +224,9 @@ namespace Library
                 if (balFine.AddFineAmount(Convert.ToInt32(txtFine.Text), lblID.Text, lblISBN.Text))
                 {
                     MessageBox.Show("Fine Paid", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvFineDetail.Rows.Clear();
+                    dgvFineDetail.DataSource = null;
+                    RefreshGrid();
                 } 
             }
         }

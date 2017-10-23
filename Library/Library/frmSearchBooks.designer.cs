@@ -57,11 +57,11 @@
             this.pnlBook = new System.Windows.Forms.Panel();
             this.btnClear = new IncLibrary.IncButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChangeStatus = new IncLibrary.IncButton();
+            this.incLabel4 = new IncLibrary.IncLabel();
+            this.incLabel2 = new IncLibrary.IncLabel();
             this.cboNewStatus = new System.Windows.Forms.ComboBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
-            this.incLabel2 = new IncLibrary.IncLabel();
-            this.incLabel4 = new IncLibrary.IncLabel();
+            this.btnChangeStatus = new IncLibrary.IncButton();
             this.pnlClose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookDetails)).BeginInit();
             this.panel1.SuspendLayout();
@@ -352,7 +352,7 @@
             this.pnlBook.Controls.Add(this.incLabel3);
             this.pnlBook.Controls.Add(this.lblBurrowerName);
             this.pnlBook.Controls.Add(this.incLabel1);
-            this.pnlBook.Location = new System.Drawing.Point(23, 63);
+            this.pnlBook.Location = new System.Drawing.Point(376, 69);
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(686, 59);
             this.pnlBook.TabIndex = 0;
@@ -364,7 +364,7 @@
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnClear.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnClear.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnClear.Location = new System.Drawing.Point(732, 63);
+            this.btnClear.Location = new System.Drawing.Point(1085, 69);
             this.btnClear.Name = "btnClear";
             this.btnClear.NextControl = null;
             this.btnClear.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -380,30 +380,39 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.panel2.Controls.Add(this.incLabel4);
             this.panel2.Controls.Add(this.incLabel2);
+            this.panel2.Controls.Add(this.btnChangeStatus);
             this.panel2.Controls.Add(this.cboNewStatus);
             this.panel2.Controls.Add(this.txtISBN);
-            this.panel2.Location = new System.Drawing.Point(818, 63);
+            this.panel2.Location = new System.Drawing.Point(1292, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(407, 59);
+            this.panel2.Size = new System.Drawing.Size(10, 59);
             this.panel2.TabIndex = 3;
             // 
-            // btnChangeStatus
+            // incLabel4
             // 
-            this.btnChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnChangeStatus.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.btnChangeStatus.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnChangeStatus.Location = new System.Drawing.Point(1231, 69);
-            this.btnChangeStatus.Name = "btnChangeStatus";
-            this.btnChangeStatus.NextControl = null;
-            this.btnChangeStatus.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnChangeStatus.PreviousControl = null;
-            this.btnChangeStatus.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnChangeStatus.Size = new System.Drawing.Size(90, 49);
-            this.btnChangeStatus.TabIndex = 68;
-            this.btnChangeStatus.Text = "Change Status";
-            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
+            this.incLabel4.AutoSize = true;
+            this.incLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel4.Location = new System.Drawing.Point(252, 6);
+            this.incLabel4.Name = "incLabel4";
+            this.incLabel4.Readonly = false;
+            this.incLabel4.Size = new System.Drawing.Size(79, 17);
+            this.incLabel4.TabIndex = 72;
+            this.incLabel4.Text = "New Status";
+            this.incLabel4.ValueByOrchestrator = "New Status";
+            // 
+            // incLabel2
+            // 
+            this.incLabel2.AutoSize = true;
+            this.incLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel2.Location = new System.Drawing.Point(59, 5);
+            this.incLabel2.Name = "incLabel2";
+            this.incLabel2.Readonly = false;
+            this.incLabel2.Size = new System.Drawing.Size(39, 17);
+            this.incLabel2.TabIndex = 71;
+            this.incLabel2.Text = "ISBN";
+            this.incLabel2.ValueByOrchestrator = "ISBN";
             // 
             // cboNewStatus
             // 
@@ -428,31 +437,23 @@
             this.txtISBN.Size = new System.Drawing.Size(148, 23);
             this.txtISBN.TabIndex = 70;
             // 
-            // incLabel2
+            // btnChangeStatus
             // 
-            this.incLabel2.AutoSize = true;
-            this.incLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.incLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel2.Location = new System.Drawing.Point(59, 5);
-            this.incLabel2.Name = "incLabel2";
-            this.incLabel2.Readonly = false;
-            this.incLabel2.Size = new System.Drawing.Size(39, 17);
-            this.incLabel2.TabIndex = 71;
-            this.incLabel2.Text = "ISBN";
-            this.incLabel2.ValueByOrchestrator = "ISBN";
-            // 
-            // incLabel4
-            // 
-            this.incLabel4.AutoSize = true;
-            this.incLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.incLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel4.Location = new System.Drawing.Point(252, 6);
-            this.incLabel4.Name = "incLabel4";
-            this.incLabel4.Readonly = false;
-            this.incLabel4.Size = new System.Drawing.Size(79, 17);
-            this.incLabel4.TabIndex = 72;
-            this.incLabel4.Text = "New Status";
-            this.incLabel4.ValueByOrchestrator = "New Status";
+            this.btnChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnChangeStatus.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnChangeStatus.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnChangeStatus.Location = new System.Drawing.Point(170, 10);
+            this.btnChangeStatus.Name = "btnChangeStatus";
+            this.btnChangeStatus.NextControl = null;
+            this.btnChangeStatus.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnChangeStatus.PreviousControl = null;
+            this.btnChangeStatus.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnChangeStatus.Size = new System.Drawing.Size(90, 49);
+            this.btnChangeStatus.TabIndex = 68;
+            this.btnChangeStatus.Text = "Change Status";
+            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
             // 
             // frmSearchBooks
             // 
@@ -464,7 +465,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnChangeStatus);
             this.Controls.Add(this.pnlBook);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlClose);

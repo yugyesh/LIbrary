@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStripZ1 = new Library.MenuStripZ();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +52,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolAddMember = new System.Windows.Forms.ToolStripButton();
             this.toolAddBooks = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolBookIssue = new System.Windows.Forms.ToolStripButton();
             this.toolBookReturn = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -92,12 +93,11 @@
             this.colDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFIneAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBookTitleF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBookTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAuthorF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClassF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -222,7 +222,7 @@
             // 
             this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.booksToolStripMenuItem.Text = "Books";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -297,6 +297,17 @@
             this.toolAddBooks.Text = "Add Books";
             this.toolAddBooks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolAddBooks.Click += new System.EventHandler(this.toolAddBooks_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(76, 59);
+            this.toolStripButton3.Text = "Import Excel";
+            this.toolStripButton3.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolBookIssue
             // 
@@ -721,14 +732,14 @@
             this.dgvFineDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvFineDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFineDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFineDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFineDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFineDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFineDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSNF,
@@ -737,32 +748,32 @@
             this.colDays,
             this.colFIneAmount,
             this.colStudentID,
-            this.colBookTitleF,
+            this.colBookTitle,
             this.colAuthorF,
             this.colClassF,
             this.colSection,
             this.colBurrowedDate});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFineDetail.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFineDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFineDetail.EnableHeadersVisualStyles = false;
             this.dgvFineDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvFineDetail.Location = new System.Drawing.Point(0, -3);
             this.dgvFineDetail.Name = "dgvFineDetail";
             this.dgvFineDetail.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFineDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFineDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFineDetail.RowHeadersVisible = false;
             this.dgvFineDetail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvFineDetail.Size = new System.Drawing.Size(158, 346);
@@ -812,12 +823,12 @@
             this.colStudentID.ReadOnly = true;
             this.colStudentID.Visible = false;
             // 
-            // colBookTitleF
+            // colBookTitle
             // 
-            this.colBookTitleF.HeaderText = "Book Title";
-            this.colBookTitleF.Name = "colBookTitleF";
-            this.colBookTitleF.ReadOnly = true;
-            this.colBookTitleF.Visible = false;
+            this.colBookTitle.HeaderText = "Book Title";
+            this.colBookTitle.Name = "colBookTitle";
+            this.colBookTitle.ReadOnly = true;
+            this.colBookTitle.Visible = false;
             // 
             // colAuthorF
             // 
@@ -846,17 +857,6 @@
             this.colBurrowedDate.Name = "colBurrowedDate";
             this.colBurrowedDate.ReadOnly = true;
             this.colBurrowedDate.Visible = false;
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(76, 59);
-            this.toolStripButton3.Text = "Import Excel";
-            this.toolStripButton3.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // frmMain
             // 
@@ -945,17 +945,6 @@
         private IncLibrary.IncLabel incLabel2;
         private System.Windows.Forms.Panel pnlISBN;
         private System.Windows.Forms.DataGridView dgvFineDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSNF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colISBNF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDays;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFIneAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBookTitleF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthorF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSection;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedDate;
         private IncLibrary.IncLabel lblISBN;
         private IncLibrary.IncLabel incLabel10;
         private IncLibrary.IncLabel lblBurrowedDate;
@@ -963,5 +952,16 @@
         private System.Windows.Forms.TextBox txtFine;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSNF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colISBNF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDays;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFIneAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBookTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthorF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClassF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSection;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBurrowedDate;
     }
 }

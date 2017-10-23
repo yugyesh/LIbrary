@@ -11,7 +11,7 @@ namespace BussinessLayer
 {
     public class BALBookIssueReturn
     {
-        public DataTable GetStudentInfo(string studentID,string studentName,string className)
+        public DataTable GetStudentInfo(string studentID, string studentName, string className)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
@@ -22,7 +22,7 @@ namespace BussinessLayer
             };
             return DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
         }
-        public DataTable GetTeacherInfo(string teacherID,string teacherName,string departmentID)
+        public DataTable GetTeacherInfo(string teacherID, string teacherName, string departmentID)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
@@ -54,7 +54,7 @@ namespace BussinessLayer
                 new SqlParameter("@infoType","C"),
             };
             DataTable dt = new DataTable();
-            dt= DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
+            dt = DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
             return dt.Rows.Count > 0 ? true : false;
         }
         public bool CheckBookIssued(string ISBN)
@@ -68,7 +68,7 @@ namespace BussinessLayer
             dt = DAO.GetTable(query, pram, CommandType.Text);
             return dt.Rows.Count > 0 ? true : false;
         }
-        public bool IssueBook(string ISBN,string[] burrowerDetails)
+        public bool IssueBook(string ISBN, string[] burrowerDetails)
         {
             SqlParameter[] pram = new SqlParameter[]
             {
@@ -90,9 +90,22 @@ namespace BussinessLayer
             {
                 new SqlParameter("@ISBN",ISBN),
                 new SqlParameter("@burrowerID",burrowerID),
+                new SqlParameter("@returnedDate",DateTime.Today),
                 new SqlParameter("@issued",Convert.ToBoolean(0)),
             };
-            return DAO.IUD("sp_BookIssueReturn", pram, CommandType.StoredProcedure) > 0 ? true:false ;
+            return DAO.IUD("sp_BookIssueReturn", pram, CommandType.StoredProcedure) > 0 ? true : false;
+        }
+        //check whether that user issued specific book during return
+        public bool CheckUserIssued(string ISBN, string burrowerID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@burrowerID",burrowerID),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("select * from burrower where bookid=@ISBN and burrowerID=@burrowerID", pram, CommandType.Text);
+            return dt == null || dt.Rows.Count == 0 ? true : false;
         }
     }
 }

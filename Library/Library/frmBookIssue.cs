@@ -226,8 +226,9 @@ namespace Library
             {
                 balIssueReturn.IssueBook(dgvISBNList.Rows[i].Cells["colISBN"].Value.ToString(), burrowrInfo);
             }
-            MessageBox.Show("Book Issued Successfully", "Issue SuccessFul", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Book issued successfully", "Issue SuccessFul", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearControls();
+            ClearGrid();
             dgvISBNList.Rows.Clear();
             dgvISBNList.DataSource = null;
 
@@ -239,7 +240,11 @@ namespace Library
             {
                 balIssueReturn.ReturnBook(dgvISBNList.Rows[0].Cells["colISBN"].Value.ToString(),txtBurrowerID.Text);
             }
-
+            MessageBox.Show("Books returned successfully", "Issue SuccessFul", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearControls();
+            ClearGrid();
+            dgvISBNList.Rows.Clear();
+            dgvISBNList.DataSource = null;
         }
 
         private void _CloseButton_Click_1(object sender, EventArgs e)
@@ -264,6 +269,13 @@ namespace Library
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearControls();
+            ClearGrid();
+            length = 0;
+        }
+        private void ClearGrid()
+        {
+            dgvInfoGeneral.Rows.Clear();
+            dgvISBNList.Rows.Clear();
         }
         int length = 0;
         private void txtISBN_TextChanged(object sender, EventArgs e)
@@ -301,10 +313,12 @@ namespace Library
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (txtISBN.Text.Length == 13)
             {
-                if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
+                if (txtISBN.Text.Trim()==string.Empty)
+                {
+                    return;
+                }
+                else if (!balIssueReturn.CheckBookAvailibity(txtISBN.Text))
                 {
                     MessageBox.Show("Book Not Registered", "Book Not Added Yet!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -313,13 +327,18 @@ namespace Library
                 {
                     MessageBox.Show("Book already issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (lblIssueorReturn.Checked == true && !balIssueReturn.CheckBookIssued(txtISBN.Text))
+                else if (lblIssueorReturn.Checked == false && !balIssueReturn.CheckBookIssued(txtISBN.Text))
                 {
-                    MessageBox.Show("Book already returned", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("This book is not issued", "Adding Terminated", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (CheckISBNDuplicate())
                 {
                     MessageBox.Show("Book Already Added To List");
+                }
+                //Test whether that user take that book or not
+                else if (lblIssueorReturn.Checked==false && balIssueReturn.CheckUserIssued(txtISBN.Text,txtBurrowerID.Text))
+                {
+                    MessageBox.Show("Book not issued by this user", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -331,8 +350,6 @@ namespace Library
                 }
                 txtISBN.Text = string.Empty;
                 txtISBN.Focus();
-            }
-
         }
         private bool CheckISBNDuplicate()
         {

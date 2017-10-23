@@ -9,6 +9,7 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\bin\Debug\BussinessLayer.
 C:\Users\Yugesh\Source\Library\Library\Library\Library\bin\Debug\Common.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Library\bin\Debug\DataAccessLayer.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.ResolveComReference.cache
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.BlackForm.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddClass.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddStatus.resources
@@ -17,6 +18,9 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddB
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmChangePassword.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmBookIssue.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddDepartment.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmChangeRole.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmFine.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmImportBooks.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmSearchBooks.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmLogin.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmGeneral.resources
@@ -25,7 +29,3 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.Propert
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.exe
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.pdb
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmChangeRole.resources
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.ResolveComReference.cache
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmImportBooks.resources
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmFine.resources
