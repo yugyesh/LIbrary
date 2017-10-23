@@ -266,5 +266,13 @@ namespace Library
                 bookImportForm.MdiParent = this;
             }
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            pnlMain.Hide();
+            frmFine fineForm = new frmFine();
+            fineForm.ShowDialog();
+            fineForm.MdiParent = this;
+        }
     }
 }
