@@ -293,5 +293,17 @@ namespace BussinessLayer
             };
             return DAO.GetTable("sp_GetBookInfo", pram, CommandType.StoredProcedure);
         }
+        public DataTable SearchBooks(string[] filters)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@filterTitle","%"+filters[0]+"%"),
+                new SqlParameter("@filterAuthor", "%"+filters[1]+"%"),
+                new SqlParameter("@filterBookID", "%"+"%"),
+                new SqlParameter("@filterStatus",Convert.ToInt32(filters[2])),
+                new SqlParameter("@portion","A"),
+            };
+            return DAO.GetTable("sp_GetBookInfo", pram, CommandType.StoredProcedure);
+        }
     }
 }
