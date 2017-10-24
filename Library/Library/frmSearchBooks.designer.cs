@@ -489,10 +489,9 @@
             this.lblBName.Location = new System.Drawing.Point(131, 31);
             this.lblBName.Name = "lblBName";
             this.lblBName.Readonly = false;
-            this.lblBName.Size = new System.Drawing.Size(48, 17);
+            this.lblBName.Size = new System.Drawing.Size(0, 17);
             this.lblBName.TabIndex = 67;
-            this.lblBName.Text = "Status";
-            this.lblBName.ValueByOrchestrator = "Status";
+            this.lblBName.ValueByOrchestrator = "";
             // 
             // incLabel7
             // 
@@ -515,10 +514,9 @@
             this.lblMemberType.Location = new System.Drawing.Point(131, 89);
             this.lblMemberType.Name = "lblMemberType";
             this.lblMemberType.Readonly = false;
-            this.lblMemberType.Size = new System.Drawing.Size(48, 17);
+            this.lblMemberType.Size = new System.Drawing.Size(0, 17);
             this.lblMemberType.TabIndex = 66;
-            this.lblMemberType.Text = "Status";
-            this.lblMemberType.ValueByOrchestrator = "Status";
+            this.lblMemberType.ValueByOrchestrator = "";
             // 
             // lblBurrowedDate
             // 
@@ -528,10 +526,9 @@
             this.lblBurrowedDate.Location = new System.Drawing.Point(131, 60);
             this.lblBurrowedDate.Name = "lblBurrowedDate";
             this.lblBurrowedDate.Readonly = false;
-            this.lblBurrowedDate.Size = new System.Drawing.Size(48, 17);
+            this.lblBurrowedDate.Size = new System.Drawing.Size(0, 17);
             this.lblBurrowedDate.TabIndex = 66;
-            this.lblBurrowedDate.Text = "Status";
-            this.lblBurrowedDate.ValueByOrchestrator = "Status";
+            this.lblBurrowedDate.ValueByOrchestrator = "";
             // 
             // incLabel11
             // 
@@ -567,10 +564,9 @@
             this.lblBurrowerID.Location = new System.Drawing.Point(131, 2);
             this.lblBurrowerID.Name = "lblBurrowerID";
             this.lblBurrowerID.Readonly = false;
-            this.lblBurrowerID.Size = new System.Drawing.Size(48, 17);
+            this.lblBurrowerID.Size = new System.Drawing.Size(0, 17);
             this.lblBurrowerID.TabIndex = 65;
-            this.lblBurrowerID.Text = "Status";
-            this.lblBurrowerID.ValueByOrchestrator = "Status";
+            this.lblBurrowerID.ValueByOrchestrator = "";
             // 
             // incLabel5
             // 

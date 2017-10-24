@@ -80,10 +80,14 @@ namespace Library
             dgvFineDetail.Columns["colDays"].DefaultCellStyle.BackColor = Color.Red;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                if (dt.Rows[i]["DaysExceed"].ToString() == null || dt.Rows[i]["DaysExceed"].ToString() == string.Empty)
+                {
+                    return;
+                }
                 dgvFineDetail.Rows.Add();
                 dgvFineDetail.Rows[i].Cells["colSNF"].Value = i;
                 dgvFineDetail.Rows[i].Cells["colDays"].Value = dt.Rows[i]["DaysExceed"].ToString();
-                dgvFineDetail.Rows[i].Cells["colFineAmount"].Value = Convert.ToInt32(dt.Rows[i]["DaysExceed"].ToString()) * 5;
+                dgvFineDetail.Rows[i].Cells["colFineAmount"].Value =  Convert.ToInt32(dt.Rows[i]["DaysExceed"].ToString()) * 5;
                 dgvFineDetail.Rows[i].Cells["colStudentID"].Value = dt.Rows[i]["BurrowerID"].ToString();
                 dgvFineDetail.Rows[i].Cells["colSection"].Value = dt.Rows[i]["SectionName"].ToString();
                 dgvFineDetail.Rows[i].Cells["colClassF"].Value = dt.Rows[i]["ClassName"].ToString();

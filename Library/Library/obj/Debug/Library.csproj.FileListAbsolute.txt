@@ -29,3 +29,4 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.Propert
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.exe
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.pdb
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmSearchMember.resources

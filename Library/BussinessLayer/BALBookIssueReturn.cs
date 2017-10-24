@@ -108,5 +108,29 @@ namespace BussinessLayer
             dt = DAO.GetTable("select * from burrower where bookid=@ISBN and burrowerID=@burrowerID", pram, CommandType.Text);
             return dt == null || dt.Rows.Count == 0 ? true : false;
         }
+        //retriving information from the burrower using the isbn to find out the book burrower details
+        public DataTable GetBurrowerDetails(string ISBN)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@ISBN",ISBN),
+                new SqlParameter("@infoType","BD"),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
+            return dt == null || dt.Rows.Count == 0 ? null : dt;
+        }
+        public DataTable GetBurrowerName(string burrowerID,int burrowerType)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@burrowerID",burrowerID),
+                new SqlParameter("@burrowerType",burrowerType),
+                new SqlParameter("@infoType","BN"),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable("sp_GetInfoBurrower", pram, CommandType.StoredProcedure);
+            return dt == null || dt.Rows.Count == 0 ? null : dt;
+        }
     }
 }

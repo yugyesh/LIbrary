@@ -37,6 +37,10 @@ namespace Library
             dgvFineDetail.Columns["colDays"].DefaultCellStyle.BackColor = Color.Red;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                if (dt.Rows[i]["DaysExceed"].ToString() == null || dt.Rows[i]["DaysExceed"].ToString() == string.Empty)
+                {
+                    return;
+                }
                 dgvFineDetail.Rows.Add();
                 dgvFineDetail.Rows[i].Cells["colSNF"].Value = i;
                 dgvFineDetail.Rows[i].Cells["colDays"].Value = dt.Rows[i]["DaysExceed"].ToString();
@@ -45,7 +49,7 @@ namespace Library
                 dgvFineDetail.Rows[i].Cells["colSection"].Value = dt.Rows[i]["SectionName"].ToString();
                 dgvFineDetail.Rows[i].Cells["colClassF"].Value = dt.Rows[i]["ClassName"].ToString();
                 dgvFineDetail.Rows[i].Cells["colStudentName"].Value = dt.Rows[i]["StudentName"].ToString();
-                dgvFineDetail.Rows[i].Cells["colBookTitleF"].Value = dt.Rows[i]["BookTitle"].ToString();
+                dgvFineDetail.Rows[i].Cells["colBookTitle"].Value = dt.Rows[i]["Title"].ToString();
                 dgvFineDetail.Rows[i].Cells["colAuthorF"].Value = dt.Rows[i]["Author"].ToString();
                 dgvFineDetail.Rows[i].Cells["colBurrowedDate"].Value = dt.Rows[i]["BurrowedDate"].ToString();
                 dgvFineDetail.Rows[i].Cells["colISBNF"].Value = dt.Rows[i]["ISBN"].ToString();

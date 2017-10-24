@@ -44,6 +44,14 @@ namespace Library
 
         private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboStatus.Text.ToLower()=="burrowed")
+            {
+                pnlBurrowerInfo.Visible = true;
+            }
+            else
+            {
+                pnlBurrowerInfo.Visible = false;
+            }
             DataTable dtAllBooks = new DataTable();
             string[] filterString = new string[]
                         {
@@ -102,10 +110,22 @@ namespace Library
 
             func(Controls);
         }
-
+        BALBookIssueReturn balBookIssueReturn = new BALBookIssueReturn();
         private void dgvBookDetails_Click(object sender, EventArgs e)
         {
-            txtISBN.Text = dgvBookDetails.CurrentRow.Cells["colISBN"].Value.ToString();
+            //txtISBN.Text = dgvBookDetails.CurrentRow.Cells["colISBN"].Value.ToString();
+            if (cboStatus.Text.ToLower()=="burrowed")
+            {
+                DataTable dt = new DataTable();
+                DataTable dtName = new DataTable();
+                dt = balBookIssueReturn.GetBurrowerDetails(dgvBookDetails.CurrentRow.Cells["colISBN"].Value.ToString());
+                lblBurrowerID.Text = dt.Rows[0]["BurrowerID"].ToString();
+                lblBurrowedDate.Text = dt.Rows[0]["BurrowedDate"].ToString();
+                lblMemberType.Text = dt.Rows[0]["TypeName"].ToString();
+                dtName = balBookIssueReturn.GetBurrowerName(lblBurrowerID.Text, Convert.ToInt32(dt.Rows[0]["BurrowerType"].ToString()));
+                lblBName.Text = dtName.Rows[0]["BurrowerName"].ToString();
+
+            }
         }
 
         private void btnChangeStatus_Click(object sender, EventArgs e)
