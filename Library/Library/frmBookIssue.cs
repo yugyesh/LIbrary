@@ -185,6 +185,7 @@ namespace Library
             };
 
             func(Controls);
+            length = 0;
         }
 
         private void dgvISBNList_Click(object sender, EventArgs e)
@@ -210,6 +211,10 @@ namespace Library
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
+            if (!ValidateControls())
+            {
+                return;
+            }
             DateTime burrowedDate = DateTime.Today;
             DateTime dueDate = burrowedDate.AddDays(10);
             string[] burrowrInfo = new string[]
@@ -237,9 +242,13 @@ namespace Library
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dgvISBNList.Rows.Count; i++)
+            if (!ValidateControls())
             {
-                balIssueReturn.ReturnBook(dgvISBNList.Rows[0].Cells["colISBN"].Value.ToString(),txtBurrowerID.Text);
+                return;
+            }
+            for (int i = 0; i < dgvISBNList.Rows.Count-1; i++)
+            {
+                balIssueReturn.ReturnBook(dgvISBNList.Rows[i].Cells["colISBN"].Value.ToString(),txtBurrowerID.Text);
             }
             MessageBox.Show("Books returned successfully", "Issue SuccessFul", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearControls();
@@ -386,6 +395,26 @@ namespace Library
             }
 
             //dgvISBNList.CurrentRow.Cells["col"]
+        }
+        BALMember balMember = new BALMember();
+        private bool ValidateControls()
+        {
+            if (txtBurrowerID.Text.Trim() == string.Empty)
+            {
+                txtBurrowerID.Focus();
+                erpGeneral.SetError(txtBurrowerID, "Please Select any Burrower");
+                return false;
+            }
+            else if (dgvISBNList.Rows.Count<=0)
+            {
+                txtISBN.Focus();
+                erpGeneral.SetError(dgvISBNList, "Please select at least one book");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
