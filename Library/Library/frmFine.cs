@@ -61,6 +61,10 @@ namespace Library
                     MessageBox.Show("Fine Paid", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            else
+            {
+                MessageBox.Show("Please provide total fine", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvFineDetail_Click(object sender, EventArgs e)
