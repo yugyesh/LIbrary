@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClose = new System.Windows.Forms.Panel();
             this._CloseButton = new Library.ButtonZ();
             this.cboStatus = new System.Windows.Forms.ComboBox();
@@ -59,14 +59,24 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.incLabel4 = new IncLibrary.IncLabel();
             this.incLabel2 = new IncLibrary.IncLabel();
+            this.btnChangeStatus = new IncLibrary.IncButton();
             this.cboNewStatus = new System.Windows.Forms.ComboBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
-            this.btnChangeStatus = new IncLibrary.IncButton();
+            this.pnlBurrowerInfo = new System.Windows.Forms.Panel();
+            this.lblBName = new IncLibrary.IncLabel();
+            this.incLabel7 = new IncLibrary.IncLabel();
+            this.lblMemberType = new IncLibrary.IncLabel();
+            this.lblBurrowedDate = new IncLibrary.IncLabel();
+            this.incLabel11 = new IncLibrary.IncLabel();
+            this.incLabel6 = new IncLibrary.IncLabel();
+            this.lblBurrowerID = new IncLibrary.IncLabel();
+            this.incLabel5 = new IncLibrary.IncLabel();
             this.pnlClose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookDetails)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlBook.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlBurrowerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -145,14 +155,14 @@
             this.dgvBookDetails.AllowUserToResizeRows = false;
             this.dgvBookDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvBookDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBookDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBookDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBookDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSN,
@@ -168,28 +178,28 @@
             this.colSource,
             this.colPublishedYear,
             this.colSubCategory});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBookDetails.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBookDetails.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBookDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBookDetails.EnableHeadersVisualStyles = false;
             this.dgvBookDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.dgvBookDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvBookDetails.Name = "dgvBookDetails";
             this.dgvBookDetails.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBookDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBookDetails.RowHeadersVisible = false;
             this.dgvBookDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBookDetails.Size = new System.Drawing.Size(1296, 438);
@@ -352,7 +362,7 @@
             this.pnlBook.Controls.Add(this.incLabel3);
             this.pnlBook.Controls.Add(this.lblBurrowerName);
             this.pnlBook.Controls.Add(this.incLabel1);
-            this.pnlBook.Location = new System.Drawing.Point(376, 69);
+            this.pnlBook.Location = new System.Drawing.Point(234, 71);
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(686, 59);
             this.pnlBook.TabIndex = 0;
@@ -364,7 +374,7 @@
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnClear.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.btnClear.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnClear.Location = new System.Drawing.Point(1085, 69);
+            this.btnClear.Location = new System.Drawing.Point(926, 73);
             this.btnClear.Name = "btnClear";
             this.btnClear.NextControl = null;
             this.btnClear.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -383,7 +393,7 @@
             this.panel2.Controls.Add(this.btnChangeStatus);
             this.panel2.Controls.Add(this.cboNewStatus);
             this.panel2.Controls.Add(this.txtISBN);
-            this.panel2.Location = new System.Drawing.Point(1292, 63);
+            this.panel2.Location = new System.Drawing.Point(12, 33);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 59);
             this.panel2.TabIndex = 3;
@@ -414,6 +424,24 @@
             this.incLabel2.Text = "ISBN";
             this.incLabel2.ValueByOrchestrator = "ISBN";
             // 
+            // btnChangeStatus
+            // 
+            this.btnChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnChangeStatus.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.btnChangeStatus.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnChangeStatus.Location = new System.Drawing.Point(170, 10);
+            this.btnChangeStatus.Name = "btnChangeStatus";
+            this.btnChangeStatus.NextControl = null;
+            this.btnChangeStatus.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnChangeStatus.PreviousControl = null;
+            this.btnChangeStatus.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnChangeStatus.Size = new System.Drawing.Size(90, 49);
+            this.btnChangeStatus.TabIndex = 68;
+            this.btnChangeStatus.Text = "Change Status";
+            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
+            // 
             // cboNewStatus
             // 
             this.cboNewStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -437,23 +465,125 @@
             this.txtISBN.Size = new System.Drawing.Size(148, 23);
             this.txtISBN.TabIndex = 70;
             // 
-            // btnChangeStatus
+            // pnlBurrowerInfo
             // 
-            this.btnChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnChangeStatus.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.btnChangeStatus.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnChangeStatus.Location = new System.Drawing.Point(170, 10);
-            this.btnChangeStatus.Name = "btnChangeStatus";
-            this.btnChangeStatus.NextControl = null;
-            this.btnChangeStatus.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnChangeStatus.PreviousControl = null;
-            this.btnChangeStatus.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnChangeStatus.Size = new System.Drawing.Size(90, 49);
-            this.btnChangeStatus.TabIndex = 68;
-            this.btnChangeStatus.Text = "Change Status";
-            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
+            this.pnlBurrowerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.pnlBurrowerInfo.Controls.Add(this.lblBName);
+            this.pnlBurrowerInfo.Controls.Add(this.incLabel7);
+            this.pnlBurrowerInfo.Controls.Add(this.lblMemberType);
+            this.pnlBurrowerInfo.Controls.Add(this.lblBurrowedDate);
+            this.pnlBurrowerInfo.Controls.Add(this.incLabel11);
+            this.pnlBurrowerInfo.Controls.Add(this.incLabel6);
+            this.pnlBurrowerInfo.Controls.Add(this.lblBurrowerID);
+            this.pnlBurrowerInfo.Controls.Add(this.incLabel5);
+            this.pnlBurrowerInfo.Location = new System.Drawing.Point(988, 31);
+            this.pnlBurrowerInfo.Name = "pnlBurrowerInfo";
+            this.pnlBurrowerInfo.Size = new System.Drawing.Size(335, 109);
+            this.pnlBurrowerInfo.TabIndex = 5;
+            // 
+            // lblBName
+            // 
+            this.lblBName.AutoSize = true;
+            this.lblBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBName.Location = new System.Drawing.Point(131, 31);
+            this.lblBName.Name = "lblBName";
+            this.lblBName.Readonly = false;
+            this.lblBName.Size = new System.Drawing.Size(48, 17);
+            this.lblBName.TabIndex = 67;
+            this.lblBName.Text = "Status";
+            this.lblBName.ValueByOrchestrator = "Status";
+            // 
+            // incLabel7
+            // 
+            this.incLabel7.AutoSize = true;
+            this.incLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel7.Location = new System.Drawing.Point(4, 31);
+            this.incLabel7.Name = "incLabel7";
+            this.incLabel7.Readonly = false;
+            this.incLabel7.Size = new System.Drawing.Size(114, 17);
+            this.incLabel7.TabIndex = 67;
+            this.incLabel7.Text = "Burrower Name :";
+            this.incLabel7.ValueByOrchestrator = "Burrower Name :";
+            // 
+            // lblMemberType
+            // 
+            this.lblMemberType.AutoSize = true;
+            this.lblMemberType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMemberType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblMemberType.Location = new System.Drawing.Point(131, 89);
+            this.lblMemberType.Name = "lblMemberType";
+            this.lblMemberType.Readonly = false;
+            this.lblMemberType.Size = new System.Drawing.Size(48, 17);
+            this.lblMemberType.TabIndex = 66;
+            this.lblMemberType.Text = "Status";
+            this.lblMemberType.ValueByOrchestrator = "Status";
+            // 
+            // lblBurrowedDate
+            // 
+            this.lblBurrowedDate.AutoSize = true;
+            this.lblBurrowedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBurrowedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBurrowedDate.Location = new System.Drawing.Point(131, 60);
+            this.lblBurrowedDate.Name = "lblBurrowedDate";
+            this.lblBurrowedDate.Readonly = false;
+            this.lblBurrowedDate.Size = new System.Drawing.Size(48, 17);
+            this.lblBurrowedDate.TabIndex = 66;
+            this.lblBurrowedDate.Text = "Status";
+            this.lblBurrowedDate.ValueByOrchestrator = "Status";
+            // 
+            // incLabel11
+            // 
+            this.incLabel11.AutoSize = true;
+            this.incLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel11.Location = new System.Drawing.Point(15, 89);
+            this.incLabel11.Name = "incLabel11";
+            this.incLabel11.Readonly = false;
+            this.incLabel11.Size = new System.Drawing.Size(103, 17);
+            this.incLabel11.TabIndex = 66;
+            this.incLabel11.Text = "Member Type :";
+            this.incLabel11.ValueByOrchestrator = "Member Type :";
+            // 
+            // incLabel6
+            // 
+            this.incLabel6.AutoSize = true;
+            this.incLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel6.Location = new System.Drawing.Point(8, 60);
+            this.incLabel6.Name = "incLabel6";
+            this.incLabel6.Readonly = false;
+            this.incLabel6.Size = new System.Drawing.Size(110, 17);
+            this.incLabel6.TabIndex = 66;
+            this.incLabel6.Text = "Burrowed Date :";
+            this.incLabel6.ValueByOrchestrator = "Burrowed Date :";
+            // 
+            // lblBurrowerID
+            // 
+            this.lblBurrowerID.AutoSize = true;
+            this.lblBurrowerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBurrowerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBurrowerID.Location = new System.Drawing.Point(131, 2);
+            this.lblBurrowerID.Name = "lblBurrowerID";
+            this.lblBurrowerID.Readonly = false;
+            this.lblBurrowerID.Size = new System.Drawing.Size(48, 17);
+            this.lblBurrowerID.TabIndex = 65;
+            this.lblBurrowerID.Text = "Status";
+            this.lblBurrowerID.ValueByOrchestrator = "Status";
+            // 
+            // incLabel5
+            // 
+            this.incLabel5.AutoSize = true;
+            this.incLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel5.Location = new System.Drawing.Point(28, 2);
+            this.incLabel5.Name = "incLabel5";
+            this.incLabel5.Readonly = false;
+            this.incLabel5.Size = new System.Drawing.Size(90, 17);
+            this.incLabel5.TabIndex = 65;
+            this.incLabel5.Text = "Burrower ID :";
+            this.incLabel5.ValueByOrchestrator = "Burrower ID :";
             // 
             // frmSearchBooks
             // 
@@ -463,6 +593,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlBurrowerInfo);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBook);
@@ -482,6 +613,8 @@
             this.pnlBook.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlBurrowerInfo.ResumeLayout(false);
+            this.pnlBurrowerInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -519,6 +652,15 @@
         private System.Windows.Forms.TextBox txtISBN;
         private IncLibrary.IncLabel incLabel4;
         private IncLibrary.IncLabel incLabel2;
+        private System.Windows.Forms.Panel pnlBurrowerInfo;
+        private IncLibrary.IncLabel incLabel5;
+        private IncLibrary.IncLabel lblBName;
+        private IncLibrary.IncLabel incLabel7;
+        private IncLibrary.IncLabel lblMemberType;
+        private IncLibrary.IncLabel lblBurrowedDate;
+        private IncLibrary.IncLabel incLabel11;
+        private IncLibrary.IncLabel incLabel6;
+        private IncLibrary.IncLabel lblBurrowerID;
     }
 }
 

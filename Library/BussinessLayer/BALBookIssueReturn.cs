@@ -78,6 +78,7 @@ namespace BussinessLayer
                 new SqlParameter("@dueDate",Convert.ToDateTime(burrowerDetails[2])),
                 new SqlParameter("@isStudent",Convert.ToBoolean(Convert.ToInt32(burrowerDetails[3]))),
                 new SqlParameter("@issued",Convert.ToBoolean(Convert.ToInt32(burrowerDetails[4]))),
+                new SqlParameter("@memberType",Convert.ToInt32(burrowerDetails[5])),
                 new SqlParameter("@operation","I"),
             };
             DataTable dt = new DataTable();

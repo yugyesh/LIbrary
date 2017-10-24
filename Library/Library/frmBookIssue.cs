@@ -221,6 +221,7 @@ namespace Library
                 dueDate.ToString(),
                 chkBurrower.Checked==true?"1":"0",
                 "1",
+                chkBurrower.Checked==true?"1":"2",
             };
             for (int i = 0; i < dgvISBNList.Rows.Count-1; i++)
             {
