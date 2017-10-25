@@ -29,6 +29,33 @@ namespace BussinessLayer
                 throw;
             }
         }
+        //Check Status for all
+        public DataTable CheckStatusState(string personalDetailID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@personalDetail",personalDetailID),
+            };
+            string query = @"select statusID,MemberStatus.MStatusName from PersonalDetails
+                            inner join MemberStatus on MemberStatus.MStatusID = PersonalDetails.StatusID where PersonalDetailID=@personalDetail";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, pram, CommandType.Text);
+            return dt == null || dt.Rows.Count <= 0 ? null : dt;
+        }
+        //Get status
+        public DataTable GetMemberStatus(string personalDetailID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@personalDetailID",personalDetailID),
+            };
+            string query = @"select StatusID,MemberStatus.MStatusName from PersonalDetails 
+                             inner join MemberStatus on MemberStatus.MStatusID=PersonalDetails.StatusID
+                             where PersonalDetailID=@personalDetailID";
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(query, pram, CommandType.Text);
+            return dt == null || dt.Rows.Count <= 0 ? null : dt;
+        }
         //Add Member Status
         public bool AddMStatus(string mStatusName, string userName)
         {

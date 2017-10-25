@@ -24,12 +24,27 @@ namespace Library
             Application.Exit();
         }
         BALUser balUser = new BALUser();
+        BALMember balMember = new BALMember();
         private void btnLogin_Click(object sender, EventArgs e)
         {
             erpGeneral.Clear();
             if (!ValidateFields())
             {
-                if (balUser.CheckUser(txtUserName.Text, txtPassword.Text, Convert.ToInt32(cboUserType.SelectedValue.ToString())))
+                DataTable dt = new DataTable();
+                DataTable dtStatusCheck = new DataTable();
+                dt = balUser.CheckUser(txtUserName.Text, txtPassword.Text, Convert.ToInt32(cboUserType.SelectedValue.ToString()));
+                dtStatusCheck = balMember.CheckStatusState(dt.Rows[0]["PersonalDetailsID"].ToString());
+                if (dt == null)
+                {
+                    MessageBox.Show("Username and Password Mismatch", "Login Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserName.Focus();
+                }
+                else if (dtStatusCheck.Rows[0]["MStatusName"].ToString().ToLower()!="active")
+                {
+                    MessageBox.Show("This User is blocked contat your admin", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
                 {
                     Program.userName = txtUserName.Text;
                     //SpeechSynthesizer speak = new SpeechSynthesizer();
@@ -41,11 +56,6 @@ namespace Library
                     //mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
                     mainForm.Show();
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Username and Password Mismatch", "Login Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtUserName.Focus();
                 }
             }
         }

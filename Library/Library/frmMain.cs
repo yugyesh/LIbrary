@@ -283,5 +283,13 @@ namespace Library
             fineForm.ShowDialog();
             fineForm.MdiParent = this;
         }
+
+        private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Hide();
+            frmUserInfo userInfo = new frmUserInfo();
+            userInfo.ShowDialog();
+            userInfo.MdiParent = this;
+        }
     }
 }
