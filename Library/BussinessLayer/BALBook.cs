@@ -265,7 +265,7 @@ namespace BussinessLayer
         {
             var pram = new List<SqlParameter>
             {
-                new SqlParameter("@ISBN", BookDetails[0]),
+                new SqlParameter("@ISBN", BookDetails[0]+"-AKS"),
                 new SqlParameter("@bStatusID", 1),
                  new SqlParameter("@bookDetailID", BookDetails[1]),
                 new SqlParameter("@addedDate", DateTime.Today),

@@ -33,11 +33,12 @@ namespace Library
                 DataTable dt = new DataTable();
                 DataTable dtStatusCheck = new DataTable();
                 dt = balUser.CheckUser(txtUserName.Text, txtPassword.Text, Convert.ToInt32(cboUserType.SelectedValue.ToString()));
-                dtStatusCheck = balMember.CheckStatusState(dt.Rows[0]["PersonalDetailsID"].ToString());
-                if (dt == null)
+                dtStatusCheck = dt==null? null: balMember.CheckStatusState(dt.Rows[0]["PersonalDetailsID"].ToString());
+            if (dt == null)
                 {
                     MessageBox.Show("Username and Password Mismatch", "Login Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUserName.Focus();
+                    return;
                 }
                 else if (dtStatusCheck.Rows[0]["MStatusName"].ToString().ToLower()!="active")
                 {
@@ -53,7 +54,7 @@ namespace Library
                     MessageBox.Show("Login Successful", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain mainForm = new frmMain();
                     mainForm.statUserName.Text = txtUserName.Text;
-                    //mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
+                    mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
                     mainForm.Show();
                     this.Hide();
                 }
