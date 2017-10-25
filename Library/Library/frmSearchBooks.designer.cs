@@ -397,6 +397,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 59);
             this.panel2.TabIndex = 3;
+            this.panel2.Visible = false;
             // 
             // incLabel4
             // 

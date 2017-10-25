@@ -77,10 +77,11 @@ namespace Library
 
         private void LoadGridFine(DataTable dt)
         {
+            dgvFineDetail.Rows.Clear();
             dgvFineDetail.Columns["colDays"].DefaultCellStyle.BackColor = Color.Red;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (dt.Rows[i]["DaysExceed"].ToString() == null || dt.Rows[i]["DaysExceed"].ToString() == string.Empty)
+                if (dt.Rows[i]["DaysExceed"].ToString() == null || dt.Rows[i]["DaysExceed"].ToString() == string.Empty || dt.Rows[i]["DaysExceed"].ToString() == "0")
                 {
                     return;
                 }

@@ -76,7 +76,7 @@ namespace BussinessLayer
         }
         public DataTable GetAllUser()
         {
-            string query = "select Username,UserID,RoleID from [User]";
+            string query = "select Username,UserID,RoleID,Password from [User]";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
             return dt == null || dt.Rows.Count == 0 ? null : dt;
@@ -87,7 +87,7 @@ namespace BussinessLayer
             {
                 new SqlParameter("@userName","%"+username+"%"),
             };
-            string query = "select Username,UserID,RoleID from [User] where username like @userName";
+            string query = "select Username,UserID,RoleID,Password from [User] where username like @userName";
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, pram, CommandType.Text);
             return dt == null || dt.Rows.Count == 0 ? null : dt;

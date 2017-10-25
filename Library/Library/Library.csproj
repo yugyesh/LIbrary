@@ -117,6 +117,12 @@
     <Compile Include="frmFine.designer.cs">
       <DependentUpon>frmFine.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserInfo.designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFine.resx">
       <DependentUpon>frmFine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchMember.resx">
       <DependentUpon>frmSearchMember.cs</DependentUpon>

@@ -63,19 +63,19 @@
             this._CloseButton.UseVisualStyleBackColor = true;
             this._CloseButton.Click += new System.EventHandler(this._CloseButton_Click);
             // 
-            // frmGeneral
+            // frmSearchMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(475, 263);
+            this.ClientSize = new System.Drawing.Size(475, 409);
             this.ControlBox = false;
             this.Controls.Add(this.pnlClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmGeneral";
+            this.Name = "frmSearchMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.pnlClose.ResumeLayout(false);
