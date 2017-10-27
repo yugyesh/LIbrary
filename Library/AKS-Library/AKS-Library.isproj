@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\BussinessLayer\BussinessLayer.csproj">
+			<Name>BussinessLayer</Name>
+			<Project>{24E311DC-7CC0-4448-959A-9BEFB51AF862}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\Common\Common.csproj">
+			<Name>Common</Name>
+			<Project>{ECDD08CE-9997-4F6B-8571-FB718DB39C89}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+			<Name>DataAccessLayer</Name>
+			<Project>{957745CA-2613-44BD-9399-41D397C3852C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\Library\Library.csproj">
+			<Name>Library</Name>
+			<Project>{3E40714B-543A-4613-BF21-906D33B1772A}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

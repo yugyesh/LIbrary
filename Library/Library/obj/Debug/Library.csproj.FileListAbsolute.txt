@@ -20,6 +20,8 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmBook
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmAddDepartment.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmChangeRole.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmFine.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmUserInfo.resources
+C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmSearchMember.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmImportBooks.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmSearchBooks.resources
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmLogin.resources
@@ -29,5 +31,3 @@ C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.Propert
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.exe
 C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.pdb
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmSearchMember.resources
-C:\Users\Yugesh\Source\Library\Library\Library\Library\obj\Debug\Library.frmUserInfo.resources

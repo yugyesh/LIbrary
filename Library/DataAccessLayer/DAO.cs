@@ -27,8 +27,8 @@ namespace DataAccessLayer
         }
         public static DataTable GetTable(string sql, SqlParameter[] pram, CommandType cmdType)
         {
-            //try
-            //{
+            try
+            {
                 using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
                 {
                     cmd.CommandType = cmdType;
@@ -42,18 +42,18 @@ namespace DataAccessLayer
                     return dt;
                 }
 
-            //}
-            //catch (Exception)
-            //{
+            }
+            catch (Exception)
+            {
 
-            //    return null;
-            //}
-            
+                return null;
+            }
+
         }
         public static int IUD(string sql, SqlParameter[] pram, CommandType cmdType)
         {
-            //try
-            //{
+            try
+            {
                 using (SqlCommand cmd = new SqlCommand(sql, GetConnection()))
                 {
                     cmd.CommandType = cmdType;
@@ -64,13 +64,13 @@ namespace DataAccessLayer
                     int i = cmd.ExecuteNonQuery();
                     return i;
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    return 0;
-            //    //throw Exception;
+        }
+            catch (Exception)
+            {
+                return 0;
+                //throw Exception;
 
-            //}
+            }
         }
         public static int IUD(string sql, List<SqlParameter> pram, CommandType cmdType)
         {

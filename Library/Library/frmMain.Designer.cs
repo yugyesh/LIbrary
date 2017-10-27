@@ -39,6 +39,7 @@
             this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.issueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,7 +100,6 @@
             this.colClassF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBurrowedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripZ1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -177,6 +177,14 @@
             this.addStatusToolStripMenuItem.Text = "Add Status";
             this.addStatusToolStripMenuItem.Click += new System.EventHandler(this.addStatusToolStripMenuItem_Click);
             // 
+            // userInfoToolStripMenuItem
+            // 
+            this.userInfoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.userInfoToolStripMenuItem.Text = "UserInfo";
+            this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
+            // 
             // bookToolStripMenuItem
             // 
             this.bookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -210,6 +218,7 @@
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // searchToolStripMenuItem
             // 
@@ -274,8 +283,8 @@
             this.toolBookIssue,
             this.toolBookReturn,
             this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolLogout});
+            this.toolLogout,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 60);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1361, 62);
@@ -361,6 +370,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(94, 59);
             this.toolStripButton2.Text = "Search Member";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
             // 
             // toolLogout
             // 
@@ -871,14 +881,6 @@
             this.colBurrowedDate.Name = "colBurrowedDate";
             this.colBurrowedDate.ReadOnly = true;
             this.colBurrowedDate.Visible = false;
-            // 
-            // userInfoToolStripMenuItem
-            // 
-            this.userInfoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.userInfoToolStripMenuItem.Text = "UserInfo";
-            this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
             // frmMain
             // 
