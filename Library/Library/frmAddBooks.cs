@@ -109,7 +109,7 @@ namespace Library
                     BookDetails.Add(txtCategory.Text);
                     BookDetails.Add(txtClassification.Text);
                     BookDetails.Add(txtBillNo.Text.Trim());
-                    BookDetails.Add(txtRemarks.Text));
+                    BookDetails.Add(txtRemarks.Text);
                     if (balBook.AddBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -282,7 +282,8 @@ namespace Library
                 txtSource.Text = dgvBooksInfo.CurrentRow.Cells["colSource"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colSource"].Value.ToString();
                 txtCost.Text = dgvBooksInfo.CurrentRow.Cells["colCost"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colCost"].Value.ToString();
                 txtYear.Text = dgvBooksInfo.CurrentRow.Cells["colPublishedYear"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colPublishedYear"].Value.ToString();
-
+                txtBillNo.Text=dgvBooksInfo.CurrentRow.Cells["colBillNo"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colBillNo"].Value.ToString();
+                txtRemarks.Text = dgvBooksInfo.CurrentRow.Cells["colRemarks"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colRemarks"].Value.ToString();
             }
         }
 
@@ -339,6 +340,8 @@ namespace Library
                 dgvBooksInfo.Rows[i].Cells["colClassification"].Value = dtAllBooks.Rows[i]["Classification"].ToString();
                 dgvBooksInfo.Rows[i].Cells["colCategory"].Value = dtAllBooks.Rows[i]["Category"].ToString();
                 dgvBooksInfo.Rows[i].Cells["colSubCategory"].Value = dtAllBooks.Rows[i]["SubCategory"].ToString();
+                dgvBooksInfo.Rows[i].Cells["colBillNo"].Value = dtAllBooks.Rows[i]["BillNo"].ToString();
+                dgvBooksInfo.Rows[i].Cells["colRemarks"].Value = dtAllBooks.Rows[i]["Remarks"].ToString();
             }
         }
 

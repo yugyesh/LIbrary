@@ -38,7 +38,7 @@ namespace Common
         }
         public static string GetBookID(string title, string author, int number)
         {
-            number = number + 1;
+            number += 1;
             return number+"-"+title.Substring(0, 5).ToUpper() + "-" + author.Substring(0, 3).ToUpper();
         }
     }
