@@ -37,9 +37,6 @@ namespace Library
             cboStatus.DisplayMember = "BstatusName";
             cboStatus.ValueMember = "BStatusID";
             cboStatus.DataSource = dt;
-            cboNewStatus.DataSource = dtnew;
-            cboNewStatus.DisplayMember = "BstatusName";
-            cboNewStatus.ValueMember = "BStatusID";
         }
 
         private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,10 +44,17 @@ namespace Library
             if (cboStatus.Text.ToLower()=="burrowed")
             {
                 pnlBurrowerInfo.Visible = true;
+                pnlFindBookNumber.Visible = false;
+            }
+            else if (cboStatus.Text.ToLower()=="available")
+            {
+                pnlFindBookNumber.Visible = true;
+                pnlBurrowerInfo.Visible = false;
             }
             else
             {
                 pnlBurrowerInfo.Visible = false;
+                pnlFindBookNumber.Visible = true;
             }
             DataTable dtAllBooks = new DataTable();
             string[] filterString = new string[]
@@ -114,7 +118,7 @@ namespace Library
         private void dgvBookDetails_Click(object sender, EventArgs e)
         {
             //txtISBN.Text = dgvBookDetails.CurrentRow.Cells["colISBN"].Value.ToString();
-            if (cboStatus.Text.ToLower()=="burrowed")
+            if (cboStatus.Text.ToLower() == "burrowed")
             {
                 DataTable dt = new DataTable();
                 DataTable dtName = new DataTable();
@@ -124,23 +128,55 @@ namespace Library
                 lblMemberType.Text = dt.Rows[0]["TypeName"].ToString();
                 dtName = balBookIssueReturn.GetBurrowerName(lblBurrowerID.Text, Convert.ToInt32(dt.Rows[0]["BurrowerType"].ToString()));
                 lblBName.Text = dtName.Rows[0]["BurrowerName"].ToString();
-
             }
-        }
-
-        private void btnChangeStatus_Click(object sender, EventArgs e)
-        {
-            DialogResult result;
-            result = MessageBox.Show("Are you sure to change book status", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (result==DialogResult.OK)
+            else if (cboStatus.Text.Trim().ToLower() == "available")
             {
-                bool check;
-                check=balBook.ChangeBookStatus(txtISBN.Text, Convert.ToInt32(cboNewStatus.SelectedValue.ToString()));
-                if (check==true)
+                DataTable dt = new DataTable();
+                string test;
+                test = dgvBookDetails.CurrentRow.Cells["colBookDetailID"].Value.ToString();
+                dt = balBook.GetBookCount(dgvBookDetails.CurrentRow.Cells["colBookDetailID"].Value.ToString());
+                int availableBook = 0, burrowedBook = 0, lostBook = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    MessageBox.Show("Status update successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dt.Rows[i]["BStatusName"].ToString().ToLower() == "available")
+                    {
+                        availableBook += 1;
+                    }
+                    else if (dt.Rows[i]["BStatusName"].ToString().ToLower() == "burrowed")
+                    {
+                        burrowedBook += 1;
+                    }
+                    else
+                    {
+                        lostBook += 1;
+                    }
                 }
+                lblAvailableNo.Text = availableBook.ToString();
+                lblBurrowed.Text = burrowedBook.ToString();
+                lblLost.Text = lostBook.ToString();
+                lblTotalBooks.Text = dt.Rows.Count.ToString();
+            }
+            else
+            {
+                pnlBurrowerInfo.Visible = false;
+                pnlFindBookNumber.Visible = false;
+                return;
             }
         }
+
+        //private void btnChangeStatus_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult result;
+        //    result = MessageBox.Show("Are you sure to change book status", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //    if (result==DialogResult.OK)
+        //    {
+        //        bool check;
+        //        check=balBook.ChangeBookStatus(txtISBN.Text, Convert.ToInt32(cboNewStatus.SelectedValue.ToString()));
+        //        if (check==true)
+        //        {
+        //            MessageBox.Show("Status update successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //    }
+        //}
     }
 }

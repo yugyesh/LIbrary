@@ -222,20 +222,21 @@ namespace BussinessLayer
                 new SqlParameter("@bookTitle", BookDetails[2]),
                 new SqlParameter("@edition", BookDetails[3]),
                 new SqlParameter("@place", BookDetails[4]),
-                new SqlParameter("@publisher", BookDetails[5]),
-                new SqlParameter("@year", BookDetails[6]),
-                new SqlParameter("@pages", BookDetails[7]),
-                new SqlParameter("@vol", BookDetails[8]),
-                new SqlParameter("@source", BookDetails[9]),
-                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[10])),
-                new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[11])),
-                new SqlParameter("@subCategoryID", BookDetails[12]),
-                new SqlParameter("@CategoryID", BookDetails[13]),
-                new SqlParameter("@classificationID",BookDetails[14]),
+                new SqlParameter("@year", BookDetails[5]),
+                new SqlParameter("@pages", BookDetails[6]),
+                new SqlParameter("@vol", BookDetails[7]),
+                new SqlParameter("@source", BookDetails[8]),
+                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[9])),
+                new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[10])),
+                new SqlParameter("@classificationID",BookDetails[11]),
+                new SqlParameter("@CategoryID", BookDetails[12]),
+                new SqlParameter("@subCategoryID", BookDetails[13]),
+                new SqlParameter("@billNo",BookDetails[14]),
+                new SqlParameter("@remarks",BookDetails[15]),
                 new SqlParameter("@addedOn",DateTime.Today),
                 new SqlParameter("@operation","S"),
             };
-            return DAO.IUD("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure) >= 0 ?  true :  false;
+            return DAO.IUD("sp_SaveChangeBookInfo", pram, CommandType.StoredProcedure) >= 0 ? true : false;
         }
         public bool UpdateBookDetails(List<string> BookDetails, byte photo = 0)
         {
@@ -246,16 +247,17 @@ namespace BussinessLayer
                 new SqlParameter("@bookTitle", BookDetails[2]),
                 new SqlParameter("@edition", BookDetails[3]),
                 new SqlParameter("@place", BookDetails[4]),
-                new SqlParameter("@publisher", BookDetails[5]),
-                new SqlParameter("@year", BookDetails[6]),
-                new SqlParameter("@pages", BookDetails[7]),
-                new SqlParameter("@vol", BookDetails[8]),
-                new SqlParameter("@source", BookDetails[9]),
-                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[10])),
-                new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[11])),
-                new SqlParameter("@classificationID",BookDetails[12]),
-                new SqlParameter("@CategoryID", BookDetails[13]),
-                new SqlParameter("@subCategoryID", BookDetails[14]),
+                new SqlParameter("@year", BookDetails[5]),
+                new SqlParameter("@pages", BookDetails[6]),
+                new SqlParameter("@vol", BookDetails[7]),
+                new SqlParameter("@source", BookDetails[8]),
+                new SqlParameter("@cost", Convert.ToDecimal(BookDetails[9])),
+                new SqlParameter("@currencyID", Convert.ToInt32(BookDetails[10])),
+                new SqlParameter("@classificationID",BookDetails[11]),
+                new SqlParameter("@CategoryID", BookDetails[12]),
+                new SqlParameter("@subCategoryID", BookDetails[13]),
+                new SqlParameter("@billNo",BookDetails[14]),
+                new SqlParameter("@remarks",BookDetails[15]),
                 new SqlParameter("@modifiedOn",DateTime.Today),
                 new SqlParameter("@operation","U"),
             };
@@ -316,6 +318,19 @@ namespace BussinessLayer
                 new SqlParameter("@portion","A"),
             };
             return DAO.GetTable("sp_GetBookInfo", pram, CommandType.StoredProcedure);
+        }
+        // Retrive number of same books present in library
+        public DataTable GetBookCount(string bookDetailID)
+        {
+            SqlParameter[] pram = new SqlParameter[]
+            {
+                new SqlParameter("@bookDetailID",bookDetailID),
+            };
+            DataTable dt = new DataTable();
+            dt = DAO.GetTable(@"select Book.BStatusID,BookStatus.BStatusName from Book
+                                inner join BookStatus on Book.BStatusID=BookStatus.BStatusID where BookDetailID=@bookDetailID"
+                                , pram, CommandType.Text);
+            return dt == null || dt.Rows.Count <= 0 ? null : dt;
         }
     }
 }

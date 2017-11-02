@@ -54,17 +54,7 @@ namespace BussinessLayer
             dt = DAO.GetTable(query, pram, CommandType.Text);
             return dt == null || dt.Rows.Count <= 0 ? null : dt;
         }
-        //public bool CheckUser(int roleID)
-        //{
-        //    SqlParameter[] pram = new SqlParameter[]
-        //    {
-        //        new SqlParameter("@roleID",roleID),
-        //    };
-        //    string query = "select UserID,UserName from [User] where [Password]=@password and UserName=@userName and RoleID=@roleID";
-        //    DataTable dt = new DataTable();
-        //    dt = DAO.GetTable(query, pram, CommandType.Text);
-        //    return dt == null || dt.Rows.Count > 0 ? true : false;
-        //}
+
         public bool DeleteUser(string userID)
         {
             SqlParameter[] pram = new SqlParameter[]

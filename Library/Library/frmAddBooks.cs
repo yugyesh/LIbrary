@@ -99,7 +99,6 @@ namespace Library
                     BookDetails.Add(txtBookTitle.Text);
                     BookDetails.Add(txtEdition.Text);
                     BookDetails.Add(txtPlace.Text);
-                    BookDetails.Add(txtPublisher.Text);
                     BookDetails.Add(txtYear.Text);
                     BookDetails.Add(txtPages.Text);
                     BookDetails.Add(txtVol.Text);
@@ -109,6 +108,8 @@ namespace Library
                     BookDetails.Add(txtSubCategory.Text);
                     BookDetails.Add(txtCategory.Text);
                     BookDetails.Add(txtClassification.Text);
+                    BookDetails.Add(txtBillNo.Text.Trim());
+                    BookDetails.Add(txtRemarks.Text));
                     if (balBook.AddBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -166,7 +167,6 @@ namespace Library
                     BookDetails.Add(txtBookTitle.Text);
                     BookDetails.Add(txtEdition.Text);
                     BookDetails.Add(txtPlace.Text);
-                    BookDetails.Add(txtPublisher.Text);
                     BookDetails.Add(txtYear.Text);
                     BookDetails.Add(txtPages.Text);
                     BookDetails.Add(txtVol.Text);
@@ -176,6 +176,8 @@ namespace Library
                     BookDetails.Add(txtClassification.Text);
                     BookDetails.Add(txtCategory.Text);
                     BookDetails.Add(txtSubCategory.Text);
+                    BookDetails.Add(txtBillNo.Text.Trim());
+                    BookDetails.Add(txtRemarks.Text);
                     if (balBook.UpdateBookDetails(BookDetails))
                     {
                         MessageBox.Show("Book Details Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -279,7 +281,6 @@ namespace Library
                 txtSubCategory.Text = dgvBooksInfo.CurrentRow.Cells["colSubCategory"].Value.ToString();
                 txtSource.Text = dgvBooksInfo.CurrentRow.Cells["colSource"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colSource"].Value.ToString();
                 txtCost.Text = dgvBooksInfo.CurrentRow.Cells["colCost"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colCost"].Value.ToString();
-                txtPublisher.Text = dgvBooksInfo.CurrentRow.Cells["colPublisherName"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colPublisherName"].Value.ToString();
                 txtYear.Text = dgvBooksInfo.CurrentRow.Cells["colPublishedYear"].Value == null ? string.Empty : dgvBooksInfo.CurrentRow.Cells["colPublishedYear"].Value.ToString();
 
             }

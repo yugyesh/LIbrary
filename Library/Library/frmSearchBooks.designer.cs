@@ -56,12 +56,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBook = new System.Windows.Forms.Panel();
             this.btnClear = new IncLibrary.IncButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.incLabel4 = new IncLibrary.IncLabel();
-            this.incLabel2 = new IncLibrary.IncLabel();
-            this.btnChangeStatus = new IncLibrary.IncButton();
-            this.cboNewStatus = new System.Windows.Forms.ComboBox();
-            this.txtISBN = new System.Windows.Forms.TextBox();
             this.pnlBurrowerInfo = new System.Windows.Forms.Panel();
             this.lblBName = new IncLibrary.IncLabel();
             this.incLabel7 = new IncLibrary.IncLabel();
@@ -71,12 +65,21 @@
             this.incLabel6 = new IncLibrary.IncLabel();
             this.lblBurrowerID = new IncLibrary.IncLabel();
             this.incLabel5 = new IncLibrary.IncLabel();
+            this.pnlFindBookNumber = new System.Windows.Forms.Panel();
+            this.lblAvailableNo = new IncLibrary.IncLabel();
+            this.incLabel4 = new IncLibrary.IncLabel();
+            this.lblLost = new IncLibrary.IncLabel();
+            this.lblBurrowed = new IncLibrary.IncLabel();
+            this.incLabel10 = new IncLibrary.IncLabel();
+            this.incLabel12 = new IncLibrary.IncLabel();
+            this.lblTotalBooks = new IncLibrary.IncLabel();
+            this.incLabel14 = new IncLibrary.IncLabel();
             this.pnlClose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookDetails)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlBook.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.pnlBurrowerInfo.SuspendLayout();
+            this.pnlFindBookNumber.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClose
@@ -385,87 +388,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.panel2.Controls.Add(this.incLabel4);
-            this.panel2.Controls.Add(this.incLabel2);
-            this.panel2.Controls.Add(this.btnChangeStatus);
-            this.panel2.Controls.Add(this.cboNewStatus);
-            this.panel2.Controls.Add(this.txtISBN);
-            this.panel2.Location = new System.Drawing.Point(12, 33);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 59);
-            this.panel2.TabIndex = 3;
-            this.panel2.Visible = false;
-            // 
-            // incLabel4
-            // 
-            this.incLabel4.AutoSize = true;
-            this.incLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.incLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel4.Location = new System.Drawing.Point(252, 6);
-            this.incLabel4.Name = "incLabel4";
-            this.incLabel4.Readonly = false;
-            this.incLabel4.Size = new System.Drawing.Size(79, 17);
-            this.incLabel4.TabIndex = 72;
-            this.incLabel4.Text = "New Status";
-            this.incLabel4.ValueByOrchestrator = "New Status";
-            // 
-            // incLabel2
-            // 
-            this.incLabel2.AutoSize = true;
-            this.incLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.incLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.incLabel2.Location = new System.Drawing.Point(59, 5);
-            this.incLabel2.Name = "incLabel2";
-            this.incLabel2.Readonly = false;
-            this.incLabel2.Size = new System.Drawing.Size(39, 17);
-            this.incLabel2.TabIndex = 71;
-            this.incLabel2.Text = "ISBN";
-            this.incLabel2.ValueByOrchestrator = "ISBN";
-            // 
-            // btnChangeStatus
-            // 
-            this.btnChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnChangeStatus.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.btnChangeStatus.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnChangeStatus.Location = new System.Drawing.Point(170, 10);
-            this.btnChangeStatus.Name = "btnChangeStatus";
-            this.btnChangeStatus.NextControl = null;
-            this.btnChangeStatus.OuterBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnChangeStatus.PreviousControl = null;
-            this.btnChangeStatus.ShineColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnChangeStatus.Size = new System.Drawing.Size(90, 49);
-            this.btnChangeStatus.TabIndex = 68;
-            this.btnChangeStatus.Text = "Change Status";
-            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
-            // 
-            // cboNewStatus
-            // 
-            this.cboNewStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.cboNewStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNewStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.cboNewStatus.ForeColor = System.Drawing.SystemColors.Window;
-            this.cboNewStatus.FormattingEnabled = true;
-            this.cboNewStatus.Location = new System.Drawing.Point(215, 26);
-            this.cboNewStatus.Name = "cboNewStatus";
-            this.cboNewStatus.Size = new System.Drawing.Size(148, 24);
-            this.cboNewStatus.TabIndex = 69;
-            // 
-            // txtISBN
-            // 
-            this.txtISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.txtISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtISBN.ForeColor = System.Drawing.Color.White;
-            this.txtISBN.Location = new System.Drawing.Point(16, 26);
-            this.txtISBN.MaxLength = 500;
-            this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(148, 23);
-            this.txtISBN.TabIndex = 70;
-            // 
             // pnlBurrowerInfo
             // 
             this.pnlBurrowerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -582,6 +504,130 @@
             this.incLabel5.Text = "Burrower ID :";
             this.incLabel5.ValueByOrchestrator = "Burrower ID :";
             // 
+            // pnlFindBookNumber
+            // 
+            this.pnlFindBookNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.pnlFindBookNumber.Controls.Add(this.lblAvailableNo);
+            this.pnlFindBookNumber.Controls.Add(this.incLabel4);
+            this.pnlFindBookNumber.Controls.Add(this.lblLost);
+            this.pnlFindBookNumber.Controls.Add(this.lblBurrowed);
+            this.pnlFindBookNumber.Controls.Add(this.incLabel10);
+            this.pnlFindBookNumber.Controls.Add(this.incLabel12);
+            this.pnlFindBookNumber.Controls.Add(this.lblTotalBooks);
+            this.pnlFindBookNumber.Controls.Add(this.incLabel14);
+            this.pnlFindBookNumber.Location = new System.Drawing.Point(988, 31);
+            this.pnlFindBookNumber.Name = "pnlFindBookNumber";
+            this.pnlFindBookNumber.Size = new System.Drawing.Size(335, 109);
+            this.pnlFindBookNumber.TabIndex = 6;
+            // 
+            // lblAvailableNo
+            // 
+            this.lblAvailableNo.AutoSize = true;
+            this.lblAvailableNo.BackColor = System.Drawing.Color.Red;
+            this.lblAvailableNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblAvailableNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblAvailableNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblAvailableNo.Location = new System.Drawing.Point(131, 32);
+            this.lblAvailableNo.Name = "lblAvailableNo";
+            this.lblAvailableNo.Readonly = false;
+            this.lblAvailableNo.Size = new System.Drawing.Size(2, 19);
+            this.lblAvailableNo.TabIndex = 67;
+            this.lblAvailableNo.ValueByOrchestrator = "";
+            // 
+            // incLabel4
+            // 
+            this.incLabel4.AutoSize = true;
+            this.incLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel4.Location = new System.Drawing.Point(4, 31);
+            this.incLabel4.Name = "incLabel4";
+            this.incLabel4.Readonly = false;
+            this.incLabel4.Size = new System.Drawing.Size(108, 17);
+            this.incLabel4.TabIndex = 67;
+            this.incLabel4.Text = "Availble Books :";
+            this.incLabel4.ValueByOrchestrator = "Availble Books :";
+            // 
+            // lblLost
+            // 
+            this.lblLost.AutoSize = true;
+            this.lblLost.BackColor = System.Drawing.Color.Red;
+            this.lblLost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblLost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblLost.Location = new System.Drawing.Point(131, 90);
+            this.lblLost.Name = "lblLost";
+            this.lblLost.Readonly = false;
+            this.lblLost.Size = new System.Drawing.Size(2, 19);
+            this.lblLost.TabIndex = 66;
+            this.lblLost.ValueByOrchestrator = "";
+            // 
+            // lblBurrowed
+            // 
+            this.lblBurrowed.AutoSize = true;
+            this.lblBurrowed.BackColor = System.Drawing.Color.Red;
+            this.lblBurrowed.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBurrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblBurrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblBurrowed.Location = new System.Drawing.Point(131, 61);
+            this.lblBurrowed.Name = "lblBurrowed";
+            this.lblBurrowed.Readonly = false;
+            this.lblBurrowed.Size = new System.Drawing.Size(2, 19);
+            this.lblBurrowed.TabIndex = 66;
+            this.lblBurrowed.ValueByOrchestrator = "";
+            // 
+            // incLabel10
+            // 
+            this.incLabel10.AutoSize = true;
+            this.incLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel10.Location = new System.Drawing.Point(15, 89);
+            this.incLabel10.Name = "incLabel10";
+            this.incLabel10.Readonly = false;
+            this.incLabel10.Size = new System.Drawing.Size(86, 17);
+            this.incLabel10.TabIndex = 66;
+            this.incLabel10.Text = "Lost Books :";
+            this.incLabel10.ValueByOrchestrator = "Lost Books :";
+            // 
+            // incLabel12
+            // 
+            this.incLabel12.AutoSize = true;
+            this.incLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel12.Location = new System.Drawing.Point(8, 60);
+            this.incLabel12.Name = "incLabel12";
+            this.incLabel12.Readonly = false;
+            this.incLabel12.Size = new System.Drawing.Size(119, 17);
+            this.incLabel12.TabIndex = 66;
+            this.incLabel12.Text = "Burrowed Books :";
+            this.incLabel12.ValueByOrchestrator = "Burrowed Books :";
+            // 
+            // lblTotalBooks
+            // 
+            this.lblTotalBooks.AutoSize = true;
+            this.lblTotalBooks.BackColor = System.Drawing.Color.Red;
+            this.lblTotalBooks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotalBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTotalBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTotalBooks.Location = new System.Drawing.Point(131, 3);
+            this.lblTotalBooks.Name = "lblTotalBooks";
+            this.lblTotalBooks.Readonly = false;
+            this.lblTotalBooks.Size = new System.Drawing.Size(2, 19);
+            this.lblTotalBooks.TabIndex = 65;
+            this.lblTotalBooks.ValueByOrchestrator = "";
+            // 
+            // incLabel14
+            // 
+            this.incLabel14.AutoSize = true;
+            this.incLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.incLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.incLabel14.Location = new System.Drawing.Point(28, 2);
+            this.incLabel14.Name = "incLabel14";
+            this.incLabel14.Readonly = false;
+            this.incLabel14.Size = new System.Drawing.Size(91, 17);
+            this.incLabel14.TabIndex = 65;
+            this.incLabel14.Text = "Total Books :";
+            this.incLabel14.ValueByOrchestrator = "Total Books :";
+            // 
             // frmSearchBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,9 +636,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1361, 609);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlFindBookNumber);
             this.Controls.Add(this.pnlBurrowerInfo);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBook);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlClose);
@@ -608,10 +654,10 @@
             this.panel1.ResumeLayout(false);
             this.pnlBook.ResumeLayout(false);
             this.pnlBook.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.pnlBurrowerInfo.ResumeLayout(false);
             this.pnlBurrowerInfo.PerformLayout();
+            this.pnlFindBookNumber.ResumeLayout(false);
+            this.pnlFindBookNumber.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -643,12 +689,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPublishedYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubCategory;
-        private System.Windows.Forms.Panel panel2;
-        private IncLibrary.IncButton btnChangeStatus;
-        private System.Windows.Forms.ComboBox cboNewStatus;
-        private System.Windows.Forms.TextBox txtISBN;
-        private IncLibrary.IncLabel incLabel4;
-        private IncLibrary.IncLabel incLabel2;
         private System.Windows.Forms.Panel pnlBurrowerInfo;
         private IncLibrary.IncLabel incLabel5;
         private IncLibrary.IncLabel lblBName;
@@ -658,6 +698,15 @@
         private IncLibrary.IncLabel incLabel11;
         private IncLibrary.IncLabel incLabel6;
         private IncLibrary.IncLabel lblBurrowerID;
+        private System.Windows.Forms.Panel pnlFindBookNumber;
+        private IncLibrary.IncLabel lblAvailableNo;
+        private IncLibrary.IncLabel incLabel4;
+        private IncLibrary.IncLabel lblLost;
+        private IncLibrary.IncLabel lblBurrowed;
+        private IncLibrary.IncLabel incLabel10;
+        private IncLibrary.IncLabel incLabel12;
+        private IncLibrary.IncLabel lblTotalBooks;
+        private IncLibrary.IncLabel incLabel14;
     }
 }
 
