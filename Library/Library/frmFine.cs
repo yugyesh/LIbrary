@@ -58,7 +58,11 @@ namespace Library
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(dgvFineDetail.CurrentRow.Cells["colFineAmount"].Value.ToString()) == Convert.ToInt32(txtFine.Text))
+            if (txtFine.Text.Trim()==string.Empty)
+            {
+                MessageBox.Show("Please provide fine Amount", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (Convert.ToInt32(dgvFineDetail.CurrentRow.Cells["colFineAmount"].Value.ToString()) == Convert.ToInt32(txtFine.Text.Trim()))
             {
                 if (balFine.AddFineAmount(Convert.ToInt32(txtFine.Text), lblID.Text, lblISBN.Text))
                 {

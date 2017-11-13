@@ -2,3 +2,4 @@ C:\Users\Yugesh\Source\Library\Library\Library\Common\bin\Debug\Common.dll
 C:\Users\Yugesh\Source\Library\Library\Library\Common\bin\Debug\Common.pdb
 C:\Users\Yugesh\Source\Library\Library\Library\Common\obj\Debug\Common.dll
 C:\Users\Yugesh\Source\Library\Library\Library\Common\obj\Debug\Common.pdb
+C:\Users\Yugesh\Source\Library\Library\Library\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

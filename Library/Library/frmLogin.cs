@@ -55,6 +55,8 @@ namespace Library
                     frmMain mainForm = new frmMain();
                     mainForm.statUserName.Text = txtUserName.Text;
                     mainForm.statRoleID.Text = cboUserType.SelectedValue.ToString();
+                    mainForm.statDate.BackColor = Color.Red;
+                    mainForm.statDate.Text = DateTime.Today.ToString("yyyy-MM-dd");
                     mainForm.Show();
                     this.Hide();
                 }

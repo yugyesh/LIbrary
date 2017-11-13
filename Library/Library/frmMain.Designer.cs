@@ -58,8 +58,8 @@
             this.toolBookIssue = new System.Windows.Forms.ToolStripButton();
             this.toolBookReturn = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolLogout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.statRoleID = new System.Windows.Forms.ToolStripStatusLabel();
@@ -362,16 +362,6 @@
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(94, 59);
-            this.toolStripButton2.Text = "Search Member";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Visible = false;
-            // 
             // toolLogout
             // 
             this.toolLogout.Image = ((System.Drawing.Image)(resources.GetObject("toolLogout.Image")));
@@ -382,8 +372,19 @@
             this.toolLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolLogout.Click += new System.EventHandler(this.toolLogout_Click);
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(94, 59);
+            this.toolStripButton2.Text = "Search Member";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Visible = false;
+            // 
             // statusStrip1
             // 
+            this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(10, 2, 10, 2);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statUserName,
             this.statRoleID,
@@ -391,7 +392,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 705);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1361, 22);
-            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.TabIndex = 80;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statUserName
