@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{3E40714B-543A-4613-BF21-906D33B1772A}"
 EndProject
@@ -10,11 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{ECDD08CE-9997-4F6B-8571-FB718DB39C89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{957745CA-2613-44BD-9399-41D397C3852C}"
-EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "AKS-Library", "AKS-Library\AKS-Library.isproj", "{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3E40714B-543A-4613-BF21-906D33B1772A} = {3E40714B-543A-4613-BF21-906D33B1772A}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,18 +60,11 @@ Global
 		{957745CA-2613-44BD-9399-41D397C3852C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{957745CA-2613-44BD-9399-41D397C3852C}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{957745CA-2613-44BD-9399-41D397C3852C}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.CD_ROM|Any CPU.Build.0 = CD_ROM
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.Debug|Any CPU.ActiveCfg = DVD-5
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.Debug|Any CPU.Build.0 = DVD-5
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.DVD-5|Any CPU.ActiveCfg = DVD-5
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.DVD-5|Any CPU.Build.0 = DVD-5
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.Release|Any CPU.ActiveCfg = SingleImage
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.Release|Any CPU.Build.0 = SingleImage
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.SingleImage|Any CPU.ActiveCfg = SingleImage
-		{276D8F7A-AA4B-4D01-9BF7-BBEAFD0F973C}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6FD21C4-F29B-47D6-9F16-4CB7DE3C10E9}
 	EndGlobalSection
 EndGlobal
