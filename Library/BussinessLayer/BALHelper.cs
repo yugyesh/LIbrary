@@ -45,7 +45,7 @@ namespace BussinessLayer
         public DataTable GetCurrencyType()
         {
             string query = "select * from Currency";
-            //testing
+            //testin
             DataTable dt = new DataTable();
             dt = DAO.GetTable(query, null, CommandType.Text);
             try
